@@ -1,0 +1,64 @@
+name: "Refactor"
+description: "동작은 유지하면서 구조, 책임, 성능, 테스트 용이성을 개선합니다."
+title: "[REFACTOR] "
+labels: ["refactor", "todo"]
+body:
+  - type: input
+    id: branch
+    attributes:
+      label: "작업 브랜치"
+      description: "이 이슈에서 사용할 브랜치 이름을 적어주세요."
+      placeholder: "refactor/10-combat-state-machine"
+    validations:
+      required: false
+
+  - type: textarea
+    id: target
+    attributes:
+      label: "리팩터링 대상"
+      description: "클래스, 시스템, 씬, 프리팹, 모듈, 데이터 구조를 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_problem
+    attributes:
+      label: "현재 문제"
+      description: "유지보수, 확장성, 결합도, 성능, 테스트 어려움 등 문제를 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: direction
+    attributes:
+      label: "개선 방향"
+      description: "어떤 구조로 바꿀지, 유지해야 할 외부 동작은 무엇인지 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "작업 상세"
+      placeholder: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: "위험 요소"
+      description: "세이브 데이터, 네트워크, 물리, 애니메이션, 밸런스 수치 등 깨질 수 있는 부분을 적어주세요."
+    validations:
+      required: false
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: "확인 방법"
+      description: "테스트, 플레이 테스트, 프로파일링, 기존 세이브 로드 확인 절차를 적어주세요."
+    validations:
+      required: true

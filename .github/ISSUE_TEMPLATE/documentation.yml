@@ -1,0 +1,62 @@
+name: "Documentation"
+description: "README, 개발 가이드, 기획서, 릴리즈 노트 등 문서 작업을 요청합니다."
+title: "[DOCS] "
+labels: ["documentation", "todo"]
+body:
+  - type: input
+    id: branch
+    attributes:
+      label: "작업 브랜치"
+      description: "이 이슈에서 사용할 브랜치 이름을 적어주세요."
+      placeholder: "document/10-inventory-system"
+    validations:
+      required: false
+
+  - type: input
+    id: document_type
+    attributes:
+      label: "문서 종류"
+      description: "README, 개발 환경 설정, 게임 기획서, 조작법, 릴리즈 노트 등을 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: "작업 목적"
+      description: "문서를 새로 작성하거나 수정해야 하는 이유를 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: contents
+    attributes:
+      label: "포함할 내용"
+      placeholder: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: "대상 독자"
+      multiple: true
+      options:
+        - "개발자"
+        - "기획자"
+        - "아티스트"
+        - "QA"
+        - "플레이어"
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "참고 자료"
+      description: "기존 문서, 이슈, PR, 스크린샷, 외부 링크를 첨부해주세요."
+    validations:
+      required: false

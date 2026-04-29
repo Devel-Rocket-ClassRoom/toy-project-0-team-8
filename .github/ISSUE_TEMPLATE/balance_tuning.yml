@@ -1,0 +1,65 @@
+name: "Balance Tuning"
+description: "스테이지, 전투, 경제, 보상, 레벨 디자인 수치 조정을 요청합니다."
+title: "[BALANCE] "
+labels: ["balance", "todo"]
+body:
+  - type: input
+    id: branch
+    attributes:
+      label: "작업 브랜치"
+      description: "이 이슈에서 사용할 브랜치 이름을 적어주세요."
+      placeholder: "balance/10-stage-03-boss"
+    validations:
+      required: false
+
+  - type: textarea
+    id: target
+    attributes:
+      label: "조정 대상"
+      description: "캐릭터, 맵, 스킬, 아이템, 스테이지, 보상, 경제 시스템을 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "현재 문제"
+      description: "너무 쉽거나 어려운 구간, 지루한 반복, 과한 보상 등 문제를 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_values
+    attributes:
+      label: "제안 수치"
+      description: "현재 값, 제안 값, 이유를 표로 정리해주세요."
+      value: |
+        | 항목 | 현재 값 | 제안 값 | 이유 |
+        | --- | --- | --- | --- |
+        |  |  |  |  |
+    validations:
+      required: false
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: "확인 방법"
+      description: "플레이 테스트 조건, 목표 클리어 시간, 실패율, DPS, 포화 속도 등 판단 기준을 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "영향 범위"
+      description: "다른 스테이지, 캐릭터, 아이템, 세이브 데이터에 영향이 있는지 적어주세요."
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "참고 자료"
+      description: "플레이 영상, 테스트 결과, 로그, 스프레드시트를 첨부해주세요."
+    validations:
+      required: false

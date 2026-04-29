@@ -1,0 +1,77 @@
+name: "Asset Request"
+description: "아트, 사운드, 애니메이션, 이펙트, UI 리소스 제작 또는 수정, 추가를 요청합니다."
+title: "[ASSET] "
+labels: ["asset", "todo"]
+body:
+  - type: input
+    id: branch
+    attributes:
+      label: "작업 브랜치"
+      description: "이 이슈에서 사용할 브랜치 이름을 적어주세요."
+      placeholder: "asset/10-enemy-hit-vfx"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: asset_type
+    attributes:
+      label: "에셋 종류"
+      multiple: true
+      options:
+        - "2D 아트"
+        - "3D 모델"
+        - "애니메이션"
+        - "SFX/BGM"
+        - "UI"
+        - "기타"
+    validations:
+      required: true
+
+  - type: textarea
+    id: request
+    attributes:
+      label: "요청 내용"
+      description: "필요한 에셋과 사용될 상황을 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: specs
+    attributes:
+      label: "스타일 및 규격"
+      description: "해상도, 파일 형식, 컬러, 톤, 루프 여부, 길이 또는 프레임 수를 적어주세요."
+      placeholder: |
+        - 해상도 또는 크기:
+        - 파일 형식:
+        - 컬러/톤:
+        - 루프 여부:
+        - 길이 또는 프레임 수:
+    validations:
+      required: false
+
+  - type: input
+    id: target_location
+    attributes:
+      label: "적용 위치"
+      description: "캐릭터, UI 화면, 프리팹, 리소스 경로를 적어주세요."
+    validations:
+      required: false
+
+  - type: textarea
+    id: done_criteria
+    attributes:
+      label: "완료 기준"
+      placeholder: |
+        - [ ] 프로젝트에 임포트 가능
+        - [ ] 실제 게임 화면에서 확인 가능
+        - [ ] 필요한 압축/최적화 설정 적용
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "참고 자료"
+      description: "레퍼런스 이미지, 영상, 사운드, 무드보드를 첨부해주세요."
+    validations:
+      required: false

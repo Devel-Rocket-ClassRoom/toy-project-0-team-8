@@ -1,0 +1,61 @@
+name: "Feature"
+description: "새로운 게임 기능, 시스템, 콘텐츠 추가를 요청합니다."
+title: "[FEAT] "
+labels: ["feature", "todo"]
+body:
+  - type: input
+    id: branch
+    attributes:
+      label: "작업 브랜치"
+      description: "이 이슈에서 사용할 브랜치 이름을 적어주세요."
+      placeholder: "feature/10-inventory-system"
+    validations:
+      required: false
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "기능 요약"
+      description: "추가하려는 기능을 짧게 설명해주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: "상세 요구사항"
+      description: "기능의 동작 방식, 입력, 조건, 수치, 보상, 실패 조건 등 필요한 규칙을 적어주세요."
+      placeholder: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: ui_ux
+    attributes:
+      label: "UI/UX 요구사항"
+      description: "화면, 버튼, 피드백, 사운드, 접근성 고려사항이 있다면 적어주세요."
+    validations:
+      required: false
+
+  - type: textarea
+    id: done_criteria
+    attributes:
+      label: "완료 기준"
+      description: "이 기능이 완료되려면 어떤 조건을 만족해야 하는지 적어주세요."
+      placeholder: |
+        - [ ] 기획된 동작이 구현됨
+        - [ ] 예외 상황이 처리됨
+        - [ ] 필요한 테스트 또는 플레이 테스트를 통과함
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "참고 자료"
+      description: "레퍼런스 이미지, 영상, 문서, 유사 게임 사례를 첨부해주세요."
+    validations:
+      required: false

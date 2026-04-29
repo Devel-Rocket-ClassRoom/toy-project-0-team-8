@@ -1,0 +1,58 @@
+name: "Code Cleanup"
+description: "동작 변경 없이 코드, 폴더, 미사용 리소스, 불필요한 데이터를 정리합니다."
+title: "[CLEANUP] "
+labels: ["cleanup", "todo"]
+body:
+  - type: input
+    id: branch
+    attributes:
+      label: "작업 브랜치"
+      description: "이 이슈에서 사용할 브랜치 이름을 적어주세요."
+      placeholder: "cleanup/10-remove-unused-assets"
+    validations:
+      required: false
+
+  - type: textarea
+    id: target
+    attributes:
+      label: "정리 대상"
+      description: "파일, 폴더, 모듈, 씬, 프리팹, 리소스 경로를 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "정리 이유"
+      description: "중복, 미사용, 가독성 저하, 데이터 불일치 등 이유를 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "작업 상세"
+      placeholder: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: behavior_change
+    attributes:
+      label: "동작 변경 여부"
+      options:
+        - "동작 변경 없음"
+        - "동작 변경 가능성이 있어 확인 필요"
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: "확인 방법"
+      description: "빌드, 테스트 씬 실행, 에셋 참조 검사 등 확인 절차를 적어주세요."
+    validations:
+      required: true
