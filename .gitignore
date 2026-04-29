@@ -124,6 +124,9 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 
+### Rider
+*.idea
+
 # Local History for Visual Studio Code
 .history/
 
