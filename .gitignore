@@ -47,7 +47,6 @@
 
 # NuGet Packages
 *.nupkg
-**/[Pp]ackages/*
 !**/[Pp]ackages/build/
 
 # .NET build artifacts
@@ -101,6 +100,7 @@ Assets/Imported
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 
 ### Windows
@@ -126,6 +126,9 @@ $RECYCLE.BIN/
 
 ### Rider
 *.idea
+
+### VS
+*.vsconfig
 
 # Local History for Visual Studio Code
 .history/
