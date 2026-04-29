@@ -8,7 +8,7 @@ body:
     attributes:
       label: "작업 브랜치"
       description: "이 이슈에서 사용할 브랜치 이름을 적어주세요."
-      placeholder: "document/10-inventory-system"
+      placeholder: "docs/10-inventory-system"
     validations:
       required: false
 
