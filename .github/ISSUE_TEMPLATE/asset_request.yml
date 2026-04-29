@@ -25,7 +25,7 @@ body:
         - "UI"
         - "기타"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: request
@@ -33,7 +33,7 @@ body:
       label: "요청 내용"
       description: "필요한 에셋과 사용될 상황을 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: specs
@@ -66,7 +66,7 @@ body:
         - [ ] 실제 게임 화면에서 확인 가능
         - [ ] 필요한 압축/최적화 설정 적용
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: references

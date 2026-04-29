@@ -18,7 +18,7 @@ body:
       label: "문서 종류"
       description: "README, 개발 환경 설정, 게임 기획서, 조작법, 릴리즈 노트 등을 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: purpose
@@ -26,7 +26,7 @@ body:
       label: "작업 목적"
       description: "문서를 새로 작성하거나 수정해야 하는 이유를 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: contents
@@ -37,7 +37,7 @@ body:
         - [ ]
         - [ ]
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: audience
@@ -51,7 +51,7 @@ body:
         - "QA"
         - "플레이어"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: references

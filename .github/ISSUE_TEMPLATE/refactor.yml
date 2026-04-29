@@ -18,7 +18,7 @@ body:
       label: "리팩터링 대상"
       description: "클래스, 시스템, 씬, 프리팹, 모듈, 데이터 구조를 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: current_problem
@@ -26,7 +26,7 @@ body:
       label: "현재 문제"
       description: "유지보수, 확장성, 결합도, 성능, 테스트 어려움 등 문제를 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: direction
@@ -34,7 +34,7 @@ body:
       label: "개선 방향"
       description: "어떤 구조로 바꿀지, 유지해야 할 외부 동작은 무엇인지 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: tasks
@@ -45,7 +45,7 @@ body:
         - [ ]
         - [ ]
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: risks
@@ -61,4 +61,4 @@ body:
       label: "확인 방법"
       description: "테스트, 플레이 테스트, 프로파일링, 기존 세이브 로드 확인 절차를 적어주세요."
     validations:
-      required: true
+      required: false

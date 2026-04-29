@@ -18,7 +18,7 @@ body:
       label: "버그 요약"
       description: "어떤 문제가 발생하는지 한두 문장으로 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: steps
@@ -30,7 +30,7 @@ body:
         2.
         3.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: actual
@@ -38,7 +38,7 @@ body:
       label: "실제 결과"
       description: "실제로 발생한 동작, 오류 메시지, 로그를 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected
@@ -46,7 +46,7 @@ body:
       label: "기대 결과"
       description: "정상이라면 어떻게 동작해야 하는지 적어주세요."
     validations:
-      required: true
+      required: false
 
   - type: input
     id: environment

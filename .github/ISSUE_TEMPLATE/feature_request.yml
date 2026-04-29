@@ -18,7 +18,7 @@ body:
       label: "기능 요약"
       description: "추가하려는 기능을 짧게 설명해주세요."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: requirements
@@ -30,7 +30,7 @@ body:
         - [ ]
         - [ ]
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: ui_ux
@@ -50,7 +50,7 @@ body:
         - [ ] 예외 상황이 처리됨
         - [ ] 필요한 테스트 또는 플레이 테스트를 통과함
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: references
