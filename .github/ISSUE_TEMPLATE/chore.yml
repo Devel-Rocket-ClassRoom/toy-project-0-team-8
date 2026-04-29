@@ -1,7 +1,7 @@
 name: "Chore"
 description: "빌드, CI/CD, 패키지, 프로젝트 설정 등 개발 환경 작업을 요청합니다."
 title: "[CHORE] "
-labels: ["chore", "todo"]
+labels: ["chore"]
 body:
   - type: input
     id: branch

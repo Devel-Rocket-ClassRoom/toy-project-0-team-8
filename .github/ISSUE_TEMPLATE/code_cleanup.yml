@@ -1,7 +1,7 @@
 name: "Code Cleanup"
 description: "동작 변경 없이 코드, 폴더, 미사용 리소스, 불필요한 데이터를 정리합니다."
 title: "[CLEANUP] "
-labels: ["cleanup", "todo"]
+labels: ["cleanup"]
 body:
   - type: input
     id: branch
