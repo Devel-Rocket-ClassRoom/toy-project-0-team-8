@@ -14,6 +14,10 @@ public class GenericWindow : MonoBehaviour
         gameObject.SetActive(true);
         EventSystem.current.SetSelectedGameObject(firstSelected);
     }
+    public virtual void Open(int count)
+    {
+        Open();
+    }
     public virtual void Close()
     {
         gameObject.SetActive(false);

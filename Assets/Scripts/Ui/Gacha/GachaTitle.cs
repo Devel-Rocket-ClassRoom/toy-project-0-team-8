@@ -4,13 +4,21 @@ using TMPro;
 using System;
 public class GachaTitle : GenericWindow
 {
-    public int currentCrystal;
+    public long currentCrystal;
+    private long textcurrentCrystal;
     public TextMeshProUGUI crystaltext;
+    private int GachaCount;
 
+    private void Awake()
+    {
+        textcurrentCrystal = currentCrystal;
+        crystaltext.text = textcurrentCrystal.ToString();
+    }
     public void OnClickAddCrystal(int crystal)
     {
         currentCrystal += crystal;
-        crystaltext.text = $"{currentCrystal.ToString()}";
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 99999999999999L);
+        crystaltext.text = $"{textcurrentCrystal.ToString()}";
     }
     public override void Open()
     {
@@ -21,7 +29,7 @@ public class GachaTitle : GenericWindow
         base.Close();
     }
 
-    public void OnClickBobbgiButton()
+    public void OnOneClickGachaButton()
     {
         if (currentCrystal < 200)
         {
@@ -29,6 +37,22 @@ public class GachaTitle : GenericWindow
             return;
         }
         currentCrystal -= 200;
-        windowManager.Open(1);
+        GachaCount = 1;
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 99999999999999L);
+        crystaltext.text = $"{textcurrentCrystal.ToString()}";
+        windowManager.Open(1,GachaCount);
+    }
+    public void OnClickGachaButton()
+    {
+        if (currentCrystal < 2000)
+        {
+            Debug.Log("크리스탈 부족");
+            return;
+        }
+        currentCrystal -= 2000;
+        GachaCount = 10;
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 99999999999999L);
+        crystaltext.text = $"{textcurrentCrystal.ToString()}";
+        windowManager.Open(1,GachaCount);
     }
 }
