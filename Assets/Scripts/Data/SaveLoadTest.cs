@@ -12,7 +12,7 @@ public class SaveLoadTest : MonoBehaviour
 
             foreach (SaveCookie cookie in list)
             {
-                cookie.CookieData = new CookieData();
+                cookie.CookieData = DataTableManager.CookieTable.Get("Cookie1");
             }
 
             SaveLoadManager.Data = new SaveDataVC();
