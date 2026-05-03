@@ -47,7 +47,7 @@ public static class DataTableIds
     };
 
     public static string String => StringTableIds[(int)Variables.DataTypes];
-    public static readonly string Item = "GearTable";
+    public static readonly string Gear = "GearTable";
     public static readonly string Cookie = "CookieTable";
 
 }

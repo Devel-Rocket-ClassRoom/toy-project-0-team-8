@@ -102,12 +102,12 @@ public class ColorConverter : JsonConverter<Color>
     }
 }
 
-public class ItemDataConverter : JsonConverter<GearData>
+public class GearDataConverter : JsonConverter<GearData>
 {
     public override GearData ReadJson(JsonReader reader, Type objectType, GearData existingValue, bool hasExistingValue, JsonSerializer serializer)
     {
         string id = reader.Value as string;
-        return DataTableManager.ItemTable.Get(id);
+        return DataTableManager.GearTable.Get(id);
     }
 
     public override void WriteJson(JsonWriter writer, GearData value, JsonSerializer serializer)

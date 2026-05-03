@@ -2,16 +2,16 @@ using Newtonsoft.Json;
 using System;
 using UnityEngine;
 
-public class SaveCookie
+public class SaveGear : MonoBehaviour
 {
     public Guid InstanceId { get; set; }
 
-    [JsonConverter(typeof(CharacterDataConverter))]
-    public CookieData CookieData;
+    [JsonConverter(typeof(GearDataConverter))]
+    public GearData GearData;
     public DateTime creationTime { get; set; }
 
 
-    public SaveCookie()
+    public SaveGear()
     {
         // json에서 알아서 직렬화, 역직렬화 처리해줌
         InstanceId = Guid.NewGuid();
@@ -21,6 +21,6 @@ public class SaveCookie
 
     public override string ToString()
     {
-        return $"{InstanceId}\n{creationTime}\n{CookieData.Id}";
+        return $"{InstanceId}\n{creationTime}\n{GearData.Id}";
     }
 }

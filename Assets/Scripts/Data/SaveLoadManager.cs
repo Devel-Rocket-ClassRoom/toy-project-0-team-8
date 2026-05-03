@@ -18,10 +18,9 @@ public static class SaveLoadManager
     private static readonly string SaveDirectory = $"{Application.persistentDataPath}/Save";
     private static readonly string[] SaveFileNames =
     {
-        "SaveAuto.json",
-        "Save1.json",
-        "Save2.json",
-        "Save3.json",
+        "SaveCookie.json",
+        "SaveGear.json",
+
     };
 
     private static JsonSerializerSettings settings = new JsonSerializerSettings()
@@ -33,22 +32,16 @@ public static class SaveLoadManager
 
     };
 
-    public static bool Save(int slot = 0)
+    public static bool Save(int slot)
     {
         return Save(slot, Mode);
     }
-    public static bool Load(int slot = 0)
+    public static bool Load(int slot)
     {
         return Load(slot, Mode);
     }
 
-    static SaveLoadManager()
-    {
-        if(!Load())
-        {
-            Debug.LogError("세이브 파일 로드 실패");
-        }
-    }
+
 
     public static bool Save(int slot, SaveMode mode)
     {
@@ -66,7 +59,7 @@ public static class SaveLoadManager
                 Directory.CreateDirectory(SaveDirectory);
             }
 
-            string path = GetSaveFilePath(mode, 0);
+            string path = GetSaveFilePath(mode, slot);
             var json = JsonConvert.SerializeObject(Data, settings);
             Debug.Log(path);
 
@@ -96,11 +89,11 @@ public static class SaveLoadManager
             return false;
         }
 
-        string path = GetSaveFilePath(mode, 0);
+        string path = GetSaveFilePath(mode, slot);
 
         if (!File.Exists(path))
         {
-            return Save();
+            return Save(slot);
         }
 
         try
@@ -147,7 +140,7 @@ public static class SaveLoadManager
     {
         return GetSaveFilePath(Mode, slot);
     }
-    private static string GetSaveFilePath(SaveMode mode, int slot = 0)
+    private static string GetSaveFilePath(SaveMode mode, int slot)
     {
         var ext = mode == SaveMode.Text ? ".json" : ".dat";
         return Path.Combine(SaveDirectory, $"{SaveFileNames[slot]}{ext}");

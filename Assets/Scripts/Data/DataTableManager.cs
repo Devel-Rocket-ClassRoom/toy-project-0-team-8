@@ -9,7 +9,7 @@ public static class DataTableManager
 
     public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
 
-    public static GearTable ItemTable => Get<GearTable>(DataTableIds.Item);
+    public static GearTable GearTable => Get<GearTable>(DataTableIds.Gear);
     public static CookieTable CookieTable => Get<CookieTable>(DataTableIds.Cookie);
 
 #if UNITY_EDITOR
@@ -40,8 +40,8 @@ public static class DataTableManager
 #endif
 
         var itemTable = new GearTable();
-        itemTable.Load(DataTableIds.Item);
-        tables.Add(DataTableIds.Item, itemTable);
+        itemTable.Load(DataTableIds.Gear);
+        tables.Add(DataTableIds.Gear, itemTable);
 
         var characterTable = new CookieTable();
         characterTable.Load(DataTableIds.Cookie);

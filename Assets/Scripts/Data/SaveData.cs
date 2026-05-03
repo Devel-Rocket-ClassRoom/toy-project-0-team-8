@@ -16,7 +16,11 @@ public abstract class SaveData
 [System.Serializable]
 public class SaveDataV1 : SaveData
 {
-    public string PlayerName {  get; set; } = string.Empty;
+    // 저장할 때 필요한 데이터
+    public List<SaveCookie> CookieList = new List<SaveCookie>();
+    public List<SaveGear> GearList = new List<SaveGear>();
+    
+
     public SaveDataV1()
     {
         Version = 1;
