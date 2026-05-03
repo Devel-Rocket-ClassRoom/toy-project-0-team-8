@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class Gacha
 {
     public string itemName;
     public float weight;
-
+    public Image Icon;
 }
 
 

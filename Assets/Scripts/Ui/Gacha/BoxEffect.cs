@@ -15,6 +15,7 @@ public class BoxEffect : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(RateLine());
     }
+
     public IEnumerator RateLine()
     {
         for (int i = 0; i < lineCount; i++)
@@ -30,4 +31,5 @@ public class BoxEffect : MonoBehaviour
             yield return new WaitForSeconds(randomTime);
         }
     }
+
 }

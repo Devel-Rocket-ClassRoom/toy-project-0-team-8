@@ -17,7 +17,7 @@ public class GachaTitle : GenericWindow
     public void OnClickAddCrystal(int crystal)
     {
         currentCrystal += crystal;
-        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 99999999999999L);
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 999999999999L);
         crystaltext.text = $"{textcurrentCrystal.ToString()}";
     }
     public override void Open()
@@ -38,7 +38,7 @@ public class GachaTitle : GenericWindow
         }
         currentCrystal -= 200;
         GachaCount = 1;
-        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 99999999999999L);
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 999999999999L);
         crystaltext.text = $"{textcurrentCrystal.ToString()}";
         windowManager.Open(1,GachaCount);
     }
