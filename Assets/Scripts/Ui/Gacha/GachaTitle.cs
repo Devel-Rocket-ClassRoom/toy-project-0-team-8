@@ -7,6 +7,7 @@ public class GachaTitle : GenericWindow
     public long currentCrystal;
     private long textcurrentCrystal;
     public TextMeshProUGUI crystaltext;
+    public GameObject addcrystalPanal;
     private int GachaCount;
 
     private void Awake()
@@ -19,6 +20,14 @@ public class GachaTitle : GenericWindow
         currentCrystal += crystal;
         textcurrentCrystal = Math.Clamp(currentCrystal, 0, 999999999999L);
         crystaltext.text = $"{textcurrentCrystal.ToString()}";
+    }
+    public void OnClickAddPanal()
+    {
+        addcrystalPanal.SetActive(true);
+    }
+    public void OnClickExitAddPanal()
+    {
+        addcrystalPanal.SetActive(false);
     }
     public override void Open()
     {
