@@ -16,6 +16,6 @@ public class ChangeScene : MonoBehaviour
     public void OnPlayScene()
     {
 
-        SceneManager.LoadScene("GachaScene");
+        SceneManager.LoadScene("ReadyScene");
     }
 }

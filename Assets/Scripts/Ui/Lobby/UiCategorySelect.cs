@@ -1,19 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.OnScreen;
+using UnityEngine.UI;
 
 public class UiCategorySelect : MonoBehaviour
 {
     public UiCookieList uiCookieList;
     public UiGearList uiGearList;
-
-
-    private void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            
-        }
-    }
 
     public void OnLoadCookie()
     {
