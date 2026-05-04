@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 using System;
 using UnityEngine;
 
-public class SaveGear : MonoBehaviour
+public class SaveGear
 {
     public Guid InstanceId { get; set; }
 

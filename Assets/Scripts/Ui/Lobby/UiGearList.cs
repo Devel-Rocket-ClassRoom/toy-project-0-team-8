@@ -39,6 +39,7 @@ public class UiGearList : MonoBehaviour
 
     public void SetSaveGearDataList(List<SaveGear> source)
     {
+
         saveGearDataList = source.ToList();
         UpdateSlots();
     }
@@ -48,13 +49,23 @@ public class UiGearList : MonoBehaviour
         return saveGearDataList;
     }
 
+    public void ClearList()
+    {
+        for (int i = 0; i < uiSlotList.Count; i++)
+        {
+            uiSlotList[i].gameObject.SetActive(false);
+        }
+    }
     private void UpdateSlots()
     {
         // 필터링 할 때 사용
         //var list = saveCookieDataList.Where(filterings[(int)filter]).ToList();
         //list.Sort(comparison[(int)sorting]);
 
+
         var list = saveGearDataList;
+
+
         // 아이템 리스트를 받아서 슬롯 리스트 생성
         if (uiSlotList.Count < list.Count)
         {
@@ -93,13 +104,6 @@ public class UiGearList : MonoBehaviour
 
         selectedSlotIndex = -1;
         onUpdateSlot.Invoke();
-    }
-
-
-    public void AddRandomItem()
-    {
-        //saveCookieDataList.Add(SaveCookie.GetRandomItem());
-        UpdateSlots();
     }
 
 }

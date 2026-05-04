@@ -10,9 +10,13 @@ public class SaveLoadTest : MonoBehaviour
         {
             List<SaveCookie> list = new List<SaveCookie>();
 
-            foreach (SaveCookie cookie in list)
+            for(int i = 0 ; i < 20; i++)
             {
-                cookie.CookieData = DataTableManager.CookieTable.Get("Cookie1");
+                SaveCookie newCookie = new SaveCookie();
+                newCookie.CookieData = DataTableManager.CookieTable.Get("Cookie1");
+
+                list.Add(newCookie);
+
             }
 
             SaveLoadManager.Data = new SaveDataVC();
@@ -24,7 +28,20 @@ public class SaveLoadTest : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            List<SaveGear> list = new List<SaveGear>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                SaveGear newGear = new SaveGear();
+                newGear.GearData = DataTableManager.GearTable.Get("Item1");
+
+                list.Add(newGear);
+
+            }
+
             SaveLoadManager.Data = new SaveDataVC();
+            SaveLoadManager.Data.GearList = list;
+
             SaveLoadManager.Save(1);
             Debug.Log("Saved Gear");
 

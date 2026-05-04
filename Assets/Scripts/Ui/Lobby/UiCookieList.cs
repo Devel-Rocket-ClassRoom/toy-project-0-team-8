@@ -48,6 +48,13 @@ public class UiCookieList : MonoBehaviour
         return saveCookieDataList;
     }
 
+    public void ClearList()
+    {
+        for (int i = 0; i < uiSlotList.Count; i++)
+        {
+            uiSlotList[i].gameObject.SetActive(false);
+        }
+    }
     private void UpdateSlots()
     {
         // 필터링 할 때 사용
@@ -55,6 +62,11 @@ public class UiCookieList : MonoBehaviour
         //list.Sort(comparison[(int)sorting]);
 
         var list = saveCookieDataList;
+        for (int i = 0; i < uiSlotList.Count; i++)
+        {
+            uiSlotList[i].gameObject.SetActive(false);
+        }
+
         // 아이템 리스트를 받아서 슬롯 리스트 생성
         if (uiSlotList.Count < list.Count)
         {

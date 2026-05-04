@@ -18,12 +18,12 @@ public static class DataTableManager
         return Get<StringTable>(DataTableIds.StringTableIds[(int)lang]);
     }
 #endif
-
+    
     static DataTableManager()
     {
         Init();
     }
-
+    
     private static void Init()
     {
 #if !UNITY_EDITOR

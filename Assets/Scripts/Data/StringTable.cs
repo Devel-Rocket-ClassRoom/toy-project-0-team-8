@@ -18,6 +18,7 @@ public class StringTable : DataTable
         table.Clear();
 
         string path = string.Format(FormatPath, filename);
+        Debug.Log(path);
         TextAsset textAsset = Resources.Load<TextAsset>(path);
         var list = LoadCSV<Data>(textAsset.text);
 
