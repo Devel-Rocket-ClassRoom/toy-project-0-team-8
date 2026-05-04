@@ -27,12 +27,14 @@ public class BbobgiTitle : GenericWindow
     private int count;
     private bool rewardCheck = false;
     private bool firstCheck = false;
+    private bool exitable = false;
     private void Awake()
     {
         isClick = false;
         isOpen = false;
         rewardCheck = false;
         firstCheck = false;
+        exitable = false;
         time = 0;
         count= 0;
         animator.speed = 1.0f;
@@ -50,6 +52,7 @@ public class BbobgiTitle : GenericWindow
         isOpen = false;
         rewardCheck = false;
         firstCheck = false;
+        exitable = false;
         time = 0;
         animator.speed = 1.0f;
     }
@@ -63,6 +66,7 @@ public class BbobgiTitle : GenericWindow
         isOpen = false;
         rewardCheck = false;
         firstCheck = false;
+        exitable = false;
         time = 0;
         animator.speed = 1.0f;
         this.count = count;
@@ -75,6 +79,7 @@ public class BbobgiTitle : GenericWindow
         isOpen= false;
         rewardCheck= false;
         firstCheck = false;
+        exitable = false;
         Treasureview.SetActive(false);
         TreasureviewOne.SetActive(false);
         effects.SetActive(false);
@@ -158,7 +163,14 @@ public class BbobgiTitle : GenericWindow
     }
     public void OnClickExit()
     {
-        windowManager.Open(0);
+        if(exitable)
+        {
+            windowManager.Open(0);
+        }
+        else
+        {
+            return;
+        }
     }
     public IEnumerator UpdateSlot()
     {
@@ -172,5 +184,6 @@ public class BbobgiTitle : GenericWindow
             go.SetActive(true); // 나중에 바꿀예정 테스트용
             yield return new WaitForSeconds(0.5f);
         }
+        exitable = true;
     }
 }
