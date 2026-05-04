@@ -1,16 +1,21 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void OnGachaScene()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+        SceneManager.LoadScene("GachaScene");
+    }
+    public void OnLobbyScene()
     {
-        
+
+        SceneManager.LoadScene("Lobby");
+    }
+    public void OnPlayScene()
+    {
+
+        SceneManager.LoadScene("GachaScene");
     }
 }
