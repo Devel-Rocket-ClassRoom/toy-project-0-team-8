@@ -1,0 +1,2652 @@
+fileFormatVersion: 2
+guid: b7efe03e74403aa4ea48320d3e03327b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7363654497244596718
+    second: Pirate_Actions_0
+  - first:
+      213: 1827599265976701484
+    second: Pirate_Actions_1
+  - first:
+      213: -2933410137532263006
+    second: Pirate_Actions_2
+  - first:
+      213: -7943732845165721515
+    second: Pirate_Actions_3
+  - first:
+      213: -4267984306643668189
+    second: Pirate_Actions_4
+  - first:
+      213: 2628816546484247711
+    second: Pirate_Actions_5
+  - first:
+      213: 3634542131899065735
+    second: Pirate_Actions_6
+  - first:
+      213: 3469235056330421271
+    second: Pirate_Actions_7
+  - first:
+      213: -1355385699586053968
+    second: Pirate_Actions_8
+  - first:
+      213: -5126488957622004108
+    second: Pirate_Actions_9
+  - first:
+      213: -6343051228597101710
+    second: Pirate_Actions_10
+  - first:
+      213: 5303470834848169403
+    second: Pirate_Actions_11
+  - first:
+      213: -4998194362470491159
+    second: Pirate_Actions_12
+  - first:
+      213: 7101789280943633032
+    second: Pirate_Actions_13
+  - first:
+      213: -3097771595553290895
+    second: Pirate_Actions_14
+  - first:
+      213: 219951914446533458
+    second: Pirate_Actions_15
+  - first:
+      213: -4736258474407327542
+    second: Pirate_Actions_16
+  - first:
+      213: 7746126784799792604
+    second: Pirate_Actions_17
+  - first:
+      213: 1720023861516058986
+    second: Pirate_Actions_18
+  - first:
+      213: 6839319752191163391
+    second: Pirate_Actions_19
+  - first:
+      213: -5909759584072136708
+    second: Pirate_Actions_20
+  - first:
+      213: 7645792374764720858
+    second: Pirate_Actions_21
+  - first:
+      213: 4114987874319709098
+    second: Pirate_Actions_22
+  - first:
+      213: -6396200352568162592
+    second: Pirate_Actions_23
+  - first:
+      213: -1637465153557029110
+    second: Pirate_Actions_24
+  - first:
+      213: -7896904920296007831
+    second: Pirate_Actions_25
+  - first:
+      213: 6398682221230690178
+    second: Pirate_Actions_26
+  - first:
+      213: -2858705244275948080
+    second: Pirate_Actions_27
+  - first:
+      213: 5129714182417377426
+    second: Pirate_Actions_28
+  - first:
+      213: -856248694421032995
+    second: Pirate_Actions_29
+  - first:
+      213: 1814379643900332147
+    second: Pirate_Actions_30
+  - first:
+      213: -6323332530451967798
+    second: Pirate_Actions_31
+  - first:
+      213: 9165774295848783216
+    second: Pirate_Actions_32
+  - first:
+      213: 8335957249456214
+    second: Pirate_Actions_33
+  - first:
+      213: 6157062237865981972
+    second: Pirate_Actions_34
+  - first:
+      213: 4420729607710508212
+    second: Pirate_Actions_35
+  - first:
+      213: -7285263345374226753
+    second: Pirate_Actions_36
+  - first:
+      213: -2129027085302097813
+    second: Pirate_Actions_37
+  - first:
+      213: -3384980167004733459
+    second: Pirate_Actions_38
+  - first:
+      213: -4627394448993523318
+    second: Pirate_Actions_39
+  - first:
+      213: -5691166300052257943
+    second: Pirate_Actions_40
+  - first:
+      213: 8815466772174509592
+    second: Pirate_Actions_41
+  - first:
+      213: 2563890178098208054
+    second: Pirate_Actions_42
+  - first:
+      213: -3112119377068631753
+    second: Pirate_Actions_43
+  - first:
+      213: -5109316379242120231
+    second: Pirate_Actions_44
+  - first:
+      213: 2465197098141065788
+    second: Pirate_Actions_45
+  - first:
+      213: -43514711289533720
+    second: Pirate_Actions_46
+  - first:
+      213: 6763005150424150776
+    second: Pirate_Actions_47
+  - first:
+      213: 3920730177702342152
+    second: Pirate_Actions_48
+  - first:
+      213: -5720424874322089069
+    second: Pirate_Actions_49
+  - first:
+      213: -1109718301810683152
+    second: Pirate_Actions_50
+  - first:
+      213: 126484483333466297
+    second: Pirate_Actions_51
+  - first:
+      213: 4758247394637499538
+    second: Pirate_Actions_52
+  - first:
+      213: -4474701375761398538
+    second: Pirate_Actions_53
+  - first:
+      213: 5866642608498877739
+    second: Pirate_Actions_54
+  - first:
+      213: -361740460847826248
+    second: Pirate_Actions_55
+  - first:
+      213: -8164689236995137362
+    second: Pirate_Actions_56
+  - first:
+      213: -3572014094642515203
+    second: Pirate_Actions_57
+  - first:
+      213: 8771457283040818840
+    second: Pirate_Actions_58
+  - first:
+      213: -3498830899639829529
+    second: Pirate_Actions_59
+  - first:
+      213: -4272668843522674896
+    second: Pirate_Actions_60
+  - first:
+      213: 3194604898285967778
+    second: Pirate_Actions_61
+  - first:
+      213: -7498364647791645507
+    second: Pirate_Actions_62
+  - first:
+      213: -7241377568289480724
+    second: Pirate_Actions_63
+  - first:
+      213: -5758983995071124662
+    second: Pirate_Actions_64
+  - first:
+      213: 2445835874202496144
+    second: Pirate_Actions_65
+  - first:
+      213: 4583200536721240068
+    second: Pirate_Actions_66
+  - first:
+      213: 7485020056303090145
+    second: Pirate_Actions_67
+  - first:
+      213: -6951471171874030626
+    second: Pirate_Actions_68
+  - first:
+      213: 3577535797005135038
+    second: Pirate_Actions_69
+  - first:
+      213: 8900047655493259164
+    second: Pirate_Actions_70
+  - first:
+      213: -1126302261719366716
+    second: Pirate_Actions_71
+  - first:
+      213: 8132177214633064958
+    second: Pirate_Actions_72
+  - first:
+      213: 3041809222177658760
+    second: Pirate_Actions_73
+  - first:
+      213: -453901595506820628
+    second: Pirate_Actions_74
+  - first:
+      213: -8055617839320306873
+    second: Pirate_Actions_75
+  - first:
+      213: -1017800749865914361
+    second: Pirate_Actions_76
+  - first:
+      213: -3308685460249721481
+    second: Pirate_Actions_77
+  - first:
+      213: -3638415702448292202
+    second: Pirate_Actions_78
+  - first:
+      213: -4541778513420702840
+    second: Pirate_Actions_79
+  - first:
+      213: 4582375328587753793
+    second: Pirate_Actions_80
+  - first:
+      213: 3480398561362380239
+    second: Pirate_Actions_81
+  - first:
+      213: -462230628110397861
+    second: Pirate_Actions_82
+  - first:
+      213: -8662355382360008184
+    second: Pirate_Actions_83
+  - first:
+      213: 5563620422089956549
+    second: Pirate_Actions_84
+  - first:
+      213: 2131038314583419293
+    second: Pirate_Actions_85
+  - first:
+      213: 7252697061293716367
+    second: Pirate_Actions_86
+  - first:
+      213: 7495322452322103357
+    second: Pirate_Actions_87
+  - first:
+      213: -5799226441577920375
+    second: Pirate_Actions_88
+  - first:
+      213: -2045496034076843960
+    second: Pirate_Actions_89
+  - first:
+      213: -4770760863179854159
+    second: Pirate_Actions_90
+  - first:
+      213: -7408406503426086523
+    second: Pirate_Actions_91
+  - first:
+      213: 4907568238839139173
+    second: Pirate_Actions_92
+  - first:
+      213: -8270757787818761676
+    second: Pirate_Actions_93
+  - first:
+      213: -5637107409181427281
+    second: Pirate_Actions_94
+  - first:
+      213: -8414557002288209248
+    second: Pirate_Actions_95
+  - first:
+      213: -2419320821561057966
+    second: Pirate_Actions_96
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pirate_Actions_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1978
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee9c8fc30c4f03660800000000000000
+      internalID: 7363654497244596718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1978
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c225e4079dfec5910800000000000000
+      internalID: 1827599265976701484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1978
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a51cd3950f6a47d0800000000000000
+      internalID: -2933410137532263006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_3
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1982
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5584b45a01132c190800000000000000
+      internalID: -7943732845165721515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_4
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1935
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323ff87c2e215c4c0800000000000000
+      internalID: -4267984306643668189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_5
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1795
+        width: 120
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cdcd098be6b7420800000000000000
+      internalID: 2628816546484247711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_6
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1876
+        width: 91
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785e805ffcc707230800000000000000
+      internalID: 3634542131899065735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_7
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1951
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71438e627e2352030800000000000000
+      internalID: 3469235056330421271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_8
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1949
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8678a23e3b03de0800000000000000
+      internalID: -1355385699586053968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_9
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1909
+        width: 75
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4765aff447d0bd8b0800000000000000
+      internalID: -5126488957622004108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_10
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1961
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b5d57b384f8f7a0800000000000000
+      internalID: -6343051228597101710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_11
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1932
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdf4c310a6b99940800000000000000
+      internalID: 5303470834848169403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_12
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1937
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eb169a75b8d2aab0800000000000000
+      internalID: -4998194362470491159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_13
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1944
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882725069bf9e8260800000000000000
+      internalID: 7101789280943633032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_14
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 1866
+        width: 92
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17540c385218205d0800000000000000
+      internalID: -3097771595553290895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_15
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 1901
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253b040d91d6d0300800000000000000
+      internalID: 219951914446533458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_16
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1911
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac88484e20e654eb0800000000000000
+      internalID: -4736258474407327542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_17
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1912
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdd51212545cf7b60800000000000000
+      internalID: 7746126784799792604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_18
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1900
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a614cd6c690ced710800000000000000
+      internalID: 1720023861516058986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_19
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1796
+        width: 176
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffbbaae04152aee50800000000000000
+      internalID: 6839319752191163391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_20
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1870
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf78b6338f05cfda0800000000000000
+      internalID: -5909759584072136708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_21
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1887
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2dd3cd7af4b1a60800000000000000
+      internalID: 7645792374764720858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_22
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1880
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa3bdd76baf5b1930800000000000000
+      internalID: 4114987874319709098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_23
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1894
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e642f8faa12c37a0800000000000000
+      internalID: -6396200352568162592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_24
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1889
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f17265e1e8649e0800000000000000
+      internalID: -1637465153557029110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_25
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1891
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 967d8b880de886290800000000000000
+      internalID: -7896904920296007831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_26
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1889
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f001b149facc850800000000000000
+      internalID: 6398682221230690178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_27
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1852
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5c265f9b6d358d0800000000000000
+      internalID: -2858705244275948080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_28
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1881
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298654aded7603740800000000000000
+      internalID: 5129714182417377426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1592
+        width: 240
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf64a9595efd14f0800000000000000
+      internalID: -856248694421032995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_30
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1821
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37801625ca8fd2910800000000000000
+      internalID: 1814379643900332147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1878
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac01db5e0920f38a0800000000000000
+      internalID: -6323332530451967798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_32
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1874
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d0973e82f533f70800000000000000
+      internalID: 9165774295848783216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_33
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1810
+        width: 69
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65877ba428d9d1000800000000000000
+      internalID: 8335957249456214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_34
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1862
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41839fbdb77427550800000000000000
+      internalID: 6157062237865981972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_35
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1718
+        width: 118
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b403abf726995d30800000000000000
+      internalID: 4420729607710508212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_36
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1859
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb69bcb169b85ea90800000000000000
+      internalID: -7285263345374226753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_37
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1865
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68126f552d2472e0800000000000000
+      internalID: -2129027085302097813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_38
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1851
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defb0f5f8722601d0800000000000000
+      internalID: -3384980167004733459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_39
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1844
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a896020044138cfb0800000000000000
+      internalID: -4627394448993523318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_40
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 1842
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96306b7376ae401b0800000000000000
+      internalID: -5691166300052257943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_41
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1840
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81698bca254d65a70800000000000000
+      internalID: 8815466772174509592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_42
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1840
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d18ac6884c49320800000000000000
+      internalID: 2563890178098208054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_43
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1805
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739d63f4ae78fc4d0800000000000000
+      internalID: -3112119377068631753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_44
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1807
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db303ac2df0819b0800000000000000
+      internalID: -5109316379242120231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_45
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1823
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32a50813b3263220800000000000000
+      internalID: 2465197098141065788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_46
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1811
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea6513c997656ff0800000000000000
+      internalID: -43514711289533720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_47
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1801
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f23b253a550bdd50800000000000000
+      internalID: 6763005150424150776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_48
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1789
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e2a1ed25b396630800000000000000
+      internalID: 3920730177702342152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_49
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1789
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b29b982e7fc90b0800000000000000
+      internalID: -5720424874322089069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_50
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1802
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f213d3851d7990f0800000000000000
+      internalID: -1109718301810683152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_51
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1800
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8a0baa7fc51c100800000000000000
+      internalID: 126484483333466297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_52
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1778
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ccbce8bc0b80240800000000000000
+      internalID: 4758247394637499538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_53
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1799
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f44ac58ecaa6e1c0800000000000000
+      internalID: -4474701375761398538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_54
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1769
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b252fbf9e508a6150800000000000000
+      internalID: 5866642608498877739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_55
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 1731
+        width: 63
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba774aa7f6dafaf0800000000000000
+      internalID: -361740460847826248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_56
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1756
+        width: 51
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea02377b56231be80800000000000000
+      internalID: -8164689236995137362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_57
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1785
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2f4243b18ad6ec0800000000000000
+      internalID: -3572014094642515203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_58
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 1743
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896392efce97ab970800000000000000
+      internalID: 8771457283040818840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_59
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1786
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebbec995d7a17fc0800000000000000
+      internalID: -3498830899639829529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_60
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1594
+        width: 119
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03fa3fa035e64b4c0800000000000000
+      internalID: -4272668843522674896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_61
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1771
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9de00ba34855c20800000000000000
+      internalID: 3194604898285967778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_62
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1764
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc2804b41570f790800000000000000
+      internalID: -7498364647791645507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_63
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1758
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef9f95d775718b90800000000000000
+      internalID: -7241377568289480724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_64
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1741
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b20a2a19af310b0800000000000000
+      internalID: -5758983995071124662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_65
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 1744
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c2fbcd4ca51f120800000000000000
+      internalID: 2445835874202496144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_66
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1724
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40036a5fa9cca9f30800000000000000
+      internalID: 4583200536721240068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_67
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1732
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9be98751220e760800000000000000
+      internalID: 7485020056303090145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_68
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1722
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edb7416bcc9678f90800000000000000
+      internalID: -6951471171874030626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_69
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1697
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc2cbf4ad5f5a130800000000000000
+      internalID: 3577535797005135038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_70
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1440
+        width: 187
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f49bd2032538b70800000000000000
+      internalID: 8900047655493259164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_71
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1587
+        width: 165
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c38f747f029e50f0800000000000000
+      internalID: -1126302261719366716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_72
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1560
+        width: 175
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9bab0371c4bd070800000000000000
+      internalID: 8132177214633064958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_73
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1605
+        width: 84
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88718621f5da63a20800000000000000
+      internalID: 3041809222177658760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_74
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1430
+        width: 185
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce935dc57ea63b9f0800000000000000
+      internalID: -453901595506820628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_75
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1416
+        width: 145
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b63017142b43090800000000000000
+      internalID: -8055617839320306873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_76
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1489
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700bd1c4c9b00e1f0800000000000000
+      internalID: -1017800749865914361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_77
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1512
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 775c054aa103512d0800000000000000
+      internalID: -3308685460249721481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_78
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1356
+        width: 117
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ebd5e1230c18dc0800000000000000
+      internalID: -3638415702448292202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1170
+        width: 183
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88bae03618c58f0c0800000000000000
+      internalID: -4541778513420702840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_80
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1297
+        width: 185
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149acf7351ed79f30800000000000000
+      internalID: 4582375328587753793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_81
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1171
+        width: 327
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc509c63d0cdc4030800000000000000
+      internalID: 3480398561362380239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_82
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1130
+        width: 193
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e8c2751b3d599f0800000000000000
+      internalID: -462230628110397861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_83
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1225
+        width: 189
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a1d34cca129c780800000000000000
+      internalID: -8662355382360008184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_84
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1196
+        width: 129
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ccd7cbeb43f53d40800000000000000
+      internalID: 5563620422089956549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1032
+        width: 178
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99ed7f6e08f29d10800000000000000
+      internalID: 2131038314583419293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_86
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 629
+        width: 505
+        height: 546
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f837ee10d81c6a460800000000000000
+      internalID: 7252697061293716367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_87
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1083
+        width: 146
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d303ba7fe0cb40860800000000000000
+      internalID: 7495322452322103357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_88
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 948
+        width: 173
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98802b9e642058fa0800000000000000
+      internalID: -5799226441577920375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_89
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 874
+        width: 324
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840216bc130fc93e0800000000000000
+      internalID: -2045496034076843960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 895
+        width: 177
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be24d1854adacdb0800000000000000
+      internalID: -4770760863179854159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 604
+        width: 173
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589289b598d003990800000000000000
+      internalID: -7408406503426086523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_92
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 811
+        width: 169
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b0ff2df4f2b1440800000000000000
+      internalID: 4907568238839139173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_93
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 512
+        width: 171
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43264c1cc9d583d80800000000000000
+      internalID: -8270757787818761676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_94
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 532
+        width: 183
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9b4039da8f4c1b0800000000000000
+      internalID: -5637107409181427281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_95
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 430
+        width: 181
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2e5581dfc793b80800000000000000
+      internalID: -8414557002288209248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirate_Actions_96
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 716
+        width: 166
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d9529e788dc6ed0800000000000000
+      internalID: -2419320821561057966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pirate_Actions_0: 7363654497244596718
+      Pirate_Actions_1: 1827599265976701484
+      Pirate_Actions_10: -6343051228597101710
+      Pirate_Actions_11: 5303470834848169403
+      Pirate_Actions_12: -4998194362470491159
+      Pirate_Actions_13: 7101789280943633032
+      Pirate_Actions_14: -3097771595553290895
+      Pirate_Actions_15: 219951914446533458
+      Pirate_Actions_16: -4736258474407327542
+      Pirate_Actions_17: 7746126784799792604
+      Pirate_Actions_18: 1720023861516058986
+      Pirate_Actions_19: 6839319752191163391
+      Pirate_Actions_2: -2933410137532263006
+      Pirate_Actions_20: -5909759584072136708
+      Pirate_Actions_21: 7645792374764720858
+      Pirate_Actions_22: 4114987874319709098
+      Pirate_Actions_23: -6396200352568162592
+      Pirate_Actions_24: -1637465153557029110
+      Pirate_Actions_25: -7896904920296007831
+      Pirate_Actions_26: 6398682221230690178
+      Pirate_Actions_27: -2858705244275948080
+      Pirate_Actions_28: 5129714182417377426
+      Pirate_Actions_29: -856248694421032995
+      Pirate_Actions_3: -7943732845165721515
+      Pirate_Actions_30: 1814379643900332147
+      Pirate_Actions_31: -6323332530451967798
+      Pirate_Actions_32: 9165774295848783216
+      Pirate_Actions_33: 8335957249456214
+      Pirate_Actions_34: 6157062237865981972
+      Pirate_Actions_35: 4420729607710508212
+      Pirate_Actions_36: -7285263345374226753
+      Pirate_Actions_37: -2129027085302097813
+      Pirate_Actions_38: -3384980167004733459
+      Pirate_Actions_39: -4627394448993523318
+      Pirate_Actions_4: -4267984306643668189
+      Pirate_Actions_40: -5691166300052257943
+      Pirate_Actions_41: 8815466772174509592
+      Pirate_Actions_42: 2563890178098208054
+      Pirate_Actions_43: -3112119377068631753
+      Pirate_Actions_44: -5109316379242120231
+      Pirate_Actions_45: 2465197098141065788
+      Pirate_Actions_46: -43514711289533720
+      Pirate_Actions_47: 6763005150424150776
+      Pirate_Actions_48: 3920730177702342152
+      Pirate_Actions_49: -5720424874322089069
+      Pirate_Actions_5: 2628816546484247711
+      Pirate_Actions_50: -1109718301810683152
+      Pirate_Actions_51: 126484483333466297
+      Pirate_Actions_52: 4758247394637499538
+      Pirate_Actions_53: -4474701375761398538
+      Pirate_Actions_54: 5866642608498877739
+      Pirate_Actions_55: -361740460847826248
+      Pirate_Actions_56: -8164689236995137362
+      Pirate_Actions_57: -3572014094642515203
+      Pirate_Actions_58: 8771457283040818840
+      Pirate_Actions_59: -3498830899639829529
+      Pirate_Actions_6: 3634542131899065735
+      Pirate_Actions_60: -4272668843522674896
+      Pirate_Actions_61: 3194604898285967778
+      Pirate_Actions_62: -7498364647791645507
+      Pirate_Actions_63: -7241377568289480724
+      Pirate_Actions_64: -5758983995071124662
+      Pirate_Actions_65: 2445835874202496144
+      Pirate_Actions_66: 4583200536721240068
+      Pirate_Actions_67: 7485020056303090145
+      Pirate_Actions_68: -6951471171874030626
+      Pirate_Actions_69: 3577535797005135038
+      Pirate_Actions_7: 3469235056330421271
+      Pirate_Actions_70: 8900047655493259164
+      Pirate_Actions_71: -1126302261719366716
+      Pirate_Actions_72: 8132177214633064958
+      Pirate_Actions_73: 3041809222177658760
+      Pirate_Actions_74: -453901595506820628
+      Pirate_Actions_75: -8055617839320306873
+      Pirate_Actions_76: -1017800749865914361
+      Pirate_Actions_77: -3308685460249721481
+      Pirate_Actions_78: -3638415702448292202
+      Pirate_Actions_79: -4541778513420702840
+      Pirate_Actions_8: -1355385699586053968
+      Pirate_Actions_80: 4582375328587753793
+      Pirate_Actions_81: 3480398561362380239
+      Pirate_Actions_82: -462230628110397861
+      Pirate_Actions_83: -8662355382360008184
+      Pirate_Actions_84: 5563620422089956549
+      Pirate_Actions_85: 2131038314583419293
+      Pirate_Actions_86: 7252697061293716367
+      Pirate_Actions_87: 7495322452322103357
+      Pirate_Actions_88: -5799226441577920375
+      Pirate_Actions_89: -2045496034076843960
+      Pirate_Actions_9: -5126488957622004108
+      Pirate_Actions_90: -4770760863179854159
+      Pirate_Actions_91: -7408406503426086523
+      Pirate_Actions_92: 4907568238839139173
+      Pirate_Actions_93: -8270757787818761676
+      Pirate_Actions_94: -5637107409181427281
+      Pirate_Actions_95: -8414557002288209248
+      Pirate_Actions_96: -2419320821561057966
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
