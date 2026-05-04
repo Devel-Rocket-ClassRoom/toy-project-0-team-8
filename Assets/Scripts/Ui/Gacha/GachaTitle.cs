@@ -10,6 +10,8 @@ public class GachaTitle : GenericWindow
     public TextMeshProUGUI crystaltext;
     public GameObject addcrystalPanal;
     public GameObject enoughCrystalPanal;
+    public GameObject treasureCenter;
+    public GameObject cookiesCenter;
     public TextMeshProUGUI enoughCrystalText;
     public long maxCrystal = 99999999999;
     private bool notenoughCheck;
@@ -20,6 +22,8 @@ public class GachaTitle : GenericWindow
         textcurrentCrystal = currentCrystal;
         enoughCrystalPanal.SetActive(false);
         crystaltext.text = textcurrentCrystal.ToString();
+        cookiesCenter.SetActive(false);
+        treasureCenter.SetActive(true);
     }
     public void OnClickAddCrystal(int crystal)
     {
@@ -94,5 +98,15 @@ public class GachaTitle : GenericWindow
         }
         notenoughCheck = false;
         enoughCrystalPanal.SetActive(false);
+    }
+    public void OnClickTreasureBbobgiPanal()
+    {
+        cookiesCenter.SetActive(false);
+        treasureCenter.SetActive(true);
+    }
+    public void OnclickCookiesBbobgiPanal()
+    {
+        treasureCenter.SetActive(false);
+        cookiesCenter.SetActive(true);
     }
 }
