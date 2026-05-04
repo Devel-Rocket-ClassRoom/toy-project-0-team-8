@@ -17,6 +17,7 @@ public class BbobgiTitle : GenericWindow
     public GameObject rewardImage;  //테스트용
     public GameObject rewardPrefab; //테스트용
     public GameObject exitbutton;
+    public ParticleSystem effectParticle;
     public Transform contentArea;
     private List<Gacha> rewardList = new List<Gacha> ();
     private List<GameObject> rewardsListTest = new List<GameObject>();
@@ -87,6 +88,7 @@ public class BbobgiTitle : GenericWindow
         TreasureviewOne.SetActive(false);
         effects.SetActive(false);
         exitbutton.SetActive(false);
+        
     }
 
     private void Update()
@@ -118,6 +120,11 @@ public class BbobgiTitle : GenericWindow
         {
             rewardImage.SetActive(false);
             Reward();
+            if(count==10)
+            {
+                effects.GetComponent<Animator>().speed = 0;
+            }
+            effectParticle.gameObject.SetActive(false);
             StartCoroutine(UpdateSlot());
             rewardCheck = false;
         }
@@ -136,8 +143,10 @@ public class BbobgiTitle : GenericWindow
         animator.speed = 2f;
         effcetTime = 0;
         effects.SetActive(true);
+        effects.GetComponent<Animator>().speed = 1;
         rewardImage.SetActive(true);
-        
+        effectParticle.gameObject.SetActive(true);
+
     }
     public IEnumerator Rewards()
     {
