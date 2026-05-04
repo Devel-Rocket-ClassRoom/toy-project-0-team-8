@@ -8,6 +8,7 @@ public class GachaTitle : GenericWindow
     private long textcurrentCrystal;
     public TextMeshProUGUI crystaltext;
     public GameObject addcrystalPanal;
+    public long maxCrystal = 99999999999;
     private int GachaCount;
 
     private void Awake()
@@ -18,7 +19,7 @@ public class GachaTitle : GenericWindow
     public void OnClickAddCrystal(int crystal)
     {
         currentCrystal += crystal;
-        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 999999999999L);
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, maxCrystal);
         crystaltext.text = $"{textcurrentCrystal.ToString()}";
     }
     public void OnClickAddPanal()
@@ -47,7 +48,7 @@ public class GachaTitle : GenericWindow
         }
         currentCrystal -= 200;
         GachaCount = 1;
-        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 999999999999L);
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, maxCrystal);
         crystaltext.text = $"{textcurrentCrystal.ToString()}";
         windowManager.Open(1,GachaCount);
     }
@@ -60,7 +61,7 @@ public class GachaTitle : GenericWindow
         }
         currentCrystal -= 2000;
         GachaCount = 10;
-        textcurrentCrystal = Math.Clamp(currentCrystal, 0, 99999999999999L);
+        textcurrentCrystal = Math.Clamp(currentCrystal, 0, maxCrystal);
         crystaltext.text = $"{textcurrentCrystal.ToString()}";
         windowManager.Open(1,GachaCount);
     }
