@@ -10,7 +10,6 @@
 # Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Static libraries
 *.a
@@ -125,7 +124,7 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 ### Rider
-*.idea
+*.idea/
 
 ### VS
 *.vsconfig
