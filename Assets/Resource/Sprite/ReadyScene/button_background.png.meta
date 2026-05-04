@@ -1,0 +1,292 @@
+fileFormatVersion: 2
+guid: 64058e23a7e7eac4e98e8b4f523cc3fc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9048593517765135490
+    second: button_background_0
+  - first:
+      213: -442624274098425108
+    second: button_background_1
+  - first:
+      213: 3714257124074896041
+    second: button_background_2
+  - first:
+      213: 5521671854429808251
+    second: button_background_3
+  - first:
+      213: 8789404830961230461
+    second: button_background_4
+  - first:
+      213: -7673274941475288299
+    second: button_background_5
+  - first:
+      213: 7548457740835140429
+    second: button_background_6
+  - first:
+      213: -8632028456577474312
+    second: button_background_7
+  - first:
+      213: 6767318975962798985
+    second: button_background_8
+  - first:
+      213: 504213200773461720
+    second: button_background_9
+  - first:
+      213: -6219104938670445977
+    second: button_background_10
+  - first:
+      213: -4114323013217225386
+    second: button_background_11
+  - first:
+      213: 3455405811164523380
+    second: button_background_12
+  - first:
+      213: 8118464284326248387
+    second: button_background_13
+  - first:
+      213: -2500059358721377561
+    second: button_background_14
+  - first:
+      213: 9158962435892125112
+    second: button_background_15
+  - first:
+      213: 8870557733805018757
+    second: button_background_16
+  - first:
+      213: 8347653653200223902
+    second: button_background_17
+  - first:
+      213: 8692493094839336047
+    second: button_background_18
+  - first:
+      213: 4061855441248894413
+    second: button_background_19
+  - first:
+      213: -2095168875234976660
+    second: button_background_20
+  - first:
+      213: -1067661773162073690
+    second: button_background_21
+  - first:
+      213: 2511902420988711438
+    second: button_background_22
+  - first:
+      213: 5480518363701639836
+    second: button_background_23
+  - first:
+      213: 5077731227253051451
+    second: button_background_24
+  - first:
+      213: -926495302967576242
+    second: button_background_25
+  - first:
+      213: 5506343317790426037
+    second: button_background_26
+  - first:
+      213: -3195123695986345313
+    second: button_background_27
+  - first:
+      213: 7930012171077139814
+    second: button_background_28
+  - first:
+      213: 1831645152433900082
+    second: button_background_29
+  - first:
+      213: 4949437719866216607
+    second: button_background_30
+  - first:
+      213: 2928706571823272301
+    second: button_background_31
+  - first:
+      213: -7035439870808891766
+    second: button_background_32
+  - first:
+      213: -6597866638947266118
+    second: button_background_33
+  - first:
+      213: -1358049351304564214
+    second: button_background_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: button_background_0
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 312
+        width: 763
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73f4b81320fc6280800000000000000
+      internalID: -9048593517765135490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      button_background_0: -9048593517765135490
+      button_background_1: -442624274098425108
+      button_background_10: -6219104938670445977
+      button_background_11: -4114323013217225386
+      button_background_12: 3455405811164523380
+      button_background_13: 8118464284326248387
+      button_background_14: -2500059358721377561
+      button_background_15: 9158962435892125112
+      button_background_16: 8870557733805018757
+      button_background_17: 8347653653200223902
+      button_background_18: 8692493094839336047
+      button_background_19: 4061855441248894413
+      button_background_2: 3714257124074896041
+      button_background_20: -2095168875234976660
+      button_background_21: -1067661773162073690
+      button_background_22: 2511902420988711438
+      button_background_23: 5480518363701639836
+      button_background_24: 5077731227253051451
+      button_background_25: -926495302967576242
+      button_background_26: 5506343317790426037
+      button_background_27: -3195123695986345313
+      button_background_28: 7930012171077139814
+      button_background_29: 1831645152433900082
+      button_background_3: 5521671854429808251
+      button_background_30: 4949437719866216607
+      button_background_31: 2928706571823272301
+      button_background_32: -7035439870808891766
+      button_background_33: -6597866638947266118
+      button_background_34: -1358049351304564214
+      button_background_4: 8789404830961230461
+      button_background_5: -7673274941475288299
+      button_background_6: 7548457740835140429
+      button_background_7: -8632028456577474312
+      button_background_8: 6767318975962798985
+      button_background_9: 504213200773461720
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
