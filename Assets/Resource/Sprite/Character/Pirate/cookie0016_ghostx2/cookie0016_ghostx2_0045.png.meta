@@ -1,0 +1,1274 @@
+fileFormatVersion: 2
+guid: 8a194b4df3f21e543bd802344ca6ee5e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2548987028470289374
+    second: cookie0016_ghostx2_0045_0
+  - first:
+      213: 827033459364284159
+    second: cookie0016_ghostx2_0045_1
+  - first:
+      213: -4907869423393344083
+    second: cookie0016_ghostx2_0045_2
+  - first:
+      213: -3099689539350200143
+    second: cookie0016_ghostx2_0045_3
+  - first:
+      213: -1106749985625963965
+    second: cookie0016_ghostx2_0045_4
+  - first:
+      213: -8582996840462548240
+    second: cookie0016_ghostx2_0045_5
+  - first:
+      213: 436026658066723509
+    second: cookie0016_ghostx2_0045_6
+  - first:
+      213: 2101514520025113851
+    second: cookie0016_ghostx2_0045_7
+  - first:
+      213: 7178746506622899552
+    second: cookie0016_ghostx2_0045_8
+  - first:
+      213: 6099111022246097061
+    second: cookie0016_ghostx2_0045_9
+  - first:
+      213: 1642422719596528457
+    second: cookie0016_ghostx2_0045_10
+  - first:
+      213: 3285655487790108792
+    second: cookie0016_ghostx2_0045_11
+  - first:
+      213: -3158956354313134453
+    second: cookie0016_ghostx2_0045_12
+  - first:
+      213: 5932587557387768171
+    second: cookie0016_ghostx2_0045_13
+  - first:
+      213: -78767528509579546
+    second: cookie0016_ghostx2_0045_14
+  - first:
+      213: -7870450533784983323
+    second: cookie0016_ghostx2_0045_15
+  - first:
+      213: 4966177801633972274
+    second: cookie0016_ghostx2_0045_16
+  - first:
+      213: -8849943256292661731
+    second: cookie0016_ghostx2_0045_17
+  - first:
+      213: -3731813687891818183
+    second: cookie0016_ghostx2_0045_18
+  - first:
+      213: 7845264634880107057
+    second: cookie0016_ghostx2_0045_19
+  - first:
+      213: 4217715959965829587
+    second: cookie0016_ghostx2_0045_20
+  - first:
+      213: -6385737356258943785
+    second: cookie0016_ghostx2_0045_21
+  - first:
+      213: 8516328018652027898
+    second: cookie0016_ghostx2_0045_22
+  - first:
+      213: 4352190696341381333
+    second: cookie0016_ghostx2_0045_23
+  - first:
+      213: -2868188138247079018
+    second: cookie0016_ghostx2_0045_24
+  - first:
+      213: -7753148463661513381
+    second: cookie0016_ghostx2_0045_25
+  - first:
+      213: 1700820407707380013
+    second: cookie0016_ghostx2_0045_26
+  - first:
+      213: -7151138080912650925
+    second: cookie0016_ghostx2_0045_27
+  - first:
+      213: -3127995853985944854
+    second: cookie0016_ghostx2_0045_28
+  - first:
+      213: 415206519884383866
+    second: cookie0016_ghostx2_0045_29
+  - first:
+      213: 3829309818701476387
+    second: cookie0016_ghostx2_0045_30
+  - first:
+      213: -3878135131768378824
+    second: cookie0016_ghostx2_0045_31
+  - first:
+      213: 5739420645190084672
+    second: cookie0016_ghostx2_0045_32
+  - first:
+      213: 2279237869554829374
+    second: cookie0016_ghostx2_0045_33
+  - first:
+      213: -974629524141525629
+    second: cookie0016_ghostx2_0045_34
+  - first:
+      213: 6972394423857147198
+    second: cookie0016_ghostx2_0045_35
+  - first:
+      213: 8655735543103974485
+    second: cookie0016_ghostx2_0045_36
+  - first:
+      213: -8426701436438903409
+    second: cookie0016_ghostx2_0045_37
+  - first:
+      213: -1427009257538782328
+    second: cookie0016_ghostx2_0045_38
+  - first:
+      213: 812686092973322388
+    second: cookie0016_ghostx2_0045_39
+  - first:
+      213: -4740221706591244190
+    second: cookie0016_ghostx2_0045_40
+  - first:
+      213: -3124145665135298849
+    second: cookie0016_ghostx2_0045_41
+  - first:
+      213: 2658452026589223770
+    second: cookie0016_ghostx2_0045_42
+  - first:
+      213: 7293081387551506632
+    second: cookie0016_ghostx2_0045_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_0
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 291
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3dc018232df5320800000000000000
+      internalID: 2548987028470289374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 291
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff645caac863a7b00800000000000000
+      internalID: 827033459364284159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 189
+        width: 89
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da573ae23ceb3ebb0800000000000000
+      internalID: -4907869423393344083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 263
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b0890d69c0bbf4d0800000000000000
+      internalID: -3099689539350200143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_4
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 261
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342889b70c804a0f0800000000000000
+      internalID: -1106749985625963965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 249
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f20ee729d113e880800000000000000
+      internalID: -8582996840462548240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 256
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2faa27fe31d0600800000000000000
+      internalID: 436026658066723509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 244
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf42c6852541a2d10800000000000000
+      internalID: 2101514520025113851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 212
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06595d3c9e700a360800000000000000
+      internalID: 7178746506622899552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_9
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 205
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0f5a6092564a450800000000000000
+      internalID: 6099111022246097061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 180
+        width: 8
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9430594f2ce0bc610800000000000000
+      internalID: 1642422719596528457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_11
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 190
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870da0c024ef89d20800000000000000
+      internalID: 3285655487790108792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_12
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 185
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ed330cee12924d0800000000000000
+      internalID: -3158956354313134453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_13
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 198
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b61100583f8c45250800000000000000
+      internalID: 5932587557387768171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_14
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 190
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eed953a95928eef0800000000000000
+      internalID: -78767528509579546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_15
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 187
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8667f50fa86c290800000000000000
+      internalID: -7870450533784983323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_16
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 2
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230c2dd06686be440800000000000000
+      internalID: 4966177801633972274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_17
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 133
+        width: 58
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16ef465f7fae2580800000000000000
+      internalID: -8849943256292661731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_18
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 182
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939844d093fe53cc0800000000000000
+      internalID: -3731813687891818183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_19
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 175
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 132a6f29e9affdc60800000000000000
+      internalID: 7845264634880107057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 157
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d94245b156588a30800000000000000
+      internalID: 4217715959965829587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_21
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 169
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc5e3325bd4167a0800000000000000
+      internalID: -6385737356258943785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_22
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 154
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afbd5762633103670800000000000000
+      internalID: 8516328018652027898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_23
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 146
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d020322166166c30800000000000000
+      internalID: 4352190696341381333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_24
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 130
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b3bc6a5162238d0800000000000000
+      internalID: -2868188138247079018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_25
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 114
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b55079cdc88476490800000000000000
+      internalID: -7753148463661513381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_26
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 114
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29222446278a9710800000000000000
+      internalID: 1700820407707380013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_27
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 109
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35dce63cdcd02cc90800000000000000
+      internalID: -7151138080912650925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_28
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 116
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeae548f7502794d0800000000000000
+      internalID: -3127995853985944854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_29
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 111
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a768226412c13c500800000000000000
+      internalID: 415206519884383866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_30
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 101
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322fd96ddf0742530800000000000000
+      internalID: 3829309818701476387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 50
+        width: 49
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83aabf715a81e2ac0800000000000000
+      internalID: -3878135131768378824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_32
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 96
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04829150ba486af40800000000000000
+      internalID: 5739420645190084672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_33
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 96
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e380f6534ca71af10800000000000000
+      internalID: 2279237869554829374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_34
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 93
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385bfe19c9b6972f0800000000000000
+      internalID: -974629524141525629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_35
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 75
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d6be389cbe2c060800000000000000
+      internalID: 6972394423857147198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_36
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 79
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c6f6ccd995f1870800000000000000
+      internalID: 8655735543103974485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_37
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 72
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8509cca0b75e0b80800000000000000
+      internalID: -8426701436438903409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_38
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 65
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88bf43114ae323ce0800000000000000
+      internalID: -1427009257538782328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_39
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 48
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 490339d12bd374b00800000000000000
+      internalID: 812686092973322388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_40
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 51
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 260780ef879573eb0800000000000000
+      internalID: -4740221706591244190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_41
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 31
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6b80be11ec4a4d0800000000000000
+      internalID: -3124145665135298849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_42
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 39
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b94497808b4e420800000000000000
+      internalID: 2658452026589223770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cookie0016_ghostx2_0045_43
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 29
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0450fa1ea363560800000000000000
+      internalID: 7293081387551506632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cookie0016_ghostx2_0045_0: 2548987028470289374
+      cookie0016_ghostx2_0045_1: 827033459364284159
+      cookie0016_ghostx2_0045_10: 1642422719596528457
+      cookie0016_ghostx2_0045_11: 3285655487790108792
+      cookie0016_ghostx2_0045_12: -3158956354313134453
+      cookie0016_ghostx2_0045_13: 5932587557387768171
+      cookie0016_ghostx2_0045_14: -78767528509579546
+      cookie0016_ghostx2_0045_15: -7870450533784983323
+      cookie0016_ghostx2_0045_16: 4966177801633972274
+      cookie0016_ghostx2_0045_17: -8849943256292661731
+      cookie0016_ghostx2_0045_18: -3731813687891818183
+      cookie0016_ghostx2_0045_19: 7845264634880107057
+      cookie0016_ghostx2_0045_2: -4907869423393344083
+      cookie0016_ghostx2_0045_20: 4217715959965829587
+      cookie0016_ghostx2_0045_21: -6385737356258943785
+      cookie0016_ghostx2_0045_22: 8516328018652027898
+      cookie0016_ghostx2_0045_23: 4352190696341381333
+      cookie0016_ghostx2_0045_24: -2868188138247079018
+      cookie0016_ghostx2_0045_25: -7753148463661513381
+      cookie0016_ghostx2_0045_26: 1700820407707380013
+      cookie0016_ghostx2_0045_27: -7151138080912650925
+      cookie0016_ghostx2_0045_28: -3127995853985944854
+      cookie0016_ghostx2_0045_29: 415206519884383866
+      cookie0016_ghostx2_0045_3: -3099689539350200143
+      cookie0016_ghostx2_0045_30: 3829309818701476387
+      cookie0016_ghostx2_0045_31: -3878135131768378824
+      cookie0016_ghostx2_0045_32: 5739420645190084672
+      cookie0016_ghostx2_0045_33: 2279237869554829374
+      cookie0016_ghostx2_0045_34: -974629524141525629
+      cookie0016_ghostx2_0045_35: 6972394423857147198
+      cookie0016_ghostx2_0045_36: 8655735543103974485
+      cookie0016_ghostx2_0045_37: -8426701436438903409
+      cookie0016_ghostx2_0045_38: -1427009257538782328
+      cookie0016_ghostx2_0045_39: 812686092973322388
+      cookie0016_ghostx2_0045_4: -1106749985625963965
+      cookie0016_ghostx2_0045_40: -4740221706591244190
+      cookie0016_ghostx2_0045_41: -3124145665135298849
+      cookie0016_ghostx2_0045_42: 2658452026589223770
+      cookie0016_ghostx2_0045_43: 7293081387551506632
+      cookie0016_ghostx2_0045_5: -8582996840462548240
+      cookie0016_ghostx2_0045_6: 436026658066723509
+      cookie0016_ghostx2_0045_7: 2101514520025113851
+      cookie0016_ghostx2_0045_8: 7178746506622899552
+      cookie0016_ghostx2_0045_9: 6099111022246097061
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
