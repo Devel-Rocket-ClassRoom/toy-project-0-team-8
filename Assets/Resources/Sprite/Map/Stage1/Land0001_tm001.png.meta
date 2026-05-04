@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: 37d965c0d4badd64bb6cca712c7baf3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7767656754738277901
+    second: Land0001_tm001_0
+  - first:
+      213: 6612151148756628567
+    second: Land0001_tm001_1
+  - first:
+      213: -4482770784142128164
+    second: Land0001_tm001_2
+  - first:
+      213: -5277252700021343566
+    second: Land0001_tm001_3
+  - first:
+      213: 6005938237830233164
+    second: Land0001_tm001_4
+  - first:
+      213: 606946884557755176
+    second: Land0001_tm001_5
+  - first:
+      213: 5451334294361246863
+    second: Land0001_tm001_6
+  - first:
+      213: -6250389949595223092
+    second: Land0001_tm001_7
+  - first:
+      213: 327376809403601669
+    second: Land0001_tm001_8
+  - first:
+      213: -472777762001909756
+    second: Land0001_tm001_9
+  - first:
+      213: 3665358722245060987
+    second: Land0001_tm001_10
+  - first:
+      213: -1604345298484657190
+    second: Land0001_tm001_11
+  - first:
+      213: 4764999586292051738
+    second: Land0001_tm001_12
+  - first:
+      213: -5407269996285148090
+    second: Land0001_tm001_13
+  - first:
+      213: 5872468620570019807
+    second: Land0001_tm001_14
+  - first:
+      213: 1790973797344559917
+    second: Land0001_tm001_15
+  - first:
+      213: -3273787974753429389
+    second: Land0001_tm001_16
+  - first:
+      213: 120110143429688912
+    second: Land0001_tm001_17
+  - first:
+      213: -3324645801357686789
+    second: Land0001_tm001_18
+  - first:
+      213: -5096025942284318277
+    second: Land0001_tm001_19
+  - first:
+      213: 4860777992694103944
+    second: Land0001_tm001_20
+  - first:
+      213: -4745563204132482707
+    second: Land0001_tm001_21
+  - first:
+      213: -5336040703272784694
+    second: Land0001_tm001_22
+  - first:
+      213: -1247317685563046631
+    second: Land0001_tm001_23
+  - first:
+      213: -4074821061753756773
+    second: Land0001_tm001_24
+  - first:
+      213: -3413367744815666381
+    second: Land0001_tm001_25
+  - first:
+      213: -4336875794152623279
+    second: Land0001_tm001_26
+  - first:
+      213: -3431275918991009444
+    second: Land0001_tm001_27
+  - first:
+      213: 6439071898751172520
+    second: Land0001_tm001_28
+  - first:
+      213: -4620964094057000055
+    second: Land0001_tm001_29
+  - first:
+      213: -1313261866352019274
+    second: Land0001_tm001_30
+  - first:
+      213: 5229116862792476996
+    second: Land0001_tm001_31
+  - first:
+      213: 2028756358320542780
+    second: Land0001_tm001_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Land0001_tm001_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 856
+        width: 484
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f159ac165db33490800000000000000
+      internalID: -7767656754738277901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 738
+        width: 484
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75474d6ef6413cb50800000000000000
+      internalID: 6612151148756628567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 614
+        width: 218
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb85b9f8bff9c1c0800000000000000
+      internalID: -4482770784142128164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_3
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 622
+        width: 218
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bab14121ae63c6b0800000000000000
+      internalID: -5277252700021343566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_4
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 582
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c7ec8a101695350800000000000000
+      internalID: 6005938237830233164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 606
+        width: 52
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823589bc9fe4c6800800000000000000
+      internalID: 606946884557755176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 591
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c8e4788a707ab40800000000000000
+      internalID: 5451334294361246863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_7
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 585
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb74b2f4772249a0800000000000000
+      internalID: -6250389949595223092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_8
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 573
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503d33049731b8400800000000000000
+      internalID: 327376809403601669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_9
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 572
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4080c2e512b5079f0800000000000000
+      internalID: -472777762001909756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_10
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 497
+        width: 39
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b79ebc58658fdd230800000000000000
+      internalID: 3665358722245060987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_11
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 551
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad301c283783cb9e0800000000000000
+      internalID: -1604345298484657190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_12
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 495
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f22dfa0eda02240800000000000000
+      internalID: 4764999586292051738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_13
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 491
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644cbca569485f4b0800000000000000
+      internalID: -5407269996285148090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_14
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 518
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd744b3c8133f7150800000000000000
+      internalID: 5872468620570019807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 466
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2341c00e21dad810800000000000000
+      internalID: 1790973797344559917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_16
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 420
+        width: 125
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37850e6ae2b2192d0800000000000000
+      internalID: -3273787974753429389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_17
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 366
+        width: 74
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e3c010a87baa100800000000000000
+      internalID: 120110143429688912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_18
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 418
+        width: 139
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7c416224c7cd1d0800000000000000
+      internalID: -3324645801357686789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_19
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 485
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9c7f7c7674749b0800000000000000
+      internalID: -5096025942284318277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_20
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 458
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f7192b4d3f47340800000000000000
+      internalID: 4860777992694103944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_21
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 435
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61d48ea86f542eb0800000000000000
+      internalID: -4745563204132482707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_22
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 412
+        width: 53
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc666e704392f5b0800000000000000
+      internalID: -5336040703272784694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 294
+        width: 142
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915c3fd6c23a0bee0800000000000000
+      internalID: -1247317685563046631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_24
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 321
+        width: 92
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9323ea65d35377c0800000000000000
+      internalID: -4074821061753756773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_25
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 400
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b6c72fe1841a0d0800000000000000
+      internalID: -3413367744815666381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_26
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 392
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 153fa86617250d3c0800000000000000
+      internalID: -4336875794152623279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_27
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 387
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59503a3bb8a160d0800000000000000
+      internalID: -3431275918991009444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_28
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 398
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af7348b6cd2c5950800000000000000
+      internalID: 6439071898751172520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 263
+        width: 72
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983d5eda3a90fdfb0800000000000000
+      internalID: -4620964094057000055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_30
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 336
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b8750f5a4b56cde0800000000000000
+      internalID: -1313261866352019274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_31
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 349
+        width: 62
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44920c7e41e819840800000000000000
+      internalID: 5229116862792476996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_tm001_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 213
+        width: 100
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34d289b827972c10800000000000000
+      internalID: 2028756358320542780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Land0001_tm001_0: -7767656754738277901
+      Land0001_tm001_1: 6612151148756628567
+      Land0001_tm001_10: 3665358722245060987
+      Land0001_tm001_11: -1604345298484657190
+      Land0001_tm001_12: 4764999586292051738
+      Land0001_tm001_13: -5407269996285148090
+      Land0001_tm001_14: 5872468620570019807
+      Land0001_tm001_15: 1790973797344559917
+      Land0001_tm001_16: -3273787974753429389
+      Land0001_tm001_17: 120110143429688912
+      Land0001_tm001_18: -3324645801357686789
+      Land0001_tm001_19: -5096025942284318277
+      Land0001_tm001_2: -4482770784142128164
+      Land0001_tm001_20: 4860777992694103944
+      Land0001_tm001_21: -4745563204132482707
+      Land0001_tm001_22: -5336040703272784694
+      Land0001_tm001_23: -1247317685563046631
+      Land0001_tm001_24: -4074821061753756773
+      Land0001_tm001_25: -3413367744815666381
+      Land0001_tm001_26: -4336875794152623279
+      Land0001_tm001_27: -3431275918991009444
+      Land0001_tm001_28: 6439071898751172520
+      Land0001_tm001_29: -4620964094057000055
+      Land0001_tm001_3: -5277252700021343566
+      Land0001_tm001_30: -1313261866352019274
+      Land0001_tm001_31: 5229116862792476996
+      Land0001_tm001_32: 2028756358320542780
+      Land0001_tm001_4: 6005938237830233164
+      Land0001_tm001_5: 606946884557755176
+      Land0001_tm001_6: 5451334294361246863
+      Land0001_tm001_7: -6250389949595223092
+      Land0001_tm001_8: 327376809403601669
+      Land0001_tm001_9: -472777762001909756
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
