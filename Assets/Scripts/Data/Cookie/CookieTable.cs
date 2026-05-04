@@ -16,6 +16,7 @@ public class CookieData
     {
         return $"{Id} / {Name} / {Icon} / {Desc} / {Grade} / {Hp}";
     }
+    
     public string StringName => DataTableManager.CookieStringTable.Get(Name);
     public string StringDesc => DataTableManager.CookieStringTable.Get(Desc);
     public Sprite SpriteIcon => GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GachaManager>().LoadCookieSprite(Icon);
@@ -25,9 +26,7 @@ public class CookieData
 public class CookieTable : DataTable
 {
     private readonly Dictionary<string, CookieData> table = new Dictionary<string, CookieData>();
-
-
-
+    
     private List<CookieData> gradeList = new List<CookieData>();
 
     public override void Load(string filename)

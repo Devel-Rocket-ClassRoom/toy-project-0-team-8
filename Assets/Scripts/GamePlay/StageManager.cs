@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class StageManager : MonoBehaviour {
+	
 
 	[Header("=== 생성된 Prefab들이 배치될 Root ===")]
 	[SerializeField] private Transform _stageRoot;
@@ -10,14 +10,18 @@ public class StageManager : MonoBehaviour {
 	[SerializeField] private Background _backgroundRendererA;
 	[SerializeField] private Background _backgroundRendererB;
 
+	[SerializeField] private CookieController _cookieController;
+
 	[Header("=== StageData 목록 ===")] 
 	[SerializeField] private StageData[] _stageDatas;
 	
 	private StageData _currentStage;
 	private float scrollSpeed;
+	
+	private float _maxHealth;
 
 	private void Start() {
-			LoadStage(_stageDatas[0]);
+		LoadStage(_stageDatas[0]);
 	}
 
 	public void LoadStage(StageData stageData) {
@@ -30,6 +34,10 @@ public class StageManager : MonoBehaviour {
 		_backgroundRendererB.ScrollSpeed = scrollSpeed;
 		
 		Instantiate(stageData.stagePrefab, _stageRoot);
+	}
+	
+	public void LoadCharacter(CookieData cookieData) {
+		_cookieController.Init(cookieData);
 	}
 	
 	private void Update() {
