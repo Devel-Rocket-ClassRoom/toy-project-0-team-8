@@ -17,7 +17,7 @@ public class StageManager : MonoBehaviour {
 	private float scrollSpeed;
 
 	private void Start() {
-		LoadStage(_stageDatas[0]);
+			LoadStage(_stageDatas[0]);
 	}
 
 	public void LoadStage(StageData stageData) {

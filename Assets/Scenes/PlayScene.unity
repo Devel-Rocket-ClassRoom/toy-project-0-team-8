@@ -375,7 +375,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2469659034725603101, guid: 59dba18d0257b7f429e797b73a0b7c41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -479,7 +479,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2469659034725603101, guid: 59dba18d0257b7f429e797b73a0b7c41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -565,9 +565,8 @@ MonoBehaviour:
   _stageRoot: {fileID: 1464115434}
   _backgroundRendererA: {fileID: 1812971359}
   _backgroundRendererB: {fileID: 1842556638}
-  _stageData: {fileID: 11400000, guid: 6823a161ae136bc4fbc98ab3980935af, type: 2}
-  _backgroundWidth: 2500
-  _backgroundHeight: 1080
+  _stageDatas:
+  - {fileID: 11400000, guid: 6823a161ae136bc4fbc98ab3980935af, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -575,6 +574,6 @@ SceneRoots:
   - {fileID: 712776787}
   - {fileID: 1874526743}
   - {fileID: 1444136102}
-  - {fileID: 1464115434}
   - {fileID: 1812971358}
   - {fileID: 1842556637}
+  - {fileID: 1464115434}
