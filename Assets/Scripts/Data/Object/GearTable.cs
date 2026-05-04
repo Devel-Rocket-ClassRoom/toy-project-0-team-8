@@ -18,6 +18,8 @@ public class GearData
 
     public string StringName => DataTableManager.StringTable.Get(Name);
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
+
+    // 경로 수정 필요함
     public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
 }
 

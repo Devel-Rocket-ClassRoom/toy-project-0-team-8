@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class UiGearList : MonoBehaviour
 {
+    // 끼고 있는 아이템에는 장착 중 표시를 해야함. 
+
+
     private List<UiGearSlot> uiSlotList = new List<UiGearSlot>();
 
     // 정렬을 위한 리스트
@@ -19,12 +22,36 @@ public class UiGearList : MonoBehaviour
 
     // 데이터 갱신을 위한 이벤트
     public UnityEvent onUpdateSlot;
-    public UnityEvent<SaveGear> onSelectSlot;
+    public UnityEvent<UiGearSlot> onSelectSlot;
 
-    private void OnSelectSlot(SaveGear saveGear)
+    public EquipObject equip;
+
+    private void OnSelectSlot(UiGearSlot saveGear)
     {
         Debug.Log(saveGear);
-        //HeroInfo.SetCharacterInfo(saveCharacter);
+        if (equip.saveGear == null)
+        {
+            Debug.LogWarning("Equip.saveGear가 null이라 런타임에서 생성합니다.");
+            equip.saveGear = new List<UiGearSlot>();
+        }
+        saveGear.selectMark.enabled = true;
+
+        // 아이템 슬롯 프리펩에는 순번 표기용 ui도 활성화 하기
+        if (equip.saveGear.Count < 3)
+        {
+            equip.saveGear.Add(saveGear);
+        }
+        else
+        {
+            // 4개 넘었을 시
+            equip.saveGear.Add(saveGear);
+
+            equip.saveGear[0].selectMark.enabled = false;
+            equip.saveGear.RemoveAt(0);
+
+
+        }
+
     }
     private void Start()
     {
@@ -51,9 +78,16 @@ public class UiGearList : MonoBehaviour
 
     public void ClearList()
     {
+        // 쿠키 데이터 비활성화
         for (int i = 0; i < uiSlotList.Count; i++)
         {
             uiSlotList[i].gameObject.SetActive(false);
+        }
+
+        // 선택된 쿠키 할당 제거
+        if(equip.saveCookie != null)
+        {
+            equip.saveCookie = null;
         }
     }
     private void UpdateSlots()
@@ -80,7 +114,7 @@ public class UiGearList : MonoBehaviour
                 newSlot.button.onClick.AddListener(() =>
                 {
                     selectedSlotIndex = newSlot.slotIndex;
-                    onSelectSlot.Invoke(newSlot.SaveGearData);
+                    onSelectSlot.Invoke(newSlot);
                 });
 
                 uiSlotList.Add(newSlot);
