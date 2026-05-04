@@ -6,6 +6,15 @@ public class UiCategorySelect : MonoBehaviour
     public UiCookieList uiCookieList;
     public UiGearList uiGearList;
 
+
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            
+        }
+    }
+
     public void OnLoadCookie()
     {
         SaveLoadManager.Load(0);
