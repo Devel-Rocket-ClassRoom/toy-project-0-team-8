@@ -5125,6 +5125,7 @@ MonoBehaviour:
   TreasureviewOne: {fileID: 886520786}
   rewardImage: {fileID: 1313093713}
   rewardPrefab: {fileID: 3251515238978161348, guid: 00183d9802745d3429074be814dd25f6, type: 3}
+  exitbutton: {fileID: 88974665}
   contentArea: {fileID: 142373523}
 --- !u!114 &1069821459
 MonoBehaviour:
