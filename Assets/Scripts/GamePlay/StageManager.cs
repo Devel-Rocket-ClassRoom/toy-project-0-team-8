@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class StageManager : MonoBehaviour {
-	
 
 	[Header("=== 생성된 Prefab들이 배치될 Root ===")]
 	[SerializeField] private Transform _stageRoot;
@@ -9,7 +8,6 @@ public class StageManager : MonoBehaviour {
 	[Header("=== 백그라운드 스크롤링 할 오브젝트 둘 ===")]
 	[SerializeField] private Background _backgroundRendererA;
 	[SerializeField] private Background _backgroundRendererB;
-
 	[SerializeField] private CookieController _cookieController;
 
 	[Header("=== StageData 목록 ===")] 
@@ -17,8 +15,6 @@ public class StageManager : MonoBehaviour {
 	
 	private StageData _currentStage;
 	private float scrollSpeed;
-	
-	private float _maxHealth;
 
 	private void Start() {
 		LoadStage(_stageDatas[0]);
@@ -41,8 +37,9 @@ public class StageManager : MonoBehaviour {
 	}
 	
 	private void Update() {
-		if (_currentStage == null) return;
+		if (_currentStage ==null) return;
 		
+		// StageRoot위에 Prefab을 생성하고, StageRoot를 밀면서 맵 진행 처리
 		_stageRoot.position += Vector3.left * scrollSpeed * Time.deltaTime;
 	}
 }
