@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 7ba540adc56db0b459d63a4f0b58fbee, type: 3}
   m_Name: Cookie_A
   m_EditorClassIdentifier: Assembly-CSharp::GachaCookie
-  cookieName: Pirate
+  cookieName: "\uD574\uC801 \uCFE0\uD0A4"
   cookieId: Cookie1
   weight: 10
   Icon: {fileID: -5571975875243587367, guid: 70ebfad6acd0c5047a6a61f5a6636f1f, type: 3}
