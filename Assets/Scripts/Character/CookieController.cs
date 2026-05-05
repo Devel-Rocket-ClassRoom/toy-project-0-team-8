@@ -5,6 +5,8 @@ using UnityEngine.UI;
 // 쿠키에는 필수적으로 Rigidbody2D, Animator, BoxCollider2D가 붙어있어야 합니다.
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(BoxCollider2D))]
 public class CookieController : MonoBehaviour {
+	// UI가 표현 가능한 최대체력을 정의
+	private readonly float UiMaxHp = 100f;
 	private float MaxHp { get; set; }
 	private readonly float MaxAdditionalHp = 100f;
 	private float _currentHp;
@@ -33,11 +35,12 @@ public class CookieController : MonoBehaviour {
 	private bool _isSliding;
 	private bool _isGodMode;
 	private bool _jumpRequested;
+	private bool _isDead;
 	
 	private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYPos = -3.16f;
 	
-	private readonly float _healthBarHeight = 32f;
+	private readonly float _healthBarHeight = 50f;
 	
 	private readonly float _standingColliderYSize = 2f;
 	private readonly float _slidingColliderYSize = 1.22f;
@@ -52,7 +55,7 @@ public class CookieController : MonoBehaviour {
 		private set => _additionalHp = Mathf.Clamp(value, 0, MaxAdditionalHp);
 	}
 	
-	private float HpPercent => CurrentHp / MaxHp;
+	private float UiHpPercent => CurrentHp / UiMaxHp;
 	private float AdditionalHpPercent => AdditionalHp / MaxAdditionalHp; 
 	
 	
@@ -116,17 +119,21 @@ public class CookieController : MonoBehaviour {
 			CurrentHp -= _healthReduceSpeed * Time.deltaTime;	
 		}
 		
-		
-		// 죽었는지 체크
-		if (_cookieBehavior.DeathCheck()) {
+		// 죽었는지 체크해서 게임 종료 알림
+		if (_cookieBehavior.DeathCheck() && !_isDead) {
+			_isDead = true;
 			_gameManager.GameEndFlag = true;
+			
+			// 죽었을 때도 충돌 판정 줄여줘야함
+			SetSlidingPosition();
+			_cookieBehavior.StartDeathAnimation();
 			return;
 		}
 		
 		// UI도 줄이고, 위치 설정
-		_hpBar.fillAmount = HpPercent;
+		_hpBar.fillAmount = UiHpPercent;
 		// 추가체력 위치 설정시에는 체력바 줄어든 값에 맞춰서 배치
-		_additionalHpBar.rectTransform.anchoredPosition = new Vector2(_hpBar.rectTransform.anchoredPosition.x + _hpBar.rectTransform.sizeDelta.x * HpPercent, 0); 
+		_additionalHpBar.rectTransform.anchoredPosition = new Vector2(_hpBar.rectTransform.anchoredPosition.x + _hpBar.rectTransform.sizeDelta.x * UiHpPercent, _additionalHpBar.rectTransform.anchoredPosition.y); 
 		_additionalHpBar.fillAmount = AdditionalHpPercent;
 		
 		// Update에서는 점프 요청했는지 확인만, 물리 처리는 FixedUpdate에서
@@ -134,15 +141,16 @@ public class CookieController : MonoBehaviour {
 		// 슬라이드 키 누르면 슬라이드 시작		
 		if (Input.GetKeyDown(_slideKey) && !_isJumping) { RequestSlidingStart(); }
 		// 슬라이드 키 떼면 슬라이드 종료
-		if (Input.GetKeyUp(_slideKey)) { RequestSlidingEnd(); }
+		if (Input.GetKeyUp(_slideKey) && _isSliding) { RequestSlidingEnd(); }
 		
 		if (Input.GetKeyDown(KeyCode.A)) { GetAdditionalHealth(10); }
 	}
 
 	private void FixedUpdate() {
-		// 점프 요청되었다면 점프, 단 슬라이딩 중엔 점프 불가능
-		if (_jumpRequested && !_isSliding) {
+		// 점프 요청되었다면 점프
+		if (_jumpRequested) {
 			if (!_isJumping && !_isDoubleJumping) {
+				_isSliding = false;
 				_isJumping = true;
 				_cookieBehavior.StartJumpAnimation();
 				
@@ -165,17 +173,27 @@ public class CookieController : MonoBehaviour {
 	
 	public void RequestSlidingStart() {
 		_isSliding = true;
-			
-		transform.position = new Vector3(transform.position.x, _slidingYPos, transform.position.z);
-		_collider.size = new Vector2(_collider.size.x, _slidingColliderYSize);
+		
+		SetSlidingPosition();
 		_cookieBehavior.StartSlidingAnimation();
 	}
 	
 	public void RequestSlidingEnd() {
 		_isSliding = false;
 			
+		SetStandingPosition();
+		_cookieBehavior.StartRunAnimation();
+	}
+	
+	// 슬라이딩 시에 위치와 충돌 박스 크기 바꿔서 충돌 자연스럽게 하기
+	public void SetSlidingPosition() {
+		transform.position = new Vector3(transform.position.x, _slidingYPos, transform.position.z);
+		_collider.size = new Vector2(_collider.size.x, _slidingColliderYSize);
+	}
+	
+	// 위치, 충돌 박스 크기 원래대로
+	public void SetStandingPosition() {
 		transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
 		_collider.size = new Vector2(_collider.size.x, _standingColliderYSize);
-		_cookieBehavior.StartRunAnimation();
 	}
 }

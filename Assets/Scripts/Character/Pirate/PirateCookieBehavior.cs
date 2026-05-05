@@ -10,6 +10,9 @@ public class PirateCookieBehavior : CookieBehavior {
 	private readonly int _isSliding = Animator.StringToHash("isSliding");
 	private readonly int _isDoubleJumping = Animator.StringToHash("isDoubleJumping");
 	private readonly int Disappear = Animator.StringToHash("Disappear");
+	private readonly int Death = Animator.StringToHash("death");
+	
+	private readonly string _ghostAnimatiorPath = "Animations/Character/Pirate/GhostAnimationController";
 	
 	private GameObject _pirateShip;
 	
@@ -17,11 +20,11 @@ public class PirateCookieBehavior : CookieBehavior {
 	private readonly float _abilityDuration = 10f;
 	
 	private bool _isUsingAbility;
+	private bool _isFirstDeath = true;
 	
 	private Coroutine _appearCoroutine;
 	private Coroutine _disappearCoroutine;
-	
-	private bool _isFirstDeath;
+	private Coroutine _reviveCoroutine;
 	
 	public override void Init(CookieController controller) {
 		base.Init(controller);
@@ -81,8 +84,41 @@ public class PirateCookieBehavior : CookieBehavior {
 		_animator.SetBool(_isSliding, true);
 	}
 
-	// 일단 체력이 다 되면 죽은걸로
+	public override void StartDeathAnimation() {
+		_animator.SetTrigger(Death);
+	}
+	
 	public override bool DeathCheck() {
-		return base.DeathCheck();
+		if (base.DeathCheck() && _isFirstDeath) {
+			_isFirstDeath = false;
+			_reviveCoroutine = StartCoroutine(CoRevive());
+		}
+		
+		// 첫 부활 코루틴 중에는 체력 0이라서 바로 사망 처리 될 수 있음. 이를 위한 null체크
+		else if (base.DeathCheck() && _reviveCoroutine == null && !_isFirstDeath) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private IEnumerator CoRevive() {
+		// 한번 죽는 애니메이션 호출 및 스크롤 정지
+		_controller.SetSlidingPosition();
+		StartDeathAnimation();
+		_gameManager.ScrollObjectsFlag = false;
+		
+		yield return new WaitForSeconds(1f);
+		
+		// 애니메이션 교체
+		_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(_ghostAnimatiorPath);
+		// 부활 애니메이션 나올 동안 대기
+		yield return new WaitForSeconds(0.5f);
+		// 추가 체력 주고, 다시 배경 스크롤
+		_controller.SetStandingPosition();
+		_controller.GetAdditionalHealth(30);
+		_gameManager.ScrollObjectsFlag = true;
+		
+		_reviveCoroutine = null;
 	}
 }
