@@ -25,4 +25,7 @@ public class UiCookieSlot : MonoBehaviour
         imageIcon.sprite = data.CookieData.SpriteIcon;
         textName.text = data.CookieData.StringName;
     }
+
+
+
 }

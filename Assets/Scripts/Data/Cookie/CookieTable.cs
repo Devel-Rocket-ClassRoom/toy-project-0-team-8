@@ -18,7 +18,7 @@ public class CookieData
     }
     public string StringName => DataTableManager.StringTable.Get(Name);
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
-    public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
+    public Sprite SpriteIcon => Resources.Load<Sprite>($"Sprite/Ui/Lobby/{Icon}");
 }
 
 

@@ -184,6 +184,11 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &26193511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7980060373889758711, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
+  m_PrefabInstance: {fileID: 800245385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &82208365
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,41 +884,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2122127226}
     m_Modifications:
-    - target: {fileID: 3345016722287694293, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3345016722287694293, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5140135311444097725, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5140135311444097725, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139568264721782028, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139568264721782028, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139568264721782028, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_SizeDelta.x
+    - target: {fileID: 2949884669173672661, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 26193511}
+    - target: {fileID: 2949884669173672661, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
+      propertyPath: CookieIcon
+      value: 
+      objectReference: {fileID: 1443609341}
+    - target: {fileID: 2949884669173672661, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
+      propertyPath: saveGear.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7980060373889758711, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
       propertyPath: m_Name
       value: Inventory
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980060373889758711, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8283693834017405172, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
       propertyPath: m_Pivot.x
@@ -1005,6 +990,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8283693834017405172, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
   m_PrefabInstance: {fileID: 800245385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &800245387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4343136045822895680, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
+  m_PrefabInstance: {fileID: 800245385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26193511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff411cb0b82c7dd409784680d9c78da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiCategorySelect
 --- !u!1 &830490698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +1767,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae910561bb89e438515dc574f2d9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
+--- !u!114 &1296186844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2949884669173672661, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
+  m_PrefabInstance: {fileID: 800245385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497dc56ee29523d4d930bcb7d7991178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipObject
 --- !u!1 &1339801948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1881,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1339801952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 26193511}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 800245387}
+        m_TargetAssemblyTypeName: UiCategorySelect, Assembly-CSharp
+        m_MethodName: OnCategoryTab
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1339801952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,17 +2506,41 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 26193511}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 800245387}
+        m_TargetAssemblyTypeName: UiCategorySelect, Assembly-CSharp
+        m_MethodName: OnCategoryTab
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1296186844}
+        m_TargetAssemblyTypeName: EquipObject, Assembly-CSharp
+        m_MethodName: EquipCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1900278053
 MonoBehaviour:
