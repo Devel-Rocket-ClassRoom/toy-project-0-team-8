@@ -12,7 +12,7 @@ public class PirateCookieBehavior : CookieBehavior {
 	private readonly int Disappear = Animator.StringToHash("Disappear");
 	private readonly int Death = Animator.StringToHash("death");
 	
-	private readonly string _ghostAnimatiorPath = "Animations/Character/Pirate/GhostAnimationController";
+	private readonly string _ghostAnimatorPath = "Animations/Character/Pirate/GhostAnimationController";
 	
 	private GameObject _pirateShip;
 	
@@ -22,8 +22,8 @@ public class PirateCookieBehavior : CookieBehavior {
 	private bool _isUsingAbility;
 	private bool _isFirstDeath = true;
 	
-	private Coroutine _appearCoroutine;
-	private Coroutine _disappearCoroutine;
+	private Coroutine _abilityCycleCoroutine;
+	private Coroutine _abilityCoroutine;
 	private Coroutine _reviveCoroutine;
 	
 	public override void Init(CookieController controller) {
@@ -31,17 +31,17 @@ public class PirateCookieBehavior : CookieBehavior {
 		
 		_animator = GetComponent<Animator>();
 		
-		// 시작 시에, PirateShip 만들고 없애두기
+		// 시작 시에, PirateShip 만들고 안보이는 상태로
 		_pirateShip = Instantiate(Resources.Load<GameObject>(_shipResourcePath));
 		
 		// 특정 초마다 실행하도록 Coroutine 시작
-		_appearCoroutine = StartCoroutine(CoUseAbility());
+		_abilityCycleCoroutine = StartCoroutine(CoAbilityCycle());
 	}
 	
-	private IEnumerator CoUseAbility() {
+	private IEnumerator CoAbilityCycle() {
 		while (true) {
 			// 특정 시간마다 능력 사용하도록
-			_disappearCoroutine = StartCoroutine(CoAbility());
+			_abilityCoroutine = StartCoroutine(CoAbility());
 			yield return new WaitForSeconds(_abilityPeriod);	
 		}
 	}
@@ -55,7 +55,7 @@ public class PirateCookieBehavior : CookieBehavior {
 		
 		StartCoroutine(CoDisappear());
 		
-		_disappearCoroutine = null;
+		_abilityCoroutine = null;
 	}
 	
 	private IEnumerator CoDisappear() {
@@ -89,13 +89,16 @@ public class PirateCookieBehavior : CookieBehavior {
 	}
 	
 	public override bool DeathCheck() {
+		// 부활해야 하는 사망
 		if (base.DeathCheck() && _isFirstDeath) {
 			_isFirstDeath = false;
 			_reviveCoroutine = StartCoroutine(CoRevive());
 		}
 		
-		// 첫 부활 코루틴 중에는 체력 0이라서 바로 사망 처리 될 수 있음. 이를 위한 null체크
+		// 진짜 사망
 		else if (base.DeathCheck() && _reviveCoroutine == null && !_isFirstDeath) {
+			StopCoroutine(_abilityCycleCoroutine);
+			_abilityCoroutine = null;
 			return true;
 		}
 		
@@ -104,20 +107,24 @@ public class PirateCookieBehavior : CookieBehavior {
 	
 	private IEnumerator CoRevive() {
 		// 한번 죽는 애니메이션 호출 및 스크롤 정지
-		_controller.SetSlidingPosition();
+		_controller.SetSlidingCollider();
 		StartDeathAnimation();
 		_gameManager.ScrollObjectsFlag = false;
+		_controller.JumpEnabled = false;
+		_controller.SlideEnabled = false;
 		
 		yield return new WaitForSeconds(1f);
 		
 		// 애니메이션 교체
-		_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(_ghostAnimatiorPath);
+		_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(_ghostAnimatorPath);
 		// 부활 애니메이션 나올 동안 대기
 		yield return new WaitForSeconds(0.5f);
 		// 추가 체력 주고, 다시 배경 스크롤
-		_controller.SetStandingPosition();
+		_controller.SetStandingCollider();
 		_controller.GetAdditionalHealth(30);
 		_gameManager.ScrollObjectsFlag = true;
+		_controller.JumpEnabled = true;
+		_controller.SlideEnabled = true;
 		
 		_reviveCoroutine = null;
 	}

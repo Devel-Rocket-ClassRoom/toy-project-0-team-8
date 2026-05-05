@@ -24,26 +24,28 @@ public class CookieController : MonoBehaviour {
 	[SerializeField] private float _gravityScale = 5f;
 	[SerializeField] private float _healthReduceSpeed = 2f;
 	
+	// 점프하자마자 Ground와 착지 판정 생겨서 3단 점프 되는 문제 해결을 위함
+	private float _ignoreGroundTimer;
+	private readonly float _ignoreGroundDuration = 0.1f;
+	
 	private Rigidbody2D _rigidBody;
 	private BoxCollider2D _collider;
 	private CookieBehavior _cookieBehavior;
 	private Animator _animator;
 	private GameManager _gameManager;
 	
-	private bool _isJumping;
-	private bool _isDoubleJumping;
-	private bool _isSliding;
-	private bool _isGodMode;
+	private CookieState _state;
 	private bool _jumpRequested;
-	private bool _isDead;
+	// 능력 사용 중일 때 등 점프 불가능하게 하고 싶을 때 사용
+	public bool JumpEnabled { get; set; } = true;
+	// 같은 이유로 슬라이딩 불가능하게 하고 싶을 때 사용
+	public bool SlideEnabled { get; set; } = true;
 	
 	private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYPos = -3.16f;
 	
-	private readonly float _healthBarHeight = 50f;
-	
-	private readonly float _standingColliderYSize = 2f;
-	private readonly float _slidingColliderYSize = 1.22f;
+	private readonly float _standingColliderYSize = 1.69f;
+	private readonly float _slidingColliderYSize = 1.1f;
 	
 	// 체력 관련 값 세팅시에는, Clamping해서 범위 넘어가지 않도록 함
 	public float CurrentHp {
@@ -102,11 +104,11 @@ public class CookieController : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		// 땅에 닿으면 점프 초기화
-		if (other.CompareTag(Tags.Ground) && _isJumping) {
+		if (other.CompareTag(Tags.Ground) &&
+		    (_state == CookieState.Jump || _state == CookieState.DoubleJump) &&
+		    _ignoreGroundTimer >= _ignoreGroundDuration) {
 			Debug.Log($"땅에 닿음");
-			_isJumping = false;
-			_isDoubleJumping = false;
-			
+			_state = CookieState.Run;
 			_cookieBehavior.StartRunAnimation();
 		}
 	}
@@ -120,8 +122,8 @@ public class CookieController : MonoBehaviour {
 		}
 		
 		// 죽었는지 체크해서 게임 종료 알림
-		if (_cookieBehavior.DeathCheck() && !_isDead) {
-			_isDead = true;
+		if (_cookieBehavior.DeathCheck() && _state != CookieState.Death) {
+			_state = CookieState.Death;
 			_gameManager.GameEndFlag = true;
 			
 			// 죽었을 때도 충돌 판정 줄여줘야함
@@ -139,26 +141,28 @@ public class CookieController : MonoBehaviour {
 		// Update에서는 점프 요청했는지 확인만, 물리 처리는 FixedUpdate에서
 		if (Input.GetKeyDown(_jumpKey)) { RequestJump(); }
 		// 슬라이드 키 누르면 슬라이드 시작		
-		if (Input.GetKeyDown(_slideKey) && !_isJumping) { RequestSlidingStart(); }
+		if (Input.GetKeyDown(_slideKey)) { RequestSlidingStart(); }
 		// 슬라이드 키 떼면 슬라이드 종료
-		if (Input.GetKeyUp(_slideKey) && _isSliding) { RequestSlidingEnd(); }
+		if (Input.GetKeyUp(_slideKey)) { RequestSlidingEnd(); }
 		
 		if (Input.GetKeyDown(KeyCode.A)) { GetAdditionalHealth(10); }
 	}
 
 	private void FixedUpdate() {
+		_ignoreGroundTimer += Time.deltaTime;
+		
 		// 점프 요청되었다면 점프
-		if (_jumpRequested) {
-			if (!_isJumping && !_isDoubleJumping) {
-				_isSliding = false;
-				_isJumping = true;
+		if (_jumpRequested && JumpEnabled) {
+			if (_state == CookieState.Run || _state == CookieState.Slide) {
+				_ignoreGroundTimer = 0f;
+				_state = CookieState.Jump;
 				_cookieBehavior.StartJumpAnimation();
 				
 				_rigidBody.linearVelocity = new Vector2(0, _jumpForce);
 			}
 			
-			else if (_isJumping && !_isDoubleJumping) {
-				_isDoubleJumping = true;
+			else if (_state == CookieState.Jump) {
+				_state = CookieState.DoubleJump;
 				_cookieBehavior.StartDoubleJumpAnimation();
 				
 				_rigidBody.linearVelocity = new Vector2(0, _jumpForce);
@@ -172,28 +176,41 @@ public class CookieController : MonoBehaviour {
 	}
 	
 	public void RequestSlidingStart() {
-		_isSliding = true;
+		// 점프나 더블점프중엔 슬라이드 불가능
+		if (_state == CookieState.Jump || _state == CookieState.DoubleJump) { return; }
+		if (!SlideEnabled) { return; }
+		_state = CookieState.Slide;
 		
 		SetSlidingPosition();
+		SetSlidingCollider();
 		_cookieBehavior.StartSlidingAnimation();
 	}
 	
 	public void RequestSlidingEnd() {
-		_isSliding = false;
+		// 슬라이딩 중일 때만 슬라이딩 종료 가능
+		if (_state != CookieState.Slide) { return; }
+		
+		_state = CookieState.Run;
 			
 		SetStandingPosition();
+		SetStandingCollider();
 		_cookieBehavior.StartRunAnimation();
 	}
 	
-	// 슬라이딩 시에 위치와 충돌 박스 크기 바꿔서 충돌 자연스럽게 하기
+	// 슬라이딩 시에 위치 자연스럽게 변경
 	public void SetSlidingPosition() {
 		transform.position = new Vector3(transform.position.x, _slidingYPos, transform.position.z);
-		_collider.size = new Vector2(_collider.size.x, _slidingColliderYSize);
 	}
-	
-	// 위치, 충돌 박스 크기 원래대로
+	// 위치 원래대로
 	public void SetStandingPosition() {
 		transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
+	}
+	// 슬라이딩 시에 충돌 박스 크기 자연스럽게 변경
+	public void SetSlidingCollider() {
+		_collider.size = new Vector2(_collider.size.x, _slidingColliderYSize);
+	}
+	// 충돌 박스 크기 원래대로
+	public void SetStandingCollider() {
 		_collider.size = new Vector2(_collider.size.x, _standingColliderYSize);
 	}
 }
