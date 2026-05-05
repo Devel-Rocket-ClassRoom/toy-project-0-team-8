@@ -20,8 +20,6 @@ public class Background : MonoBehaviour {
 	
 	private void Update() {
 		// 백그라운드는, 내가 화면 밖으로 완전히 나가면 다시 뒤로 돌아와야 함
-		transform.position += Vector3.left * ScrollSpeed * Time.deltaTime;
-		
 		if (transform.position.x <= -Width) {
 			transform.position += Vector3.right * Width * 2f;
 		}

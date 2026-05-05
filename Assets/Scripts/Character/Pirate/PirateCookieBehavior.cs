@@ -21,10 +21,10 @@ public class PirateCookieBehavior : CookieBehavior {
 	private Coroutine _appearCoroutine;
 	private Coroutine _disappearCoroutine;
 	
-	private bool 
+	private bool _isFirstDeath;
 	
-	public override void Init(CookieController controller, CookieData data) {
-		base.Init(controller, data);
+	public override void Init(CookieController controller) {
+		base.Init(controller);
 		
 		_animator = GetComponent<Animator>();
 		
@@ -81,7 +81,8 @@ public class PirateCookieBehavior : CookieBehavior {
 		_animator.SetBool(_isSliding, true);
 	}
 
+	// 일단 체력이 다 되면 죽은걸로
 	public override bool DeathCheck() {
-		
+		return base.DeathCheck();
 	}
 }

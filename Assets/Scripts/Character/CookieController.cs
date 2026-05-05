@@ -5,8 +5,14 @@ using UnityEngine.UI;
 // 쿠키에는 필수적으로 Rigidbody2D, Animator, BoxCollider2D가 붙어있어야 합니다.
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(BoxCollider2D))]
 public class CookieController : MonoBehaviour {
-	private float MaxHealth { get; set; }
-	private float CurrentHp { get; set; }
+	private float MaxHp { get; set; }
+	private readonly float MaxAdditionalHp = 100f;
+	private float _currentHp;
+	private float _additionalHp;
+	
+	[Header("=== 체력바 관련 Image ===")]
+	[SerializeField] private Image _hpBar;
+	[SerializeField] private Image _additionalHpBar;
 	
 	[SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 	[SerializeField] private KeyCode _slideKey = KeyCode.LeftControl;
@@ -20,6 +26,7 @@ public class CookieController : MonoBehaviour {
 	private BoxCollider2D _collider;
 	private CookieBehavior _cookieBehavior;
 	private Animator _animator;
+	private GameManager _gameManager;
 	
 	private bool _isJumping;
 	private bool _isDoubleJumping;
@@ -27,17 +34,33 @@ public class CookieController : MonoBehaviour {
 	private bool _isGodMode;
 	private bool _jumpRequested;
 	
-	private readonly float _startXPos = -6f;
-	private readonly float _startYPos = -2.735f;
+	private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYPos = -3.16f;
 	
-	private readonly float _colliderYSize = 2f;
+	private readonly float _healthBarHeight = 32f;
+	
+	private readonly float _standingColliderYSize = 2f;
 	private readonly float _slidingColliderYSize = 1.22f;
+	
+	// 체력 관련 값 세팅시에는, Clamping해서 범위 넘어가지 않도록 함
+	public float CurrentHp {
+		get => _currentHp;
+		private set => _currentHp = Mathf.Clamp(value, 0, MaxHp);
+	}
+	public float AdditionalHp {
+		get => _additionalHp;
+		private set => _additionalHp = Mathf.Clamp(value, 0, MaxAdditionalHp);
+	}
+	
+	private float HpPercent => CurrentHp / MaxHp;
+	private float AdditionalHpPercent => AdditionalHp / MaxAdditionalHp; 
 	
 	
 	public void Init(CookieData data) {
-		MaxHealth = data.Hp;
-		CurrentHp = MaxHealth;
+		_gameManager = GameObject.FindWithTag(Tags.GameManager).GetComponent<GameManager>();
+		
+		MaxHp = data.Hp;
+		CurrentHp = MaxHp;
 		
 		// Factory 이용해서 data에 맞는 Behavior 붙이기
 		CookieBehaviorFactory.AddBehavior(gameObject, data);
@@ -49,24 +72,29 @@ public class CookieController : MonoBehaviour {
 		
 		_rigidBody.gravityScale = _gravityScale;
 		
-		_cookieBehavior.Init(this, data);
+		_cookieBehavior.Init(this);
 		_animator.runtimeAnimatorController = data.AnimatorController;
 	}
 	
 	// 체력 감소
-	public void TakeDamage(int amount) {
-		CurrentHp -= amount;
-		CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHealth);
-	}
-	
-	protected void EnableGodMode(float time) {
+	public void TakeDamage(float amount) {
+		// 추가체력이 있다면, 그것부터 감소
+		if (_additionalHp > 0) {
+			float reducedAmount = Mathf.Clamp(amount, 0, _additionalHp);
+			AdditionalHp -= reducedAmount;
+			amount -= reducedAmount;
+		}
 		
+		CurrentHp -= amount;
 	}
 	
 	// 체력 증가
-	public void RecoverHp(int amount) {
+	public void RecoverHp(float amount) {
 		CurrentHp += amount;
-		CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHealth);
+	}
+	
+	public void GetAdditionalHealth(float amount) {
+		AdditionalHp += amount;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
@@ -78,15 +106,28 @@ public class CookieController : MonoBehaviour {
 			
 			_cookieBehavior.StartRunAnimation();
 		}
-		
-		if (other.CompareTag(Tags.Obstacle)) {
-			TakeDamage(20);
-		}
 	}
 
 	private void Update() {
-		// 체력 조금씩 줄이기
-		CurrentHp -= _healthReduceSpeed * Time.deltaTime;
+		// 체력 조금씩 줄이기. 추가체력 있으면 추가체력부터
+		if (AdditionalHp > 0) {
+			AdditionalHp -= _healthReduceSpeed * Time.deltaTime;
+		} else {
+			CurrentHp -= _healthReduceSpeed * Time.deltaTime;	
+		}
+		
+		
+		// 죽었는지 체크
+		if (_cookieBehavior.DeathCheck()) {
+			_gameManager.GameEndFlag = true;
+			return;
+		}
+		
+		// UI도 줄이고, 위치 설정
+		_hpBar.fillAmount = HpPercent;
+		// 추가체력 위치 설정시에는 체력바 줄어든 값에 맞춰서 배치
+		_additionalHpBar.rectTransform.anchoredPosition = new Vector2(_hpBar.rectTransform.anchoredPosition.x + _hpBar.rectTransform.sizeDelta.x * HpPercent, 0); 
+		_additionalHpBar.fillAmount = AdditionalHpPercent;
 		
 		// Update에서는 점프 요청했는지 확인만, 물리 처리는 FixedUpdate에서
 		if (Input.GetKeyDown(_jumpKey)) { RequestJump(); }
@@ -94,10 +135,12 @@ public class CookieController : MonoBehaviour {
 		if (Input.GetKeyDown(_slideKey) && !_isJumping) { RequestSlidingStart(); }
 		// 슬라이드 키 떼면 슬라이드 종료
 		if (Input.GetKeyUp(_slideKey)) { RequestSlidingEnd(); }
+		
+		if (Input.GetKeyDown(KeyCode.A)) { GetAdditionalHealth(10); }
 	}
 
 	private void FixedUpdate() {
-		// 점프 키 누르면 점프, 단 슬라이딩 중엔 점프 불가능
+		// 점프 요청되었다면 점프, 단 슬라이딩 중엔 점프 불가능
 		if (_jumpRequested && !_isSliding) {
 			if (!_isJumping && !_isDoubleJumping) {
 				_isJumping = true;
@@ -131,8 +174,8 @@ public class CookieController : MonoBehaviour {
 	public void RequestSlidingEnd() {
 		_isSliding = false;
 			
-		transform.position = new Vector3(transform.position.x, _startYPos, transform.position.z);
-		_collider.size = new Vector2(_collider.size.x, _colliderYSize);
+		transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
+		_collider.size = new Vector2(_collider.size.x, _standingColliderYSize);
 		_cookieBehavior.StartRunAnimation();
 	}
 }

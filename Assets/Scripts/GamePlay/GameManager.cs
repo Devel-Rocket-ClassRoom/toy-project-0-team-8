@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StageManager : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
 	[Header("=== 생성된 Prefab들이 배치될 Root ===")]
 	[SerializeField] private Transform _stageRoot;
@@ -17,6 +17,9 @@ public class StageManager : MonoBehaviour {
 	
 	private StageData _currentStage;
 	private float scrollSpeed;
+	
+	public bool ScrollObjectsFlag { get; set; } = true;
+	public bool GameEndFlag { get; set; } = false;
 
 	private void Start() {
 		CookieData data = DataTableManager.CookieTable.Get("Cookie_Pirate");
@@ -30,8 +33,6 @@ public class StageManager : MonoBehaviour {
 		
 		_backgroundRendererA.Init(stageData.background, true);
 		_backgroundRendererB.Init(stageData.background, false);
-		_backgroundRendererA.ScrollSpeed = scrollSpeed;
-		_backgroundRendererB.ScrollSpeed = scrollSpeed;
 		
 		Instantiate(stageData.stagePrefab, _stageRoot);
 	}
@@ -43,7 +44,12 @@ public class StageManager : MonoBehaviour {
 	private void Update() {
 		if (_currentStage ==null) return;
 		
-		// StageRoot위에 Prefab을 생성하고, StageRoot를 밀면서 맵 진행 처리
-		_stageRoot.position += Vector3.left * scrollSpeed * Time.deltaTime;
+		
+		if (ScrollObjectsFlag && !GameEndFlag) {
+			_backgroundRendererA.transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
+			_backgroundRendererB.transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
+			// StageRoot위에 Prefab을 생성하고, StageRoot를 밀면서 맵 진행 처리
+			_stageRoot.position += Vector3.left * scrollSpeed * Time.deltaTime;	
+		}
 	}
 }
