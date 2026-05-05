@@ -7,10 +7,12 @@ public static class DataTableManager
     private static readonly Dictionary<string, DataTable> tables =
         new Dictionary<string, DataTable>();
 
-    public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
-
-    public static GearTable GearTable => Get<GearTable>(DataTableIds.Gear);
+    public static StringTable CookieStringTable => Get<StringTable>("StringTableCookie");
     public static CookieTable CookieTable => Get<CookieTable>(DataTableIds.Cookie);
+
+    public static StringTable GearStringTable => Get<StringTable>("StringTableGear");
+    public static GearTable GearTable => Get<GearTable>(DataTableIds.Gear);
+    
 
 #if UNITY_EDITOR
     public static StringTable GetStringTable(DataType lang)
@@ -26,18 +28,12 @@ public static class DataTableManager
     
     private static void Init()
     {
-#if !UNITY_EDITOR
-        var stringTable = new StringTable();
-        stringTable.Load(DataTableIds.String);
-        tables.Add(DataTableIds.String, stringTable);
-#else
         foreach (var id in DataTableIds.StringTableIds)
         {
             var stringTable = new StringTable();
             stringTable.Load(id);
             tables.Add(id, stringTable);
         }
-#endif
 
         var itemTable = new GearTable();
         itemTable.Load(DataTableIds.Gear);
@@ -64,6 +60,7 @@ public static class DataTableManager
                 break;
             }
         }
+
         var stringTable = tables[oldId];
         stringTable.Load(newId);
         tables.Remove(oldId);

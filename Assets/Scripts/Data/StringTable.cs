@@ -39,7 +39,7 @@ public class StringTable : DataTable
 
     public string Get(string Key)
     {
-        if(!table.ContainsKey(Key))
+        if (!table.ContainsKey(Key))
         {
             return Unknown;
         }

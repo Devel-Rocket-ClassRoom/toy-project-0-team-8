@@ -78,10 +78,12 @@ public class GachaTitle : GenericWindow
             StartCoroutine(NotEnoughCrystal());
             return;
         }
+
         currentCrystal -= 2000;
         GachaCount = 10;
         textcurrentCrystal = Math.Clamp(currentCrystal, 0, maxCrystal);
         crystaltext.text = $"{textcurrentCrystal.ToString()}";
+        
         windowManager.Open(1,GachaCount);
     }
     public IEnumerator NotEnoughCrystal()

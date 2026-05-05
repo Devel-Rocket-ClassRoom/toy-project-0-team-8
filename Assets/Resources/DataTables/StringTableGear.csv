@@ -1,40 +1,9 @@
 ﻿Id,String
-HELLO,안녕
-BYE,잘가
-YOU DIE,너 죽음
-Item1Name,검
-Item2Name,방패
-Item3Name,활 
-Item4Name,물약 
+Item1Name,젤리항아리
+Item2Name,자석로봇
+Item3Name,에너지부스터 
+Item4Name,추가
 Item1Desc ,이것은 검이다.
 Item2Desc,이것은 방패다.
 Item3Desc,이것은 활이다.
 Item4Desc,이것은 물약이다.
-Character1Name,해골 병사
-Character2Name,해골 투사
-Character3Name,해골 왕
-Character1Desc,해골 병사.
-Character2Desc,해골 투사.
-Character3Desc,해골 왕.
-NAME, 이름
-DESC, 설명
-TYPE, 타입
-VALUE, 밸류
-COST, 비용
-WEAPON, 무기
-EQUIP, 장비
-CONSUMABLE, 소모품
-NONCONSUMABLE, 비소모품
-NONE, 없음
-CREATIONTIMEASCENDING, 날짜(오름차순)
-CREATIONTIMEDESCENDING, 날짜(내림차순)
-NAMEASCENDING, 이름(오름차순)
-NAMEDESCENDING, 이름(내림차순)
-TYPEASCENDING, 타입(오름차순)
-TYPEDESCENDING, 타입(내림차순)
-VALUEASCENDING, 밸류(오름차순)
-VALUEDESCENDING, 밸류(내림차순)
-SAVE, 저장
-LOAD, 불러오기
-CREATE, 생성
-DELETE, 제거
