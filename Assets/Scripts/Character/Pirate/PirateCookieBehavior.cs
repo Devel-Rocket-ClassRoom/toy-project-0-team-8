@@ -106,12 +106,20 @@ public class PirateCookieBehavior : CookieBehavior {
 	}
 	
 	private IEnumerator CoRevive() {
-		// 한번 죽는 애니메이션 호출 및 스크롤 정지
+		Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+		
+		// 사망 연출을 위해 콜라이더 사망처럼 변경
 		_controller.SetSlidingCollider();
+		// 사망 애니메이션 재생
 		StartDeathAnimation();
+		// 배경 스크롤 그만
 		_gameManager.ScrollObjectsFlag = false;
+		// 점프 및 슬라이딩 불가능하게
 		_controller.JumpEnabled = false;
 		_controller.SlideEnabled = false;
+		// 잠깐 중력 연출도 정지
+		rigidbody.simulated = false;
+		
 		
 		yield return new WaitForSeconds(1f);
 		
@@ -119,12 +127,16 @@ public class PirateCookieBehavior : CookieBehavior {
 		_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(_ghostAnimatorPath);
 		// 부활 애니메이션 나올 동안 대기
 		yield return new WaitForSeconds(0.5f);
-		// 추가 체력 주고, 다시 배경 스크롤
+		// 다시 스탠딩 콜라이더로 변경
 		_controller.SetStandingCollider();
+		// 추가 체력 주고, 다시 배경 스크롤
 		_controller.GetAdditionalHealth(30);
 		_gameManager.ScrollObjectsFlag = true;
+		// 점프, 슬라이딩 가능하게
 		_controller.JumpEnabled = true;
 		_controller.SlideEnabled = true;
+		// 중력 다시 연출
+		rigidbody.simulated = true;
 		
 		_reviveCoroutine = null;
 	}

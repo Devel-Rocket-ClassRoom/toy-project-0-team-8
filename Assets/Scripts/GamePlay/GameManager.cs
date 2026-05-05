@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 
 	[Header("=== StageData 목록 ===")] 
 	[SerializeField] private StageData[] _stageDatas;
+	[SerializeField] public GameObject InvisibleGround;
 	
 	private StageData _currentStage;
 	private float scrollSpeed;
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour {
 		CookieData data = DataTableManager.CookieTable.Get("Cookie_Pirate");
 		LoadCharacter(data);
 		LoadStage(_stageDatas[0]);
+		
+		InvisibleGround.SetActive(false);
 	}
 
 	public void LoadStage(StageData stageData) {

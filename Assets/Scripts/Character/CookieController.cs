@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 // 모든 쿠키가 베이스로 사용할 클래스입니다.
@@ -11,6 +12,10 @@ public class CookieController : MonoBehaviour {
 	private readonly float MaxAdditionalHp = 100f;
 	private float _currentHp;
 	private float _additionalHp;
+	
+	private readonly float _godModeDuration = 2f;
+	
+	private bool _isGodMode = false;
 	
 	[Header("=== 체력바 관련 Image ===")]
 	[SerializeField] private Image _hpBar;
@@ -33,8 +38,9 @@ public class CookieController : MonoBehaviour {
 	private CookieBehavior _cookieBehavior;
 	private Animator _animator;
 	private GameManager _gameManager;
-	
 	private CookieState _state;
+	private SpriteRenderer _spriteRenderer;
+	
 	private bool _jumpRequested;
 	// 능력 사용 중일 때 등 점프 불가능하게 하고 싶을 때 사용
 	public bool JumpEnabled { get; set; } = true;
@@ -42,10 +48,12 @@ public class CookieController : MonoBehaviour {
 	public bool SlideEnabled { get; set; } = true;
 	
 	private readonly float _standingYPos = -2.735f;
-	private readonly float _slidingYPos = -3.16f;
+	private readonly float _slidingYDiff = -0.425f;
 	
 	private readonly float _standingColliderYSize = 1.69f;
 	private readonly float _slidingColliderYSize = 1.1f;
+	
+	private Coroutine _coGodMode;
 	
 	// 체력 관련 값 세팅시에는, Clamping해서 범위 넘어가지 않도록 함
 	public float CurrentHp {
@@ -74,6 +82,7 @@ public class CookieController : MonoBehaviour {
 		_collider = GetComponent<BoxCollider2D>();
 		_cookieBehavior = GetComponent<CookieBehavior>();
 		_animator = GetComponent<Animator>();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 		
 		_rigidBody.gravityScale = _gravityScale;
 		
@@ -83,6 +92,8 @@ public class CookieController : MonoBehaviour {
 	
 	// 체력 감소
 	public void TakeDamage(float amount) {
+		// 무적 상태일 땐 데미지 없음
+		if (_isGodMode) { return; }
 		// 추가체력이 있다면, 그것부터 감소
 		if (_additionalHp > 0) {
 			float reducedAmount = Mathf.Clamp(amount, 0, _additionalHp);
@@ -91,6 +102,30 @@ public class CookieController : MonoBehaviour {
 		}
 		
 		CurrentHp -= amount;
+		
+		// 무적 상태 활성화
+		_coGodMode = StartCoroutine(CoGodMode());
+	}
+	
+	public IEnumerator CoGodMode() {
+		_gameManager.InvisibleGround.SetActive(true);
+		_isGodMode = true;
+		float godModeTimer = 0f;
+		
+		while (godModeTimer <= _godModeDuration) {
+			godModeTimer += Time.deltaTime;
+			if ((int)(godModeTimer / 0.1) % 2 == 0) {
+				_spriteRenderer.enabled = false;
+			} else {
+				_spriteRenderer.enabled = true;
+			}
+			
+			yield return null;
+		}
+		
+		_spriteRenderer.enabled = true;
+		_gameManager.InvisibleGround.SetActive(false);
+		_isGodMode = false;
 	}
 	
 	// 체력 증가
@@ -111,6 +146,13 @@ public class CookieController : MonoBehaviour {
 			_state = CookieState.Run;
 			_cookieBehavior.StartRunAnimation();
 		}
+		
+		// 바닥으로 떨어지면 다시 위로 올려주기
+		if (other.CompareTag(Tags.Drop)) {
+			Debug.Log($"바닥에 떨어짐");
+			TakeDamage(20f);
+			transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
+		}
 	}
 
 	private void Update() {
@@ -121,14 +163,21 @@ public class CookieController : MonoBehaviour {
 			CurrentHp -= _healthReduceSpeed * Time.deltaTime;	
 		}
 		
-		// 죽었는지 체크해서 게임 종료 알림
+		// 죽었는지 체크해서 게임 종료 알림 및 RigidBody 해제
 		if (_cookieBehavior.DeathCheck() && _state != CookieState.Death) {
 			_state = CookieState.Death;
 			_gameManager.GameEndFlag = true;
+			_rigidBody.simulated = false;
 			
-			// 죽었을 때도 충돌 판정 줄여줘야함
+			// 사망 시에 무적상태였을 수 있으니, 무적상태 연출 해제
+			StopCoroutine(_coGodMode);
+			_spriteRenderer.enabled = true;
+			
+			// 죽었을 때 충돌 판정 조정해서 죽는 모션 자연스럽게
 			SetSlidingPosition();
+			SetSlidingCollider();
 			_cookieBehavior.StartDeathAnimation();
+			
 			return;
 		}
 		
@@ -153,7 +202,7 @@ public class CookieController : MonoBehaviour {
 		
 		// 점프 요청되었다면 점프
 		if (_jumpRequested && JumpEnabled) {
-			if (_state == CookieState.Run || _state == CookieState.Slide) {
+			if (_state == CookieState.Run || _state == CookieState.Slide || _state == CookieState.Death) {
 				_ignoreGroundTimer = 0f;
 				_state = CookieState.Jump;
 				_cookieBehavior.StartJumpAnimation();
@@ -177,7 +226,7 @@ public class CookieController : MonoBehaviour {
 	
 	public void RequestSlidingStart() {
 		// 점프나 더블점프중엔 슬라이드 불가능
-		if (_state == CookieState.Jump || _state == CookieState.DoubleJump) { return; }
+		if (_state == CookieState.Jump || _state == CookieState.DoubleJump || _state == CookieState.Death) { return; }
 		if (!SlideEnabled) { return; }
 		_state = CookieState.Slide;
 		
@@ -199,11 +248,11 @@ public class CookieController : MonoBehaviour {
 	
 	// 슬라이딩 시에 위치 자연스럽게 변경
 	public void SetSlidingPosition() {
-		transform.position = new Vector3(transform.position.x, _slidingYPos, transform.position.z);
+		transform.position = new Vector3(transform.position.x, transform.position.y + _slidingYDiff, transform.position.z);
 	}
 	// 위치 원래대로
 	public void SetStandingPosition() {
-		transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
+		transform.position = new Vector3(transform.position.x, transform.position.y - _slidingYDiff, transform.position.z);
 	}
 	// 슬라이딩 시에 충돌 박스 크기 자연스럽게 변경
 	public void SetSlidingCollider() {

@@ -3,4 +3,5 @@
 	public static readonly string GameManager = "GameManager";
 	public static readonly string Ground = "Ground";
 	public static readonly string Obstacle = "Obstacle";
+	public static readonly string Drop = "Drop";
 }
