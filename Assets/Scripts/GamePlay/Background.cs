@@ -23,7 +23,6 @@ public class Background : MonoBehaviour {
 		transform.position += Vector3.left * ScrollSpeed * Time.deltaTime;
 		
 		if (transform.position.x <= -Width) {
-			Debug.Log($"배경 이동");
 			transform.position += Vector3.right * Width * 2f;
 		}
 	}
