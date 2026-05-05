@@ -7,6 +7,17 @@ public class UiCategorySelect : MonoBehaviour
 {
     public UiCookieList uiCookieList;
     public UiGearList uiGearList;
+    
+    public Button[] buttons;
+    public int index;
+
+
+    public void OnCategoryTab(int index)
+    {
+        buttons[index].onClick.Invoke();
+    }
+
+
 
     public Button[] buttons;
 

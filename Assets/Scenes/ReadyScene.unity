@@ -1803,6 +1803,11 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &1193413630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7980060373889758711, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
+  m_PrefabInstance: {fileID: 800245385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1200968487
 PrefabInstance:
   m_ObjectHideFlags: 0
