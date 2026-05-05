@@ -1,5 +1,5 @@
 ﻿Id,Name,Icon,Desc,Grade,CoolTime
-Item1,Item1Name,icon_Gear1,Item1Desc,Rare,15
-Item2,Item2Name,icon_Gear1,Item2Desc,Epic,15
-Item3,Item3Name,icon_Gear1,Item3Desc,Common,15
-Item4,Item4Name,icon_Gear1,Item4Desc,Rare,15
+Item1,Item1Name,Gear_A,Item1Desc,Rare,15
+Item2,Item2Name,Gear_B,Item2Desc,Epic,15
+Item3,Item3Name,Gear_C,Item3Desc,Common,15
+Item4,Item4Name,Gear_D,Item4Desc,Rare,15

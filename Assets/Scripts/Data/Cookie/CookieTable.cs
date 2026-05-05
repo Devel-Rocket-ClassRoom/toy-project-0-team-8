@@ -16,9 +16,9 @@ public class CookieData
     {
         return $"{Id} / {Name} / {Icon} / {Desc} / {Grade} / {Hp}";
     }
-    public string StringName => DataTableManager.StringTable.Get(Name);
-    public string StringDesc => DataTableManager.StringTable.Get(Desc);
-    public Sprite SpriteIcon => Resources.Load<Sprite>($"Sprite/Ui/Lobby/{Icon}");
+    public string StringName => DataTableManager.CookieStringTable.Get(Name);
+    public string StringDesc => DataTableManager.CookieStringTable.Get(Desc);
+    public Sprite SpriteIcon => GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GachaManager>().LoadCookieSprite(Icon);
 }
 
 

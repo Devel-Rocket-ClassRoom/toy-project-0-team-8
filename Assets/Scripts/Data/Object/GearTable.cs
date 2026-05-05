@@ -16,9 +16,11 @@ public class GearData
         return $"{Id} / {Name} / {Desc} / {Grade} / {CoolTime} / {Icon}";
     }
 
-    public string StringName => DataTableManager.StringTable.Get(Name);
-    public string StringDesc => DataTableManager.StringTable.Get(Desc);
-    public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
+    public string StringName => DataTableManager.GearStringTable.Get(Name);
+    public string StringDesc => DataTableManager.GearStringTable.Get(Desc);
+
+    // 경로 수정 필요함
+    public Sprite SpriteIcon => GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GachaManager>().LoadGearSprite(Icon);
 }
 
 public class GearTable : DataTable

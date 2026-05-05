@@ -1,9 +1,12 @@
-using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
-using System.Collections;
-using UnityEngine.UIElements;
-using System.Collections.Generic;
+using UnityEditor.Overlays;
+using UnityEngine;
+using UnityEngine.UI;
+using SaveDataVC = SaveDataV1;
+
 public class BbobgiTitle : GenericWindow
 {
 
@@ -14,14 +17,12 @@ public class BbobgiTitle : GenericWindow
     public GameObject effects;
     public GameObject Treasureview;
     public GameObject TreasureviewOne;
-    public GameObject rewardImage;  //테스트용
-    public GameObject rewardPrefab; //테스트용
+    public GameObject rewardPrefab;
     public GameObject exitbutton;
     public ParticleSystem effectParticle;
     public Transform contentArea;
-    private List<Gacha> rewardList = new List<Gacha> ();
-    private List<GameObject> rewardsListTest = new List<GameObject>();
-    private GachaManager gachaManager;
+    private List<GachaGear> rewardList;
+    public GachaManager gachaManager;
     private bool isClick = false;
     private bool isOpen = false;
     private float effectscalemin = 1f;
@@ -32,6 +33,8 @@ public class BbobgiTitle : GenericWindow
     private bool exitable = false;
     private void Awake()
     {
+        rewardList = new List<GachaGear>();
+
         isClick = false;
         isOpen = false;
         rewardCheck = false;
@@ -93,6 +96,7 @@ public class BbobgiTitle : GenericWindow
 
     private void Update()
     {
+        // 상자 클릭 시 효과 재생
         if (isClick)
         {
             effcetTime += Time.deltaTime/effectScaleSpeed;
@@ -106,6 +110,8 @@ public class BbobgiTitle : GenericWindow
                 time = 0;
             }
         }
+
+        // 상자가 열리는 연출
         if (isOpen)
         {
             time += Time.deltaTime;
@@ -116,14 +122,17 @@ public class BbobgiTitle : GenericWindow
                 isOpen = false;
             }
         }
+
+        // 보상 획득
         if(rewardCheck)
         {
-            rewardImage.SetActive(false);
             Reward();
             if(count==10)
             {
+                // 10회 뽑기 시 연출 정지
                 effects.GetComponent<Animator>().speed = 0;
             }
+
             effectParticle.gameObject.SetActive(false);
             StartCoroutine(UpdateSlot());
             rewardCheck = false;
@@ -137,6 +146,7 @@ public class BbobgiTitle : GenericWindow
         {
             return;
         }
+
         firstCheck = true;
         isClick = true;
         Debug.Log("상자클릭");
@@ -144,7 +154,7 @@ public class BbobgiTitle : GenericWindow
         effcetTime = 0;
         effects.SetActive(true);
         effects.GetComponent<Animator>().speed = 1;
-        rewardImage.SetActive(true);
+
         effectParticle.gameObject.SetActive(true);
 
     }
@@ -154,25 +164,46 @@ public class BbobgiTitle : GenericWindow
     }
     public void Reward()
     {
-        rewardsListTest.Clear();
+        rewardList.Clear();
+
         Treasureview.SetActive(false);
         TreasureviewOne.SetActive(false);
+
         if(count == 1)
         {
            TreasureviewOne.SetActive(true);
-            TreasureviewOne.transform.localScale = new Vector3(3f, 3f, 3f);
-          /* rewardList.Add(gachaManager.GachaItem());*/
-           rewardsListTest.Add(rewardImage);
+           TreasureviewOne.transform.localScale = new Vector3(3f, 3f, 3f);
+           rewardList.Add(gachaManager.GachaItem());
         }
         else if (count <= 10)
         {
             Treasureview.SetActive(true);
             for (int i = 0; i < count; i++)
             {
-                /*rewardList.Add(gachaManager.GachaItem());*/
-                rewardsListTest.Add(rewardImage);
+                rewardList.Add(gachaManager.GachaItem());
             }
         }
+
+        // 리워드 리스트 json으로 저장
+        SaveReward();
+    }
+    public void SaveReward()
+    {
+        List<SaveGear> list = new List<SaveGear>();
+
+        for (int i = 0; i < rewardList.Count; i++)
+        {
+            SaveGear newGear = new SaveGear();
+            newGear.GearData = DataTableManager.GearTable.Get(rewardList[i].itemId);
+
+            list.Add(newGear);
+
+        }
+
+        SaveLoadManager.Data = new SaveDataVC();
+        SaveLoadManager.Data.GearList = list;
+
+        SaveLoadManager.Save(1);
     }
     public void OnClickExit()
     {
@@ -191,10 +222,11 @@ public class BbobgiTitle : GenericWindow
         {
             Destroy(child.gameObject);
         }
-        for (int i = 0; i < rewardsListTest.Count; i++)
+        for (int i = 0; i < rewardList.Count; i++)
         {
             GameObject go = Instantiate(rewardPrefab,contentArea);
             go.SetActive(true); // 나중에 바꿀예정 테스트용
+            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardList[i].Icon;
             yield return new WaitForSeconds(0.5f);
         }
         exitable = true;

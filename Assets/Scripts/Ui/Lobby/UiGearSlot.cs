@@ -8,6 +8,8 @@ public class UiGearSlot : MonoBehaviour
     public Image imageIcon;
     public TextMeshProUGUI textName;
 
+    public Image selectMark;
+
     public Button button;
 
     public SaveGear SaveGearData { get; private set; }

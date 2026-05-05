@@ -21,10 +21,14 @@ public class UiCookieList : MonoBehaviour
     public UnityEvent onUpdateSlot;
     public UnityEvent<SaveCookie> onSelectSlot;
 
+    //데이터 전송
+    public EquipObject equip;
+
     private void OnSelectSlot(SaveCookie saveCookie)
     {
-        Debug.Log(saveCookie);
-        //HeroInfo.SetCharacterInfo(saveCharacter);
+        Debug.Log(saveCookie.CookieData.Name);
+        equip.saveCookie = saveCookie;
+
     }
     private void Start()
     {
@@ -54,6 +58,9 @@ public class UiCookieList : MonoBehaviour
         {
             uiSlotList[i].gameObject.SetActive(false);
         }
+
+        // 선택된 보물 할당 제거
+        equip.saveGear = null;
     }
     private void UpdateSlots()
     {
