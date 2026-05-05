@@ -18,14 +18,6 @@ public class UiCategorySelect : MonoBehaviour
     }
 
 
-
-    public Button[] buttons;
-
-    public void OnCategoryTab(int index)
-    {
-        buttons[index].onClick.Invoke();
-    }
-
     public void OnLoadCookie()
     {
         DataTableManager.ChangeDataType(DataType.Cookie);
