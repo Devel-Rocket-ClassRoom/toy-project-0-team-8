@@ -10,7 +10,6 @@ public class InGameCookieData {
 	public string Name => baseData.Name;
 	public Grade Grade => baseData.Grade;
 	public Sprite Icon => baseData.SpriteIcon;
-	public GameObject Prefab => baseData.CookiePrefab;
 	
 	public bool IsDeadDelayed { get; private set; }
 	public bool IsDead => CurrentHp <= 0;

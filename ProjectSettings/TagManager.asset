@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - SceneManager
+  - Ground
+  - Obstacle
   layers:
   - Default
   - TransparentFX

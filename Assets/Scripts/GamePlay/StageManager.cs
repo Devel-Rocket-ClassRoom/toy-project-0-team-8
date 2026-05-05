@@ -8,6 +8,8 @@ public class StageManager : MonoBehaviour {
 	[Header("=== 백그라운드 스크롤링 할 오브젝트 둘 ===")]
 	[SerializeField] private Background _backgroundRendererA;
 	[SerializeField] private Background _backgroundRendererB;
+
+	[Header("=== 사용될 CookieController ===")]
 	[SerializeField] private CookieController _cookieController;
 
 	[Header("=== StageData 목록 ===")] 
@@ -17,6 +19,8 @@ public class StageManager : MonoBehaviour {
 	private float scrollSpeed;
 
 	private void Start() {
+		CookieData data = DataTableManager.CookieTable.Get("Cookie_Pirate");
+		LoadCharacter(data);
 		LoadStage(_stageDatas[0]);
 	}
 
