@@ -11,8 +11,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
   m_Name: Gear_B
-  m_EditorClassIdentifier: Assembly-CSharp::Gacha
-  itemName: "\uC790\uC11D\uD3EC\uC158"
-  itemId: 
+  m_EditorClassIdentifier: Assembly-CSharp::GachaGear
+  itemName: "\uC790\uC11D\uB85C\uBD07"
+  itemId: Item2
   weight: 10
-  Icon: {fileID: 0}
+  Icon: {fileID: -8245842631113459091, guid: 8f6f2425becbbb747ae3cfed8d680034, type: 3}

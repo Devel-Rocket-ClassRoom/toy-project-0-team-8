@@ -4,7 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEditor.Overlays;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using SaveDataVC = SaveDataV1;
 
 public class BbobgiTitle : GenericWindow
@@ -21,7 +21,7 @@ public class BbobgiTitle : GenericWindow
     public GameObject exitbutton;
     public ParticleSystem effectParticle;
     public Transform contentArea;
-    private List<Gacha> rewardList;
+    private List<GachaGear> rewardList;
     public GachaManager gachaManager;
     private bool isClick = false;
     private bool isOpen = false;
@@ -33,7 +33,7 @@ public class BbobgiTitle : GenericWindow
     private bool exitable = false;
     private void Awake()
     {
-        rewardList = new List<Gacha>();
+        rewardList = new List<GachaGear>();
 
         isClick = false;
         isOpen = false;
@@ -226,7 +226,7 @@ public class BbobgiTitle : GenericWindow
         {
             GameObject go = Instantiate(rewardPrefab,contentArea);
             go.SetActive(true); // 나중에 바꿀예정 테스트용
-            go.GetComponent<Image>().sprite = rewardList[i].Icon;
+            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardList[i].Icon;
             yield return new WaitForSeconds(0.5f);
         }
         exitable = true;

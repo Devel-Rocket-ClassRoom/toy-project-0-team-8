@@ -106,6 +106,7 @@ public class GearDataConverter : JsonConverter<GearData>
 {
     public override GearData ReadJson(JsonReader reader, Type objectType, GearData existingValue, bool hasExistingValue, JsonSerializer serializer)
     {
+
         string id = reader.Value as string;
         return DataTableManager.GearTable.Get(id);
     }

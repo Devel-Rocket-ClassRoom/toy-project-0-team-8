@@ -17,6 +17,8 @@ public class UiCategorySelect : MonoBehaviour
 
     public void OnLoadCookie()
     {
+        DataTableManager.ChangeDataType(DataType.Cookie);
+
         SaveLoadManager.Load(0);
         uiGearList.ClearList();
         uiCookieList.SetSaveCookieDataList(SaveLoadManager.Data.CookieList);
@@ -24,6 +26,8 @@ public class UiCategorySelect : MonoBehaviour
     }
     public void OnLoadGear()
     {
+        DataTableManager.ChangeDataType(DataType.Gear);
+
         SaveLoadManager.Load(1);
         uiCookieList.ClearList();
         uiGearList.SetSaveGearDataList(SaveLoadManager.Data.GearList);

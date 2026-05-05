@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Gear_A
-  m_EditorClassIdentifier: Assembly-CSharp::GachaGear
-  itemName: "\uC824\uB9AC\uD56D\uC544\uB9AC"
-  itemId: Item1
+  m_Name: Cookie_B
+  m_EditorClassIdentifier: Assembly-CSharp::GachaCookie
+  cookieName: Hero
+  cookieId: Cookie2
   weight: 10
-  Icon: {fileID: 8877155103068462111, guid: f9535f2028821ab46899de8e1443cd79, type: 3}
+  Icon: {fileID: 34664355856286608, guid: fcf6a1fa1997f584780f1f3273411131, type: 3}

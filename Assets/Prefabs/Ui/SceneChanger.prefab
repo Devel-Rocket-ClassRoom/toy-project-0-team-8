@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3952188912561225248}
   - component: {fileID: 7242597582833930819}
+  - component: {fileID: 2450288386097922244}
   m_Layer: 0
   m_Name: SceneChanger
-  m_TagString: Untagged
+  m_TagString: SceneManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,3 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae910561bb89e438515dc574f2d9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
+--- !u!114 &2450288386097922244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265799766583747759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde7f7ba61d936141a915386f06c838b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GachaManager
+  itemList:
+  - {fileID: 11400000, guid: 7ede5e01228d48a4fbb0cc40b5434967, type: 2}
+  - {fileID: 11400000, guid: 0afc396d7f8d20a4b9057ff0416314fd, type: 2}
+  - {fileID: 11400000, guid: 6bb0815bbdf52cf489c0cc97278d3a59, type: 2}
+  cookieList:
+  - {fileID: 11400000, guid: 06887c102ac6f0c488bdd167f3d7b0cc, type: 2}
+  - {fileID: 11400000, guid: 9d5ad74b5eaca0349ae822248989d576, type: 2}
+  - {fileID: 11400000, guid: e0a892adaf50ece4c8491e12b9b58ee2, type: 2}

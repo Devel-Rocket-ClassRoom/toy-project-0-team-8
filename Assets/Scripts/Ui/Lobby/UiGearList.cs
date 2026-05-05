@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UiGearList : MonoBehaviour
@@ -23,12 +25,26 @@ public class UiGearList : MonoBehaviour
     // 데이터 갱신을 위한 이벤트
     public UnityEvent onUpdateSlot;
     public UnityEvent<UiGearSlot> onSelectSlot;
+    public UnityEvent<UiGearSlot> onEquipSlot;
 
     public EquipObject equip;
 
     private void OnSelectSlot(UiGearSlot saveGear)
     {
         Debug.Log(saveGear);
+
+        // 준비 씬일때만 호출
+        if (SceneManager.GetActiveScene().name == "ReadyScene")
+        { 
+            equip.gameObject.SetActive(true);
+            EquipGear(saveGear); 
+        }
+
+    }
+
+    public void EquipGear(UiGearSlot saveGear)
+    {
+
         if (equip.saveGear == null)
         {
             Debug.LogWarning("Equip.saveGear가 null이라 런타임에서 생성합니다.");
@@ -49,9 +65,7 @@ public class UiGearList : MonoBehaviour
             equip.saveGear[0].selectMark.enabled = false;
             equip.saveGear.RemoveAt(0);
 
-
         }
-
     }
     private void Start()
     {
@@ -68,6 +82,7 @@ public class UiGearList : MonoBehaviour
     {
 
         saveGearDataList = source.ToList();
+        Debug.Log($"SaveGearDataList {saveGearDataList.Count}.");
         UpdateSlots();
     }
 

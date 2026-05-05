@@ -13,7 +13,6 @@ public enum Grade
 
 public static class Variables
 {
-    public static event System.Action OnLanguageChanged;
     private static DataType dataType = DataType.Cookie;
 
     public static DataType DataTypes
@@ -31,7 +30,6 @@ public static class Variables
 
             dataType = value;
             DataTableManager.ChangeDataType(dataType);
-            OnLanguageChanged?.Invoke();
         }
     }
 
