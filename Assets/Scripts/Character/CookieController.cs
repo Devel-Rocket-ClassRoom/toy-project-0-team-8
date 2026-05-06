@@ -49,6 +49,9 @@ public class CookieController : MonoBehaviour {
 	[Header("=== 체력바 관련 Image ===")]
 	[SerializeField] private Image _hpBar;
 	[SerializeField] private Image _additionalHpBar;
+	[SerializeField] private Image _healthBarShine;
+
+	[Header("=== 능력치 표시 바 ===")]
 	[SerializeField] private Image _abilityProgressBar;
 	
 	[Header("=== 점프, 슬라이드 버튼 ===")]
@@ -261,8 +264,15 @@ public class CookieController : MonoBehaviour {
 		// UI도 줄이고, 위치 설정
 		_hpBar.fillAmount = UiHpPercent;
 		// 추가체력 위치 설정시에는 체력바 줄어든 값에 맞춰서 배치
-		_additionalHpBar.rectTransform.anchoredPosition = new Vector2(_hpBar.rectTransform.anchoredPosition.x + _hpBar.rectTransform.sizeDelta.x * UiHpPercent, _additionalHpBar.rectTransform.anchoredPosition.y); 
+		_additionalHpBar.rectTransform.anchoredPosition = new Vector2(
+																	_hpBar.rectTransform.anchoredPosition.x +
+																	_hpBar.rectTransform.sizeDelta.x * UiHpPercent,
+																	_additionalHpBar.rectTransform.anchoredPosition.y);
 		_additionalHpBar.fillAmount = AdditionalHpPercent;
+		// 추가체력 위치까지 고려해서 Shine 배치
+		_healthBarShine.rectTransform.anchoredPosition = new Vector2(_additionalHpBar.rectTransform.anchoredPosition.x +
+		                                                             _additionalHpBar.rectTransform.sizeDelta.x * AdditionalHpPercent - 20,
+																	 _healthBarShine.rectTransform.anchoredPosition.y);
 		// ProgressBar 사용한다면, 현재 진행도 값으로 ProgressbarAmount 수정
 		if (_cookieBehavior.UseAbilityProgressBar) {
 			_abilityProgressBar.fillAmount = _cookieBehavior.GetProgressbarAmount();

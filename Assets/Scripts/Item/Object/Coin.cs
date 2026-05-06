@@ -1,16 +1,8 @@
-using UnityEngine;
-
-public class Coin : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class Coin : ItemBase {
+	private readonly int _coinAmount = 1;
+	
+	protected override float ItemDuration => 0f;
+	protected override void ApplyItemEffect(CookieController other) {
+		_gameManager.AddCoin(_coinAmount);
+	}
 }
