@@ -1,12 +1,4 @@
-﻿using UnityEngine;
-
-public class DashItem : ItemBase {
-	private GameManager _gameManager;
-
-	protected override void Awake() {
-		base.Awake();
-		_gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-	}
+﻿public class DashItem : ItemBase {
 	
 	protected override float ItemDuration => 5f;
 	protected override void ApplyItemEffect(CookieController other) {

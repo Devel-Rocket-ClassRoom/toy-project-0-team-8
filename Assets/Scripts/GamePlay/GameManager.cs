@@ -1,6 +1,6 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class GameManager : MonoBehaviour {
 	[Header("=== 사용될 CookieController ===")]
@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour {
 	[Header("=== 백그라운드 스크롤링 할 오브젝트 둘 ===")]
 	[SerializeField] private Background _backgroundRendererA;
 	[SerializeField] private Background _backgroundRendererB;
+
+	[Header("=== UI에 표시될 코인, 점수 텍스트 ===")]
+	[SerializeField] private TextMeshProUGUI _scoreText;
+	[SerializeField] private TextMeshProUGUI _earnedCoinText;
 
 	[Header("=== StageData 목록 ===")] 
 	[SerializeField] private StageData[] _stageDatas;
@@ -33,6 +37,9 @@ public class GameManager : MonoBehaviour {
 	private Coroutine _coDash;
 	
 	private float _giantGrowDuration = 0.5f;
+	
+	private int _score = 0;
+	private int _earnedCoin = 0;
 	
 	public bool ScrollObjectsFlag { get; set; } = true;
 	public bool GameEndFlag { get; set; } = false;
@@ -84,6 +91,10 @@ public class GameManager : MonoBehaviour {
 		} else {
 			InvisibleGround.SetActive(false);
 		}
+		
+		// 매 프레임 UI 갱신
+		_earnedCoinText.text = _earnedCoin.ToString("N0");
+		_scoreText.text = _score.ToString("N0");
 	}
 	
 	public void ActivateMagnet(float duration) {
@@ -153,4 +164,7 @@ public class GameManager : MonoBehaviour {
 		
 		_coDash = null;
 	}
+	
+	public void AddScore(int amount) => _score += amount;
+	public void AddCoin(int amount) => _earnedCoin += amount;
 }

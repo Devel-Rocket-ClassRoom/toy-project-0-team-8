@@ -4,6 +4,9 @@ using UnityEngine;
 public abstract class ItemBase : MonoBehaviour {
 	[HideInInspector] public Transform MagnetTarget = null;
 	[HideInInspector] public float _magnetSpeed = 5f;
+	
+	protected GameManager _gameManager;
+	
 	protected abstract float ItemDuration { get; }
 	
 	protected virtual void Update() {
@@ -44,5 +47,6 @@ public abstract class ItemBase : MonoBehaviour {
 
 	protected virtual void Awake() {
 		transform.tag = Tags.Item;
+		_gameManager = GameObject.FindWithTag(Tags.GameManager).GetComponent<GameManager>();
 	}
 }
