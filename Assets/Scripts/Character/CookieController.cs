@@ -237,8 +237,8 @@ public class CookieController : MonoBehaviour {
 		_ignoreGroundTimer += Time.deltaTime;
 		
 		// 점프 요청되었다면 점프
-		if (_jumpRequested && JumpEnabled) {
-			if (_state == CookieState.Run || _state == CookieState.Slide || _state == CookieState.Death) {
+		if (_jumpRequested && JumpEnabled && _state != CookieState.Death) {
+			if (_state == CookieState.Run || _state == CookieState.Slide) {
 				_ignoreGroundTimer = 0f;
 				_state = CookieState.Jump;
 				_cookieBehavior.StartJumpAnimation();
