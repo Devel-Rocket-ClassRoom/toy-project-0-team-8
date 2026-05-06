@@ -16,4 +16,4 @@ MonoBehaviour:
   stageLength: 500
   scrollSpeed: 10
   background: {fileID: -4448238061107810689, guid: fb73a2fba7a14dd4d980d188e9923a83, type: 3}
-  stagePrefab: {fileID: 0}
+  stagePrefab: {fileID: 8451582715555078851, guid: 9373c2d23b044f747939f53978347437, type: 3}

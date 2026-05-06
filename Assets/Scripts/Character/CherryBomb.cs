@@ -21,12 +21,12 @@ public class CherryBomb : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Hurdle")) //장애물 이름 뭘로할지 몰라 임시
+        if (other.CompareTag("Obstacle")) // 시간이 안지나도 장애물 닿을시 파괴 
         {
-            Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            Effect();
             isExploded = true;
             SpawnJelly();
-            bombAudio.Play();
+            AudioSource.PlayClipAtPoint(bombAudio.clip, transform.position);
             Destroy(gameObject);
         }
     }
@@ -34,7 +34,7 @@ public class CherryBomb : MonoBehaviour
     {
         int jellycount = 12;
         int count = 0;
-        while(count<3) // 젤리를 원모양으로 3번 생성 원크기가 늘어남에 따라 반지름 증가
+        while(count<3) // 젤리를 원모양으로 3번 생성 젤리가 늘어남에 따라 반지름 증가
         {
             for (int i = 0; i < jellycount; i++)
             {
@@ -55,13 +55,18 @@ public class CherryBomb : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         if(!isExploded)
         {
-            isExploded=true;
-            if(effectPrefab != null)
-            Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            isExploded =true;
+            if (effectPrefab != null)
+                Effect();
             SpawnJelly();
-            bombAudio.Play();
+            AudioSource.PlayClipAtPoint(bombAudio.clip, transform.position);
             Destroy(gameObject);
         }
+    }
+    public void Effect()
+    {
+        GameObject eft = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+        Destroy(eft,3f);
     }
 
 }

@@ -41,6 +41,31 @@ public class GachaManager : MonoBehaviour
         }
         return null;
     }
+    public GachaCookie GachaCookies()
+    {
+        totalWeight = 0f;
+        foreach (var item in cookieList)
+        {
+            totalWeight += item.weight;
+        }
+        float pivot = Random.Range(0, totalWeight);
+        for (int i = 0; i < cookieList.Count; i++)
+        {
+            if (pivot <= cookieList[i].weight)
+            {
+                lastIndex = i;
+                break;
+            }
+            pivot -= cookieList[i].weight;
+        }
+        if(lastIndex != -1)
+        {
+            GachaCookie result = cookieList[lastIndex];
+            dropHistoryCookie.Add(result);
+            return result;
+        }
+        return null;
+    }
 
 
     // 유료에셋이 있어서 기존에 쓰던 Resources.Load로 불러오는 방식은 못 씀..
