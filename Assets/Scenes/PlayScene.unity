@@ -1641,10 +1641,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2615641987897293069, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Constraints
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4452933684968082351, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_Name
       value: BaseCookie
       objectReference: {fileID: 0}
+    - target: {fileID: 5305658334026297100, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6805693047356623700, guid: a0489b6321f71d04c8ed72af37c2dd7c, type: 3}
     - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: _hpBar
       value: 

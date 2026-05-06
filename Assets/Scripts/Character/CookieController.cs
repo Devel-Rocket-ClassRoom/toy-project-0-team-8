@@ -17,7 +17,14 @@ public class CookieController : MonoBehaviour {
 	private readonly float _godModeDuration = 2f;
 	private bool _isGodMode = false;
 	private bool _isDashing = false;
+	private bool _isGiantMode = false;
 	public bool IsGodMode => _isGodMode;
+
+	public bool IsGiantMode {
+		get => _isGiantMode;
+		set => _isGiantMode = value;
+	}
+
 	public bool IsDashing {
 		get => _isDashing;
 		set {
@@ -79,8 +86,8 @@ public class CookieController : MonoBehaviour {
 	private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYDiff = -0.425f;
 	
-	private readonly float _standingColliderYSize = 1.69f;
-	private readonly float _slidingColliderYSize = 1.1f;
+	private readonly float _standingColliderYSize = 1.5f;
+	private readonly float _slidingColliderYSize = 0.7f;
 	
 	private Coroutine _coGodMode;
 	
@@ -134,6 +141,10 @@ public class CookieController : MonoBehaviour {
 		OnJumpKeyDown.AddListener(RequestJump);
 		OnSlideKeyDown.AddListener(RequestSlidingStart);
 		OnSlideKeyUp.AddListener(RequestSlidingEnd);
+		// 슬라이드 누르고 있으면 땅에 내리자마자 슬라이딩
+		WhileSlideKeyPressed.AddListener(() => {
+			if (_state == CookieState.Run) { RequestSlidingStart(); }
+		});
 		
 		// 능력 진행도 바를 사용한다면 활성화, 안한다면 비활성화
 		_abilityProgressBar.gameObject.SetActive(_cookieBehavior.UseAbilityProgressBar);
@@ -204,6 +215,20 @@ public class CookieController : MonoBehaviour {
 			Debug.Log($"바닥에 떨어짐");
 			TakeDamage(20f);
 			transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
+		}
+		
+		// 장애물과 충돌하면 무적 판정 실행하고, 체력 깎기
+		if (other.CompareTag(Tags.Obstacle)) {
+			// 무적 상태라면, 데미지 받지 않음
+			if (IsGodMode) { return; }
+			// 대쉬 혹은 거인화 상태라면, 부수고 지나감
+			if (IsDashing || IsGiantMode) {
+				Destroy(other.gameObject);
+				return;
+			}
+			
+			// 다 아니라면 데미지 받기
+			TakeDamage(20);
 		}
 	}
 
