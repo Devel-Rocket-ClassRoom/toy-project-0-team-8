@@ -10,6 +10,7 @@ TagManager:
   - GameManager
   - Drop
   - Platform
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -46,6 +47,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Item
+    uniqueID: 1015660747
     locked: 0
   - name: Character
     uniqueID: 3328285513
