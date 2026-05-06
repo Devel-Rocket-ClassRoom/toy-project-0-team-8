@@ -9,6 +9,11 @@ public class HeroCookie : CookieBehavior
     public float Health = 100f;
     public int ChargeStack;
     private int maxStack;
+
+    public float flyUpForce = 15f;
+    public float maxUpwardVelocity = 8f;
+
+
     // 종료 로직과 시간을 같이 담을 튜플 ... 구조체로 받을 방법 없나? 다른 요소가 필요할 수도 있으니
     private (Action<GameObject>, float) ActiveItem;
     // 를 담을 리스트. 갱신과 종료가 각자 돼야하니
@@ -46,7 +51,13 @@ public class HeroCookie : CookieBehavior
         if (ChargeStack == 5 || Input.GetKeyDown(KeyCode.Alpha1))
         {
             _controller.JumpEnabled = false;
+            _controller.SlideEnabled = false;
             Transformation();
+        }
+
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            OnSkill();
         }
 
     }
@@ -57,25 +68,39 @@ public class HeroCookie : CookieBehavior
 
         if(coSkillAnim == null)
         {
+            StopAllCoroutines();
             StartCoroutine(coSkill());
         }
     }
 
     IEnumerator coSkill()
     {
+
         while (true)
         {
             if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Run")
             {
                 ChargeStack = 0;
                 coSkillAnim = null;
+
+                _controller.JumpEnabled = true;
+                _controller.SlideEnabled = true;
                 break;
             }
             yield return null;
         }
 
-        
     }
+
+    public void OnSkill()
+    {
+        if (rb.linearVelocity.y < maxUpwardVelocity)
+        {
+            rb.AddForce(Vector3.up * flyUpForce, ForceMode2D.Force);
+        }
+    }
+
+
     // 애니메이션 이벤트
     public void Fallen()
     {
