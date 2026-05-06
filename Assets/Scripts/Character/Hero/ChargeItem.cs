@@ -1,15 +1,20 @@
 using UnityEngine;
 
-public class ChargeItem : MonoBehaviour
+public class ChargeItem : ItemBase
 {
     private int stack;
-    public void OnTriggerEnter2D(Collider2D collision)
+
+    protected override float ItemDuration => 0.5f;
+
+    protected override void ApplyItemEffect(CookieController other)
     {
-        if(collision.CompareTag("Player"))
-        {
-            stack = collision.gameObject.GetComponent<HeroCookie>().ChargeStack;
-            if (stack < 5)
-                collision.gameObject.GetComponent<HeroCookie>().ChargeStack += 1;
-        }
+        stack = other.GetComponent<HeroCookie>().ChargeStack;
+        if (stack < 5)
+            other.GetComponent<HeroCookie>().ChargeStack += 1;
+    }
+
+    protected override void RemoveItemEffect(CookieController other)
+    {
+        
     }
 }

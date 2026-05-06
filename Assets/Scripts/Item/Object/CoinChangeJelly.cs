@@ -10,7 +10,7 @@ public class CoinChangeJelly : ItemBase
         TransformArea = GameObject.FindAnyObjectByType<CoinChanger>(FindObjectsInactive.Include).gameObject;
     }
 
-    protected override float ItemDuration => 0f;
+    protected override float ItemDuration => 0.5f;
 
     protected override void ApplyItemEffect(CookieController other)
     {
