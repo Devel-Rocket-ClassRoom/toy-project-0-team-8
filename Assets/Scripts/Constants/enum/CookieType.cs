@@ -1,5 +1,6 @@
 ﻿public enum CookieType {
 	Pirate,
 	Hero,
-	Hero_Suit
+	Cherry,
+	Hero_Suit,
 }
