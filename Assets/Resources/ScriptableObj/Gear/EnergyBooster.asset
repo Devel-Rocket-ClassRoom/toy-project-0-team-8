@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8857a0f44d04e14ea5388d14ed3a7b9, type: 3}
-  m_Name: Gear_A
+  m_Name: EnergyBooster
   m_EditorClassIdentifier: Assembly-CSharp::GachaGear
-  itemName: "\uC824\uB9AC\uD56D\uC544\uB9AC"
-  itemId: Item1
+  itemName: "\uC5D0\uB108\uC9C0\uBD80\uC2A4\uD2B8"
+  itemId: Gear_EnergyBooster
   weight: 10
-  Icon: {fileID: 8877155103068462111, guid: f9535f2028821ab46899de8e1443cd79, type: 3}
+  Icon: {fileID: 6954644936596414839, guid: 406540c0c319a3e4fbfff99c11559cc6, type: 3}

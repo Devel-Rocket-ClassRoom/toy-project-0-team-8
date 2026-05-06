@@ -22,7 +22,9 @@ public class UiCategorySelect : MonoBehaviour
         DataTableManager.ChangeDataType(DataType.Cookie);
 
         SaveLoadManager.Load(0);
-        uiGearList.ClearList();
+        uiGearList.gameObject.SetActive(false);
+        uiCookieList.gameObject.SetActive(true);
+
         uiCookieList.SetSaveCookieDataList(SaveLoadManager.Data.CookieList);
 
     }
@@ -31,7 +33,9 @@ public class UiCategorySelect : MonoBehaviour
         DataTableManager.ChangeDataType(DataType.Gear);
 
         SaveLoadManager.Load(1);
-        uiCookieList.ClearList();
+        uiCookieList.gameObject.SetActive(false);
+        uiGearList.gameObject.SetActive(true);
+
         uiGearList.SetSaveGearDataList(SaveLoadManager.Data.GearList);
 
     }

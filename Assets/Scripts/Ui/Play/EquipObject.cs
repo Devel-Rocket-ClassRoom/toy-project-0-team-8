@@ -29,7 +29,7 @@ public class EquipObject : MonoBehaviour
             for(int i = 0; i < saveGear.Count; i++)
             {
                 if(Gear[i] != null)
-                    Gear[i].sprite = saveGear[i].SaveGearData.GearData.SpriteIcon;
+                    Gear[i].sprite = saveGear[i].GearData.Icon;
             }
         }
 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8857a0f44d04e14ea5388d14ed3a7b9, type: 3}
-  m_Name: Gear_C
+  m_Name: MagnetMachine
   m_EditorClassIdentifier: Assembly-CSharp::GachaGear
-  itemName: "\uC5D0\uB108\uC9C0\uBD80\uC2A4\uD2B8"
-  itemId: Item3
+  itemName: "\uC790\uC11D\uB85C\uBD07"
+  itemId: Gear_MagnetMachine
   weight: 10
-  Icon: {fileID: 6954644936596414839, guid: 406540c0c319a3e4fbfff99c11559cc6, type: 3}
+  Icon: {fileID: -8245842631113459091, guid: 8f6f2425becbbb747ae3cfed8d680034, type: 3}

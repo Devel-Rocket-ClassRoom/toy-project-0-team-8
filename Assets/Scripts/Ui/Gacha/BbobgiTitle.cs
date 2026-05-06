@@ -189,19 +189,19 @@ public class BbobgiTitle : GenericWindow
     }
     public void SaveReward()
     {
-        List<SaveGear> list = new List<SaveGear>();
+        SaveLoadManager.Data = new SaveDataVC();
 
-        for (int i = 0; i < rewardList.Count; i++)
+        foreach (GachaGear gear in rewardList)
         {
-            SaveGear newGear = new SaveGear();
-            newGear.GearData = DataTableManager.GearTable.Get(rewardList[i].itemId);
+            string gearId = gear.itemId;
 
-            list.Add(newGear);
+            if (SaveLoadManager.Data.GearList.ContainsKey(gearId))
+            {
+                SaveLoadManager.Data.GearList[gearId]++;
+            }
+            
 
         }
-
-        SaveLoadManager.Data = new SaveDataVC();
-        SaveLoadManager.Data.GearList = list;
 
         SaveLoadManager.Save(1);
     }
