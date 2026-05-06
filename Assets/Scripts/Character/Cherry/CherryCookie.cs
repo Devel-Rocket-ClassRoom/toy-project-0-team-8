@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using Unity.Properties;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CherryCookie : CookieBehavior
 {
@@ -55,6 +56,13 @@ public class CherryCookie : CookieBehavior
         JumpClip = Resources.Load<AudioClip>(_jumpAudioClip);
         SlideClip = Resources.Load<AudioClip>(_SlideAudioClip);
         cor = StartCoroutine(Cycle());
+    }
+
+    public override bool UseAbilityProgressBar => true;
+
+    public override float GetProgressbarAmount() {
+        Debug.LogWarning($"CookieBehavior 내부 GetProgressbarAmount 작성해주세요");
+        return 0f;
     }
 
     public override void StartJumpAnimation()

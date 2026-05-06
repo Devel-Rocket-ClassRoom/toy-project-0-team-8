@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
 	public bool GameEndFlag { get; set; } = false;
 
 	private void Start() {
-		CookieData data = DataTableManager.CookieTable.Get("Cookie_Hero");
+		CookieData data = DataTableManager.CookieTable.Get("Cookie_Pirate");
 		LoadCharacter(data);
 		LoadStage(_stageDatas[0]);
 		
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public void LoadCharacter(CookieData cookieData) {
-		_cookieController.Init(cookieData);
+		_cookieController.Init(cookieData, this);
 	}
 	
 	private void Update() {

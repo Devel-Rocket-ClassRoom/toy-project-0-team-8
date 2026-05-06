@@ -17,7 +17,8 @@ public class PirateCookieBehavior : CookieBehavior {
 	private GameObject _pirateShip;
 	
 	private readonly float _abilityPeriod = 15f;
-	private readonly float _abilityDuration = 10f;
+	private readonly float _abilityDuration = 2f;
+	private float _abilityTimer;
 	
 	private bool _isUsingAbility;
 	private bool _isFirstDeath = true;
@@ -26,6 +27,8 @@ public class PirateCookieBehavior : CookieBehavior {
 	private Coroutine _abilityCoroutine;
 	private Coroutine _reviveCoroutine;
 	
+	public override bool UseAbilityProgressBar => true;
+	
 	public override void Init(CookieController controller) {
 		base.Init(controller);
 		
@@ -33,16 +36,26 @@ public class PirateCookieBehavior : CookieBehavior {
 		
 		// 시작 시에, PirateShip 만들고 안보이는 상태로
 		_pirateShip = Instantiate(Resources.Load<GameObject>(_shipResourcePath));
+		_pirateShip.SetActive(false);
 		
 		// 특정 초마다 실행하도록 Coroutine 시작
 		_abilityCycleCoroutine = StartCoroutine(CoAbilityCycle());
 	}
-	
+
 	private IEnumerator CoAbilityCycle() {
 		while (true) {
-			// 특정 시간마다 능력 사용하도록
+			if (_abilityCoroutine != null) { StopCoroutine(_abilityCoroutine); }
 			_abilityCoroutine = StartCoroutine(CoAbility());
-			yield return new WaitForSeconds(_abilityPeriod);	
+			
+			// 특정 시간마다 능력 사용하도록
+			_abilityTimer = 0f;
+			while (true) {
+				_abilityTimer += Time.deltaTime;
+				yield return null;
+				if (_abilityTimer >= _abilityPeriod) {
+					break;
+				}
+			}
 		}
 	}
 	
@@ -65,7 +78,9 @@ public class PirateCookieBehavior : CookieBehavior {
 		
 		_pirateShip.SetActive(false);
 	}
-	
+
+	public override float GetProgressbarAmount() => _abilityTimer / _abilityPeriod;
+
 	public override void StartJumpAnimation() {
 		_animator.SetBool(_isJumping, true);
 	}
