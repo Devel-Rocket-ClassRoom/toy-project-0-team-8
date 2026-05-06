@@ -18,12 +18,25 @@ public class CookieController : MonoBehaviour {
 	
 	private bool _isGodMode = false;
 	
-	private UnityEvent OnTakeDamage;
+	[HideInInspector] public UnityEvent OnTakeDamage;
+	
+	// 이벤트 종류별로 모두 생성 (점프키 누르기, 떼기, 누르고있기, 슬라이드 누르기, 떼기, 누르고있기)
+	[HideInInspector] public UnityEvent OnJumpKeyDown;
+	[HideInInspector] public UnityEvent OnJumpKeyUp;
+	[HideInInspector] public UnityEvent WhileJumpKeyPressed;
+	[HideInInspector] public UnityEvent OnSlideKeyDown;
+	[HideInInspector] public UnityEvent OnSlideKeyUp;
+	[HideInInspector] public UnityEvent WhileSlideKeyPressed;
 	
 	[Header("=== 체력바 관련 Image ===")]
 	[SerializeField] private Image _hpBar;
 	[SerializeField] private Image _additionalHpBar;
 	
+	[Header("=== 점프, 슬라이드 버튼 ===")]
+	[SerializeField] public JumpButton JumpButton;
+	[SerializeField] public SlideButton SlideButton;
+
+	[Header("=== 단축키 ===")]
 	[SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 	[SerializeField] private KeyCode _slideKey = KeyCode.LeftControl;
 
@@ -93,6 +106,19 @@ public class CookieController : MonoBehaviour {
 		_cookieBehavior.Init(this);
 		_animator.runtimeAnimatorController = data.AnimatorController;
 		_cookieBehavior.StartRunAnimation();
+		
+		// 점프 및 슬라이드 버튼의 동작을 키와 동기화
+		JumpButton.OnButtonDown.AddListener(() => OnJumpKeyDown?.Invoke());
+		JumpButton.OnButtonUp.AddListener(() => OnJumpKeyUp?.Invoke());
+		JumpButton.WhileButtonPressed.AddListener(() => WhileJumpKeyPressed?.Invoke());
+		SlideButton.OnButtonDown.AddListener(() => OnSlideKeyDown?.Invoke());
+		SlideButton.OnButtonUp.AddListener(() => OnSlideKeyUp?.Invoke());
+		SlideButton.WhileButtonPressed.AddListener(() => WhileSlideKeyPressed?.Invoke());
+		
+		// 처음엔 점프 눌렀을 때 RequestJump, 슬라이드 누르고 뗄 때 Start, End만 넣음
+		OnJumpKeyDown.AddListener(RequestJump);
+		OnSlideKeyDown.AddListener(RequestSlidingStart);
+		OnSlideKeyUp.AddListener(RequestSlidingEnd);
 	}
 	
 	// 체력 감소
@@ -194,12 +220,15 @@ public class CookieController : MonoBehaviour {
 		_additionalHpBar.rectTransform.anchoredPosition = new Vector2(_hpBar.rectTransform.anchoredPosition.x + _hpBar.rectTransform.sizeDelta.x * UiHpPercent, _additionalHpBar.rectTransform.anchoredPosition.y); 
 		_additionalHpBar.fillAmount = AdditionalHpPercent;
 		
-		// Update에서는 점프 요청했는지 확인만, 물리 처리는 FixedUpdate에서
-		if (Input.GetKeyDown(_jumpKey)) { RequestJump(); }
+		// Update에서는 점프애 관련하여 요청했는지 확인만, 물리 처리는 FixedUpdate에서 수행
+		if (Input.GetKeyDown(_jumpKey)) { OnJumpKeyDown?.Invoke(); }
+		if (Input.GetKeyUp(_jumpKey)) { OnJumpKeyUp?.Invoke(); }
+		if (Input.GetKey(_jumpKey)) { WhileJumpKeyPressed?.Invoke(); }
 		// 슬라이드 키 누르면 슬라이드 시작		
-		if (Input.GetKeyDown(_slideKey)) { RequestSlidingStart(); }
+		if (Input.GetKeyDown(_slideKey)) { OnSlideKeyDown?.Invoke(); }
 		// 슬라이드 키 떼면 슬라이드 종료
-		if (Input.GetKeyUp(_slideKey)) { RequestSlidingEnd(); }
+		if (Input.GetKeyUp(_slideKey)) { OnSlideKeyUp?.Invoke(); }
+		if (Input.GetKey(_slideKey)) { WhileSlideKeyPressed?.Invoke(); }
 		
 		if (Input.GetKeyDown(KeyCode.A)) { GetAdditionalHealth(10); }
 	}
