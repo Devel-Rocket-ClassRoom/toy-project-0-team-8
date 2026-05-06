@@ -207,4 +207,8 @@ public class HeroCookie : CookieBehavior
         animator.SetTrigger("Dead");
         Die();
     }
+
+    public override void StartDashAnimation() {
+        throw new NotImplementedException();
+    }
 }

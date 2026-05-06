@@ -100,6 +100,11 @@ public class CherryCookie : CookieBehavior
         Alive = false;
         animator.SetTrigger(_isDie);
     }
+
+    public override void StartDashAnimation() {
+        throw new System.NotImplementedException();
+    }
+
     public IEnumerator Cycle()
     {
         while (Alive)

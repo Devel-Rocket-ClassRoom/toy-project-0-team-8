@@ -16,6 +16,18 @@ public class CookieController : MonoBehaviour {
 	
 	private readonly float _godModeDuration = 2f;
 	private bool _isGodMode = false;
+	private bool _isDashing = false;
+	public bool IsGodMode => _isGodMode;
+	public bool IsDashing {
+		get => _isDashing;
+		set {
+			// 대쉬 먹게 되었을 때, 뛰는 상태면 Dash로 애니메이션 바꿔주기
+			if (value && _state == CookieState.Run) { _cookieBehavior.StartDashAnimation(); }
+			// 대쉬 끝날 때, 뛰는 상태면 Run으로 애니메이션 변경
+			else if (!value && _state == CookieState.Run) { _cookieBehavior.StartRunAnimation(); }
+			_isDashing = value;
+		}
+	}
 	
 	[HideInInspector] public UnityEvent OnTakeDamage;
 	
@@ -105,7 +117,10 @@ public class CookieController : MonoBehaviour {
 		
 		_cookieBehavior.Init(this);
 		_animator.runtimeAnimatorController = data.AnimatorController;
-		_cookieBehavior.StartRunAnimation();
+		
+		// 시작 시에 달리기 상태로 시작
+		if (IsDashing) { _cookieBehavior.StartDashAnimation(); }
+		else { _cookieBehavior.StartRunAnimation(); }
 		
 		// 점프 및 슬라이드 버튼의 동작을 키와 동기화
 		JumpButton.OnButtonDown.AddListener(() => OnJumpKeyDown?.Invoke());
@@ -144,7 +159,6 @@ public class CookieController : MonoBehaviour {
 	}
 	
 	public IEnumerator CoGodMode() {
-		_gameManager.InvisibleGround.SetActive(true);
 		_isGodMode = true;
 		float godModeTimer = 0f;
 		
@@ -160,7 +174,6 @@ public class CookieController : MonoBehaviour {
 		}
 		
 		_spriteRenderer.enabled = true;
-		_gameManager.InvisibleGround.SetActive(false);
 		_isGodMode = false;
 	}
 	
@@ -180,7 +193,10 @@ public class CookieController : MonoBehaviour {
 		    _ignoreGroundTimer >= _ignoreGroundDuration) {
 			Debug.Log($"땅에 닿음");
 			_state = CookieState.Run;
-			_cookieBehavior.StartRunAnimation();
+			
+			// 대쉬중이라면 대쉬모션, 아니라면 일반모션
+			if (IsDashing) { _cookieBehavior.StartDashAnimation(); }
+			else { _cookieBehavior.StartRunAnimation(); }
 		}
 		
 		// 바닥으로 떨어지면 다시 위로 올려주기
@@ -239,7 +255,10 @@ public class CookieController : MonoBehaviour {
 		if (Input.GetKey(_slideKey)) { WhileSlideKeyPressed?.Invoke(); }
 		
 		// 임시. A키 누르면 임시 체력 생김
-		if (Input.GetKeyDown(KeyCode.A)) { GetAdditionalHealth(10); }
+		if (Input.GetKeyDown(KeyCode.A)) {
+			GetAdditionalHealth(10);
+			_gameManager.ActivateDash(5f);
+		}
 	}
 
 	private void FixedUpdate() {
