@@ -97,6 +97,10 @@ public class CherryCookie : CookieBehavior
         while (Alive)
         {
             yield return new WaitForSeconds(coolTime);
+            if(!Alive)
+            {
+                yield break;
+            }
             cor = StartCoroutine(Skill());
             coolTime -= 0.2f;
             if(coolTime < minCoolTIme)
