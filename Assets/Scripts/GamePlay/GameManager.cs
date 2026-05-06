@@ -104,9 +104,16 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private IEnumerator CoGiant(float duration) {
+		// 거인모드 활성화
+		_cookieController.IsGiantMode = true;
+		// 0.5초동안 커지기
 		yield return StartCoroutine(CoGrowToGiant(true));
+		// 기다리기
 		yield return new WaitForSeconds(duration);
+		// 0.5초동안 작아지기
 		yield return StartCoroutine(CoGrowToGiant(false));
+		// 거인모드 비활성화
+		_cookieController.IsGiantMode = false;
 		
 		_coGiant = null;
 	}
