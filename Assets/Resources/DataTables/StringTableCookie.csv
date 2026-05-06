@@ -1,7 +1,9 @@
 ﻿Id,String
-Cookie1Name,해적맛 쿠키
-Cookie2Name,히어로 쿠키
+PirateCookieName,해적맛 쿠키
+HeroCookieName,히어로 쿠키
 Cookie3Name,체리맛 쿠키
-Cookie1Desc,"히어로 쿠키는 배터리 젤리를 먹어서 게이지를 충전 할 수 있다. 충전 게이지가 최대가 됐을 때 히어로 슈트를 장착하여 빠르게 날 수 있다."
-Cookie2Desc,히어로 쿠키.
+HeroCookieDesc,"히어로 쿠키는 배터리 젤리를 먹어서 게이지를 충전 할 수 있다. 충전 게이지가 최대가 됐을 때 히어로 슈트를 장착하여 빠르게 날 수 있다."
+PirateCookieDesc,히어로 쿠키.
 Cookie3Desc,히어로 쿠키.
+CherryCookieName,체리맛 쿠키
+CherryCookieDesc,"체리맛 쿠키 는 일정 주기마다 폭탄을 던져 장애물 파괴 와 젤리를 생성한다."

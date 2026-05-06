@@ -9130,7 +9130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3422375651489457943}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: OnLobbyScene
         m_Mode: 1
@@ -15159,6 +15159,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa827a90845c02346871b93b67e09caf, type: 3}
+--- !u!114 &3422375651489457943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7242597582833930819, guid: aa827a90845c02346871b93b67e09caf, type: 3}
+  m_PrefabInstance: {fileID: 3422375651489457942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae910561bb89e438515dc574f2d9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

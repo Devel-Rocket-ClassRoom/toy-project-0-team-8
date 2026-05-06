@@ -3011,7 +3011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4313278095473410144, guid: 6797560fcf66c204f9446c9e2e3a813e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayScene
+      value: OnReadyScene
       objectReference: {fileID: 0}
     - target: {fileID: 4313278095473410144, guid: 6797560fcf66c204f9446c9e2e3a813e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

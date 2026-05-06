@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ba540adc56db0b459d63a4f0b58fbee, type: 3}
-  m_Name: Cookie_B
+  m_Name: PirateCookie
   m_EditorClassIdentifier: Assembly-CSharp::GachaCookie
-  cookieName: "\uD788\uC5B4\uB85C \uCFE0\uD0A4"
-  cookieId: Cookie2
+  cookieName: "\uD574\uC801 \uCFE0\uD0A4"
+  cookieId: Cookie_Pirate
   weight: 10
-  Icon: {fileID: 34664355856286608, guid: fcf6a1fa1997f584780f1f3273411131, type: 3}
+  Icon: {fileID: -5571975875243587367, guid: 70ebfad6acd0c5047a6a61f5a6636f1f, type: 3}
