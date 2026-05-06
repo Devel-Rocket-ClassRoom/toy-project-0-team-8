@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class HeroCookie : CookieBehavior
 {
     public float Health = 100f;
-
+    public int ChargeStack;
+    private int maxStack;
     // 종료 로직과 시간을 같이 담을 튜플 ... 구조체로 받을 방법 없나? 다른 요소가 필요할 수도 있으니
     private (Action<GameObject>, float) ActiveItem;
     // 를 담을 리스트. 갱신과 종료가 각자 돼야하니
@@ -24,6 +26,7 @@ public class HeroCookie : CookieBehavior
     private Vector3 originPos;
 
     private Coroutine coFallenAnim;
+    private Coroutine coSkillAnim;
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,16 +43,39 @@ public class HeroCookie : CookieBehavior
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (ChargeStack == 5 || Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _controller.JumpEnabled = false;
             Transformation();
+        }
 
     }
 
     private void Transformation()
     {
         animator.SetTrigger("Transformation");
+
+        if(coSkillAnim == null)
+        {
+            StartCoroutine(coSkill());
+        }
     }
 
+    IEnumerator coSkill()
+    {
+        while (true)
+        {
+            if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Run")
+            {
+                ChargeStack = 0;
+                coSkillAnim = null;
+                break;
+            }
+            yield return null;
+        }
+
+        
+    }
     // 애니메이션 이벤트
     public void Fallen()
     {
@@ -118,6 +144,7 @@ public class HeroCookie : CookieBehavior
         animator.SetBool("isGrounded", true);
         animator.SetBool("isDouble", false);
         animator.SetBool("isSlide", false);
+
     }
 
     public override void StartDoubleJumpAnimation()
