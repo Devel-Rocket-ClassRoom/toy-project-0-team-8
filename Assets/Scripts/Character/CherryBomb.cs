@@ -8,13 +8,14 @@ public class CherryBomb : MonoBehaviour
     public float jellyRadius = 1.5f;
     public float jellyAddRadius = 0.35f;
     private bool isExploded = false;
-
+    public AudioSource bombAudio;
     private Coroutine bombCor;
     private void OnEnable()
     {
         isExploded = false;
         if (bombCor != null)
             StopCoroutine(bombCor);
+        bombAudio = GetComponent<AudioSource>();
         bombCor = StartCoroutine(Bomb());
     }
 
@@ -25,6 +26,7 @@ public class CherryBomb : MonoBehaviour
             Instantiate(effectPrefab, transform.position, Quaternion.identity);
             isExploded = true;
             SpawnJelly();
+            bombAudio.Play();
             Destroy(gameObject);
         }
     }
@@ -57,6 +59,7 @@ public class CherryBomb : MonoBehaviour
             if(effectPrefab != null)
             Instantiate(effectPrefab, transform.position, Quaternion.identity);
             SpawnJelly();
+            bombAudio.Play();
             Destroy(gameObject);
         }
     }

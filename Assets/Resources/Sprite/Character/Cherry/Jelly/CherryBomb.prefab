@@ -52,6 +52,7 @@ MonoBehaviour:
   jellyPrefab: {fileID: 6475758118511651950, guid: acf56d1fdd1338c43a3309662cea4719, type: 3}
   jellyRadius: 0.45
   jellyAddRadius: 0.25
+  bombAudio: {fileID: 0}
 --- !u!212 &8239208661615089389
 SpriteRenderer:
   serializedVersion: 2
@@ -144,8 +145,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: dd5d147d697db8c48817cd56fc713528, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
