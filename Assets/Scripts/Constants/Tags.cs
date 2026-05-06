@@ -4,4 +4,5 @@
 	public static readonly string Ground = "Ground";
 	public static readonly string Obstacle = "Obstacle";
 	public static readonly string Drop = "Drop";
+	public static readonly string Item = "Item";
 }
