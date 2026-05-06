@@ -11,6 +11,7 @@ TagManager:
   - Drop
   - Platform
   - Item
+  - Area
   layers:
   - Default
   - TransparentFX
