@@ -16,7 +16,7 @@ public abstract class CookieBehavior : MonoBehaviour {
 	/// </summary>
 	public abstract bool UseAbilityProgressBar { get; }
 	/// <summary>
-	///  사용하는 경우에는, 0 ~ 1 사이 값으로 현재 진행도 바는 얼마의 값인가?
+	/// 사용하는 경우에는, 0 ~ 1 사이 값으로 현재 진행도 바는 얼마의 값인가?
 	/// </summary>
 	public abstract float GetProgressbarAmount();
 	public abstract void StartJumpAnimation();

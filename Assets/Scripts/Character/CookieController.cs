@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.LowLevelPhysics2D;
 using UnityEngine.UI;
 
 // 모든 쿠키가 베이스로 사용할 클래스입니다.
@@ -18,11 +17,14 @@ public class CookieController : MonoBehaviour {
 	private readonly float _godModeDuration = 2f;
 	private bool _isGodMode = false;
 	private bool _isDashing = false;
+	public bool IsGodMode => _isGodMode;
 	public bool IsDashing {
 		get => _isDashing;
 		set {
 			// 대쉬 먹게 되었을 때, 뛰는 상태면 Dash로 애니메이션 바꿔주기
 			if (value && _state == CookieState.Run) { _cookieBehavior.StartDashAnimation(); }
+			// 대쉬 끝날 때, 뛰는 상태면 Run으로 애니메이션 변경
+			else if (!value && _state == CookieState.Run) { _cookieBehavior.StartRunAnimation(); }
 			_isDashing = value;
 		}
 	}
@@ -157,7 +159,6 @@ public class CookieController : MonoBehaviour {
 	}
 	
 	public IEnumerator CoGodMode() {
-		_gameManager.InvisibleGround.SetActive(true);
 		_isGodMode = true;
 		float godModeTimer = 0f;
 		
@@ -173,7 +174,6 @@ public class CookieController : MonoBehaviour {
 		}
 		
 		_spriteRenderer.enabled = true;
-		_gameManager.InvisibleGround.SetActive(false);
 		_isGodMode = false;
 	}
 	

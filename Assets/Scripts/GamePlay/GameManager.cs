@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class GameManager : MonoBehaviour {
 	[Header("=== 사용될 CookieController ===")]
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] private StageData[] _stageDatas;
 	[SerializeField] public GameObject InvisibleGround;
 	
+	private float _initialScrollSpeed;
+	private Vector3 _initialCookieScale;
 	private readonly float _giantScaleMultiplier = 3f;
 	private readonly float _dashSpeedMultiplier = 1.5f;
 	
@@ -35,12 +38,19 @@ public class GameManager : MonoBehaviour {
 	public bool GameEndFlag { get; set; } = false;
 
 	private void Start() {
-		CookieData data = DataTableManager.CookieTable.Get("Cookie_Hero");
+		Init();
+	}
+	
+	public void Init() {
+		CookieData data = DataTableManager.CookieTable.Get("Cookie_Pirate");
 		LoadCharacter(data);
 		LoadStage(_stageDatas[0]);
 		
 		MagnetArea.gameObject.SetActive(false);
 		InvisibleGround.SetActive(false);
+		
+		_initialCookieScale = _cookieController.transform.localScale;
+		_initialScrollSpeed = _scrollSpeed;
 	}
 
 	public void LoadStage(StageData stageData) {
@@ -59,11 +69,20 @@ public class GameManager : MonoBehaviour {
 	
 	private void Update() {
 		if (_currentStage ==null) return;
+		
+		// 스크롤을 진행해야 한다면, 스크롤 진행
 		if (ScrollObjectsFlag && !GameEndFlag) {
 			_backgroundRendererA.transform.position += Vector3.left * _scrollSpeed * Time.deltaTime;
 			_backgroundRendererB.transform.position += Vector3.left * _scrollSpeed * Time.deltaTime;
 			// StageRoot위에 Prefab을 생성하고, StageRoot를 밀면서 맵 진행 처리
 			_stageRoot.position += Vector3.left * _scrollSpeed * Time.deltaTime;	
+		}
+		
+		// 무적이거나, 대쉬중이면 투명 바닥 활성화
+		if (_cookieController.IsDashing || _cookieController.IsGodMode) {
+			InvisibleGround.SetActive(true);
+		} else {
+			InvisibleGround.SetActive(false);
 		}
 	}
 	
@@ -92,19 +111,23 @@ public class GameManager : MonoBehaviour {
 		_coGiant = null;
 	}
 	
+	// 0.5초동안 줄어들기, 커지기 애니메이션 등장
 	private IEnumerator CoGrowToGiant(bool beBigger) {
 		float growTimer = 0f;
 		Vector3 startScale = _cookieController.transform.localScale;
-		Vector3 endScale = beBigger ? startScale * _giantScaleMultiplier : startScale / _giantScaleMultiplier; 
+		Vector3 endScale = beBigger ? _initialCookieScale * _giantScaleMultiplier : _initialCookieScale; 
 		
 		while (growTimer <= _giantGrowDuration) {
 			growTimer += Time.deltaTime;
 			_cookieController.transform.localScale = Vector3.Lerp(startScale, endScale, growTimer / _giantGrowDuration);
 			yield return null;
 		}
+		
+		_cookieController.transform.localScale = endScale;
 	}
 	
 	public void ActivateDash(float duration) {
+		if (_coDash != null) StopCoroutine(_coDash);
 		_coDash = StartCoroutine(CoDash(duration));
 	}
 	
@@ -112,17 +135,15 @@ public class GameManager : MonoBehaviour {
 		// IsDashing 활성화
 		_cookieController.IsDashing = true;
 		// 스크롤 속도 높이기
-		_scrollSpeed *= _dashSpeedMultiplier;
-		// 투명 바닥 활성화
-		InvisibleGround.SetActive(true);
+		_scrollSpeed = _initialScrollSpeed *_dashSpeedMultiplier;
 		
 		yield return new WaitForSeconds(duration);
 		
 		// IsDashing 비활성화
 		_cookieController.IsDashing = false;
 		// 스크롤 속도 원상복귀
-		_scrollSpeed /= _dashSpeedMultiplier;
-		// 투명 바닥 비활성화
-		InvisibleGround.SetActive(false);
+		_scrollSpeed = _initialScrollSpeed;
+		
+		_coDash = null;
 	}
 }
