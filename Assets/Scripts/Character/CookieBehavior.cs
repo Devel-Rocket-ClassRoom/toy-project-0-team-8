@@ -19,16 +19,12 @@ public abstract class CookieBehavior : MonoBehaviour {
 	///  사용하는 경우에는, 0 ~ 1 사이 값으로 현재 진행도 바는 얼마의 값인가?
 	/// </summary>
 	public abstract float GetProgressbarAmount();
-	
 	public abstract void StartJumpAnimation();
-	
 	public abstract void StartRunAnimation();
-	
 	public abstract void StartDoubleJumpAnimation();
-	
 	public abstract void StartSlidingAnimation();
-	
 	public abstract void StartDeathAnimation();
+	public abstract void StartDashAnimation();
 	
 	// 캐릭터가 사망했는지 아닌지 체크하기 위함. 특정 쿠키는 능력 사용중에 죽으면 안되고, 누구는 죽으면 살아나고 해야 해서 공통 로직으로 분리하였음
 	// 별도 사망 미루기 로직이 없다면, 재구현 안해도 됨

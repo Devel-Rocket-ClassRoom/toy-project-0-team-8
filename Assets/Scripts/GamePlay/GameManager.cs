@@ -19,13 +19,15 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] private StageData[] _stageDatas;
 	[SerializeField] public GameObject InvisibleGround;
 	
-	private readonly float _scaleMultiplier = 3f;
+	private readonly float _giantScaleMultiplier = 3f;
+	private readonly float _dashSpeedMultiplier = 1.5f;
 	
 	private StageData _currentStage;
-	private float scrollSpeed;
+	private float _scrollSpeed;
 	
 	private Coroutine _coMagnet;
 	private Coroutine _coGiant;
+	private Coroutine _coDash;
 	
 	private float _giantGrowDuration = 0.5f;
 	
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour {
 
 	public void LoadStage(StageData stageData) {
 		_currentStage = stageData;
-		scrollSpeed = stageData.scrollSpeed;
+		_scrollSpeed = stageData.scrollSpeed;
 		
 		_backgroundRendererA.Init(stageData.background, true);
 		_backgroundRendererB.Init(stageData.background, false);
@@ -58,10 +60,10 @@ public class GameManager : MonoBehaviour {
 	private void Update() {
 		if (_currentStage ==null) return;
 		if (ScrollObjectsFlag && !GameEndFlag) {
-			_backgroundRendererA.transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
-			_backgroundRendererB.transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
+			_backgroundRendererA.transform.position += Vector3.left * _scrollSpeed * Time.deltaTime;
+			_backgroundRendererB.transform.position += Vector3.left * _scrollSpeed * Time.deltaTime;
 			// StageRoot위에 Prefab을 생성하고, StageRoot를 밀면서 맵 진행 처리
-			_stageRoot.position += Vector3.left * scrollSpeed * Time.deltaTime;	
+			_stageRoot.position += Vector3.left * _scrollSpeed * Time.deltaTime;	
 		}
 	}
 	
@@ -93,12 +95,34 @@ public class GameManager : MonoBehaviour {
 	private IEnumerator CoGrowToGiant(bool beBigger) {
 		float growTimer = 0f;
 		Vector3 startScale = _cookieController.transform.localScale;
-		Vector3 endScale = beBigger ? startScale * _scaleMultiplier : startScale / _scaleMultiplier; 
+		Vector3 endScale = beBigger ? startScale * _giantScaleMultiplier : startScale / _giantScaleMultiplier; 
 		
 		while (growTimer <= _giantGrowDuration) {
 			growTimer += Time.deltaTime;
 			_cookieController.transform.localScale = Vector3.Lerp(startScale, endScale, growTimer / _giantGrowDuration);
 			yield return null;
 		}
+	}
+	
+	public void ActivateDash(float duration) {
+		_coDash = StartCoroutine(CoDash(duration));
+	}
+	
+	private IEnumerator CoDash(float duration) {
+		// IsDashing 활성화
+		_cookieController.IsDashing = true;
+		// 스크롤 속도 높이기
+		_scrollSpeed *= _dashSpeedMultiplier;
+		// 투명 바닥 활성화
+		InvisibleGround.SetActive(true);
+		
+		yield return new WaitForSeconds(duration);
+		
+		// IsDashing 비활성화
+		_cookieController.IsDashing = false;
+		// 스크롤 속도 원상복귀
+		_scrollSpeed /= _dashSpeedMultiplier;
+		// 투명 바닥 비활성화
+		InvisibleGround.SetActive(false);
 	}
 }

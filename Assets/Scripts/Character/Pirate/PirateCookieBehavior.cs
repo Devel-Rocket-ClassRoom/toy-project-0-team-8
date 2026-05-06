@@ -9,6 +9,7 @@ public class PirateCookieBehavior : CookieBehavior {
 	private readonly int _isJumping = Animator.StringToHash("isJumping");
 	private readonly int _isSliding = Animator.StringToHash("isSliding");
 	private readonly int _isDoubleJumping = Animator.StringToHash("isDoubleJumping");
+	private readonly int _isDashing = Animator.StringToHash("isDashing");
 	private readonly int Disappear = Animator.StringToHash("Disappear");
 	private readonly int Death = Animator.StringToHash("death");
 	
@@ -86,6 +87,7 @@ public class PirateCookieBehavior : CookieBehavior {
 	}
 	
 	public override void StartRunAnimation() {
+		_animator.SetBool(_isDashing, false);
 		_animator.SetBool(_isJumping, false);
 		_animator.SetBool(_isDoubleJumping, false);
 		_animator.SetBool(_isSliding, false);
@@ -102,7 +104,14 @@ public class PirateCookieBehavior : CookieBehavior {
 	public override void StartDeathAnimation() {
 		_animator.SetTrigger(Death);
 	}
-	
+
+	public override void StartDashAnimation() {
+		_animator.SetBool(_isDashing, true);
+		_animator.SetBool(_isJumping, false);
+		_animator.SetBool(_isDoubleJumping, false);
+		_animator.SetBool(_isSliding, false);
+	}
+
 	public override bool DeathCheck() {
 		// 부활해야 하는 사망
 		if (base.DeathCheck() && _isFirstDeath) {
