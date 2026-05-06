@@ -25,8 +25,8 @@ public class CookieController : MonoBehaviour {
 	[SerializeField] private KeyCode _slideKey = KeyCode.LeftControl;
 
 	[Header("=== 디버그용 변수 ===")]
-	[SerializeField] private float _jumpForce = 17f;
-	[SerializeField] private float _gravityScale = 5f;
+	[SerializeField] private float _jumpForce = 10f;
+	[SerializeField] private float _gravityScale = 3f;
 	[SerializeField] private float _healthReduceSpeed = 2f;
 	
 	// 점프하자마자 Ground와 착지 판정 생겨서 3단 점프 되는 문제 해결을 위함

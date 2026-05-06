@@ -1650,8 +1650,8 @@ MonoBehaviour:
   _additionalHpBar: {fileID: 403513912}
   _jumpKey: 32
   _slideKey: 306
-  _jumpForce: 17
-  _gravityScale: 5
+  _jumpForce: 10
+  _gravityScale: 3
   _healthReduceSpeed: 2
 --- !u!61 &2088064810
 BoxCollider2D:
