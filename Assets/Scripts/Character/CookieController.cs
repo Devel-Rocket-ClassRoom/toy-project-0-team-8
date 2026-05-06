@@ -38,6 +38,7 @@ public class CookieController : MonoBehaviour {
 	
 	private Rigidbody2D _rigidBody;
 	private BoxCollider2D _collider;
+	public BoxCollider2D Collider => _collider;
 	private CookieBehavior _cookieBehavior;
 	private Animator _animator;
 	private GameManager _gameManager;
