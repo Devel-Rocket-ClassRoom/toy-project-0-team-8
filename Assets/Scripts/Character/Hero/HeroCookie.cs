@@ -7,9 +7,6 @@ public class HeroCookie : CookieBehavior
 {
     public float Health = 100f;
 
-    private bool isGrounded = false;
-    private bool isSlide = false;
-
     // 종료 로직과 시간을 같이 담을 튜플 ... 구조체로 받을 방법 없나? 다른 요소가 필요할 수도 있으니
     private (Action<GameObject>, float) ActiveItem;
     // 를 담을 리스트. 갱신과 종료가 각자 돼야하니
@@ -24,8 +21,6 @@ public class HeroCookie : CookieBehavior
     private Animator animator;
     private BoxCollider2D col;
 
-    private Vector2 originOffset;
-    private Vector2 originSize;
     private Vector3 originPos;
 
     private Coroutine coFallenAnim;
@@ -39,8 +34,6 @@ public class HeroCookie : CookieBehavior
 
     void Start()
     {
-        originOffset = col.offset;
-        originSize = col.size;
         originPos = transform.position;
     }
 

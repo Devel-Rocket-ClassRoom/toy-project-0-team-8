@@ -13,9 +13,8 @@ public class test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
 
-            CookieDummy("Cookie1");
-            CookieDummy("Cookie2");
-            CookieDummy("Cookie3");
+            CookieDummy("Cookie_Pirate");
+            CookieDummy("Cookie_Hero");
 
 
             SaveLoadManager.Data = new SaveDataV1();
