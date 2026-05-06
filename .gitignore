@@ -123,6 +123,10 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 
+
+*.pdb
+*.pdb.meta
+
 ### Rider
 *.idea/
 
