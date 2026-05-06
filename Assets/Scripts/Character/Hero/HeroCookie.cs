@@ -8,10 +8,9 @@ public class HeroCookie : CookieBehavior
 {
     public float Health = 100f;
     public int ChargeStack;
-    private int maxStack;
 
     public float flyUpForce = 15f;
-    public float maxUpwardVelocity = 8f;
+    public float maxUpwardVelocity = 4f;
 
 
     // 종료 로직과 시간을 같이 담을 튜플 ... 구조체로 받을 방법 없나? 다른 요소가 필요할 수도 있으니
@@ -43,6 +42,7 @@ public class HeroCookie : CookieBehavior
     void Start()
     {
         originPos = transform.position;
+
     }
 
     // Update is called once per frame
@@ -50,14 +50,16 @@ public class HeroCookie : CookieBehavior
     {
         if (ChargeStack == 5 || Input.GetKeyDown(KeyCode.Alpha1))
         {
+            // 기존 조작 해제
+            _controller.WhileJumpKeyPressed.AddListener(OnSkill);
+            _controller.WhileSlideKeyPressed.AddListener(OnSkill);
             _controller.JumpEnabled = false;
             _controller.SlideEnabled = false;
-            Transformation();
-        }
 
-        if (Input.GetKey(KeyCode.Alpha2))
-        {
-            OnSkill();
+            // 점프 한번 되면서 변신
+            rb.AddForce(Vector3.up * flyUpForce, ForceMode2D.Force);
+            rb.gravityScale = 1;
+            Transformation();
         }
 
     }
@@ -66,7 +68,7 @@ public class HeroCookie : CookieBehavior
     {
         animator.SetTrigger("Transformation");
 
-        if(coSkillAnim == null)
+        if (coSkillAnim == null)
         {
             StopAllCoroutines();
             StartCoroutine(coSkill());
@@ -78,13 +80,17 @@ public class HeroCookie : CookieBehavior
 
         while (true)
         {
-            if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Run")
+            if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "FlyEnd")
             {
                 ChargeStack = 0;
                 coSkillAnim = null;
+                rb.gravityScale = 3;
 
                 _controller.JumpEnabled = true;
                 _controller.SlideEnabled = true;
+
+                _controller.WhileJumpKeyPressed.RemoveListener(OnSkill);
+                _controller.WhileSlideKeyPressed.RemoveListener(OnSkill);
                 break;
             }
             yield return null;
@@ -94,10 +100,14 @@ public class HeroCookie : CookieBehavior
 
     public void OnSkill()
     {
+
         if (rb.linearVelocity.y < maxUpwardVelocity)
         {
+            Debug.Log("비행");
             rb.AddForce(Vector3.up * flyUpForce, ForceMode2D.Force);
         }
+
+
     }
 
 
@@ -112,6 +122,7 @@ public class HeroCookie : CookieBehavior
 
     IEnumerator coFallen()
     {
+        rb.gravityScale = 0;
         Vector3 targetPos = originPos;
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
@@ -169,6 +180,7 @@ public class HeroCookie : CookieBehavior
         animator.SetBool("isGrounded", true);
         animator.SetBool("isDouble", false);
         animator.SetBool("isSlide", false);
+        rb.gravityScale = 3;
 
     }
 
