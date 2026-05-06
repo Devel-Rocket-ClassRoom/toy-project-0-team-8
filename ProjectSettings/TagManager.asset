@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - GameManager
   - Drop
+  - Platform
   layers:
   - Default
   - TransparentFX
