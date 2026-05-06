@@ -2,10 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class HeroCookie : CookieBehavior
 {
     public float Health = 100f;
+    public int ChargeStack;
+
+    public float flyUpForce = 15f;
+    public float maxUpwardVelocity = 4f;
+
 
     // 종료 로직과 시간을 같이 담을 튜플 ... 구조체로 받을 방법 없나? 다른 요소가 필요할 수도 있으니
     private (Action<GameObject>, float) ActiveItem;
@@ -24,6 +30,7 @@ public class HeroCookie : CookieBehavior
     private Vector3 originPos;
 
     private Coroutine coFallenAnim;
+    private Coroutine coSkillAnim;
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,20 +42,74 @@ public class HeroCookie : CookieBehavior
     void Start()
     {
         originPos = transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (ChargeStack == 5 || Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            // 기존 조작 해제
+            _controller.WhileJumpKeyPressed.AddListener(OnSkill);
+            _controller.WhileSlideKeyPressed.AddListener(OnSkill);
+            _controller.JumpEnabled = false;
+            _controller.SlideEnabled = false;
+
+            // 점프 한번 되면서 변신
+            rb.AddForce(Vector3.up * flyUpForce, ForceMode2D.Force);
+            rb.gravityScale = 1;
             Transformation();
+        }
 
     }
 
     private void Transformation()
     {
         animator.SetTrigger("Transformation");
+
+        if (coSkillAnim == null)
+        {
+            StopAllCoroutines();
+            StartCoroutine(coSkill());
+        }
     }
+
+    IEnumerator coSkill()
+    {
+
+        while (true)
+        {
+            if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "FlyEnd")
+            {
+                ChargeStack = 0;
+                coSkillAnim = null;
+                rb.gravityScale = 3;
+
+                _controller.JumpEnabled = true;
+                _controller.SlideEnabled = true;
+
+                _controller.WhileJumpKeyPressed.RemoveListener(OnSkill);
+                _controller.WhileSlideKeyPressed.RemoveListener(OnSkill);
+                break;
+            }
+            yield return null;
+        }
+
+    }
+
+    public void OnSkill()
+    {
+
+        if (rb.linearVelocity.y < maxUpwardVelocity)
+        {
+            Debug.Log("비행");
+            rb.AddForce(Vector3.up * flyUpForce, ForceMode2D.Force);
+        }
+
+
+    }
+
 
     // 애니메이션 이벤트
     public void Fallen()
@@ -61,6 +122,7 @@ public class HeroCookie : CookieBehavior
 
     IEnumerator coFallen()
     {
+        rb.gravityScale = 0;
         Vector3 targetPos = originPos;
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
@@ -118,6 +180,8 @@ public class HeroCookie : CookieBehavior
         animator.SetBool("isGrounded", true);
         animator.SetBool("isDouble", false);
         animator.SetBool("isSlide", false);
+        rb.gravityScale = 3;
+
     }
 
     public override void StartDoubleJumpAnimation()
