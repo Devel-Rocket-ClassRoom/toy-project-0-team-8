@@ -17,6 +17,7 @@ public class CherryCookie : CookieBehavior
     private readonly int _isDie = Animator.StringToHash("isDie");
     private readonly int _isMiddleRun = Animator.StringToHash("MiddleRun");
     private readonly int _isHappyRun = Animator.StringToHash("HappyRun");
+    private readonly int _isDash = Animator.StringToHash("isDash");
     private readonly string _jumpAudioClip = "Sprite/Character/Cherry/Sound/Ch28Jump";
     private readonly string _SlideAudioClip = "Sprite/Character/Cherry/Sound/Ch28slide";
     private readonly string _ThrowAudioClip = "Sprite/Character/Cherry/Sound/Cherry_Throwing_Normal";
@@ -36,6 +37,7 @@ public class CherryCookie : CookieBehavior
     public float maxCoolTIme = 8f;
     public float middleCoolTime = 6.5f;
     private float minCoolTIme = 5f;
+    private float time = 0;
 
     private void OnEnable()
     {
@@ -59,10 +61,18 @@ public class CherryCookie : CookieBehavior
     }
 
     public override bool UseAbilityProgressBar => true;
-
+    private void Update()
+    {
+        time += Time.deltaTime;
+        if (time > coolTime)
+        {
+            time = 0;
+        }
+        
+    }
     public override float GetProgressbarAmount() {
-        Debug.LogWarning($"CookieBehavior 내부 GetProgressbarAmount 작성해주세요");
-        return 0f;
+
+        return time / coolTime;
     }
 
     public override void StartJumpAnimation()
@@ -77,7 +87,8 @@ public class CherryCookie : CookieBehavior
         animator.SetBool(_isJumping, false);
         animator.SetBool(_isSliding, false);
         animator.SetBool(_isDoubleJumping, false);
-        animator.SetBool(_isGround, true);
+        animator.SetBool(_isDash, false);
+        animator.SetBool(_isGround,true);
     }
 
     public override void StartDoubleJumpAnimation()
@@ -102,9 +113,8 @@ public class CherryCookie : CookieBehavior
     }
 
     public override void StartDashAnimation() {
-        throw new System.NotImplementedException();
+        animator.SetBool(_isDash, true);
     }
-
     public IEnumerator Cycle()
     {
         while (Alive)
@@ -123,12 +133,12 @@ public class CherryCookie : CookieBehavior
             }
             if(coolTime <middleCoolTime&&coolTime>minCoolTIme)
             {
-                animator.SetFloat(_isMiddleRun, 1f);
+                animator.SetBool(_isMiddleRun, true);
             }
             if(coolTime ==minCoolTIme)
             {
-                animator.SetFloat(_isMiddleRun, 0f);
-                animator.SetFloat(_isHappyRun, 1f);
+                animator.SetBool(_isMiddleRun, false);
+                animator.SetBool(_isHappyRun, true);
                 normalSkill = false;
                 madSkill = true;
             }
@@ -138,8 +148,8 @@ public class CherryCookie : CookieBehavior
                 hit = false;
                 normalSkill = true;
                 madSkill=false;
-                animator.SetFloat(_isMiddleRun, 0f);
-                animator.SetFloat(_isHappyRun, 0f);
+                animator.SetBool(_isMiddleRun, false);
+                animator.SetBool(_isHappyRun, false);
 
             }
         }
