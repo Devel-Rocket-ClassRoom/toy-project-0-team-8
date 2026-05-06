@@ -1,24 +1,17 @@
-using System.Collections;
+using System;
 using UnityEngine;
 
-public class MagnetItem : MonoBehaviour
-{
-    public float duration = 3f;
-    public float distance = 5f;
+public class MagnetItem : ItemBase {
+    private GameManager _gameManager;
 
-    public IEnumerator SetActiveItem()
-    {
-        float t = 0;
+    protected override void Awake() {
+        base.Awake();
+        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+    }
 
-        while (t < 1)
-        {
-            t += Time.deltaTime / duration;
-            GameObject gameObject = GetComponent<GameObject>();
-            if (gameObject.CompareTag("Jelly"))
-            {
-                gameObject.transform.position = Vector3.Lerp(new Vector3(distance, distance, distance), transform.position, t);
-            }
-            yield return null;
-        }
+    protected override float ItemDuration => 5f;
+    
+    protected override void ApplyItemEffect(CookieController other) {
+        _gameManager.ActivateMagnet(ItemDuration);
     }
 }
