@@ -7,7 +7,7 @@ public class CoinChanger : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstarcle"))
+        if (collision.CompareTag("Obstacle"))
         {
             ConvertToCoins(collision);
         }
@@ -37,6 +37,6 @@ public class CoinChanger : MonoBehaviour
         }
 
         // 애니메이션 넣기
-        Destroy(gameObject);
+        Destroy(obstarcle.gameObject);
     }
 }

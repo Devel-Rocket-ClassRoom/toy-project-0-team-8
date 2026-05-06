@@ -17,4 +17,8 @@ public class CoinChangeJelly : ItemBase
         TransformArea.SetActive(true);
     }
 
+    protected override void RemoveItemEffect(CookieController other) 
+    {
+        TransformArea.SetActive(false);
+    }
 }
