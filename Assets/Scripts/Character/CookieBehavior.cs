@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class CookieBehavior : MonoBehaviour {
 	
@@ -9,6 +10,15 @@ public abstract class CookieBehavior : MonoBehaviour {
 		_controller = controller;
 		_gameManager = GameObject.FindWithTag(Tags.GameManager).GetComponent<GameManager>();
 	}
+	
+	/// <summary>
+	/// 능력이 얼마나 준비되었는지 보여주는 ProgressBar를 사용하는가?
+	/// </summary>
+	public abstract bool UseAbilityProgressBar { get; }
+	/// <summary>
+	///  사용하는 경우에는, 0 ~ 1 사이 값으로 현재 진행도 바는 얼마의 값인가?
+	/// </summary>
+	public abstract float GetProgressbarAmount();
 	
 	public abstract void StartJumpAnimation();
 	

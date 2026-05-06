@@ -15,7 +15,6 @@ public class CookieController : MonoBehaviour {
 	private float _additionalHp;
 	
 	private readonly float _godModeDuration = 2f;
-	
 	private bool _isGodMode = false;
 	
 	[HideInInspector] public UnityEvent OnTakeDamage;
@@ -31,6 +30,7 @@ public class CookieController : MonoBehaviour {
 	[Header("=== 체력바 관련 Image ===")]
 	[SerializeField] private Image _hpBar;
 	[SerializeField] private Image _additionalHpBar;
+	[SerializeField] private Image _abilityProgressBar;
 	
 	[Header("=== 점프, 슬라이드 버튼 ===")]
 	[SerializeField] public JumpButton JumpButton;
@@ -86,8 +86,8 @@ public class CookieController : MonoBehaviour {
 	private float AdditionalHpPercent => AdditionalHp / MaxAdditionalHp; 
 	
 	
-	public void Init(CookieData data) {
-		_gameManager = GameObject.FindWithTag(Tags.GameManager).GetComponent<GameManager>();
+	public void Init(CookieData data, GameManager gameManager) {
+		_gameManager = gameManager;
 		
 		MaxHp = data.Hp;
 		CurrentHp = MaxHp;
@@ -119,6 +119,9 @@ public class CookieController : MonoBehaviour {
 		OnJumpKeyDown.AddListener(RequestJump);
 		OnSlideKeyDown.AddListener(RequestSlidingStart);
 		OnSlideKeyUp.AddListener(RequestSlidingEnd);
+		
+		// 능력 진행도 바를 사용한다면 활성화, 안한다면 비활성화
+		_abilityProgressBar.gameObject.SetActive(_cookieBehavior.UseAbilityProgressBar);
 	}
 	
 	// 체력 감소
@@ -219,6 +222,11 @@ public class CookieController : MonoBehaviour {
 		// 추가체력 위치 설정시에는 체력바 줄어든 값에 맞춰서 배치
 		_additionalHpBar.rectTransform.anchoredPosition = new Vector2(_hpBar.rectTransform.anchoredPosition.x + _hpBar.rectTransform.sizeDelta.x * UiHpPercent, _additionalHpBar.rectTransform.anchoredPosition.y); 
 		_additionalHpBar.fillAmount = AdditionalHpPercent;
+		// ProgressBar 사용한다면, 현재 진행도 값으로 ProgressbarAmount 수정
+		if (_cookieBehavior.UseAbilityProgressBar) {
+			_abilityProgressBar.fillAmount = _cookieBehavior.GetProgressbarAmount();
+		}
+		
 		
 		// Update에서는 점프애 관련하여 요청했는지 확인만, 물리 처리는 FixedUpdate에서 수행
 		if (Input.GetKeyDown(_jumpKey)) { OnJumpKeyDown?.Invoke(); }
@@ -230,6 +238,7 @@ public class CookieController : MonoBehaviour {
 		if (Input.GetKeyUp(_slideKey)) { OnSlideKeyUp?.Invoke(); }
 		if (Input.GetKey(_slideKey)) { WhileSlideKeyPressed?.Invoke(); }
 		
+		// 임시. A키 누르면 임시 체력 생김
 		if (Input.GetKeyDown(KeyCode.A)) { GetAdditionalHealth(10); }
 	}
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
 
 public class HeroCookie : CookieBehavior
 {
@@ -167,6 +168,13 @@ public class HeroCookie : CookieBehavior
                 _activeItems.RemoveAt(i);
             }
         }
+    }
+
+    public override bool UseAbilityProgressBar { get; }
+
+
+    public override float GetProgressbarAmount() {
+        throw new NotImplementedException();
     }
 
     public override void StartJumpAnimation()
