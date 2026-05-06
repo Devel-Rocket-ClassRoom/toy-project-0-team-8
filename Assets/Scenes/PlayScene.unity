@@ -328,6 +328,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlideButton
   _cookieController: {fileID: 2088064809}
+  OnButtonDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonUp:
+    m_PersistentCalls:
+      m_Calls: []
   WhileButtonPressed:
     m_PersistentCalls:
       m_Calls: []
@@ -1176,6 +1182,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpButton
   _cookieController: {fileID: 2088064809}
+  OnButtonDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonUp:
+    m_PersistentCalls:
+      m_Calls: []
   WhileButtonPressed:
     m_PersistentCalls:
       m_Calls: []
@@ -1730,8 +1742,6 @@ MonoBehaviour:
   _stageRoot: {fileID: 1464115434}
   _backgroundRendererA: {fileID: 1812971359}
   _backgroundRendererB: {fileID: 1842556638}
-  JumpButton: {fileID: 969491471}
-  SlideButton: {fileID: 204089303}
   _stageDatas:
   - {fileID: 11400000, guid: 6823a161ae136bc4fbc98ab3980935af, type: 2}
   InvisibleGround: {fileID: 1628101516}
@@ -1831,8 +1841,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d88e76bf8a747669ccc0afc14b92bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookieController
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJumpKeyDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJumpKeyUp:
+    m_PersistentCalls:
+      m_Calls: []
+  WhileJumpKeyPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSlideKeyDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSlideKeyUp:
+    m_PersistentCalls:
+      m_Calls: []
+  WhileSlideKeyPressed:
+    m_PersistentCalls:
+      m_Calls: []
   _hpBar: {fileID: 65928756}
   _additionalHpBar: {fileID: 403513912}
+  JumpButton: {fileID: 969491471}
+  SlideButton: {fileID: 204089303}
   _jumpKey: 32
   _slideKey: 306
   _jumpForce: 10
