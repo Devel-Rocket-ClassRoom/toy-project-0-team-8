@@ -219,6 +219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2561756647003666238, guid: 5b325e79e75403a4b916fb2a3bbfedd5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4051375343010762199, guid: 299b9ee8608beaa41b07803e9f3acb2c, type: 3}
     - target: {fileID: 3832355978599105764, guid: 5b325e79e75403a4b916fb2a3bbfedd5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -263,6 +267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cherrry
       objectReference: {fileID: 0}
+    - target: {fileID: 5646925230405667871, guid: 5b325e79e75403a4b916fb2a3bbfedd5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 036212517e8020f43975cd1cfff6481e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

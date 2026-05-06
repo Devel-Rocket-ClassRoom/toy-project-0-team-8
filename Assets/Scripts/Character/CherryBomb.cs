@@ -17,6 +17,7 @@ public class CherryBomb : MonoBehaviour
             StopCoroutine(bombCor);
         bombCor = StartCoroutine(Bomb());
     }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Hurdle")) //장애물 이름 뭘로할지 몰라 임시
@@ -49,7 +50,7 @@ public class CherryBomb : MonoBehaviour
     }
     public IEnumerator Bomb() // 시간 지나면 터지도록 
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         if(!isExploded)
         {
             isExploded=true;

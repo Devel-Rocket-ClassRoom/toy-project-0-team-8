@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CherryCookieRun
+  m_Name: CherryJump
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,19 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 7372055386051288259, guid: 4b7e1bac28ad97841aacd686f73dfff5, type: 3}
-    - time: 0.125
-      value: {fileID: 1283732648154095244, guid: 764db8bbf164a0741a196780a0cf25ba, type: 3}
-    - time: 0.25
-      value: {fileID: 6779830897278624625, guid: dd7ff8529e5493a4caba2cfdcca2ebee, type: 3}
-    - time: 0.375
-      value: {fileID: 6097844080594439835, guid: 25b7e38888a710f46b9e231172c9ff34, type: 3}
+      value: {fileID: -7490703503269309827, guid: 442f5003257dbd048b2d13fb0cbfdece, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 40
+  m_SampleRate: 30
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -50,16 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 7372055386051288259, guid: 4b7e1bac28ad97841aacd686f73dfff5, type: 3}
-    - {fileID: 1283732648154095244, guid: 764db8bbf164a0741a196780a0cf25ba, type: 3}
-    - {fileID: 6779830897278624625, guid: dd7ff8529e5493a4caba2cfdcca2ebee, type: 3}
-    - {fileID: 6097844080594439835, guid: 25b7e38888a710f46b9e231172c9ff34, type: 3}
+    - {fileID: -7490703503269309827, guid: 442f5003257dbd048b2d13fb0cbfdece, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4
+    m_StopTime: 0.033333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
