@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] private Background _backgroundRendererA;
 	[SerializeField] private Background _backgroundRendererB;
 
+	[Header("=== 점프, 슬라이드 버튼 등록 ===")]
+	[SerializeField] public JumpButton JumpButton;
+	[SerializeField] public SlideButton SlideButton;
+
 	[Header("=== StageData 목록 ===")] 
 	[SerializeField] private StageData[] _stageDatas;
 	[SerializeField] public GameObject InvisibleGround;
