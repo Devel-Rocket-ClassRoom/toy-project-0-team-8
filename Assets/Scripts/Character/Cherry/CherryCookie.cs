@@ -58,11 +58,11 @@ public class CherryCookie : CookieBehavior
         cor = StartCoroutine(Cycle());
     }
 
-    public override bool UseAbilityProgressBar { get; }
-
+    public override bool UseAbilityProgressBar => true;
 
     public override float GetProgressbarAmount() {
-        throw new System.NotImplementedException();
+        Debug.LogWarning($"CookieBehavior 내부 GetProgressbarAmount 작성해주세요");
+        return 0f;
     }
 
     public override void StartJumpAnimation()
