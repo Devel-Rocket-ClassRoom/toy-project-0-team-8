@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 // 모든 쿠키가 베이스로 사용할 클래스입니다.
@@ -16,6 +17,8 @@ public class CookieController : MonoBehaviour {
 	private readonly float _godModeDuration = 2f;
 	
 	private bool _isGodMode = false;
+	
+	private UnityEvent OnTakeDamage;
 	
 	[Header("=== 체력바 관련 Image ===")]
 	[SerializeField] private Image _hpBar;
@@ -103,6 +106,8 @@ public class CookieController : MonoBehaviour {
 		
 		CurrentHp -= amount;
 		
+		// 부딫혔을 때 이벤트 활성화
+		OnTakeDamage?.Invoke();
 		// 무적 상태 활성화
 		_coGodMode = StartCoroutine(CoGodMode());
 	}
