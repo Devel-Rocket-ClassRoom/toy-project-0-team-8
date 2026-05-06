@@ -12,6 +12,7 @@ TagManager:
   - Platform
   - Item
   - Area
+  - StageRoot
   layers:
   - Default
   - TransparentFX

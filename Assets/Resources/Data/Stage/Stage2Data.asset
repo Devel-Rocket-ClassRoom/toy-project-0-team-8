@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2660187a5ae844c79ea5b9de98952fae, type: 3}
-  m_Name: Stage3Data
+  m_Name: Stage2Data
   m_EditorClassIdentifier: Assembly-CSharp::StageData
-  stageId: 2
+  stageId: 1
   stageLength: 500
   scrollSpeed: 10
-  background: {fileID: -4448238061107810689, guid: fb73a2fba7a14dd4d980d188e9923a83, type: 3}
-  stagePrefab: {fileID: 8451582715555078851, guid: 9373c2d23b044f747939f53978347437, type: 3}
+  background: {fileID: -6456285561183728347, guid: 7204546c99f1a6249a9d7159dca9c1ba, type: 3}
+  stagePrefab: {fileID: 0}
