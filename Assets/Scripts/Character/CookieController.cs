@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 // 모든 쿠키가 베이스로 사용할 클래스입니다.
@@ -17,6 +18,8 @@ public class CookieController : MonoBehaviour {
 	
 	private bool _isGodMode = false;
 	
+	private UnityEvent OnTakeDamage;
+	
 	[Header("=== 체력바 관련 Image ===")]
 	[SerializeField] private Image _hpBar;
 	[SerializeField] private Image _additionalHpBar;
@@ -25,8 +28,8 @@ public class CookieController : MonoBehaviour {
 	[SerializeField] private KeyCode _slideKey = KeyCode.LeftControl;
 
 	[Header("=== 디버그용 변수 ===")]
-	[SerializeField] private float _jumpForce = 17f;
-	[SerializeField] private float _gravityScale = 5f;
+	[SerializeField] private float _jumpForce = 10f;
+	[SerializeField] private float _gravityScale = 3f;
 	[SerializeField] private float _healthReduceSpeed = 2f;
 	
 	// 점프하자마자 Ground와 착지 판정 생겨서 3단 점프 되는 문제 해결을 위함
@@ -88,6 +91,7 @@ public class CookieController : MonoBehaviour {
 		
 		_cookieBehavior.Init(this);
 		_animator.runtimeAnimatorController = data.AnimatorController;
+		_cookieBehavior.StartRunAnimation();
 	}
 	
 	// 체력 감소
@@ -103,6 +107,8 @@ public class CookieController : MonoBehaviour {
 		
 		CurrentHp -= amount;
 		
+		// 부딫혔을 때 이벤트 활성화
+		OnTakeDamage?.Invoke();
 		// 무적 상태 활성화
 		_coGodMode = StartCoroutine(CoGodMode());
 	}
