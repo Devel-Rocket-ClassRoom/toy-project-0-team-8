@@ -173,8 +173,8 @@ public class HeroCookie : CookieBehavior
     public override bool UseAbilityProgressBar => true;
     
     public override float GetProgressbarAmount() {
-        Debug.LogWarning($"CookieBehavior 내부 GetProgressbarAmount 작성해주세요");
-        return 0f;
+
+        return ChargeStack/5;
     }
 
     public override void StartJumpAnimation()
