@@ -1,0 +1,652 @@
+fileFormatVersion: 2
+guid: 3097f30ead74ada419a36e386e1e1f4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5128170886323414573
+    second: Land0001_obstacles_0
+  - first:
+      213: 70279396078323415
+    second: Land0001_obstacles_1
+  - first:
+      213: -308303409806488149
+    second: Land0001_obstacles_2
+  - first:
+      213: 8459612868124804885
+    second: Land0001_obstacles_3
+  - first:
+      213: -3863096257420127800
+    second: Land0001_obstacles_4
+  - first:
+      213: 5991232471808354871
+    second: Land0001_obstacles_5
+  - first:
+      213: 1109625121265474837
+    second: Land0001_obstacles_6
+  - first:
+      213: 3661702453883216573
+    second: Land0001_obstacles_7
+  - first:
+      213: 7895277442733503346
+    second: Land0001_obstacles_8
+  - first:
+      213: 5808601558150870750
+    second: Land0001_obstacles_9
+  - first:
+      213: 8206785582683298297
+    second: Land0001_obstacles_10
+  - first:
+      213: 6605123249283834626
+    second: Land0001_obstacles_11
+  - first:
+      213: 5160267873314855038
+    second: Land0001_obstacles_12
+  - first:
+      213: -3191638861676897175
+    second: Land0001_obstacles_13
+  - first:
+      213: 7972301464999743578
+    second: Land0001_obstacles_14
+  - first:
+      213: 1420011944012664414
+    second: Land0001_obstacles_15
+  - first:
+      213: 7153062565939141118
+    second: Land0001_obstacles_16
+  - first:
+      213: 7350890703958288291
+    second: Land0001_obstacles_17
+  - first:
+      213: -2447027059634025906
+    second: Land0001_obstacles_18
+  - first:
+      213: -1215480118083947519
+    second: Land0001_obstacles_19
+  - first:
+      213: 6288651149349154788
+    second: Land0001_obstacles_20
+  - first:
+      213: 4509185341153474159
+    second: Land0001_obstacles_21
+  - first:
+      213: 8661371159912665302
+    second: Land0001_obstacles_22
+  - first:
+      213: -1464263088700760140
+    second: Land0001_obstacles_23
+  - first:
+      213: 893390867744188952
+    second: Land0001_obstacles_24
+  - first:
+      213: -7482611261383934448
+    second: Land0001_obstacles_25
+  - first:
+      213: -4068637288549625975
+    second: Land0001_obstacles_26
+  - first:
+      213: 7922115461005524224
+    second: Land0001_obstacles_27
+  - first:
+      213: -5325591920766505696
+    second: Land0001_obstacles_28
+  - first:
+      213: 2850980951490111631
+    second: Land0001_obstacles_29
+  - first:
+      213: -1744098983189569261
+    second: Land0001_obstacles_30
+  - first:
+      213: -9120691776095433537
+    second: Land0001_obstacles_31
+  - first:
+      213: -4391489242439180010
+    second: Land0001_obstacles_32
+  - first:
+      213: -8100884242042799819
+    second: Land0001_obstacles_33
+  - first:
+      213: -1092133898808545485
+    second: Land0001_obstacles_34
+  - first:
+      213: 7858697870658485351
+    second: Land0001_obstacles_35
+  - first:
+      213: 3676103351311922779
+    second: Land0001_obstacles_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Land0001_obstacles_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 374
+        width: 152
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26aeca304cea2740800000000000000
+      internalID: 5128170886323414573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 374
+        width: 149
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d607460dbea9f000800000000000000
+      internalID: 70279396078323415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 763
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad4177aeafa8bbf0800000000000000
+      internalID: -308303409806488149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_11
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 779
+        width: 117
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 203ac3b899c1aab50800000000000000
+      internalID: 6605123249283834626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_13
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 528
+        width: 117
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c9a668d5505b3d0800000000000000
+      internalID: -3191638861676897175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_14
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 622
+        width: 89
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50d2af71fd43ae60800000000000000
+      internalID: 7972301464999743578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_17
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 514
+        width: 98
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a7a728062c930660800000000000000
+      internalID: 7350890703958288291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 138
+        width: 116
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a6875c246f56c00800000000000000
+      internalID: 893390867744188952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_25
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 138
+        width: 116
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e7fdcc3bc682890800000000000000
+      internalID: -7482611261383934448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_26
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 138
+        width: 115
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f471051fb4987c0800000000000000
+      internalID: -4068637288549625975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_27
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 148
+        width: 115
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d3dd2e90201fd60800000000000000
+      internalID: 7922115461005524224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_28
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 9
+        width: 124
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02da5004d52b716b0800000000000000
+      internalID: -5325591920766505696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 73
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8829faf118b09720800000000000000
+      internalID: 2850980951490111631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_31
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 11
+        width: 52
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc4104372bcc6180800000000000000
+      internalID: -9120691776095433537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_32
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 12
+        width: 73
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611a6751dcb4e03c0800000000000000
+      internalID: -4391489242439180010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_33
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 132
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539ba72c3b0e39f80800000000000000
+      internalID: -8100884242042799819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land0001_obstacles_35
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 8
+        width: 73
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76cb7b18314bf0d60800000000000000
+      internalID: 7858697870658485351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 557f3c9570ca71f46ba71aa1e1610569
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Land0001_obstacles_0: 5128170886323414573
+      Land0001_obstacles_1: 70279396078323415
+      Land0001_obstacles_10: 8206785582683298297
+      Land0001_obstacles_11: 6605123249283834626
+      Land0001_obstacles_12: 5160267873314855038
+      Land0001_obstacles_13: -3191638861676897175
+      Land0001_obstacles_14: 7972301464999743578
+      Land0001_obstacles_15: 1420011944012664414
+      Land0001_obstacles_16: 7153062565939141118
+      Land0001_obstacles_17: 7350890703958288291
+      Land0001_obstacles_18: -2447027059634025906
+      Land0001_obstacles_19: -1215480118083947519
+      Land0001_obstacles_2: -308303409806488149
+      Land0001_obstacles_20: 6288651149349154788
+      Land0001_obstacles_21: 4509185341153474159
+      Land0001_obstacles_22: 8661371159912665302
+      Land0001_obstacles_23: -1464263088700760140
+      Land0001_obstacles_24: 893390867744188952
+      Land0001_obstacles_25: -7482611261383934448
+      Land0001_obstacles_26: -4068637288549625975
+      Land0001_obstacles_27: 7922115461005524224
+      Land0001_obstacles_28: -5325591920766505696
+      Land0001_obstacles_29: 2850980951490111631
+      Land0001_obstacles_3: 8459612868124804885
+      Land0001_obstacles_30: -1744098983189569261
+      Land0001_obstacles_31: -9120691776095433537
+      Land0001_obstacles_32: -4391489242439180010
+      Land0001_obstacles_33: -8100884242042799819
+      Land0001_obstacles_34: -1092133898808545485
+      Land0001_obstacles_35: 7858697870658485351
+      Land0001_obstacles_36: 3676103351311922779
+      Land0001_obstacles_4: -3863096257420127800
+      Land0001_obstacles_5: 5991232471808354871
+      Land0001_obstacles_6: 1109625121265474837
+      Land0001_obstacles_7: 3661702453883216573
+      Land0001_obstacles_8: 7895277442733503346
+      Land0001_obstacles_9: 5808601558150870750
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

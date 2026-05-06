@@ -1,4 +1,5 @@
-Id,Name,Icon,Desc,Grade,Hp
-Cookie1,Cookie1Name,Cookie_A,Cookie1Desc,Common,40
-Cookie2,Cookie2Name,Cookie_B,Cookie2Desc,Rare,80
-Cookie3,Cookie3Name,Cookie_C,Cookie3Desc,Epic,120
+Id,Name,Icon,Desc,Grade,Hp,Type
+Cookie_Pirate,PirateCookieName,PirateCookie,PirateCookieDesc,Rare,100,Pirate
+Cookie1,Cookie1Name,Cookie_A,Cookie1Desc,Common,40,Hero
+Cookie2,Cookie2Name,Cookie_B,Cookie2Desc,Rare,80,Hero_Suit
+Cookie3,Cookie3Name,Cookie_C,Cookie3Desc,Epic,120,Hero
