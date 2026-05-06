@@ -91,6 +91,7 @@ public class CookieController : MonoBehaviour {
 		
 		_cookieBehavior.Init(this);
 		_animator.runtimeAnimatorController = data.AnimatorController;
+		_cookieBehavior.StartRunAnimation();
 	}
 	
 	// 체력 감소
