@@ -1,5 +1,4 @@
 ﻿Id,Name,Icon,Desc,Grade,CoolTime
-Item1,Item1Name,Gear_A,Item1Desc,Rare,15
-Item2,Item2Name,Gear_B,Item2Desc,Epic,15
-Item3,Item3Name,Gear_C,Item3Desc,Common,15
-Item4,Item4Name,Gear_D,Item4Desc,Rare,15
+Gear_JellyPot,JellyPotName,JellyPot,JellyPotDesc,Rare,15
+Gear_MagnetMachine,MagnetMachineName,MagnetMachine,MagnetMachineDesc,Epic,15
+Gear_EnergyBooster,EnergyBoosterName,EnergyBooster,EnergyBoosterDesc,Common,15

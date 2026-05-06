@@ -1,9 +1,7 @@
 ﻿Id,String
-Item1Name,젤리항아리
-Item2Name,자석로봇
-Item3Name,에너지부스터 
-Item4Name,추가
-Item1Desc ,이것은 검이다.
-Item2Desc,이것은 방패다.
-Item3Desc,이것은 활이다.
-Item4Desc,이것은 물약이다.
+JellyPotName,젤리항아리
+MagnetMachineName,자석로봇
+EnergyBoosterName,에너지부스터 
+JellyPotDesc,"일정 시간마다 코인 변환기 아이템을 생성한다"
+MagnetMachineDesc,"일정 시간마다 자석 아이템을 생성한다"
+EnergyBoosterDesc,"일정시간 마다 부스터 아이템을 생성한다"
