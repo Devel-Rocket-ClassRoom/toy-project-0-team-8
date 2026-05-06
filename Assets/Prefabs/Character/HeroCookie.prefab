@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2452568198810537324}
   - component: {fileID: 8587293722315718155}
   - component: {fileID: 8421396315284034126}
-  - component: {fileID: 4910946639356851122}
   - component: {fileID: 1561542575002896649}
   - component: {fileID: 2997062892402973873}
+  - component: {fileID: 4910946639356851122}
   m_Layer: 0
   m_Name: HeroCookie
   m_TagString: Player
@@ -117,22 +117,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4910946639356851122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7960550251552601294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4afa0cee5e6eb478537eee85cbfa9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HeroCookie
-  jumpForce: 10
-  Health: 100
-  isDead: 0
-  isImmune: 0
 --- !u!61 &1561542575002896649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -206,3 +190,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4910946639356851122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7960550251552601294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4afa0cee5e6eb478537eee85cbfa9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroCookie
+  jumpForce: 10
+  Health: 100
+  isDead: 0
+  isImmune: 0

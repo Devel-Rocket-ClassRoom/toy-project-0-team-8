@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroCookie : MonoBehaviour
+public class HeroCookie : CookieBehavior
 {
-    public float jumpForce = 200f;
     public float Health = 100f;
-    private int jumpCount = 0;
 
     private bool isGrounded = false;
     private bool isSlide = false;
@@ -20,6 +18,7 @@ public class HeroCookie : MonoBehaviour
 
     public bool isDead = false;
     public bool isImmune = false;
+    public bool isDash = false;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -48,47 +47,14 @@ public class HeroCookie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ItemCheck();
-        Jump();
-        Slide();
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
             Transformation();
-
-        animator.SetBool("isGrounded", isGrounded);
-        animator.SetBool("isSlide", isSlide);
 
     }
 
     private void Transformation()
     {
         animator.SetTrigger("Transformation");
-    }
-
-    void Jump()
-    {
-
-        if (Input.GetButtonDown("Fire1") && jumpCount < 2)
-        {
-            jumpCount++;
-            rb.linearVelocity = Vector2.zero;
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            animator.SetBool("isDouble", jumpCount == 2);
-
-            Debug.Log("jump");
-
-            if (isSlide)
-            {
-                isSlide = false;
-                isGrounded = false;
-
-                
-                col.offset = new Vector2(originOffset.x, originOffset.y);
-                col.size = new Vector2(originSize.x, originSize.y);
-            }
-
-        }
-
     }
 
     // 애니메이션 이벤트
@@ -103,54 +69,23 @@ public class HeroCookie : MonoBehaviour
     IEnumerator coFallen()
     {
         Vector3 targetPos = originPos;
-        while (Vector3.Distance(transform.position, targetPos) > 0.01f)
+        while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
             transform.position = Vector3.Lerp(transform.position, targetPos, 0.1f);
-            yield return null;
+            yield return new WaitForSeconds(0.05f);
         }
+
+        Debug.Log("낙하");
         transform.position = targetPos;
         coFallenAnim = null;
-    }
-    void Slide()
-    {
-
-        if (Input.GetKey(KeyCode.S) && !isSlide && isGrounded)
-        {
-            isSlide = true;
-
-            col.offset = new Vector2(col.offset.x, col.offset.y - col.size.y / 4);
-            col.size = new Vector2(col.size.x, col.size.y * 0.5f);
-
-
-            Debug.Log("slide");
-        }
-        else if (Input.GetKeyUp(KeyCode.S) && isSlide)
-        {
-            isSlide = false;
-
-            col.offset = new Vector2(originOffset.x, originOffset.y);
-
-            col.size = new Vector2(originSize.x, originSize.y);
-        }
-
-
     }
 
     public void Die()
     {
-        isDead = true;
-        animator.SetTrigger("isDead");
-
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
 
     }
-
-    public void Heal(float energy)
-    {
-        Health += energy;
-    }
-
     public void AddItem(Action<GameObject> onApply, Action<GameObject> onRemove, float duration)
     {
 
@@ -179,28 +114,32 @@ public class HeroCookie : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void StartJumpAnimation()
     {
-        if (collision.collider.CompareTag("Platform") && collision.contacts[0].normal.y > 0.7f)
-        {
-            isGrounded = true;
-            jumpCount = 0;
-        }
+        
+        animator.SetBool("isGrounded", false);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public override void StartRunAnimation()
     {
-        if (collision.collider.CompareTag("Platform"))
-        {
-            isGrounded = false;
-        }
+        animator.SetBool("isGrounded", true);
+        animator.SetBool("isDouble", false);
+        animator.SetBool("isSlide", false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void StartDoubleJumpAnimation()
     {
-        if (collision.CompareTag("Dead"))
-        {
-            Die();
-        }
+        animator.SetBool("isDouble", true);
+    }
+
+    public override void StartSlidingAnimation()
+    {
+        animator.SetBool("isSlide", true);
+    }
+
+    public override void StartDeathAnimation()
+    {
+        animator.SetTrigger("Dead");
+        Die();
     }
 }
