@@ -119,12 +119,12 @@ TextureImporter:
       name: cookie0016_ghostx2_0066_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 3
-        width: 89
-        height: 113
+        x: 36
+        y: 2
+        width: 245
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: cookie0016_ghostx2_0066_1
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 21
-        width: 164
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1da9e8cf62dc81770800000000000000
-      internalID: 8581834657284135633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 64397c773678af4468234be162e2eb38
     internalID: 0
     vertices: []
     indices: 

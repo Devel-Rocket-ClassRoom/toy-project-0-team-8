@@ -1,7 +1,6 @@
 using System.Collections;
-using TMPro;
-using Unity.Android.Gradle;
 using UnityEngine;
+
 public class BoxEffect : MonoBehaviour
 {
     public GameObject[] linePrefab;
