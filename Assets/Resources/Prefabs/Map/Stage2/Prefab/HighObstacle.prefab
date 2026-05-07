@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 14814388281402903}
   - component: {fileID: 1795583204842674516}
   - component: {fileID: 5275618733780226125}
+  - component: {fileID: 4274633606667205833}
   m_Layer: 0
   m_Name: HighObstacle
   m_TagString: Obstacle
@@ -138,3 +139,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.01, y: 6.43}
   m_EdgeRadius: 0
+--- !u!95 &4274633606667205833
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838957945840205799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

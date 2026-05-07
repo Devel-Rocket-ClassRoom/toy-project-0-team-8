@@ -16,3 +16,4 @@ MonoBehaviour:
   itemId: Gear_MagnetMachine
   weight: 10
   Icon: {fileID: -8245842631113459091, guid: 8f6f2425becbbb747ae3cfed8d680034, type: 3}
+  GearPrefab: {fileID: 4142290624600904514, guid: 5cb04c1d3160fbc4f9dd22f17b88b06f, type: 3}
