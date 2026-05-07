@@ -7,6 +7,12 @@ public class ChangeScene : MonoBehaviour
     public Image ReadyCharacter;
     public UiGearSlot[] equipGear;
 
+    private void OnEnable()
+    {
+        // 씬이 바뀔 때마다 데이터를 저장
+        SaveLoadManager.Save(); 
+        SaveLoadManager.Load();   
+    }
     public void OnGachaScene()
     {
 

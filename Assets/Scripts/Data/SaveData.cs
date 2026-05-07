@@ -38,10 +38,15 @@ public class SaveDataV1 : SaveData
     public int score = 0;
 
     public string currentCookie = "Cookie_Pirate";
-    public string[] currentGear = new string[3];
+    public string[] currentGear = new string[]
+    {
+        "Blank",
+        "Blank",
+        "Blank"
+    };
     public int currentExp = 0;
 
-    public string lobbyCookieId = null;
+    public string lobbyCookieId = "Cookie_Pirate";
     public int playerLevel = 1;
 
     public SaveDataV1()
