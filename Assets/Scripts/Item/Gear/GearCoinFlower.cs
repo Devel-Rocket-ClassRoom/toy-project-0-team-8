@@ -6,7 +6,7 @@ public class GearCoinFlower : MonoBehaviour
     public GameObject stageroot;
     private float cooltime = 0.3f;
     private float t = 0;
-    private float weight = 30f;
+    private float weight = 10f;
 
     private void OnEnable()
     {

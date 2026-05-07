@@ -99,6 +99,7 @@ public class CherryCookie : CookieBehavior
  
         if (coolTime == minCoolTIme)
         {
+            animator.SetBool(_isGround,false);
             animator.SetBool(_isMiddleRun, false);
             animator.SetBool(_isHappyRun, true);
             normalSkill = false;
@@ -106,6 +107,7 @@ public class CherryCookie : CookieBehavior
         }
         else if (coolTime < middleCoolTime && coolTime > minCoolTIme)
         {
+            animator.SetBool(_isGround, false);
             animator.SetBool(_isMiddleRun, true);
         }
     }
