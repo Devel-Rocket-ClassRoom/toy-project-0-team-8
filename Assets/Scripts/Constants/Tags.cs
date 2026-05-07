@@ -5,4 +5,6 @@
 	public static readonly string Obstacle = "Obstacle";
 	public static readonly string Drop = "Drop";
 	public static readonly string Item = "Item";
+	public static readonly string StageRoot = "StageRoot";
+	public static readonly string StageEnd = "StageEnd";
 }

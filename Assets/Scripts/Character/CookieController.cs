@@ -89,7 +89,8 @@ public class CookieController : MonoBehaviour {
 	private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYDiff = -0.425f;
 	
-	private readonly float _standingColliderYSize = 1.5f;
+	private readonly float _standingColliderYSize = 1.2f;
+	private readonly float _slidingColliderYOffset = -0.28f;
 	private readonly float _slidingColliderYSize = 0.7f;
 	
 	private Coroutine _coGodMode;
@@ -239,6 +240,11 @@ public class CookieController : MonoBehaviour {
 			// 다 아니라면 데미지 받기
 			TakeDamage(20);
 		}
+		
+		// 맵 끝과 충돌하면, 다음 스테이지 로딩하게
+		if (other.CompareTag(Tags.StageEnd)) {
+			_gameManager.LoadNextStage();
+		}
 	}
 
 	private void Update() {
@@ -361,10 +367,12 @@ public class CookieController : MonoBehaviour {
 	}
 	// 슬라이딩 시에 충돌 박스 크기 자연스럽게 변경
 	public void SetSlidingCollider() {
+		_collider.offset = new Vector2(_collider.offset.x, _slidingColliderYOffset);
 		_collider.size = new Vector2(_collider.size.x, _slidingColliderYSize);
 	}
 	// 충돌 박스 크기 원래대로
 	public void SetStandingCollider() {
+		_collider.offset = new Vector2(_collider.offset.x, 0);
 		_collider.size = new Vector2(_collider.size.x, _standingColliderYSize);
 	}
 }

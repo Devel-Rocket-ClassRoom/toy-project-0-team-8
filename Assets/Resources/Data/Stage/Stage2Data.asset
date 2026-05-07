@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2660187a5ae844c79ea5b9de98952fae, type: 3}
+  m_Name: Stage2Data
+  m_EditorClassIdentifier: Assembly-CSharp::StageData
+  Background: {fileID: -6456285561183728347, guid: 7204546c99f1a6249a9d7159dca9c1ba, type: 3}
+  ScrollSpeed: 10
+  StagePrefab: {fileID: -1178925783844410437, guid: 2d2d1dd4f9ced5a4590ed1575f38ba25, type: 3}
