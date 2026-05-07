@@ -6,14 +6,22 @@ public class PirateCookieBehavior : CookieBehavior {
 	private Animator _animator;
 	
 	private readonly string _shipResourcePath = "Prefabs/Character/Pirate/PirateShip";
+	private readonly string _jumpSoundpath = "Sprite/Character/Pirate/Sound/Ch16jump";
+	private readonly string _slideSoundpath = "Sprite/Character/Pirate/Sound/Ch16slide";
+	private readonly string _reviveSoundpath = "Sprite/Character/Pirate/Sound/G_ghostmode_start";
 	private readonly int _isJumping = Animator.StringToHash("isJumping");
 	private readonly int _isSliding = Animator.StringToHash("isSliding");
 	private readonly int _isDoubleJumping = Animator.StringToHash("isDoubleJumping");
 	private readonly int _isDashing = Animator.StringToHash("isDashing");
 	private readonly int Disappear = Animator.StringToHash("Disappear");
 	private readonly int Death = Animator.StringToHash("death");
-	
-	private readonly string _ghostAnimatorPath = "Animations/Character/Pirate/GhostAnimationController";
+    private AudioClip JumpClip;
+    private AudioClip SlideClip;
+    private AudioClip ReviveClip;
+
+    public AudioSource audioSource;
+
+    private readonly string _ghostAnimatorPath = "Animations/Character/Pirate/GhostAnimationController";
 	
 	private GameObject _pirateShip;
 	
@@ -34,11 +42,14 @@ public class PirateCookieBehavior : CookieBehavior {
 		base.Init(controller);
 		
 		_animator = GetComponent<Animator>();
-		
-		// 시작 시에, PirateShip 만들고 안보이는 상태로
-		_pirateShip = Instantiate(Resources.Load<GameObject>(_shipResourcePath));
+        audioSource = GetComponent<AudioSource>();
+        // 시작 시에, PirateShip 만들고 안보이는 상태로
+        _pirateShip = Instantiate(Resources.Load<GameObject>(_shipResourcePath));
 		_pirateShip.SetActive(false);
-		
+		JumpClip = Resources.Load<AudioClip>(_jumpSoundpath);
+		SlideClip = Resources.Load<AudioClip>(_slideSoundpath);
+		ReviveClip = Resources.Load<AudioClip>(_reviveSoundpath);
+
 		// 특정 초마다 실행하도록 Coroutine 시작
 		_abilityCycleCoroutine = StartCoroutine(CoAbilityCycle());
 	}
@@ -83,6 +94,7 @@ public class PirateCookieBehavior : CookieBehavior {
 	public override float GetProgressbarAmount() => _abilityTimer / _abilityPeriod;
 
 	public override void StartJumpAnimation() {
+		audioSource.PlayOneShot(JumpClip);
 		_animator.SetBool(_isJumping, true);
 	}
 	
@@ -94,10 +106,12 @@ public class PirateCookieBehavior : CookieBehavior {
 	}
 	
 	public override void StartDoubleJumpAnimation() {
-		_animator.SetBool(_isDoubleJumping, true);
+        audioSource.PlayOneShot(JumpClip);
+        _animator.SetBool(_isDoubleJumping, true);
 	}
 
 	public override void StartSlidingAnimation() {
+		audioSource.PlayOneShot(SlideClip);
 		_animator.SetBool(_isSliding, true);
 	}
 
@@ -149,8 +163,9 @@ public class PirateCookieBehavior : CookieBehavior {
 		
 		// 애니메이션 교체
 		_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(_ghostAnimatorPath);
-		// 부활 애니메이션 나올 동안 대기
-		yield return new WaitForSeconds(0.5f);
+        audioSource.PlayOneShot(ReviveClip);
+        // 부활 애니메이션 나올 동안 대기
+        yield return new WaitForSeconds(0.5f);
 		// 다시 스탠딩 콜라이더로 변경
 		_controller.SetStandingCollider();
 		// 추가 체력 주고, 다시 배경 스크롤
