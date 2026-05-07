@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
-using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.UI;
 using SaveDataVC = SaveDataV1;
@@ -239,11 +236,11 @@ public class BbobgiTitle : GenericWindow
         {
             Destroy(child.gameObject);
         }
-        for (int i = 0; i < rewardList.Count; i++)
+        for (int i = 0; i < rewardGearList.Count; i++)
         {
             GameObject go = Instantiate(rewardPrefab,contentArea);
             go.SetActive(true); // 나중에 바꿀예정 테스트용
-            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardList[i].Icon;
+            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[i].Icon;
             yield return new WaitForSeconds(0.5f);
         }
         exitable = true;
