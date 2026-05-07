@@ -74,12 +74,16 @@ public class GameResultManager : MonoBehaviour {
 		// 표시할 아이콘 전부 비활성화
 		_characterImage.gameObject.SetActive(false);
 		_stageText.gameObject.SetActive(false);
-		_gradeImage.gameObject.SetActive(false);
 		_coinIcon.gameObject.SetActive(false);
 		_coinText.gameObject.SetActive(false);
 		_scoreIcon.gameObject.SetActive(false);
 		_scoreText.gameObject.SetActive(false);
 		_bestScoreImage.gameObject.SetActive(false);
+		
+		// 이미지 텍스트는 비활성화하면 레이아웃이 이상해져서, 투명도 0으로
+		_gradeImage.color = new Color(1, 1, 1, 0);
+		// 미리 이미지를 정해둬야 Text위치가 바뀌지 않음
+		_gradeImage.sprite = GetGradeSpriteByStageNum(_stageIdx);
 		
 		// 확인 버튼 누르면 메인으로 돌아가게 구성
 		_confirmButton.onClick.AddListener(_changeScene.OnLobbyScene);
@@ -113,8 +117,9 @@ public class GameResultManager : MonoBehaviour {
 		yield return new WaitForSeconds(_appearPeriod);
 		
 		// 스테이지 Grade Sprite 표시
-		_gradeImage.gameObject.SetActive(true);
+		_gradeImage.color = new Color(1, 1, 1, 1);
 		_gradeImage.sprite = GetGradeSpriteByStageNum(_stageIdx);
+		_gradeImage.SetNativeSize();
 		yield return new WaitForSeconds(_appearPeriod);
 		
 		// 코인 아이콘 표시
@@ -166,8 +171,8 @@ public class GameResultManager : MonoBehaviour {
 		_stageText.text = GetStageResultStringByStageNum(_stageIdx);
 		
 		// 스테이지 Grade Sprite 표시
-		_gradeImage.gameObject.SetActive(true);
-		_gradeImage.sprite = GetGradeSpriteByStageNum(_stageIdx);
+		_gradeImage.color = new Color(1, 1, 1, 1);
+		_gradeImage.SetNativeSize();
 		
 		// 코인 아이콘 표시
 		_coinIcon.gameObject.SetActive(true);
