@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 public class GameReadyManager : MonoBehaviour {
 	[SerializeField] private Sprite[] _backgroundSprites;
 	[SerializeField] private Image _backgroundImage;
+	[SerializeField] private TextMeshProUGUI _maxScoreText;
 
 	public Image cookie;
 	public Image[] gear;
@@ -20,6 +22,7 @@ public class GameReadyManager : MonoBehaviour {
 	public void Init() {
 		stageNum = 0;
 		
+		_maxScoreText.text = SaveLoadManager.Data.score.ToString("N0");
 		_backgroundImage.sprite = _backgroundSprites[stageNum];
 	}
 	
