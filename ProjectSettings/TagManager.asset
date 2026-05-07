@@ -12,6 +12,7 @@ TagManager:
   - Platform
   - Item
   - Area
+  - StageRoot
   layers:
   - Default
   - TransparentFX
@@ -54,6 +55,9 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 3328285513
+    locked: 0
+  - name: BlackBackGround
+    uniqueID: 148559689
     locked: 0
   m_RenderingLayers:
   - Default

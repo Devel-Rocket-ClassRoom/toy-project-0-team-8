@@ -5,6 +5,7 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CherryCookie : CookieBehavior
 {
     public Animator animator;
@@ -15,8 +16,9 @@ public class CherryCookie : CookieBehavior
     private readonly int _isDoubleJumping = Animator.StringToHash("isDoubleJump");
     private readonly int _isSkill = Animator.StringToHash("isSkill");
     private readonly int _isDie = Animator.StringToHash("isDie");
-    private readonly int _isMiddleRun = Animator.StringToHash("MiddleRun");
-    private readonly int _isHappyRun = Animator.StringToHash("HappyRun");
+    private readonly int _isMiddleRun = Animator.StringToHash("isMiddleRun");
+    private readonly int _isHappyRun = Animator.StringToHash("isHappyRun");
+    private readonly int _isDash = Animator.StringToHash("isDash");
     private readonly string _jumpAudioClip = "Sprite/Character/Cherry/Sound/Ch28Jump";
     private readonly string _SlideAudioClip = "Sprite/Character/Cherry/Sound/Ch28slide";
     private readonly string _ThrowAudioClip = "Sprite/Character/Cherry/Sound/Cherry_Throwing_Normal";
@@ -36,6 +38,7 @@ public class CherryCookie : CookieBehavior
     public float maxCoolTIme = 8f;
     public float middleCoolTime = 6.5f;
     private float minCoolTIme = 5f;
+    private float time = 0;
 
     private void OnEnable()
     {
@@ -59,15 +62,29 @@ public class CherryCookie : CookieBehavior
     }
 
     public override bool UseAbilityProgressBar => true;
-
+    private void Update()
+    {
+        if (!Alive)
+        {
+            time = 0;
+            return;
+        }
+        time += Time.deltaTime;
+        if (time > coolTime)
+        {
+            time = 0;
+        }
+      
+    }
     public override float GetProgressbarAmount() {
-        Debug.LogWarning($"CookieBehavior 내부 GetProgressbarAmount 작성해주세요");
-        return 0f;
+
+        return time / coolTime;
     }
 
     public override void StartJumpAnimation()
     {
        audioSource.PlayOneShot(JumpClip);
+       animator.SetBool(_isSliding, false);
        animator.SetBool(_isGround, false);  
        animator.SetBool(_isJumping, true);
     }
@@ -77,14 +94,26 @@ public class CherryCookie : CookieBehavior
         animator.SetBool(_isJumping, false);
         animator.SetBool(_isSliding, false);
         animator.SetBool(_isDoubleJumping, false);
-        animator.SetBool(_isGround, true);
+        animator.SetBool(_isDash, false);
+        animator.SetBool(_isGround,true);
+ 
+        if (coolTime == minCoolTIme)
+        {
+            animator.SetBool(_isMiddleRun, false);
+            animator.SetBool(_isHappyRun, true);
+            normalSkill = false;
+            madSkill = true;
+        }
+        else if (coolTime < middleCoolTime && coolTime > minCoolTIme)
+        {
+            animator.SetBool(_isMiddleRun, true);
+        }
     }
 
     public override void StartDoubleJumpAnimation()
     {
         audioSource.PlayOneShot(JumpClip);
         animator.SetBool(_isJumping, false);
-        animator.SetBool(_isGround, false);
         animator.SetBool(_isDoubleJumping, true);
     }
 
@@ -102,9 +131,8 @@ public class CherryCookie : CookieBehavior
     }
 
     public override void StartDashAnimation() {
-        throw new System.NotImplementedException();
+        animator.SetBool(_isDash, true);
     }
-
     public IEnumerator Cycle()
     {
         while (Alive)
@@ -115,31 +143,21 @@ public class CherryCookie : CookieBehavior
                 yield break;
             }
             cor = StartCoroutine(Skill());
-            coolTime -= 0.2f;
+            coolTime -= 0.5f;
             if(coolTime < minCoolTIme)
             {
                 coolTime = minCoolTIme;
 
             }
-            if(coolTime <middleCoolTime&&coolTime>minCoolTIme)
-            {
-                animator.SetFloat(_isMiddleRun, 1f);
-            }
-            if(coolTime ==minCoolTIme)
-            {
-                animator.SetFloat(_isMiddleRun, 0f);
-                animator.SetFloat(_isHappyRun, 1f);
-                normalSkill = false;
-                madSkill = true;
-            }
+
             if (hit)
             {
                 coolTime = maxCoolTIme;
                 hit = false;
                 normalSkill = true;
                 madSkill=false;
-                animator.SetFloat(_isMiddleRun, 0f);
-                animator.SetFloat(_isHappyRun, 0f);
+                animator.SetBool(_isMiddleRun, false);
+                animator.SetBool(_isHappyRun, false);
 
             }
         }

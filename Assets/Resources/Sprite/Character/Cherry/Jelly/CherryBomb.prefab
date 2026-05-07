@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CherryBomb
   effectPrefab: {fileID: 107336, guid: 3547e5e490f502041ae6e8a59042e4bd, type: 3}
   jellyPrefab: {fileID: 6475758118511651950, guid: acf56d1fdd1338c43a3309662cea4719, type: 3}
+  stageroot: {fileID: 0}
   jellyRadius: 0.45
   jellyAddRadius: 0.25
   bombAudio: {fileID: 0}
