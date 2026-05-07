@@ -84,20 +84,33 @@ public class EquipObject : MonoBehaviour
     {
         // 클릭 시 실행할 함수.
         // null이 아닌 데이터를 찾아서 장착함
+
+        // 
         changeScene.equipGear = currentSlots;
 
         currentSlots = new UiGearSlot[maxIndex];
         if (GearList.activeInHierarchy) 
         {
+            string[] gear = new string[maxIndex];
             for (int i = 0; i < maxIndex; i++)
             {
                 var data = changeScene.equipGear[i];
 
+
                 if (data != null)
+                {
                     Gear[i].sprite = data.GearData.Icon;
+                    gear[i] = data.GearData.itemId;
+                }
                 else
+                {
                     Gear[i].sprite = Blank;
+                    gear[i] = null;
+                }
             }
+
+            SaveLoadManager.Data.currentGear = gear;
+            SaveLoadManager.Save();
         }
         
 
@@ -105,6 +118,9 @@ public class EquipObject : MonoBehaviour
         {
             CookieIcon.sprite = SaveCookie.CookieData.Icon;
             SaveCookie.selectMark.enabled = false;
+
+            SaveLoadManager.Data.currentCookie = SaveCookie.CookieData.cookieId;
+            SaveLoadManager.Save();
         }
 
         var list = Inventory.GetComponent<UiCategorySelect>().uiGearList.uiSlotList;
