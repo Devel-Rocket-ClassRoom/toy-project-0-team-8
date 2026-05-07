@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 	private readonly float _dashSpeedMultiplier = 1.5f;
 	private readonly float _godmodeDurationAfterItem = 1.0f;
 	
-	private StageData _currentStage;
+	private MapPrefab _currentStage;
 	private float _scrollSpeed;
 	
 	private Coroutine _coMagnet;
@@ -49,10 +49,16 @@ public class GameManager : MonoBehaviour {
 		Init();
 	}
 	
+	private int _stageNum = 0;
+	
 	public void Init() {
 		CookieData data = DataTableManager.CookieTable.Get("Cookie_Pirate");
 		LoadCharacter(data);
-		LoadStage(_stageDatas[0]);
+		// 처음 시작 시에 첫 스테이지 로딩
+		LoadNextStage();
+		
+		// 맵 가리는 Panel을 잠시동안 치워두기 위한 Coroutine
+		StartCoroutine(CoRemoveBlindPanel());
 		
 		MagnetArea.gameObject.SetActive(false);
 		InvisibleGround.SetActive(false);
@@ -60,15 +66,35 @@ public class GameManager : MonoBehaviour {
 		_initialCookieScale = _cookieController.transform.localScale;
 		_initialScrollSpeed = _scrollSpeed;
 	}
+	
+	// 첫 스테이지는 가리는 패널이 없어야 해서 사용
+	// 패널을 가리고, 10초 후에 등장시킨다.
+	private IEnumerator CoRemoveBlindPanel() {
+		_currentStage.DisappearBlindPanels();
+		yield return new WaitForSeconds(10f);
+		_currentStage.AppearBlindPanels();
+	}
 
-	public void LoadStage(StageData stageData) {
-		_currentStage = stageData;
-		_scrollSpeed = stageData.scrollSpeed;
+	public void LoadNextStage() {
+		// 만약 모든 스테이지를 다 지났다면, 클리어이다.
+		if (_stageNum <= _stageDatas.Length) {
+			EndGame();
+			return;
+		}
 		
-		_backgroundRendererA.Init(stageData.background, true);
-		_backgroundRendererB.Init(stageData.background, false);
-		
-		Instantiate(stageData.stagePrefab, _stageRoot);
+		// stageRoot내의 모든 오브젝트 지우기
+		foreach (Transform child in _stageRoot) {
+			Destroy(child.gameObject);
+		}
+		StageData stageData = _stageDatas[_stageNum++];
+		// 새 맵 생성
+		_currentStage = Instantiate(stageData.StagePrefab, _stageRoot);
+		_scrollSpeed = stageData.ScrollSpeed;
+		// 백그라운드 이미지 교체
+		_backgroundRendererA.Init(stageData.Background, true);
+		_backgroundRendererB.Init(stageData.Background, false);
+		// StageRoot를 다시 0으로 땡겨오기
+		_stageRoot.transform.position = new Vector3(0, _stageRoot.position.y, _stageRoot.position.z);
 	}
 	
 	public void LoadCharacter(CookieData cookieData) {
@@ -83,7 +109,7 @@ public class GameManager : MonoBehaviour {
 			_backgroundRendererA.transform.position += Vector3.left * _scrollSpeed * Time.deltaTime;
 			_backgroundRendererB.transform.position += Vector3.left * _scrollSpeed * Time.deltaTime;
 			// StageRoot위에 Prefab을 생성하고, StageRoot를 밀면서 맵 진행 처리
-			_stageRoot.position += Vector3.left * _scrollSpeed * Time.deltaTime;	
+			_stageRoot.position += Vector3.left * _scrollSpeed * Time.deltaTime;
 		}
 		
 		// 무적이거나, 대쉬중이면 투명 바닥 활성화
@@ -172,4 +198,8 @@ public class GameManager : MonoBehaviour {
 	
 	public void AddScore(int amount) => _score += amount;
 	public void AddCoin(int amount) => _earnedCoin += amount;
+	
+	public void EndGame() {
+		Debug.Log($"게임 종료");
+	}
 }

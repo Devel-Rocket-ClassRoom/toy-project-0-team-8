@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660187a5ae844c79ea5b9de98952fae, type: 3}
   m_Name: Stage1Data
   m_EditorClassIdentifier: Assembly-CSharp::StageData
-  stageId: 0
-  stageLength: 500
-  scrollSpeed: 10
-  background: {fileID: 2469659034725603101, guid: 59dba18d0257b7f429e797b73a0b7c41, type: 3}
-  stagePrefab: {fileID: 1445961609766967756, guid: ba175322310d1d24d859a78afca11217, type: 3}
+  Background: {fileID: 2469659034725603101, guid: 59dba18d0257b7f429e797b73a0b7c41, type: 3}
+  ScrollSpeed: 10
+  StagePrefab: {fileID: 6238700789883086199, guid: ba175322310d1d24d859a78afca11217, type: 3}

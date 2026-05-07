@@ -2248,7 +2248,9 @@ MonoBehaviour:
   _scoreText: {fileID: 109657855}
   _earnedCoinText: {fileID: 549349325}
   _stageDatas:
+  - {fileID: 11400000, guid: 6823a161ae136bc4fbc98ab3980935af, type: 2}
   - {fileID: 11400000, guid: 6bfe10c195bd7944c98af3ef261679bc, type: 2}
+  - {fileID: 11400000, guid: 587582f884a93654695e1fae6ec14bc3, type: 2}
   InvisibleGround: {fileID: 1628101516}
 --- !u!1 &2080230968
 GameObject:
@@ -2421,6 +2423,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &2088064821
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142484156}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.87
 --- !u!1001 &1089295749770407398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2430,12 +2468,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Size.x
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_Offset.y
-      value: -0.11
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2087361772635488321, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -2470,9 +2516,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 969491471}
     - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: _jumpForce
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: SlideButton
       value: 
       objectReference: {fileID: 204089303}
+    - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: _gravityScale
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: _healthBarShine
       value: 
@@ -2484,6 +2538,10 @@ PrefabInstance:
     - target: {fileID: 6777470905179820843, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_Offset.y
       value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777470905179820843, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7222709207348568573, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2533,6 +2591,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4452933684968082351, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2088064815}
+    - targetCorrespondingSourceObject: {fileID: 4452933684968082351, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2088064821}
   m_SourcePrefab: {fileID: 100100000, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
