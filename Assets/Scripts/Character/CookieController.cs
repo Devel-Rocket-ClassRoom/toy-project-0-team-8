@@ -329,12 +329,16 @@ public class CookieController : MonoBehaviour {
 				_state = CookieState.Jump;
 				_cookieBehavior.StartJumpAnimation();
 				
+				// 점프하면 포지션 값 초기화
+				SetStandingPosition();
+				SetStandingCollider();
+				
 				_rigidBody.linearVelocity = new Vector2(0, _jumpForce);
 			}
 			
 			else if (_state == CookieState.Jump) {
 				_state = CookieState.DoubleJump;
-				_cookieBehavior.StartDoubleJumpAnimation();
+				_cookieBehavior.StartDoubleJumpAnimation();	
 				
 				_rigidBody.linearVelocity = new Vector2(0, _jumpForce);
 			}
