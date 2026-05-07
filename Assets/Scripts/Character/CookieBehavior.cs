@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public abstract class CookieBehavior : MonoBehaviour {
 	
-	protected CookieController _controller;
+	protected CookieController _cookieController;
 	protected GameManager _gameManager;
 	
 	public virtual void Init(CookieController controller) {
-		_controller = controller;
+		_cookieController = controller;
 		_gameManager = GameObject.FindWithTag(Tags.GameManager).GetComponent<GameManager>();
 	}
 	
@@ -29,6 +29,6 @@ public abstract class CookieBehavior : MonoBehaviour {
 	// 캐릭터가 사망했는지 아닌지 체크하기 위함. 특정 쿠키는 능력 사용중에 죽으면 안되고, 누구는 죽으면 살아나고 해야 해서 공통 로직으로 분리하였음
 	// 별도 사망 미루기 로직이 없다면, 재구현 안해도 됨
 	public virtual bool DeathCheck() {
-		return _controller.CurrentHp <= 0 && _controller.AdditionalHp <= 0;
+		return _cookieController.CurrentHp <= 0 && _cookieController.AdditionalHp <= 0;
 	}
 }

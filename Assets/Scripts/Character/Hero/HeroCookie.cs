@@ -38,7 +38,7 @@ public class HeroCookie : CookieBehavior
             _chargeJellyBatch.ReplaceJellyByDistance(); // 스테이지 전환 시에도 호출 해야함
 
         // 컨트롤러에서 기본 중력값을 가져옵니다.
-        defaultGravity = _controller.GravityScale;
+        defaultGravity = _cookieController.GravityScale;
         Debug.Log(defaultGravity);
 
         
@@ -59,13 +59,13 @@ public class HeroCookie : CookieBehavior
         ChargeStack = 6; // 변신 중 상태 유지용
 
         // 천장 활성화
-        _controller.roof.SetActive(true);
+        _cookieController.roof.SetActive(true);
 
         // 기존 조작 비활성화 및 스킬 리스너 등록
-        _controller.JumpEnabled = false;
-        _controller.SlideEnabled = false;
-        _controller.WhileJumpKeyPressed.AddListener(OnSkill);
-        _controller.WhileSlideKeyPressed.AddListener(OnSkill);
+        _cookieController.JumpEnabled = false;
+        _cookieController.SlideEnabled = false;
+        _cookieController.WhileJumpKeyPressed.AddListener(OnSkill);
+        _cookieController.WhileSlideKeyPressed.AddListener(OnSkill);
 
         StopAllCoroutines();
         StartCoroutine(coSkillRoutine());
@@ -105,8 +105,8 @@ public class HeroCookie : CookieBehavior
 
         // --- 3. FlyEnd (변신 해제 및 지면 복귀) ---
         // 다시 조작권 회수 및 상태 초기화
-        _controller.WhileJumpKeyPressed.RemoveListener(OnSkill);
-        _controller.WhileSlideKeyPressed.RemoveListener(OnSkill);
+        _cookieController.WhileJumpKeyPressed.RemoveListener(OnSkill);
+        _cookieController.WhileSlideKeyPressed.RemoveListener(OnSkill);
 
         // 착지 시에는 부드럽게 지면 근처로 유도 (원래 위치 y값으로)
         float returnElapsed = 0f;
@@ -126,11 +126,11 @@ public class HeroCookie : CookieBehavior
         // 최종 리셋
         ChargeStack = 0;
         rb.gravityScale = defaultGravity;
-        _controller.roof.SetActive(false);
+        _cookieController.roof.SetActive(false);
 
         isFlying = false;
-        _controller.JumpEnabled = true;
-        _controller.SlideEnabled = true;
+        _cookieController.JumpEnabled = true;
+        _cookieController.SlideEnabled = true;
 
         // 땅에 닿은 상태로 전환하기 위한 트리거/불린 설정
         //animator.SetBool("isGrounded", true);
