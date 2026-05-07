@@ -163,6 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4122772600711291973}
   - component: {fileID: 2826347769447976407}
+  - component: {fileID: 6212924346476317305}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -248,6 +249,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6212924346476317305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93645051488129058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da7f3d81849485c807e6cc54ed96891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlindPanel
 --- !u!1 &101895129909784700
 GameObject:
   m_ObjectHideFlags: 0
@@ -18682,6 +18695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7263018533494028582}
   - component: {fileID: 3981139359557463403}
+  - component: {fileID: 1693050254326675547}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -18767,6 +18781,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1693050254326675547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419252938058191473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da7f3d81849485c807e6cc54ed96891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlindPanel
 --- !u!1 &3455030697014168980
 GameObject:
   m_ObjectHideFlags: 0
@@ -21350,7 +21376,7 @@ GameObject:
   - component: {fileID: 5448269832338188438}
   m_Layer: 0
   m_Name: StageChanger
-  m_TagString: Untagged
+  m_TagString: StageEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40617,6 +40643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2867796599098991834}
+  - component: {fileID: 3292931868030355898}
   m_Layer: 0
   m_Name: Stage3Prefab
   m_TagString: Untagged
@@ -41008,6 +41035,18 @@ RectTransform:
   m_AnchoredPosition: {x: 18.1, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3292931868030355898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451582715555078851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48db326fe6564c83822a9b6371246b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapPrefab
 --- !u!1 &8478060112285148744
 GameObject:
   m_ObjectHideFlags: 0

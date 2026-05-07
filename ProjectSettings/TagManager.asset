@@ -13,6 +13,7 @@ TagManager:
   - Item
   - Area
   - StageRoot
+  - StageEnd
   layers:
   - Default
   - TransparentFX

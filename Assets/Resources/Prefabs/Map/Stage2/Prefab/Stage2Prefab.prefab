@@ -1540,6 +1540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4756086717195723245}
   - component: {fileID: 6753760151072953342}
+  - component: {fileID: 7070494643902937409}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1607,8 +1608,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 148559689
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2469659034725603101, guid: 59dba18d0257b7f429e797b73a0b7c41, type: 3}
@@ -1621,6 +1622,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7070494643902937409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954327343156459698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da7f3d81849485c807e6cc54ed96891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlindPanel
 --- !u!1 &1027275945913811496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8744746533162974364}
+  - component: {fileID: -1178925783844410437}
   m_Layer: 0
   m_Name: Stage2Prefab
   m_TagString: Untagged
@@ -3833,6 +3847,18 @@ Transform:
   - {fileID: 3817619403691327899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1178925783844410437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019538423579277385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48db326fe6564c83822a9b6371246b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapPrefab
 --- !u!1 &2205441519252271024
 GameObject:
   m_ObjectHideFlags: 0
@@ -5222,7 +5248,7 @@ GameObject:
   - component: {fileID: 9143635572516831161}
   m_Layer: 0
   m_Name: StageChanger
-  m_TagString: Untagged
+  m_TagString: StageEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10653,6 +10679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8675606148038761754}
   - component: {fileID: 3447792517200488818}
+  - component: {fileID: 9111621821818579295}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -10669,7 +10696,7 @@ Transform:
   m_GameObject: {fileID: 6133477459742561738}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.8, y: 0, z: 0}
+  m_LocalPosition: {x: -21.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10720,8 +10747,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 148559689
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2469659034725603101, guid: 59dba18d0257b7f429e797b73a0b7c41, type: 3}
@@ -10734,6 +10761,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &9111621821818579295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133477459742561738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da7f3d81849485c807e6cc54ed96891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlindPanel
 --- !u!1 &6175070352685729529
 GameObject:
   m_ObjectHideFlags: 0
