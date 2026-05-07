@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CherryJelly
   MagnetTarget: {fileID: 0}
   _magnetSpeed: 5
+  scoreAmount: 200
 --- !u!61 &1026242241947807199
 BoxCollider2D:
   m_ObjectHideFlags: 0
