@@ -107,6 +107,10 @@ public class CookieController : MonoBehaviour {
 	public bool JumpEnabled { get; set; } = true;
 	// 같은 이유로 슬라이딩 불가능하게 하고 싶을 때 사용
 	public bool SlideEnabled { get; set; } = true;
+	// 체력 줄지 않게 하고 싶을 때 사용
+	public bool CollisionEnabled { get; set; } = true;
+	// 체력 회복되지 않게 하고 싶을 때 사용
+	public bool HealEnabled { get; set; } = true;
 	
 	private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYDiff = -0.425f;

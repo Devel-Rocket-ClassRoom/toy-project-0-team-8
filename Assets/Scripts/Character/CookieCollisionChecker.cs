@@ -50,12 +50,14 @@ public class CookieCollisionChecker : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		// 장애물과 충돌하면 무적 판정 실행하고, 체력 깎기
 		if (other.CompareTag(Tags.Obstacle)) {
+			// 충돌 비활성화 상태라면, 일체의 상호작용 없음
+			if (!_cookieController.CollisionEnabled) { return; }
 			// 대쉬 혹은 거인화 상태라면, 부수고 지나감
 			if (_cookieController.IsDashing || _cookieController.IsGiantMode) {
 				Destroy(other.gameObject);
 				return;
 			}
-			// 무적 상태라면, 데미지 받지 않음
+			// 무적 상태라면 데미지 받지 않음
 			if (_cookieController.IsGodMode) { return; }
 			
 			// 다 아니라면 데미지 받기
