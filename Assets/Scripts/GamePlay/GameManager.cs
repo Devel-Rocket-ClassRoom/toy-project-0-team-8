@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
 
 	public void LoadNextStage() {
 		// 만약 모든 스테이지를 다 지났다면, 클리어이다.
-		if (_stageNum <= _stageDatas.Length) {
+		if (_stageNum >= _stageDatas.Length) {
 			EndGame();
 			return;
 		}
