@@ -1,14 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayDataManager : MonoBehaviour {
 	public static PlayDataManager Instance;
-	
-	public CookieData CookieData;
-	public int EarnedCoin;
-	public int Score;
-	public int StageIdx;
-	public bool IsMaxScoreRenewed;
+
+	[HideInInspector] public CookieData CookieData;
+	[HideInInspector] public int EarnedCoin;
+	[HideInInspector] public int Score;
+	[HideInInspector] public int StageIdx;
+	[HideInInspector] public bool IsMaxScoreRenewed;
 
 	private void Awake() {
 		if (Instance != null) {
