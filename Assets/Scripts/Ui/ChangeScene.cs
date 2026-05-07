@@ -27,4 +27,9 @@ public class ChangeScene : MonoBehaviour
         // 누를 때 데이터 테이블에 쿠키 정보 저장
         SceneManager.LoadScene("PlayScene");
     }
+    public void OnResultScene()
+    {
+        
+        SceneManager.LoadScene("GameResultScene");
+    }
 }

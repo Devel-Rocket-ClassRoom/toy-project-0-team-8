@@ -9,33 +9,20 @@ using UnityEngine.UI;
 public class CookieController : MonoBehaviour {
 	// UI가 표현 가능한 최대체력을 정의
 	private readonly float UiMaxHp = 100f;
+	
+	// 체력 세팅 관련 변수
 	private float MaxHp { get; set; }
 	private readonly float MaxAdditionalHp = 100f;
 	private float _currentHp;
 	private float _additionalHp;
 	
+	// 무적, 능력 관련 변수
 	private readonly float _godModeDurationAfterHit = 2f;
 	private bool _isGodMode = false;
 	private bool _isDashing = false;
 	private bool _isGiantMode = false;
-	public bool IsGodMode => _isGodMode;
-
-	public bool IsGiantMode {
-		get => _isGiantMode;
-		set => _isGiantMode = value;
-	}
-
-	public bool IsDashing {
-		get => _isDashing;
-		set {
-			// 대쉬 먹게 되었을 때, 뛰는 상태면 Dash로 애니메이션 바꿔주기
-			if (value && _state == CookieState.Run) { _cookieBehavior.StartDashAnimation(); }
-			// 대쉬 끝날 때, 뛰는 상태면 Run으로 애니메이션 변경
-			else if (!value && _state == CookieState.Run) { _cookieBehavior.StartRunAnimation(); }
-			_isDashing = value;
-		}
-	}
 	
+	// 데미지 입을 시 특정 행동을 하는 캐릭터들이 사용하기 위한 이벤트
 	[HideInInspector] public UnityEvent OnTakeDamage;
 	
 	// 이벤트 종류별로 모두 생성 (점프키 누르기, 떼기, 누르고있기, 슬라이드 누르기, 떼기, 누르고있기)
@@ -61,22 +48,26 @@ public class CookieController : MonoBehaviour {
 	[Header("=== 단축키 ===")]
 	[SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 	[SerializeField] private KeyCode _slideKey = KeyCode.LeftControl;
-
-	[Header("=== 디버그용 변수 ===")]
+	
+	[Header("=== 실제 충돌 처리할 캡슐 ===")]
+	[SerializeField] private CookieCollisionChecker _collisionCollider;
+	
+	// 점프 관련 변수
 	private readonly float _jumpForce = 25f;
 	private readonly float _gravityScale = 8f;
 	private readonly float _healthReduceSpeed = 2f;
 	private readonly float _linearVelocityMax = 22f;
 	public float GravityScale => _gravityScale;
 	
+	// 사망 후 몇 초 있다 엔딩화면으로 넘어갈지
+	private readonly float _latencyAfterDeath = 1.5f;
+	
 	// 점프하자마자 Ground와 착지 판정 생겨서 3단 점프 되는 문제 해결을 위함
 	private float _ignoreGroundTimer;
 	private readonly float _ignoreGroundDuration = 0.1f;
 	
+	// 붙어있는 Component 목록
 	private Rigidbody2D _rigidBody;
-
-	[Header("=== 실제 충돌 처리할 캡슐 ===")]
-	[SerializeField] private CookieCollisionChecker _collisionCollider;
 	private BoxCollider2D _collider;
 	public BoxCollider2D Collider => _collider;
 	private CookieBehavior _cookieBehavior;
@@ -84,6 +75,26 @@ public class CookieController : MonoBehaviour {
 	private GameManager _gameManager;
 	private CookieState _state;
 	private SpriteRenderer _spriteRenderer;
+	
+	
+	
+	public bool IsGodMode => _isGodMode;
+
+	public bool IsGiantMode {
+		get => _isGiantMode;
+		set => _isGiantMode = value;
+	}
+
+	public bool IsDashing {
+		get => _isDashing;
+		set {
+			// 대쉬 먹게 되었을 때, 뛰는 상태면 Dash로 애니메이션 바꿔주기
+			if (value && _state == CookieState.Run) { _cookieBehavior.StartDashAnimation(); }
+			// 대쉬 끝날 때, 뛰는 상태면 Run으로 애니메이션 변경
+			else if (!value && _state == CookieState.Run) { _cookieBehavior.StartRunAnimation(); }
+			_isDashing = value;
+		}
+	}
 	
 	private bool _jumpRequested;
 	// 능력 사용 중일 때 등 점프 불가능하게 하고 싶을 때 사용
@@ -264,6 +275,8 @@ public class CookieController : MonoBehaviour {
 			SetSlidingCollider();
 			_cookieBehavior.StartDeathAnimation();
 			
+			StartCoroutine(CoEndGame());
+			
 			return;
 		}
 		
@@ -361,6 +374,7 @@ public class CookieController : MonoBehaviour {
 		_collisionCollider.SetSlidingPos();
 		transform.position = new Vector3(transform.position.x, transform.position.y + _slidingYDiff, transform.position.z);
 	}
+	
 	// 위치 원래대로
 	public void SetStandingPosition() {
 		_collisionCollider.SetStandingPos();
@@ -375,5 +389,10 @@ public class CookieController : MonoBehaviour {
 	public void SetStandingCollider() {
 		_collider.offset = new Vector2(_collider.offset.x, _standingColliderYOffset);
 		_collider.size = new Vector2(_collider.size.x, _standingColliderYSize);
+	}
+	
+	private IEnumerator CoEndGame() {
+		yield return new WaitForSeconds(_latencyAfterDeath);
+		_gameManager.EndGame();
 	}
 }

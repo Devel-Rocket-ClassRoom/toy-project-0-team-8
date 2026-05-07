@@ -41,7 +41,9 @@ public class PauseButton : MonoBehaviour {
 		_isPaused = !_isPaused;
 	}
 	
+	// 종료하고 결과창으로 내보내기
 	private void Quit() {
+		Time.timeScale = 1f;
 		_gameManager.EndGame();
 	}
 
