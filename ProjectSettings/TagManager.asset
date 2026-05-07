@@ -14,6 +14,7 @@ TagManager:
   - Area
   - StageRoot
   - StageEnd
+  - Lobby
   layers:
   - Default
   - TransparentFX
