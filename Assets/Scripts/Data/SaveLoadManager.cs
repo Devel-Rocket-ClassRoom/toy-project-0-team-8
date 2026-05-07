@@ -140,7 +140,7 @@ public static class SaveLoadManager
     }
     private static string GetSaveFilePath(SaveMode mode, int slot)
     {
-        var ext = mode == SaveMode.Text ? ".json" : ".dat";
-        return Path.Combine(SaveDirectory, $"{SaveFileNames[slot]}{ext}");
+        //var ext = mode == SaveMode.Text ? ".json" : ".dat";
+        return Path.Combine(SaveDirectory, $"{SaveFileNames[slot]}");
     }
 }

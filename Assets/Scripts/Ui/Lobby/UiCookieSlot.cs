@@ -13,6 +13,8 @@ public class UiCookieSlot : MonoBehaviour
     public int level;
 
     public Button button;
+    public Image LobbyImage;
+    public Image selectMark;
 
     private void Start()
     {
@@ -31,6 +33,9 @@ public class UiCookieSlot : MonoBehaviour
         textLevel.text = $"Lv.{level}";
     }
 
-
+    public void SetLobby()
+    {
+        LobbyImage.sprite = CookieData.Icon;
+    }
 
 }

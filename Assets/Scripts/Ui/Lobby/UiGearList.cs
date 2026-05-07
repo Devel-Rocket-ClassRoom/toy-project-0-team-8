@@ -12,7 +12,7 @@ public class UiGearList : MonoBehaviour
     // 끼고 있는 아이템에는 장착 중 표시를 해야함. 
 
 
-    private List<UiGearSlot> uiSlotList = new List<UiGearSlot>();
+    public List<UiGearSlot> uiSlotList = new List<UiGearSlot>();
 
     // 정렬을 위한 리스트
 
@@ -31,50 +31,48 @@ public class UiGearList : MonoBehaviour
     {
         Debug.Log(saveGear);
 
-        // 준비 씬일때만 호출
-        if (SceneManager.GetActiveScene().name == "ReadyScene")
-        { 
-            equip.gameObject.SetActive(true);
-            EquipGear(saveGear); 
+        if (equip.gameObject.activeSelf)
+        {
+            Debug.Log(saveGear.GearData.itemName);
+            equip.EquipGear(saveGear);
         }
+
 
     }
 
-    public void EquipGear(UiGearSlot saveGear)
+    private void Awake()
     {
-
-        if (equip.saveGear == null)
+        foreach (var slot in scrollRect.content.GetComponentsInChildren<UiGearSlot>(true))
         {
-            Debug.LogWarning("Equip.saveGear가 null이라 런타임에서 생성합니다.");
-            equip.saveGear = new List<UiGearSlot>();
-        }
-        saveGear.selectMark.enabled = true;
-
-        // 아이템 슬롯 프리펩에는 순번 표기용 ui도 활성화 하기
-        if (equip.saveGear.Count < 3)
-        {
-            equip.saveGear.Add(saveGear);
-        }
-        else
-        {
-            // 4개 넘었을 시
-            equip.saveGear.Add(saveGear);
-
-            equip.saveGear[0].selectMark.enabled = false;
-            equip.saveGear.RemoveAt(0);
-
+            uiSlotList.Add(slot);
+            slot.button.onClick.AddListener(() => onSelectSlot.Invoke(slot));
         }
     }
     private void Start()
     {
         onSelectSlot.AddListener(OnSelectSlot);
 
-        foreach (var slot in scrollRect.content.GetComponentsInChildren<UiGearSlot>(true))
-        {
-            uiSlotList.Add(slot);
-        }
+  
     }
 
+    private void OnEnable()
+    {
+        // 준비 씬일때만 호출
+        if (SceneManager.GetActiveScene().name == "ReadyScene")
+        {
+            equip.gameObject.SetActive(true);
+
+            for (int i = 0; i < equip.changeScene.equipGear.Length; i++)
+            {
+                int index = uiSlotList.IndexOf(equip.changeScene.equipGear[i]);
+
+                if (index > -1)
+                { 
+                    equip.EquipCheck(uiSlotList[index]);
+                }
+            }
+        }
+    }
 
     public void SetSaveGearDataList(Dictionary<string, int> source)
     {
@@ -98,9 +96,9 @@ public class UiGearList : MonoBehaviour
         }
 
         // 선택된 쿠키 할당 제거
-        if(equip.saveCookie != null)
+        if(equip.SaveCookie != null)
         {
-            equip.saveCookie = null;
+            equip.SaveCookie = null;
         }
     }
 
