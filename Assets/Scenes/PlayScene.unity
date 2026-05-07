@@ -3547,12 +3547,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
   m_PrefabInstance: {fileID: 1089295749770407398}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1089295749770407399}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d88e76bf8a747669ccc0afc14b92bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookieController
+--- !u!1 &2134716886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 488300550919767075, guid: 7201e0e40e88fdc4e8972b477b291245, type: 3}
+  m_PrefabInstance: {fileID: 1844997899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1089295749770407398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3561,10 +3566,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2615641987897293069, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_GravityScale
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4452933684968082351, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_Name
       value: BaseCookie
       objectReference: {fileID: 0}
+    - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: roof
+      value: 
+      objectReference: {fileID: 2134716886}
     - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: _hpBar
       value: 
@@ -3636,8 +3649,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4452933684968082351, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1089295749770407400}
   m_SourcePrefab: {fileID: 100100000, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+--- !u!1 &1089295749770407399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4452933684968082351, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+  m_PrefabInstance: {fileID: 1089295749770407398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1089295749770407400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089295749770407399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e1ff14904e2e24098c825474021fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChargeJellyBatch
+  stateObject: {fileID: 1464115433}
+  chargeJellyPrefab: {fileID: 1637299784096980318, guid: 82b50d755553dc846bfc0f7ed2ffec63, type: 3}
+  distanceThreshold: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

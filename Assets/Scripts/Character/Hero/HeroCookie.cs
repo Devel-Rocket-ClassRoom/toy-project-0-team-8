@@ -7,163 +7,145 @@ using UnityEngine.UI;
 
 public class HeroCookie : CookieBehavior
 {
-    public float Health = 100f;
+
     public int ChargeStack;
 
-    public float flyUpForce = 15f;
-    public float maxUpwardVelocity = 4f;
-
-
-    // 종료 로직과 시간을 같이 담을 튜플 ... 구조체로 받을 방법 없나? 다른 요소가 필요할 수도 있으니
-    private (Action<GameObject>, float) ActiveItem;
-    // 를 담을 리스트. 갱신과 종료가 각자 돼야하니
-    private List<(Action<GameObject>, float)> _activeItems = new List<(Action<GameObject>, float)>();
-
-
-    public bool isDead = false;
-    public bool isImmune = false;
-    public bool isDash = false;
+    [Header("Flight Settings")]
+    public float flyUpForce = 20f;        // 위로 밀어주는 힘 (좀 더 강하게 수정 권장)
+    public float maxUpwardVelocity = 6f; // 최대 상승 속도
+    public float flightGravityScale = 0.8f; // 비행 중 낙하 속도 (천천히 떨어지게)
+    public float SkillPosY = 0f;          // 비행 시작 높이
 
     private Rigidbody2D rb;
     private Animator animator;
-    private BoxCollider2D col;
+    private float defaultGravity;
+    private bool isFlying = false;
 
-    private Vector3 originPos;
-    private float SkillPosY = 0;
+    private ChargeJellyBatch _chargeJellyBatch;
 
-    private Coroutine coFallenAnim;
-    private Coroutine coSkillAnim;
-    private float gravity;
-   
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        col = GetComponent<BoxCollider2D>();
-        gravity = 10; // 컨트롤러의 gravity scale 값
+        _chargeJellyBatch = GetComponent<ChargeJellyBatch>();
+
+        
     }
 
     void Start()
     {
-        originPos = transform.position;
+        if (_chargeJellyBatch != null)
+            _chargeJellyBatch.ReplaceJellyByDistance(); // 스테이지 전환 시에도 호출 해야함
 
+        // 컨트롤러에서 기본 중력값을 가져옵니다.
+        defaultGravity = _controller.GravityScale;
+        Debug.Log(defaultGravity);
+
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (ChargeStack == 5 || Input.GetKeyDown(KeyCode.Alpha1))
+        // 변신 조건: 풀스택이거나 테스트용 1번키
+        if ((ChargeStack == 5 || Input.GetKeyDown(KeyCode.Alpha1)) && !isFlying)
         {
-            // 기존 조작 해제
-            _controller.WhileJumpKeyPressed.AddListener(OnSkill);
-            _controller.WhileSlideKeyPressed.AddListener(OnSkill);
-            _controller.JumpEnabled = false;
-            _controller.SlideEnabled = false;
-
-            rb.gravityScale = 1;
-
-            Transformation();
+            StartTransformation();
         }
-
     }
 
-    private void Transformation()
+    private void StartTransformation()
     {
+        isFlying = true;
+        ChargeStack = 6; // 변신 중 상태 유지용
+
+        // 천장 활성화
+        _controller.roof.SetActive(true);
+
+        // 기존 조작 비활성화 및 스킬 리스너 등록
+        _controller.JumpEnabled = false;
+        _controller.SlideEnabled = false;
+        _controller.WhileJumpKeyPressed.AddListener(OnSkill);
+        _controller.WhileSlideKeyPressed.AddListener(OnSkill);
+
+        StopAllCoroutines();
+        StartCoroutine(coSkillRoutine());
+    }
+
+    IEnumerator coSkillRoutine()
+    {
+        // --- 1. Transformation (변신 시작 및 공중 부양) ---
         animator.SetTrigger("Transformation");
-        
-        if (coSkillAnim == null)
+        rb.bodyType = RigidbodyType2D.Kinematic; // 위치 고정을 위해 잠시 키네마틱
+
+        float elapsed = 0f;
+        float duration = 1.1f; // 변신 애니메이션 동안 올라가는 시간 (조절 가능)
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = new Vector3(transform.position.x, SkillPosY, transform.position.z);
+
+        while (elapsed < duration)
         {
-            StopAllCoroutines();
-            StartCoroutine(coSkill());
-        }
-    }
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
 
-    IEnumerator coSkill()
-    {
-
-        // 1. 변신 시작: 물리 힘에 방해받지 않도록 킨메틱 설정
-        rb.bodyType = RigidbodyType2D.Kinematic;
-        rb.linearVelocity = Vector2.zero;
-
-        while (true)
-        {
-            var clipInfo = animator.GetCurrentAnimatorClipInfo(0);
-            if (clipInfo.Length > 0)
-            {
-                string clipName = clipInfo[0].clip.name;
-
-                // 변신 중: Y축 0 근처로 강제 이동 (이제 물리 간섭 없음)
-                if (clipName == "Transformation")
-                {
-                    float newY = Mathf.Lerp(transform.position.y, SkillPosY, 0.1f);
-                    transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-                }
-                // 2. 비행 시작 시점: 다시 물리(Dynamic)로 복구하여 AddForce가 먹히게 함
-                else if (clipName == "Fly" || clipName == "FlyEnd")
-                {
-                    if (rb.bodyType != RigidbodyType2D.Dynamic)
-                    {
-                        rb.bodyType = RigidbodyType2D.Dynamic;
-                        rb.gravityScale = 1f; // 비행 중엔 중력을 약하게 조절 가능
-                    }
-                }
-
-                if (clipName == "FlyEnd")
-                {
-                    // 변신 종료 및 리셋 로직
-                    ChargeStack = 0;
-                    coSkillAnim = null;
-                    rb.gravityScale = gravity;
-
-                    _controller.JumpEnabled = true;
-                    _controller.SlideEnabled = true;
-                    _controller.WhileJumpKeyPressed.RemoveListener(OnSkill);
-                    _controller.WhileSlideKeyPressed.RemoveListener(OnSkill);
-                    break;
-                }
-            }
+            // 부드러운 Lerp를 위해 SmoothStep 사용
+            float newY = Mathf.SmoothStep(startPos.y, SkillPosY, t);
+            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
             yield return null;
         }
-    }
 
-    
+        // --- 2. Fly (실제 비행 구간) ---
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.gravityScale = flightGravityScale; // 비행 전용 중력 적용
+
+        // 애니메이션이 Fly 상태인 동안 대기 (FlyEnd가 시작될 때까지)
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("FlyEnd"))
+        {
+            yield return null;
+        }
+
+        // --- 3. FlyEnd (변신 해제 및 지면 복귀) ---
+        // 다시 조작권 회수 및 상태 초기화
+        _controller.WhileJumpKeyPressed.RemoveListener(OnSkill);
+        _controller.WhileSlideKeyPressed.RemoveListener(OnSkill);
+
+        // 착지 시에는 부드럽게 지면 근처로 유도 (원래 위치 y값으로)
+        float returnElapsed = 0f;
+        float returnDuration = 1.0f;
+        Vector3 flightEndPos = transform.position;
+        float targetLandingY = -2f; // 보통 0이나 바닥 높이
+
+        while (returnElapsed < returnDuration)
+        {
+            returnElapsed += Time.deltaTime;
+            float t = returnElapsed / returnDuration;
+            // 물리엔진과 충돌하지 않게 속도를 줄이면서 Lerp
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Lerp(rb.linearVelocity.y, targetLandingY, t));
+            yield return null;
+        }
+
+        // 최종 리셋
+        ChargeStack = 0;
+        rb.gravityScale = defaultGravity;
+        _controller.roof.SetActive(false);
+
+        isFlying = false;
+        _controller.JumpEnabled = true;
+        _controller.SlideEnabled = true;
+
+        // 땅에 닿은 상태로 전환하기 위한 트리거/불린 설정
+        //animator.SetBool("isGrounded", true);
+    }
 
     public void OnSkill()
     {
-        
-        if (rb.linearVelocity.y < maxUpwardVelocity)
+        // 비행 중 상승 로직
+        if (rb.bodyType == RigidbodyType2D.Dynamic && rb.linearVelocity.y < maxUpwardVelocity)
         {
-            Debug.Log("비행");
-            rb.AddForce(Vector3.up * flyUpForce, ForceMode2D.Force);
-        }
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, flyUpForce * 0.5f);
 
-
-    }
-
-
-    // 애니메이션 이벤트
-    public void Fallen()
-    {
-        if(coFallenAnim == null)
-        {
-            coFallenAnim = StartCoroutine(coFallen());
         }
     }
 
-    IEnumerator coFallen()
-    {
-        rb.gravityScale = 0;
-        Vector3 targetPos = originPos;
-        while (Vector3.Distance(transform.position, targetPos) > 0.1f)
-        {
-            transform.position = Vector3.Lerp(transform.position, targetPos, 0.1f);
-            yield return new WaitForSeconds(0.05f);
-        }
-
-        Debug.Log("낙하");
-        transform.position = targetPos;
-        coFallenAnim = null;
-    }
 
     public void Die()
     {
@@ -174,9 +156,10 @@ public class HeroCookie : CookieBehavior
 
     public override bool UseAbilityProgressBar => true;
     
-    public override float GetProgressbarAmount() {
+    public override float GetProgressbarAmount() 
+    {
 
-        return ChargeStack/5;
+        return ChargeStack/5f;
     }
 
     public override void StartJumpAnimation()
@@ -187,11 +170,11 @@ public class HeroCookie : CookieBehavior
 
     public override void StartRunAnimation()
     {
-        animator.SetBool("isGrounded", true);
         animator.SetBool("isDouble", false);
         animator.SetBool("isSlide", false);
         animator.SetBool("isDash", false);
-        rb.gravityScale = gravity;
+
+        animator.SetBool("isGrounded", true);
 
     }
 

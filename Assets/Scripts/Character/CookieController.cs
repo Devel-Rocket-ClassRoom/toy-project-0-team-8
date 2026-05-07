@@ -51,6 +51,10 @@ public class CookieController : MonoBehaviour {
 	
 	[Header("=== 실제 충돌 처리할 캡슐 ===")]
 	[SerializeField] private CookieCollisionChecker _collisionCollider;
+
+
+	[Header("=== 비행 쿠키 전용 천장 ===")]
+	public GameObject roof;
 	
 	// 점프 관련 변수
 	private readonly float _jumpForce = 25f;
