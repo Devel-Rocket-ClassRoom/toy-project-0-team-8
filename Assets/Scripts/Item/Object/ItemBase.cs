@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class ItemBase : MonoBehaviour {
 	[HideInInspector] public Transform MagnetTarget = null;
-	[HideInInspector] public float _magnetSpeed = 5f;
+	[HideInInspector] public float _magnetSpeed;
 	
 	protected GameManager _gameManager;
 	
@@ -11,7 +11,7 @@ public abstract class ItemBase : MonoBehaviour {
 	
 	protected virtual void Update() {
 		if (MagnetTarget != null) {
-			
+			Debug.Log($"magnetSpeed : {_magnetSpeed}");
 			// transform을 MagnetTarget의 위치로 점점 끌어당기기
 			transform.position = 
 				Vector3.MoveTowards(
@@ -27,7 +27,7 @@ public abstract class ItemBase : MonoBehaviour {
 			// 아이템 먹으면 바로 사라지는 처리 후, 실제 효과 종료되면 아예 Destroy
 			GetComponent<SpriteRenderer>().enabled = false;
 			GetComponent<BoxCollider2D>().enabled = false;
-			StartCoroutine(CoApplyItemEffect(other.gameObject.GetComponent<CookieController>()));
+			StartCoroutine(CoApplyItemEffect(other.gameObject.GetComponent<CookieCollisionChecker>().CookieController));
 		}
 	}
 	
@@ -48,5 +48,6 @@ public abstract class ItemBase : MonoBehaviour {
 	protected virtual void Awake() {
 		transform.tag = Tags.Item;
 		_gameManager = GameObject.FindWithTag(Tags.GameManager).GetComponent<GameManager>();
+		_magnetSpeed = 15f;
 	}
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -44,6 +45,9 @@ public class GameManager : MonoBehaviour {
 	
 	public bool ScrollObjectsFlag { get; set; } = true;
 	public bool GameEndFlag { get; set; } = false;
+	
+	private KeyCode _pauseKey = KeyCode.Escape;
+	public KeyCode PauseKey => _pauseKey;
 
 	private void Start() {
 		Init();
@@ -204,6 +208,10 @@ public class GameManager : MonoBehaviour {
 	public void AddCoin(int amount) => _earnedCoin += amount;
 	
 	public void EndGame() {
+		// 이번 게임에 얻은 코인과 점수 SaveLoadManager에 저장
+		SaveLoadManager.Data.Coin += _earnedCoin;
+		SaveLoadManager.Data.score = Math.Max(SaveLoadManager.Data.score, _score);
+		
 		Debug.Log($"게임 종료");
 	}
 }
