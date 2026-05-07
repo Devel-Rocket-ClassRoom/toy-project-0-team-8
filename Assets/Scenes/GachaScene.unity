@@ -3852,7 +3852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 412583967}
         m_TargetAssemblyTypeName: GachaTitle, Assembly-CSharp
-        m_MethodName: OnOneClickGachaButton
+        m_MethodName: OnOneClickGachaCookiesButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5659,7 +5659,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 412583967}
         m_TargetAssemblyTypeName: GachaTitle, Assembly-CSharp
-        m_MethodName: OnClickGachaButton
+        m_MethodName: OnClickGachaCookieButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5707,6 +5707,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806539174}
   m_CullTransparentMesh: 1
+--- !u!1 &809656340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4774365592494035733, guid: 0095f72347eae3f49a00690bd2cc46ec, type: 3}
+  m_PrefabInstance: {fileID: 1531674836581811175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &824685933
 GameObject:
   m_ObjectHideFlags: 0
@@ -7929,6 +7934,7 @@ MonoBehaviour:
   animator: {fileID: 101924077}
   time: 0
   effects: {fileID: 2093566017}
+  yunchul: {fileID: 809656340}
   Treasureview: {fileID: 927239565}
   TreasureviewOne: {fileID: 7710626251124971678, guid: 22a185894c9b7bc4198031fc313d3fde, type: 3}
   rewardPrefab: {fileID: 7710626251124971678, guid: 22a185894c9b7bc4198031fc313d3fde, type: 3}
@@ -14604,7 +14610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &2093566018
 Canvas:
   m_ObjectHideFlags: 0

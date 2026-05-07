@@ -12,6 +12,7 @@ public class BbobgiTitle : GenericWindow
     private float effcetTime = 0;
     private float effectScaleSpeed = 5f;
     public GameObject effects;
+    public GameObject yunchul;
     public GameObject Treasureview;
     public GameObject TreasureviewOne;
     public GameObject rewardPrefab;
@@ -31,6 +32,7 @@ public class BbobgiTitle : GenericWindow
     private bool exitable = false;
     private bool escCheck = false;
     private bool escdoubleCheck = false;
+    private bool rewardjoin = false;
     private int howTitle;
 
     private Coroutine cor;
@@ -45,6 +47,7 @@ public class BbobgiTitle : GenericWindow
         firstCheck = false;
         exitable = false;
         escCheck = false;
+        rewardjoin = false;
         escdoubleCheck = false;
         time = 0;
         count= 0;
@@ -67,6 +70,7 @@ public class BbobgiTitle : GenericWindow
         isClick = false;
         isOpen = false;
         rewardCheck = false;
+        rewardjoin = false;
         firstCheck = false;
         exitable = false;
         escCheck = false;
@@ -84,6 +88,7 @@ public class BbobgiTitle : GenericWindow
         isClick = false;
         isOpen = false;
         rewardCheck = false;
+        rewardjoin = false;
         firstCheck = false;
         exitable = false;
         escCheck = false;
@@ -104,6 +109,7 @@ public class BbobgiTitle : GenericWindow
         isClick = false;
         isOpen = false;
         rewardCheck = false;
+        rewardjoin = false;
         firstCheck = false;
         exitable = false;
         escCheck = false;
@@ -118,6 +124,7 @@ public class BbobgiTitle : GenericWindow
         isClick= false;
         isOpen= false;
         rewardCheck= false;
+        rewardjoin = false;
         firstCheck = false;
         exitable = false;
         Treasureview.SetActive(false);
@@ -135,8 +142,12 @@ public class BbobgiTitle : GenericWindow
             return;
         }
         // 상자 클릭 시 효과 재생
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)&&firstCheck|| Input.GetKeyDown(KeyCode.Escape)&&rewardjoin)
         {
+            if (rewardjoin)
+            {
+                escdoubleCheck = true;
+            }
             if (escdoubleCheck)
             {
 
@@ -149,14 +160,17 @@ public class BbobgiTitle : GenericWindow
                 return;
 
             }
+           
             escdoubleCheck = true;
             effects.transform.localScale = new Vector3(effectscaleMax, effectscaleMax, effectscaleMax);
             rewardCheck = true;
         }
         if (isClick)
         {
+            yunchul.SetActive(true);
             effcetTime += Time.deltaTime/effectScaleSpeed;
             effects.transform.localScale = Vector3.Lerp(new Vector3(effectscalemin, effectscalemin, effectscalemin), new Vector3(effectscaleMax, effectscaleMax, effectscaleMax), effcetTime);
+            yunchul.transform.localScale = Vector3.Lerp(new Vector3(effectscalemin, effectscalemin, effectscalemin), new Vector3(effectscaleMax, effectscaleMax, effectscaleMax), effcetTime);
             time += Time.deltaTime;
             if (time > 3)
             {
@@ -182,6 +196,9 @@ public class BbobgiTitle : GenericWindow
         // 보상 획득
         if(rewardCheck)
         {
+            Debug.Log($"뽑기번호 : {howTitle}");
+            rewardjoin = true;
+            yunchul.SetActive(false);
             if (howTitle == 0)
             {
                 Reward();
@@ -337,6 +354,7 @@ public class BbobgiTitle : GenericWindow
         {
             GameObject go = Instantiate(rewardPrefab,contentArea);
             go.SetActive(true); // 나중에 바꿀예정 테스트용
+            go.transform.localScale = Vector3.one;
             go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[i].Icon;
             yield return new WaitForSeconds(0.5f);
         }
@@ -356,6 +374,7 @@ public class BbobgiTitle : GenericWindow
         {
             GameObject go = Instantiate(rewardPrefab, contentArea);
             go.SetActive(true); // 나중에 바꿀예정 테스트용
+            go.transform.localScale = Vector3.one;
             go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[i].Icon;
             yield return new WaitForSeconds(0.5f);
         }
@@ -372,6 +391,7 @@ public class BbobgiTitle : GenericWindow
             {
                 GameObject go = Instantiate(rewardPrefab, contentArea);
                 go.SetActive(true);
+                go.transform.localScale = Vector3.one;
                 go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[i].Icon;
             }
         }
@@ -382,6 +402,7 @@ public class BbobgiTitle : GenericWindow
             {
                 GameObject go = Instantiate(rewardPrefab, contentArea);
                 go.SetActive(true);
+                go.transform.localScale = Vector3.one;
                 go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[i].Icon;
             }
           
