@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour {
 	[Header("=== StageData 목록 ===")] 
 	[SerializeField] private StageData[] _stageDatas;
 	[SerializeField] public GameObject InvisibleGround;
+
+	[SerializeField] private ChangeScene _changeScene;
 	
 	private float _initialScrollSpeed;
 	private Vector3 _initialCookieScale;
@@ -53,7 +55,7 @@ public class GameManager : MonoBehaviour {
 		Init();
 	}
 	
-	private int _stageNum = 0;
+	private int _stageIdx = 0;
 	
 	public void Init() {
 		// 파일 로딩 후 추가
@@ -61,8 +63,8 @@ public class GameManager : MonoBehaviour {
 		string cookie = SaveLoadManager.Data.currentCookie;
 
 		CookieData data = DataTableManager.CookieTable.Get(cookie);
+		// 스테이지 및 캐릭터 로딩
 		LoadCharacter(data);
-		// 처음 시작 시에 첫 스테이지 로딩
 		LoadNextStage();
 		
 		// 맵 가리는 Panel을 잠시동안 치워두기 위한 Coroutine
@@ -84,17 +86,21 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoadNextStage() {
-		// 만약 모든 스테이지를 다 지났다면, 클리어이다.
-		if (_stageNum >= _stageDatas.Length) {
+		// 스테이지 모두 깼다면, 클리어!
+		if (_stageIdx >= _stageDatas.Length) {
+			_stageIdx++;
 			EndGame();
 			return;
 		}
+		
+		// 스테이지 데이터 세팅
+		StageData stageData = _stageDatas[_stageIdx++];
 		
 		// stageRoot내의 모든 오브젝트 지우기
 		foreach (Transform child in _stageRoot) {
 			Destroy(child.gameObject);
 		}
-		StageData stageData = _stageDatas[_stageNum++];
+		
 		// 새 맵 생성
 		_currentStage = Instantiate(stageData.StagePrefab, _stageRoot);
 		_scrollSpeed = stageData.ScrollSpeed;
@@ -208,9 +214,18 @@ public class GameManager : MonoBehaviour {
 	public void AddCoin(int amount) => _earnedCoin += amount;
 	
 	public void EndGame() {
+		// PlayDataManager에 값 갱신
+		PlayDataManager.Instance.EarnedCoin = _earnedCoin;
+		PlayDataManager.Instance.Score = _score;
+		PlayDataManager.Instance.IsMaxScoreRenewed = SaveLoadManager.Data.score < _score;
+		PlayDataManager.Instance.StageIdx = _stageIdx;
+		
 		// 이번 게임에 얻은 코인과 점수 SaveLoadManager에 저장
 		SaveLoadManager.Data.Coin += _earnedCoin;
 		SaveLoadManager.Data.score = Math.Max(SaveLoadManager.Data.score, _score);
+		
+		// 다음 씬으로 넘기기
+		_changeScene.OnResultScene();
 		
 		Debug.Log($"게임 종료");
 	}

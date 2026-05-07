@@ -2730,6 +2730,17 @@ Transform:
   - {fileID: 1119937294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1753349384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7242597582833930819, guid: aa827a90845c02346871b93b67e09caf, type: 3}
+  m_PrefabInstance: {fileID: 1753349383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae910561bb89e438515dc574f2d9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
 --- !u!1 &1812971356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,6 +3146,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6bfe10c195bd7944c98af3ef261679bc, type: 2}
   - {fileID: 11400000, guid: 587582f884a93654695e1fae6ec14bc3, type: 2}
   InvisibleGround: {fileID: 1628101516}
+  _changeScene: {fileID: 1753349384}
 --- !u!1 &1918267843
 GameObject:
   m_ObjectHideFlags: 0
