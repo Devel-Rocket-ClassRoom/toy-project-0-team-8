@@ -52,6 +52,8 @@ public class CookieController : MonoBehaviour {
 	[Header("=== 실제 충돌 처리할 캡슐 ===")]
 	[SerializeField] private CookieCollisionChecker _collisionCollider;
 
+	[Header("=== 떨어졌을때 메세지 출력할 Panel ===")] 
+	[SerializeField] private GameObject _fallAlertPanel;
 
 	[Header("=== 비행 쿠키 전용 천장 ===")]
 	public GameObject roof;
@@ -173,6 +175,9 @@ public class CookieController : MonoBehaviour {
 		
 		// 능력 진행도 바를 사용한다면 활성화, 안한다면 비활성화
 		_abilityProgressBar.gameObject.SetActive(_cookieBehavior.UseAbilityProgressBar);
+		
+		// 추락 알림 패널 비활성화
+		_fallAlertPanel.SetActive(false);
 	}
 	
 	// 체력 감소
@@ -233,7 +238,6 @@ public class CookieController : MonoBehaviour {
 		if (other.CompareTag(Tags.Ground) &&
 		    (_state == CookieState.Jump || _state == CookieState.DoubleJump) &&
 		    _ignoreGroundTimer >= _ignoreGroundDuration) {
-			Debug.Log($"땅에 닿음");
 			_state = CookieState.Run;
 			
 			// 대쉬중이라면 대쉬모션, 아니라면 일반모션
@@ -241,11 +245,11 @@ public class CookieController : MonoBehaviour {
 			else { _cookieBehavior.StartRunAnimation(); }
 		}
 		
-		// 바닥으로 떨어지면 다시 위로 올려주기
+		// 바닥으로 떨어지면 게임 종료 처리
 		if (other.CompareTag(Tags.Drop)) {
-			Debug.Log($"바닥에 떨어짐");
-			TakeDamage(20f);
-			transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
+			_gameManager.GameEndFlag = true;
+			_fallAlertPanel.SetActive(true);
+			StartCoroutine(CoEndGame());
 		}
 	}
 
