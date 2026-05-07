@@ -34,8 +34,8 @@ public class GameResultManager : MonoBehaviour {
 	private int _stageIdx;
 	private bool _isMaxScoreRenewed;
 	private CookieData _cookieData;
-	private readonly float _appearPeriod = 1.0f;
-	private readonly float _lerpDuration = 1.0f;
+	private readonly float _appearPeriod = 0.5f;
+	private readonly float _lerpDuration = 0.5f;
 
 	[Header("=== 캐릭터가 표시될 이미지 ===")]
 	[SerializeField] private Image _characterImage;
@@ -77,6 +77,9 @@ public class GameResultManager : MonoBehaviour {
 		_gradeImage.gameObject.SetActive(false);
 		_coinIcon.gameObject.SetActive(false);
 		_coinText.gameObject.SetActive(false);
+		_scoreIcon.gameObject.SetActive(false);
+		_scoreText.gameObject.SetActive(false);
+		_bestScoreImage.gameObject.SetActive(false);
 		
 		// 확인 버튼 누르면 메인으로 돌아가게 구성
 		_confirmButton.onClick.AddListener(_changeScene.OnLobbyScene);

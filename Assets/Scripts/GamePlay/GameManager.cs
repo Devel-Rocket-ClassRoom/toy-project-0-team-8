@@ -61,8 +61,10 @@ public class GameManager : MonoBehaviour {
 		// 파일 로딩 후 추가
 		SaveLoadManager.Load();
 		string cookie = SaveLoadManager.Data.currentCookie;
-
 		CookieData data = DataTableManager.CookieTable.Get(cookie);
+		
+		PlayDataManager.Instance.CookieData = data;
+		
 		// 스테이지 및 캐릭터 로딩
 		LoadCharacter(data);
 		LoadNextStage();
@@ -223,6 +225,7 @@ public class GameManager : MonoBehaviour {
 		// 이번 게임에 얻은 코인과 점수 SaveLoadManager에 저장
 		SaveLoadManager.Data.Coin += _earnedCoin;
 		SaveLoadManager.Data.score = Math.Max(SaveLoadManager.Data.score, _score);
+		SaveLoadManager.Save();
 		
 		// 다음 씬으로 넘기기
 		_changeScene.OnResultScene();

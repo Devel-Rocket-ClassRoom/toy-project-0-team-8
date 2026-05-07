@@ -30,6 +30,6 @@ public class ChangeScene : MonoBehaviour
     public void OnResultScene()
     {
         
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("GameResultScene");
     }
 }
