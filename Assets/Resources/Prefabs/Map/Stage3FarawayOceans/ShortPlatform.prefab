@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8193386037696266314}
   - component: {fileID: 3926161830395718076}
   - component: {fileID: 2492373574131361591}
+  - component: {fileID: 5899913758754802719}
   m_Layer: 0
   m_Name: Land (12)
   m_TagString: Ground
@@ -123,7 +124,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -138,6 +139,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
+--- !u!251 &5899913758754802719
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211286037624396435}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 160
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1982822978303123801
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +169,7 @@ GameObject:
   - component: {fileID: 3311234005239358091}
   - component: {fileID: 177699412718505490}
   - component: {fileID: 3815922571104466772}
+  - component: {fileID: 1397418681944194814}
   m_Layer: 0
   m_Name: Land (11)
   m_TagString: Ground
@@ -261,7 +282,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -276,6 +297,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
+--- !u!251 &1397418681944194814
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982822978303123801}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 160
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &4235485984866363492
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +327,7 @@ GameObject:
   - component: {fileID: 6707113411761480875}
   - component: {fileID: 4128618103322856143}
   - component: {fileID: 832759726649289115}
+  - component: {fileID: 1336753359173194396}
   m_Layer: 0
   m_Name: Land (10)
   m_TagString: Ground
@@ -399,7 +440,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -414,6 +455,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
+--- !u!251 &1336753359173194396
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235485984866363492}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 160
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5188569200225338199
 GameObject:
   m_ObjectHideFlags: 0

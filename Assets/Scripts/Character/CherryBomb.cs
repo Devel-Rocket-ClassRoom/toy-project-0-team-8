@@ -30,12 +30,12 @@ public class CherryBomb : MonoBehaviour
             isExploded = true;
             SpawnJelly();
             AudioSource.PlayClipAtPoint(bombAudio.clip, transform.position);
-            Collider2D[] obstacles = Physics2D.OverlapCircleAll(transform.position,splashRadius);
+            Collider2D[] obstacles = Physics2D.OverlapCircleAll(transform.position,splashRadius);  // 범위 내에 장애물들이 있는지 확인
             foreach (var obstacle in obstacles)
             {
                 if(obstacle.CompareTag("Obstacle"))
                 {
-                    Destroy(obstacle.gameObject);
+                    Destroy(obstacle.gameObject); // 장애물이 있으면 부숨
                 }
 
             }
