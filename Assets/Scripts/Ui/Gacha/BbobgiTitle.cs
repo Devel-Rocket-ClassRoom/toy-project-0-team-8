@@ -63,9 +63,11 @@ public class BbobgiTitle : GenericWindow
     public override void Open()
     {
         base.Open();
+        howTitle = -1;
         Treasureview.SetActive(false);
         TreasureviewOne.SetActive(false);
         effects.SetActive(false);
+        yunchul.SetActive(false);
         exitbutton.SetActive(false);
         isClick = false;
         isOpen = false;
@@ -85,6 +87,7 @@ public class BbobgiTitle : GenericWindow
         TreasureviewOne.SetActive(false);
         effects.SetActive(false);
         exitbutton.SetActive(false);
+        yunchul.SetActive(false);
         isClick = false;
         isOpen = false;
         rewardCheck = false;
@@ -106,6 +109,7 @@ public class BbobgiTitle : GenericWindow
         TreasureviewOne.SetActive(false);
         effects.SetActive(false);
         exitbutton.SetActive(false);
+        yunchul.SetActive(false);
         isClick = false;
         isOpen = false;
         rewardCheck = false;
@@ -131,7 +135,8 @@ public class BbobgiTitle : GenericWindow
         TreasureviewOne.SetActive(false);
         effects.SetActive(false);
         exitbutton.SetActive(false);
-        howTitle = -1;
+        yunchul.SetActive(false);
+  
         
     }
 
@@ -167,7 +172,7 @@ public class BbobgiTitle : GenericWindow
         }
         if (isClick)
         {
-            yunchul.SetActive(true);
+
             effcetTime += Time.deltaTime/effectScaleSpeed;
             effects.transform.localScale = Vector3.Lerp(new Vector3(effectscalemin, effectscalemin, effectscalemin), new Vector3(effectscaleMax, effectscaleMax, effectscaleMax), effcetTime);
             yunchul.transform.localScale = Vector3.Lerp(new Vector3(effectscalemin, effectscalemin, effectscalemin), new Vector3(effectscaleMax, effectscaleMax, effectscaleMax), effcetTime);
@@ -241,6 +246,7 @@ public class BbobgiTitle : GenericWindow
         animator.speed = 2f;
         effcetTime = 0;
         effects.SetActive(true);
+        yunchul.SetActive(true);
         effects.GetComponent<Animator>().speed = 1;
 
         effectParticle.gameObject.SetActive(true);
@@ -337,7 +343,7 @@ public class BbobgiTitle : GenericWindow
     {
         if(exitable)
         {
-            windowManager.Open(0);
+            windowManager.Open(0,0, howTitle);
         }
         else
         {

@@ -18,22 +18,24 @@ public class GachaTitle : GenericWindow
     public GameObject treasureCenter;
     public GameObject cookiesCenter;
     public TextMeshProUGUI enoughCrystalText;
-    private bool bbobgititleCheck;
-    private bool gachatitleCheck;
+    private bool bbobgititleCheck = false;
+    private bool gachatitleCheck = true;
     public int maxCrystal = 999999;
     private bool notenoughCheck;
     private int GachaCount;
 
-    private void OnEnable()
+/*    private void OnEnable()
     {
         
         currentCrystal = SaveLoadManager.Data.Cristal;
         textcurrentCrystal = currentCrystal;
         enoughCrystalPanal.SetActive(false);
+        gachatitleCheck = true;
+        bbobgititleCheck = false;
         crystaltext.text = textcurrentCrystal.ToString();
         cookiesCenter.SetActive(false);
         treasureCenter.SetActive(true);
-    }
+    }*/
     public void OnClickAddCrystal(int crystal)
     {
         currentCrystal += crystal;
@@ -72,11 +74,31 @@ public class GachaTitle : GenericWindow
         currentCrystal = SaveLoadManager.Data.Cristal;
         textcurrentCrystal = currentCrystal;
         crystaltext.text = textcurrentCrystal.ToString();
-        cookiesCenter.SetActive(false);
-        treasureCenter.SetActive(true);
-        enoughCrystalPanal.SetActive(false);
 
     }
+
+    public override void Open(int count, int currentBbobgi)
+    {
+        base.Open(count, currentBbobgi);
+        SaveLoadManager.Load();
+        currentCrystal = SaveLoadManager.Data.Cristal;
+        textcurrentCrystal = currentCrystal;
+        crystaltext.text = textcurrentCrystal.ToString();
+   
+        enoughCrystalPanal.SetActive(false);
+        if (currentBbobgi == 0)
+        {
+            OnClickTreasureBbobgiPanal();
+        }
+        else if (currentBbobgi == 1)
+        {
+            OnclickCookiesBbobgiPanal();
+        }
+
+
+           
+    }
+    
     public override void Close()
     {
         base.Close();
