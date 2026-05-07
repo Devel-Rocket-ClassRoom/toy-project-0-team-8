@@ -122,6 +122,7 @@ public class GameResultManager : MonoBehaviour {
 		float timer = 0f;
 		_coinText.gameObject.SetActive(true);
 		while (timer <= _lerpDuration) {
+			timer += Time.deltaTime;
 			_coinText.text = ((int)Mathf.Lerp(0, _earnedCoin, timer / _lerpDuration)).ToString("N0");
 			yield return null;
 		}
@@ -136,6 +137,7 @@ public class GameResultManager : MonoBehaviour {
 		timer = 0f;
 		_scoreText.gameObject.SetActive(true);
 		while (timer <= _lerpDuration) {
+			timer += Time.deltaTime;
 			_scoreText.text = ((int)Mathf.Lerp(0, _score, timer / _lerpDuration)).ToString("N0");
 			yield return null;
 		}
