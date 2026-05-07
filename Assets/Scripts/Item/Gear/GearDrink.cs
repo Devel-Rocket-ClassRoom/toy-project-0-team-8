@@ -3,23 +3,28 @@ using UnityEngine;
 
 public class GearDrink : MonoBehaviour
 {
-    private float radius = 2f;
-    private float magnetspeed = 15f;
-
-
-
+    private float coolTime = 10f;
+    private GameObject go;
+    private GameManager gm;
+    private float t;
+    private void OnEnable()
+    {
+        go = GameObject.FindWithTag(Tags.GameManager);
+        if (go != null)
+        {
+            gm = go.GetComponent<GameManager>();
+        }
+        t = 0;
+    }
     private void Update()
     {
-        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach(Collider2D target in col)
+        t += Time.deltaTime;
+        if (t > coolTime)
         {
-            ItemBase itemBase = target.GetComponent<ItemBase>();
-            if(itemBase!=null)
-            {
-                target.transform.position = Vector3.MoveTowards(target.transform.position,transform.position,magnetspeed*Time.deltaTime);
-            }
+            gm.ActivateDash(2f);
+            t = 0;
         }
-    }
 
+    }
 
 }
