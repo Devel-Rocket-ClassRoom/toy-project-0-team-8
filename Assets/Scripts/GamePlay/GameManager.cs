@@ -74,9 +74,9 @@ public class GameManager : MonoBehaviour {
 		// 스테이지 및 캐릭터 로딩
 		LoadCharacter(data);
 		LoadNextStage();
-		
-		// 맵 가리는 Panel을 잠시동안 치워두기 위한 Coroutine
-		StartCoroutine(CoRemoveBlindPanel());
+
+        // 맵 가리는 Panel을 잠시동안 치워두기 위한 Coroutine
+        StartCoroutine(CoRemoveBlindPanel());
 		
 		MagnetArea.gameObject.SetActive(false);
 		InvisibleGround.SetActive(false);
@@ -245,4 +245,5 @@ public class GameManager : MonoBehaviour {
 		
 		Debug.Log($"게임 종료");
 	}
+
 }

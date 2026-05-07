@@ -57,6 +57,9 @@ public class CookieController : MonoBehaviour {
 
 	[Header("=== 비행 쿠키 전용 천장 ===")]
 	public GameObject roof;
+
+	[Header("=== 보물 프리팹 생성 ===")]
+	public Transform gearPrefabParent;
 	
 	// 점프 관련 변수
 	private readonly float _jumpForce = 25f;
@@ -144,8 +147,12 @@ public class CookieController : MonoBehaviour {
 		
 		// Factory 이용해서 data에 맞는 Behavior 붙이기
 		CookieBehaviorFactory.AddBehavior(gameObject, data);
-		
-		_rigidBody = GetComponent<Rigidbody2D>();
+
+		// 보물 장착
+		SetGear();
+
+
+        _rigidBody = GetComponent<Rigidbody2D>();
 		_cookieBehavior = GetComponent<CookieBehavior>();
 		_animator = GetComponent<Animator>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
@@ -404,4 +411,28 @@ public class CookieController : MonoBehaviour {
 		yield return new WaitForSeconds(_latencyAfterDeath);
 		_gameManager.EndGame();
 	}
+
+
+
+	private void SetGear()
+	{
+        string[] gearIds = SaveLoadManager.Data.currentGear;
+
+        foreach (string id in gearIds)
+        {
+            if (string.IsNullOrEmpty(id)) continue;
+
+            // 테이블에서 ID에 해당하는 데이터(SO) 가져오기
+			// 추하게 들고오긴 했음..
+            var gearData = DataTableManager.GearTable.Get(id);
+			var gearPrefab = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GachaManager>().itemList.Find(g => g.itemId == id).GearPrefab;
+            
+			if (gearData != null && gearPrefab != null)
+            {
+                GameObject gearObj = Instantiate(gearPrefab, gearPrefabParent);
+
+                Debug.Log($"{id} 보물이 {gearPrefabParent.name} 아래에 생성되었습니다.");
+            }
+        }
+    }
 }

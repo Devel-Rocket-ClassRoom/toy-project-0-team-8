@@ -7,5 +7,7 @@ public class GachaGear : ScriptableObject
     public string itemId;
     public float weight;
     public Sprite Icon;
-    public MonoBehaviour effectScript;
+
+    // 스크립트 이름
+    public GameObject GearPrefab;
 }
