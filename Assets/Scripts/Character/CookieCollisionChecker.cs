@@ -2,7 +2,9 @@
 
 public class CookieCollisionChecker : MonoBehaviour {
 	[SerializeField] private CookieController _cookieController;
+	[SerializeField] private GameManager _gameManager;
 	public CookieController CookieController => _cookieController;
+	
 	private CapsuleCollider2D _collider2D;
 	
 	private readonly float _standingColliderXOffset = -0.08f;
@@ -58,6 +60,11 @@ public class CookieCollisionChecker : MonoBehaviour {
 			
 			// 다 아니라면 데미지 받기
 			_cookieController.TakeDamage(20);
+		}
+
+		// 맵 끝과 충돌하면, 다음 스테이지 로딩하게
+		if (other.CompareTag(Tags.StageEnd)) {
+			_gameManager.LoadNextStage();
 		}
 	}
 }

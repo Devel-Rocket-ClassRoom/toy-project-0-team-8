@@ -965,7 +965,8 @@ GameObject:
   - component: {fileID: 1154427269}
   - component: {fileID: 1154427271}
   - component: {fileID: 1154427270}
-  - component: {fileID: 1154427272}
+  - component: {fileID: 1154427273}
+  - component: {fileID: 1154427274}
   m_Layer: 5
   m_Name: GradeImage
   m_TagString: Untagged
@@ -989,8 +990,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 487, y: -23}
-  m_SizeDelta: {x: 100, y: 80}
+  m_AnchoredPosition: {x: 503.73, y: -45}
+  m_SizeDelta: {x: 145, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154427270
 MonoBehaviour:
@@ -1012,7 +1013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2291780521471669916, guid: 3f903681841bd4041bad46222f77d21f, type: 3}
+  m_Sprite: {fileID: -5743474462039176297, guid: 4167b6756d4ed4b418961e9e7921b26e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1030,7 +1031,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154427268}
   m_CullTransparentMesh: 1
---- !u!114 &1154427272
+--- !u!114 &1154427273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1042,7 +1043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
-  m_IgnoreLayout: 1
+  m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
@@ -1050,6 +1051,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1154427274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154427268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 0
 --- !u!1 &1185611815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2A4\uD14C\uC774\uC9C0 2 : \uC815\uAE00 \uBC8C\uB808 \uC232"
+  m_text: "\uC2A4\uD14C\uC774\uC9C0 3 : \uBA40\uB9AC\uBA40\uB9AC \uBC14\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 793ddb94cac7f164b80b97518993c2e6, type: 2}
   m_sharedMaterial: {fileID: 6489297266514710221, guid: 793ddb94cac7f164b80b97518993c2e6, type: 2}
@@ -1226,8 +1241,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
