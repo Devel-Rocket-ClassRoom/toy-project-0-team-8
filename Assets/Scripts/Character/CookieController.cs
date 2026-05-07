@@ -14,7 +14,7 @@ public class CookieController : MonoBehaviour {
 	private float _currentHp;
 	private float _additionalHp;
 	
-	private readonly float _godModeDuration = 2f;
+	private readonly float _godModeDurationAfterHit = 2f;
 	private bool _isGodMode = false;
 	private bool _isDashing = false;
 	private bool _isGiantMode = false;
@@ -169,14 +169,20 @@ public class CookieController : MonoBehaviour {
 		// 부딫혔을 때 이벤트 활성화
 		OnTakeDamage?.Invoke();
 		// 무적 상태 활성화
-		_coGodMode = StartCoroutine(CoGodMode());
+		EnableGodMode(_godModeDurationAfterHit);
 	}
 	
-	public IEnumerator CoGodMode() {
+	public void EnableGodMode(float duration) {
+		if (_coGodMode != null) StopCoroutine(_coGodMode);
+		_coGodMode = StartCoroutine(CoGodMode(duration));
+	} 
+	
+	// 실제 무적모드 효과 연출 및 무적 적용
+	private IEnumerator CoGodMode(float duration) {
 		_isGodMode = true;
 		float godModeTimer = 0f;
 		
-		while (godModeTimer <= _godModeDuration) {
+		while (godModeTimer <= duration) {
 			godModeTimer += Time.deltaTime;
 			if ((int)(godModeTimer / 0.1) % 2 == 0) {
 				_spriteRenderer.enabled = false;

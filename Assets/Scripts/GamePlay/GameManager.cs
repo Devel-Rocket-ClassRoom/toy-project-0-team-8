@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
 	private Vector3 _initialCookieScale;
 	private readonly float _giantScaleMultiplier = 3f;
 	private readonly float _dashSpeedMultiplier = 1.5f;
+	private readonly float _godmodeDurationAfterItem = 1.0f;
 	
 	private StageData _currentStage;
 	private float _scrollSpeed;
@@ -125,6 +126,8 @@ public class GameManager : MonoBehaviour {
 		yield return StartCoroutine(CoGrowToGiant(false));
 		// 거인모드 비활성화
 		_cookieController.IsGiantMode = false;
+		// 종료 시 무적모드 1초간 활성화
+		_cookieController.EnableGodMode(_godmodeDurationAfterItem);
 		
 		_coGiant = null;
 	}
@@ -161,6 +164,8 @@ public class GameManager : MonoBehaviour {
 		_cookieController.IsDashing = false;
 		// 스크롤 속도 원상복귀
 		_scrollSpeed = _initialScrollSpeed;
+		// 종료 시 무적모드 1초간 활성화
+		_cookieController.EnableGodMode(_godmodeDurationAfterItem);
 		
 		_coDash = null;
 	}
