@@ -144,7 +144,7 @@ public class GameResultManager : MonoBehaviour {
 			_scoreText.text = ((int)Mathf.Lerp(0, _score, timer / _lerpDuration)).ToString("N0");
 			yield return null;
 		}
-		_scoreText.text = _earnedCoin.ToString("N0");
+		_scoreText.text = _score.ToString("N0");
 		yield return new WaitForSeconds(_appearPeriod);
 		
 		// Best Score 표시? 혹은 안하기?
