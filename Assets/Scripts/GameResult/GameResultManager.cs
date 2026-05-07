@@ -181,7 +181,7 @@ public class GameResultManager : MonoBehaviour {
 		
 		// 젤리 값 표시
 		_scoreText.gameObject.SetActive(true);
-		_scoreText.text = _earnedCoin.ToString("N0");
+		_scoreText.text = _score.ToString("N0");
 		
 		// Best Score 표시 혹은 안하기
 		_bestScoreImage.gameObject.SetActive(_isMaxScoreRenewed);
