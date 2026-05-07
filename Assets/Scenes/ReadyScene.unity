@@ -752,6 +752,7 @@ GameObject:
   - component: {fileID: 306353697}
   - component: {fileID: 306353696}
   - component: {fileID: 306353695}
+  - component: {fileID: 306353698}
   m_Layer: 5
   m_Name: Gear3Icon
   m_TagString: Untagged
@@ -816,6 +817,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &306353698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306353694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35da143e53541af8953700f19ffcb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GearIcon
 --- !u!1 &593437449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2090,7 @@ GameObject:
   - component: {fileID: 1430248982}
   - component: {fileID: 1430248983}
   - component: {fileID: 1430248984}
+  - component: {fileID: 1430248985}
   m_Layer: 5
   m_Name: Gear1Icon
   m_TagString: Untagged
@@ -2141,6 +2155,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1430248985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430248981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35da143e53541af8953700f19ffcb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GearIcon
 --- !u!1 &1434689176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2178,7 @@ GameObject:
   - component: {fileID: 1434689177}
   - component: {fileID: 1434689178}
   - component: {fileID: 1434689179}
+  - component: {fileID: 1434689180}
   m_Layer: 5
   m_Name: Gear2Icon
   m_TagString: Untagged
@@ -2216,6 +2243,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1434689180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434689176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35da143e53541af8953700f19ffcb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GearIcon
 --- !u!1 &1443609339
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 	[Header("=== 사용될 CookieController ===")]
@@ -24,6 +25,11 @@ public class GameManager : MonoBehaviour {
 	[Header("=== StageData 목록 ===")] 
 	[SerializeField] private StageData[] _stageDatas;
 	[SerializeField] public GameObject InvisibleGround;
+	
+	[Header("=== 착용한 유물을 각각 표현할 1, 2, 3번 이미지 ===")]
+	[SerializeField] private InGameGearSlot _firstGear;
+	[SerializeField] private InGameGearSlot _secondGearImage;
+	[SerializeField] private InGameGearSlot _thirdGearImage;
 
 	[SerializeField] private ChangeScene _changeScene;
 	
@@ -77,6 +83,13 @@ public class GameManager : MonoBehaviour {
 		
 		_initialCookieScale = _cookieController.transform.localScale;
 		_initialScrollSpeed = _scrollSpeed;
+	}
+	
+	// 유물 설정하기, 없다면 입력 안해도 됨
+	public void SetGears(GearBase firstGear = null, GearBase secondGear = null, GearBase thirdGear = null) {
+		_firstGear.Init(firstGear);
+		_secondGearImage.Init(secondGear);
+		_thirdGearImage.Init(thirdGear);
 	}
 	
 	// 첫 스테이지는 가리는 패널이 없어야 해서 사용
