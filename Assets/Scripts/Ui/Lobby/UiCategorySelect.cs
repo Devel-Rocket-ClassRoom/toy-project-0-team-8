@@ -21,7 +21,7 @@ public class UiCategorySelect : MonoBehaviour
     {
         DataTableManager.ChangeDataType(DataType.Cookie);
 
-        SaveLoadManager.Load(0);
+        SaveLoadManager.Load();
         uiGearList.gameObject.SetActive(false);
         uiCookieList.gameObject.SetActive(true);
 
@@ -32,7 +32,7 @@ public class UiCategorySelect : MonoBehaviour
     {
         DataTableManager.ChangeDataType(DataType.Gear);
 
-        SaveLoadManager.Load(1);
+        SaveLoadManager.Load();
         uiCookieList.gameObject.SetActive(false);
         uiGearList.gameObject.SetActive(true);
 

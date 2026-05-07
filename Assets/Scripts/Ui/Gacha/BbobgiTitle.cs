@@ -21,7 +21,8 @@ public class BbobgiTitle : GenericWindow
     public GameObject exitbutton;
     public ParticleSystem effectParticle;
     public Transform contentArea;
-    private List<GachaGear> rewardList;
+    private List<GachaGear> rewardGearList;
+    private List<GachaCookie> rewardCookieList;
     public GachaManager gachaManager;
     private bool isClick = false;
     private bool isOpen = false;
@@ -33,7 +34,8 @@ public class BbobgiTitle : GenericWindow
     private bool exitable = false;
     private void Awake()
     {
-        rewardList = new List<GachaGear>();
+        rewardGearList = new List<GachaGear>();
+        rewardCookieList = new List<GachaCookie>();
 
         isClick = false;
         isOpen = false;
@@ -164,7 +166,8 @@ public class BbobgiTitle : GenericWindow
     }
     public void Reward()
     {
-        rewardList.Clear();
+        // 쿠키 분리하던지 여기서 자체 분기 하던지
+        rewardGearList.Clear();
 
         Treasureview.SetActive(false);
         TreasureviewOne.SetActive(false);
@@ -173,25 +176,25 @@ public class BbobgiTitle : GenericWindow
         {
            TreasureviewOne.SetActive(true);
            TreasureviewOne.transform.localScale = new Vector3(3f, 3f, 3f);
-           rewardList.Add(gachaManager.GachaItem());
+            rewardGearList.Add(gachaManager.GachaItem());
         }
         else if (count <= 10)
         {
             Treasureview.SetActive(true);
             for (int i = 0; i < count; i++)
             {
-                rewardList.Add(gachaManager.GachaItem());
+                rewardGearList.Add(gachaManager.GachaItem());
             }
         }
 
         // 리워드 리스트 json으로 저장
-        SaveReward();
+        SaveGearReward();
     }
-    public void SaveReward()
+    public void SaveGearReward()
     {
         SaveLoadManager.Data = new SaveDataVC();
 
-        foreach (GachaGear gear in rewardList)
+        foreach (GachaGear gear in rewardGearList)
         {
             string gearId = gear.itemId;
 
@@ -199,11 +202,25 @@ public class BbobgiTitle : GenericWindow
             {
                 SaveLoadManager.Data.GearList[gearId]++;
             }
-            
-
         }
 
-        SaveLoadManager.Save(1);
+        SaveLoadManager.Save();
+    }
+    public void SaveCookieReward()
+    {
+        SaveLoadManager.Data = new SaveDataVC();
+
+        foreach (GachaCookie cookie in rewardCookieList)
+        {
+            string cookieId = cookie.cookieId;
+
+            if (SaveLoadManager.Data.CookieList.ContainsKey(cookieId))
+            {
+                SaveLoadManager.Data.CookieList[cookieId]++;
+            }
+        }
+
+        SaveLoadManager.Save();
     }
     public void OnClickExit()
     {

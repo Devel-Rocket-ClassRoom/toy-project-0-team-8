@@ -18,9 +18,7 @@ public static class SaveLoadManager
     private static readonly string SaveDirectory = $"{Application.persistentDataPath}/Save";
     private static readonly string[] SaveFileNames =
     {
-        "SaveCookie.json",
-        "SaveGear.json",
-
+        "SaveData.json",
     };
 
     private static JsonSerializerSettings settings = new JsonSerializerSettings()
@@ -32,18 +30,18 @@ public static class SaveLoadManager
 
     };
 
-    public static bool Save(int slot)
+    public static bool Save(int slot = 0)
     {
         return Save(slot, Mode);
     }
-    public static bool Load(int slot)
+    public static bool Load(int slot = 0)
     {
         return Load(slot, Mode);
     }
 
 
 
-    public static bool Save(int slot, SaveMode mode)
+    public static bool Save(int slot, SaveMode mode = 0)
     {
         if (Data == null || slot < 0 || slot >= SaveFileNames.Length)
         { 
@@ -82,7 +80,7 @@ public static class SaveLoadManager
         }
     }
 
-    public static bool Load(int slot, SaveMode mode)
+    public static bool Load(int slot, SaveMode mode = 0)
     {
         if(slot < 0 || (slot >= SaveFileNames.Length))
         {
