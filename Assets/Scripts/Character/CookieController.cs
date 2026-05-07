@@ -66,12 +66,16 @@ public class CookieController : MonoBehaviour {
 	[SerializeField] private float _jumpForce = 10f;
 	[SerializeField] private float _gravityScale = 3f;
 	[SerializeField] private float _healthReduceSpeed = 2f;
+	[SerializeField] private float _linearVelocityMax = 20f;
 	
 	// 점프하자마자 Ground와 착지 판정 생겨서 3단 점프 되는 문제 해결을 위함
 	private float _ignoreGroundTimer;
 	private readonly float _ignoreGroundDuration = 0.1f;
 	
 	private Rigidbody2D _rigidBody;
+
+	[Header("=== 실제 충돌 처리할 캡슐 ===")]
+	[SerializeField] private CookieCollisionChecker _collisionCollider;
 	private BoxCollider2D _collider;
 	public BoxCollider2D Collider => _collider;
 	private CookieBehavior _cookieBehavior;
@@ -89,8 +93,10 @@ public class CookieController : MonoBehaviour {
 	private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYDiff = -0.425f;
 	
-	private readonly float _standingColliderYSize = 1.2f;
-	private readonly float _slidingColliderYOffset = -0.28f;
+	
+	private readonly float _standingColliderYOffset = -0.21f;
+	private readonly float _standingColliderYSize = 1.32f;
+	private readonly float _slidingColliderYOffset = -0.21f;
 	private readonly float _slidingColliderYSize = 0.7f;
 	
 	private Coroutine _coGodMode;
@@ -106,8 +112,7 @@ public class CookieController : MonoBehaviour {
 	}
 	
 	private float UiHpPercent => CurrentHp / UiMaxHp;
-	private float AdditionalHpPercent => AdditionalHp / MaxAdditionalHp; 
-	
+	private float AdditionalHpPercent => AdditionalHp / MaxAdditionalHp;
 	
 	public void Init(CookieData data, GameManager gameManager) {
 		_gameManager = gameManager;
@@ -119,10 +124,10 @@ public class CookieController : MonoBehaviour {
 		CookieBehaviorFactory.AddBehavior(gameObject, data);
 		
 		_rigidBody = GetComponent<Rigidbody2D>();
-		_collider = GetComponent<BoxCollider2D>();
 		_cookieBehavior = GetComponent<CookieBehavior>();
 		_animator = GetComponent<Animator>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
+		_collider = GetComponent<BoxCollider2D>();
 		
 		_rigidBody.gravityScale = _gravityScale;
 		
@@ -227,20 +232,6 @@ public class CookieController : MonoBehaviour {
 			transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
 		}
 		
-		// 장애물과 충돌하면 무적 판정 실행하고, 체력 깎기
-		if (other.CompareTag(Tags.Obstacle)) {
-			// 무적 상태라면, 데미지 받지 않음
-			if (IsGodMode) { return; }
-			// 대쉬 혹은 거인화 상태라면, 부수고 지나감
-			if (IsDashing || IsGiantMode) {
-				Destroy(other.gameObject);
-				return;
-			}
-			
-			// 다 아니라면 데미지 받기
-			TakeDamage(20);
-		}
-		
 		// 맵 끝과 충돌하면, 다음 스테이지 로딩하게
 		if (other.CompareTag(Tags.StageEnd)) {
 			_gameManager.LoadNextStage();
@@ -329,6 +320,11 @@ public class CookieController : MonoBehaviour {
 			}
 		}
 		_jumpRequested = false;
+		
+		// 만약 스피드가 제한 속도 이상이면, 그 아래로 잘라줘야 함(중력 영향 줄이기)
+		var temp = _rigidBody.linearVelocity;
+		temp.y = Mathf.Clamp(temp.y, -_linearVelocityMax, _linearVelocityMax);
+		_rigidBody.linearVelocity = temp;
 	}
 	
 	public void RequestJump() {
@@ -359,10 +355,12 @@ public class CookieController : MonoBehaviour {
 	
 	// 슬라이딩 시에 위치 자연스럽게 변경
 	public void SetSlidingPosition() {
+		_collisionCollider.SetSlidingPos();
 		transform.position = new Vector3(transform.position.x, transform.position.y + _slidingYDiff, transform.position.z);
 	}
 	// 위치 원래대로
 	public void SetStandingPosition() {
+		_collisionCollider.SetStandingPos();
 		transform.position = new Vector3(transform.position.x, transform.position.y - _slidingYDiff, transform.position.z);
 	}
 	// 슬라이딩 시에 충돌 박스 크기 자연스럽게 변경
@@ -372,7 +370,7 @@ public class CookieController : MonoBehaviour {
 	}
 	// 충돌 박스 크기 원래대로
 	public void SetStandingCollider() {
-		_collider.offset = new Vector2(_collider.offset.x, 0);
+		_collider.offset = new Vector2(_collider.offset.x, _standingColliderYOffset);
 		_collider.size = new Vector2(_collider.size.x, _standingColliderYSize);
 	}
 }

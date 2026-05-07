@@ -4,6 +4,8 @@ using UnityEngine;
 public class MagnetArea : MonoBehaviour {
 	private readonly List<ItemBase> magnetItemList = new();
 
+	[SerializeField] private CookieController _cookieController;
+
 	// 활성화될 때 아이템 리스트 초기화
 	private void OnEnable() {
 		magnetItemList.Clear();
@@ -21,7 +23,7 @@ public class MagnetArea : MonoBehaviour {
 		if (other.transform.CompareTag(Tags.Item)) {
 			Debug.Log($"아이템 진입");
 			ItemBase item = other.gameObject.GetComponent<ItemBase>();
-			item.MagnetTarget = transform;
+			item.MagnetTarget = _cookieController.transform;
 			magnetItemList.Add(item);
 		}
 	}
