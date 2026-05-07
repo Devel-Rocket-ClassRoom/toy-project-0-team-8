@@ -52,7 +52,11 @@ public class GameManager : MonoBehaviour {
 	private int _stageNum = 0;
 	
 	public void Init() {
-		CookieData data = DataTableManager.CookieTable.Get("Cookie_Pirate");
+		// 파일 로딩 후 추가
+		SaveLoadManager.Load();
+		string cookie = SaveLoadManager.Data.currentCookie;
+
+		CookieData data = DataTableManager.CookieTable.Get(cookie);
 		LoadCharacter(data);
 		// 처음 시작 시에 첫 스테이지 로딩
 		LoadNextStage();
