@@ -8,6 +8,7 @@ public class CherryBomb : MonoBehaviour
     public GameObject stageroot;
     public float jellyRadius = 1.5f;
     public float jellyAddRadius = 0.35f;
+    private float splashRadius = 2f;
     private bool isExploded = false;
     public AudioSource bombAudio;
     private Coroutine bombCor;
@@ -17,9 +18,7 @@ public class CherryBomb : MonoBehaviour
         if (bombCor != null)
             StopCoroutine(bombCor);
         bombAudio = GetComponent<AudioSource>();
-
         stageroot = GameObject.FindWithTag(Tags.StageRoot);
-        
         bombCor = StartCoroutine(Bomb());
     }
 
@@ -31,6 +30,15 @@ public class CherryBomb : MonoBehaviour
             isExploded = true;
             SpawnJelly();
             AudioSource.PlayClipAtPoint(bombAudio.clip, transform.position);
+            Collider2D[] obstacles = Physics2D.OverlapCircleAll(transform.position,splashRadius);
+            foreach (var obstacle in obstacles)
+            {
+                if(obstacle.CompareTag("Obstacle"))
+                {
+                    Destroy(obstacle.gameObject);
+                }
+
+            }
             Destroy(gameObject);
         }
     }
@@ -64,6 +72,15 @@ public class CherryBomb : MonoBehaviour
                 Effect();
             SpawnJelly();
             AudioSource.PlayClipAtPoint(bombAudio.clip, transform.position);
+            Collider2D[] obstacles = Physics2D.OverlapCircleAll(transform.position, splashRadius);
+            foreach (var obstacle in obstacles)
+            {
+                if (obstacle.CompareTag("Obstacle"))
+                {
+                    Destroy(obstacle.gameObject);
+                }
+
+            }
             Destroy(gameObject);
         }
     }

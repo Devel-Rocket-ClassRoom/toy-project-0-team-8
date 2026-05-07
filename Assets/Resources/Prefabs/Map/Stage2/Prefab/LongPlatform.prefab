@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4561058839539735410}
+  - component: {fileID: 7750075763845656258}
   m_Layer: 0
   m_Name: LongPlatform
   m_TagString: Ground
@@ -41,6 +42,18 @@ Transform:
   - {fileID: 6656439090340690113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7750075763845656258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174756326166375534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c802bc03f1a1a4c8e209a9ca7ed6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveDownPlatform
 --- !u!1001 &528081052876360727
 PrefabInstance:
   m_ObjectHideFlags: 0
