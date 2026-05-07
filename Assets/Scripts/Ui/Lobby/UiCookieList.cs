@@ -13,7 +13,7 @@ public class UiCookieList : MonoBehaviour
 
     public UiCookieSlot prefab;
     public ScrollRect scrollRect;
-
+    public Image LobbyCookie;
     // 데이터 갱신을 위한 이벤트
     public UnityEvent onUpdateSlot;
     public UnityEvent<UiCookieSlot> onSelectSlot;
@@ -33,6 +33,13 @@ public class UiCookieList : MonoBehaviour
                 slot.selectMark.enabled = false;
             }
             equip.EquipCookie(saveCookie);
+        }
+        else
+        {
+            Debug.Log(saveCookie.CookieData.Icon.name);
+            SaveLoadManager.Data.lobbyCookieId = saveCookie.CookieData.cookieId;
+            SaveLoadManager.Save();
+            LobbyCookie.sprite = saveCookie.CookieData.Icon;
         }
     }
 
