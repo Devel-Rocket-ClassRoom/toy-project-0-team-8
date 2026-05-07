@@ -4,7 +4,7 @@ using UnityEngine;
 public class GearDrink : MonoBehaviour
 {
     private float radius = 2f;
-    private float magnetspeed = 5f;
+    private float magnetspeed = 15f;
 
 
 
