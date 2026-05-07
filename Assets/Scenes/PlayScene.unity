@@ -2744,17 +2744,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa827a90845c02346871b93b67e09caf, type: 3}
---- !u!114 &1753349384 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7242597582833930819, guid: aa827a90845c02346871b93b67e09caf, type: 3}
-  m_PrefabInstance: {fileID: 1753349383}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aae910561bb89e438515dc574f2d9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
 --- !u!1 &1771133921
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,7 +3183,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6bfe10c195bd7944c98af3ef261679bc, type: 2}
   - {fileID: 11400000, guid: 587582f884a93654695e1fae6ec14bc3, type: 2}
   InvisibleGround: {fileID: 1628101516}
-  _changeScene: {fileID: 1753349384}
+  _changeScene: {fileID: 0}
 --- !u!1 &1918267843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3566,6 +3555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2514233627556925859, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Size.y
+      value: 2.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2615641987897293069, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_GravityScale
       value: 8
@@ -3605,6 +3598,18 @@ PrefabInstance:
     - target: {fileID: 5630293020394366963, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: _linearVelocityMax
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777470905179820843, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Size.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777470905179820843, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Size.y
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777470905179820843, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 7222709207348568573, guid: 9f088c791e50a84409cf627cd4806495, type: 3}
       propertyPath: m_LocalPosition.x
