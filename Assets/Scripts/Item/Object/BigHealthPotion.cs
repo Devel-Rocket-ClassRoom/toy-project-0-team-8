@@ -4,6 +4,7 @@ public class BigHealthPotion : ItemBase {
     protected override float ItemDuration => 0f;
 
     protected override void ApplyItemEffect(CookieController other) {
-        other.RecoverHp(_healAmount);
+        // 상대가 회복 가능할때만 회복
+        if (other.HealEnabled) { other.RecoverHp(_healAmount); }
     }
 }
