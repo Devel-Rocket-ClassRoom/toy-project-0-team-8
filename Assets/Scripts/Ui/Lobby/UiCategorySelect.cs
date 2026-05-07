@@ -15,13 +15,28 @@ public class UiCategorySelect : MonoBehaviour
     public void OnCategoryTab(int index)
     {
         buttons[index].onClick.Invoke();
+
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (buttons[i] == null) continue;
+
+            if (i == index)
+            {
+                buttons[i].Select();
+            }
+        }
+    }
+
+    private void OnEnable()
+    {
+
+        OnCategoryTab(0);
     }
 
     public void OnLoadCookie()
     {
         DataTableManager.ChangeDataType(DataType.Cookie);
 
-        SaveLoadManager.Load();
         uiGearList.gameObject.SetActive(false);
         uiCookieList.gameObject.SetActive(true);
 
@@ -32,7 +47,6 @@ public class UiCategorySelect : MonoBehaviour
     {
         DataTableManager.ChangeDataType(DataType.Gear);
 
-        SaveLoadManager.Load();
         uiCookieList.gameObject.SetActive(false);
         uiGearList.gameObject.SetActive(true);
 

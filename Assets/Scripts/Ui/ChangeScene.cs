@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class ChangeScene : MonoBehaviour
 {
     public Image ReadyCharacter;
+    public UiGearSlot[] equipGear;
+
     public void OnGachaScene()
     {
 
