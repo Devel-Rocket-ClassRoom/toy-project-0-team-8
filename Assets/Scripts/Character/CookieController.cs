@@ -139,8 +139,6 @@ public class CookieController : MonoBehaviour {
 		// Factory 이용해서 data에 맞는 Behavior 붙이기
 		CookieBehaviorFactory.AddBehavior(gameObject, data);
 		
-
-
 		_rigidBody = GetComponent<Rigidbody2D>();
 		_cookieBehavior = GetComponent<CookieBehavior>();
 		_animator = GetComponent<Animator>();
@@ -248,11 +246,6 @@ public class CookieController : MonoBehaviour {
 			Debug.Log($"바닥에 떨어짐");
 			TakeDamage(20f);
 			transform.position = new Vector3(transform.position.x, _standingYPos, transform.position.z);
-		}
-		
-		// 맵 끝과 충돌하면, 다음 스테이지 로딩하게
-		if (other.CompareTag(Tags.StageEnd)) {
-			_gameManager.LoadNextStage();
 		}
 	}
 
