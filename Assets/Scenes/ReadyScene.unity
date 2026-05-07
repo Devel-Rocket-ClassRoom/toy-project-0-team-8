@@ -313,6 +313,12 @@ MonoBehaviour:
   _backgroundSprites:
   - {fileID: 7247319467162733307, guid: 939a8182dae6b4f4dbe9105aa312a823, type: 3}
   _backgroundImage: {fileID: 1941658650}
+  cookie: {fileID: 1443609341}
+  gear:
+  - {fileID: 1430248984}
+  - {fileID: 1434689179}
+  - {fileID: 306353695}
+  data: {fileID: 1200968489}
 --- !u!4 &102371904
 Transform:
   m_ObjectHideFlags: 0
@@ -1871,6 +1877,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae910561bb89e438515dc574f2d9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
+--- !u!114 &1200968489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2450288386097922244, guid: aa827a90845c02346871b93b67e09caf, type: 3}
+  m_PrefabInstance: {fileID: 1200968487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde7f7ba61d936141a915386f06c838b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GachaManager
 --- !u!114 &1296186844 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2949884669173672661, guid: 2e3685d165d6a7c4488e37ff188efac0, type: 3}
