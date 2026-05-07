@@ -18,6 +18,10 @@ public class GenericWindow : MonoBehaviour
     {
         Open();
     }
+    public virtual void Open(int count, int currentBbobgi)
+    {
+        Open();
+    }
     public virtual void Close()
     {
         gameObject.SetActive(false);
