@@ -29,15 +29,18 @@ public class HeroCookie : CookieBehavior
     private BoxCollider2D col;
 
     private Vector3 originPos;
+    private float SkillPosY = 0;
 
     private Coroutine coFallenAnim;
     private Coroutine coSkillAnim;
+    private float gravity;
+   
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         col = GetComponent<BoxCollider2D>();
-
+        gravity = 10; // 컨트롤러의 gravity scale 값
     }
 
     void Start()
@@ -57,9 +60,8 @@ public class HeroCookie : CookieBehavior
             _controller.JumpEnabled = false;
             _controller.SlideEnabled = false;
 
-            // 점프 한번 되면서 변신
-            rb.AddForce(Vector3.up * flyUpForce, ForceMode2D.Force);
             rb.gravityScale = 1;
+
             Transformation();
         }
 
@@ -68,7 +70,7 @@ public class HeroCookie : CookieBehavior
     private void Transformation()
     {
         animator.SetTrigger("Transformation");
-
+        
         if (coSkillAnim == null)
         {
             StopAllCoroutines();
@@ -79,29 +81,56 @@ public class HeroCookie : CookieBehavior
     IEnumerator coSkill()
     {
 
+        // 1. 변신 시작: 물리 힘에 방해받지 않도록 킨메틱 설정
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.linearVelocity = Vector2.zero;
+
         while (true)
         {
-            if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "FlyEnd")
+            var clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+            if (clipInfo.Length > 0)
             {
-                ChargeStack = 0;
-                coSkillAnim = null;
-                rb.gravityScale = 3;
+                string clipName = clipInfo[0].clip.name;
 
-                _controller.JumpEnabled = true;
-                _controller.SlideEnabled = true;
+                // 변신 중: Y축 0 근처로 강제 이동 (이제 물리 간섭 없음)
+                if (clipName == "Transformation")
+                {
+                    float newY = Mathf.Lerp(transform.position.y, SkillPosY, 0.1f);
+                    transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+                }
+                // 2. 비행 시작 시점: 다시 물리(Dynamic)로 복구하여 AddForce가 먹히게 함
+                else if (clipName == "Fly" || clipName == "FlyEnd")
+                {
+                    if (rb.bodyType != RigidbodyType2D.Dynamic)
+                    {
+                        rb.bodyType = RigidbodyType2D.Dynamic;
+                        rb.gravityScale = 1f; // 비행 중엔 중력을 약하게 조절 가능
+                    }
+                }
 
-                _controller.WhileJumpKeyPressed.RemoveListener(OnSkill);
-                _controller.WhileSlideKeyPressed.RemoveListener(OnSkill);
-                break;
+                if (clipName == "FlyEnd")
+                {
+                    // 변신 종료 및 리셋 로직
+                    ChargeStack = 0;
+                    coSkillAnim = null;
+                    rb.gravityScale = gravity;
+
+                    _controller.JumpEnabled = true;
+                    _controller.SlideEnabled = true;
+                    _controller.WhileJumpKeyPressed.RemoveListener(OnSkill);
+                    _controller.WhileSlideKeyPressed.RemoveListener(OnSkill);
+                    break;
+                }
             }
             yield return null;
         }
-
     }
+
+    
 
     public void OnSkill()
     {
-
+        
         if (rb.linearVelocity.y < maxUpwardVelocity)
         {
             Debug.Log("비행");
@@ -142,33 +171,6 @@ public class HeroCookie : CookieBehavior
         rb.bodyType = RigidbodyType2D.Kinematic;
 
     }
-    public void AddItem(Action<GameObject> onApply, Action<GameObject> onRemove, float duration)
-    {
-
-        // 효과 발동
-        onApply?.Invoke(gameObject);
-
-        // bool 값까지 받아서 획득 시 지속시간 초기화를 해야하나..
-        _activeItems.Add((onRemove, duration));
-    }
-
-    public void ItemCheck()
-    {
-        for (int i = _activeItems.Count - 1; i >= 0; i--)
-        {
-            var item = _activeItems[i];
-            item.Item2 -= Time.deltaTime;
-            _activeItems[i] = item;
-
-
-            // 시간이 다 되면 보관해둔 삭제 로직 실행
-            if (_activeItems[i].Item2 <= 0)
-            {
-                _activeItems[i].Item1?.Invoke(gameObject);
-                _activeItems.RemoveAt(i);
-            }
-        }
-    }
 
     public override bool UseAbilityProgressBar => true;
     
@@ -188,7 +190,8 @@ public class HeroCookie : CookieBehavior
         animator.SetBool("isGrounded", true);
         animator.SetBool("isDouble", false);
         animator.SetBool("isSlide", false);
-        rb.gravityScale = 3;
+        animator.SetBool("isDash", false);
+        rb.gravityScale = gravity;
 
     }
 
@@ -208,7 +211,8 @@ public class HeroCookie : CookieBehavior
         Die();
     }
 
-    public override void StartDashAnimation() {
-        throw new NotImplementedException();
+    public override void StartDashAnimation() 
+    {
+        animator.SetBool("isDash",true);
     }
 }

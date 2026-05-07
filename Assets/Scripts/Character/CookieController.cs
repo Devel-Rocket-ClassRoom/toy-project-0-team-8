@@ -124,6 +124,8 @@ public class CookieController : MonoBehaviour {
 		// Factory 이용해서 data에 맞는 Behavior 붙이기
 		CookieBehaviorFactory.AddBehavior(gameObject, data);
 		
+
+
 		_rigidBody = GetComponent<Rigidbody2D>();
 		_cookieBehavior = GetComponent<CookieBehavior>();
 		_animator = GetComponent<Animator>();
