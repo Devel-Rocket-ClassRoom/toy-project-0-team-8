@@ -8,5 +8,4 @@ public class GachaGear : ScriptableObject
     public float weight;
     public Sprite Icon;
     public MonoBehaviour effectScript;
-
 }

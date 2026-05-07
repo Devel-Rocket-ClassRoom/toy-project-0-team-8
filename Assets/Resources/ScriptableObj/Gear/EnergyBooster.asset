@@ -16,3 +16,4 @@ MonoBehaviour:
   itemId: Gear_EnergyBooster
   weight: 10
   Icon: {fileID: 6954644936596414839, guid: 406540c0c319a3e4fbfff99c11559cc6, type: 3}
+  effectScript: {fileID: 7281793232950079702, guid: 660ab855ec6d8df4180d19b36d5c0397, type: 3}
