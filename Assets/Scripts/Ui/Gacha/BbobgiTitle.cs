@@ -167,11 +167,11 @@ public class BbobgiTitle : GenericWindow
                 rewardCheck = false;
                 escdoubleCheck = false;
                 escCheck = true;
+                isClick = false;
                 SkipReward();
                 return;
-
             }
-           
+            isClick = false;
             escdoubleCheck = true;
             effects.transform.localScale = new Vector3(effectscaleMax, effectscaleMax, effectscaleMax);
             rewardCheck = true;
