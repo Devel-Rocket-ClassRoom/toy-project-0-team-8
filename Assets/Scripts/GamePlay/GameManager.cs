@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,10 +27,14 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] private StageData[] _stageDatas;
 	[SerializeField] public GameObject InvisibleGround;
 	
+	[Header("=== 착용한 유물을 각각 표현할 1, 2, 3번 슬롯 ===")]
+	[SerializeField] private InGameGearSlot _firstGearSlot;
+	[SerializeField] private InGameGearSlot _secondGearSlot;
+	[SerializeField] private InGameGearSlot _thirdGearSlot;
 	[Header("=== 착용한 유물을 각각 표현할 1, 2, 3번 이미지 ===")]
-	[SerializeField] private InGameGearSlot _firstGear;
-	[SerializeField] private InGameGearSlot _secondGearImage;
-	[SerializeField] private InGameGearSlot _thirdGearImage;
+	[SerializeField] private Image _firstGearImage;
+	[SerializeField] private Image _secondGearImage;
+	[SerializeField] private Image _thirdGearImage;
 
 	[SerializeField] private ChangeScene _changeScene;
 	
@@ -86,10 +91,17 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	// 유물 설정하기, 없다면 입력 안해도 됨
-	public void SetGears(GearBase firstGear = null, GearBase secondGear = null, GearBase thirdGear = null) {
-		_firstGear.Init(firstGear);
-		_secondGearImage.Init(secondGear);
-		_thirdGearImage.Init(thirdGear);
+	public void SetGears(List<GearBase> gears) {
+		_firstGearSlot.Init(gears.Count >= 1 ? gears[0] : null);
+		_secondGearSlot.Init(gears.Count >= 2 ? gears[1] : null);
+		_thirdGearSlot.Init(gears.Count >= 3 ? gears[2] : null);
+	}
+	
+	// 유물 이미지 설정하기, 역시 없다면 입력 안 해도 됨
+	public void SetGearImages(List<GearData> gears) {
+		_firstGearImage.sprite = gears.Count >= 1 ? gears[0].SpriteIcon : null;
+		_secondGearImage.sprite = gears.Count >= 2 ? gears[1].SpriteIcon : null;
+		_thirdGearImage.sprite = gears.Count >= 3 ? gears[2].SpriteIcon : null;
 	}
 	
 	// 첫 스테이지는 가리는 패널이 없어야 해서 사용
