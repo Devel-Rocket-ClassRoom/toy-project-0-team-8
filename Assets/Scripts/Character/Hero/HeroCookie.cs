@@ -23,13 +23,15 @@ public class HeroCookie : CookieBehavior
 
     private ChargeJellyBatch _chargeJellyBatch;
 
+    public override void Init(CookieController controller) {
+        base.Init(controller);
+        rb = GetComponent<Rigidbody2D>();
+        _chargeJellyBatch = GetComponent<ChargeJellyBatch>();
+        animator = _cookieController.Animator;
+    }
+
     public void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        _chargeJellyBatch = GetComponent<ChargeJellyBatch>();
-
-        
     }
 
     void Start()
@@ -40,8 +42,6 @@ public class HeroCookie : CookieBehavior
         // 컨트롤러에서 기본 중력값을 가져옵니다.
         defaultGravity = _cookieController.GravityScale;
         Debug.Log(defaultGravity);
-
-        
     }
 
     void Update()
