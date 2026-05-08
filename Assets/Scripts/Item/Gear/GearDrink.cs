@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GearDrink : GearBase
 {
@@ -12,6 +13,8 @@ public class GearDrink : GearBase
     {
         return t / coolTime;
     }
+
+    public override UnityEvent OnGearActivated { get; } = new();
 
     private void OnEnable()
     {
@@ -29,6 +32,7 @@ public class GearDrink : GearBase
         {
             gm.ActivateDash(2f);
             t = 0;
+            OnGearActivated?.Invoke();
         }
 
     }

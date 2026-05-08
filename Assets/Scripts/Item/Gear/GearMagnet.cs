@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GearMagnet : GearBase
 {
@@ -9,6 +10,9 @@ public class GearMagnet : GearBase
     {
         return 1f;
     }
+
+    // 자석은 별도로 "활성화" 타이밍이 없어서 그냥 킵
+    public override UnityEvent OnGearActivated { get; } = new();
 
     private void Update()
     {
