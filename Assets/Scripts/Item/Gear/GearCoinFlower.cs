@@ -1,12 +1,17 @@
 using UnityEngine;
 
-public class GearCoinFlower : MonoBehaviour
+public class GearCoinFlower : GearBase
 {
     public GameObject coinFlowerPrefab;
     public GameObject stageroot;
     private float cooltime = 0.3f;
     private float t = 0;
-    private float weight = 80f;
+    private float weight = 10f;
+
+    public override float GetProgressBarAmount()
+    {
+        return 1f;
+    }
 
     private void OnEnable()
     {
@@ -22,7 +27,7 @@ public class GearCoinFlower : MonoBehaviour
             float randomW = Random.Range(0, 100);
             if (randomW < weight)
             {
-                Instantiate(coinFlowerPrefab,new Vector3(transform.position.x+6f,transform.position.y,0f),Quaternion.identity,stageroot.transform);
+                Instantiate(coinFlowerPrefab,new Vector3(transform.position.x+6f,0f,0f),Quaternion.identity,stageroot.transform);
             }
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8872515319238640941}
   - component: {fileID: 3624873060573976416}
   - component: {fileID: 624990498481832209}
-  - component: {fileID: 3696142196174902802}
+  - component: {fileID: 4553593050951117893}
   m_Layer: 0
   m_Name: Land (8)
   m_TagString: Ground
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &3696142196174902802
+--- !u!251 &4553593050951117893
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,7 +154,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4680920944103789812}
   - component: {fileID: 8363396955861171415}
   - component: {fileID: 8619111329859945261}
-  - component: {fileID: 5466066394179390445}
+  - component: {fileID: 4375630520153367519}
   m_Layer: 0
   m_Name: Land (4)
   m_TagString: Ground
@@ -297,7 +297,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &5466066394179390445
+--- !u!251 &4375630520153367519
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,7 +312,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 8954914295255368698}
   - component: {fileID: 8172654775417439663}
   - component: {fileID: 8893892903520175276}
-  - component: {fileID: 6618421816431956090}
+  - component: {fileID: 6857144846011376204}
   m_Layer: 0
   m_Name: Land (2)
   m_TagString: Ground
@@ -455,7 +455,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &6618421816431956090
+--- !u!251 &6857144846011376204
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,7 +470,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 471598378273652127}
   - component: {fileID: 3443246708663690130}
   - component: {fileID: 1208039024805757702}
-  - component: {fileID: 5570950814861608046}
+  - component: {fileID: 2742921694337576883}
   m_Layer: 0
   m_Name: Land (9)
   m_TagString: Ground
@@ -613,7 +613,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &5570950814861608046
+--- !u!251 &2742921694337576883
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,7 +628,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 9142446403227394847}
   - component: {fileID: 8372629669984605642}
   - component: {fileID: 7922248532740685454}
-  - component: {fileID: 6480968657378996807}
+  - component: {fileID: 2719591064698793340}
   m_Layer: 0
   m_Name: Land (5)
   m_TagString: Ground
@@ -771,7 +771,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &6480968657378996807
+--- !u!251 &2719591064698793340
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -786,7 +786,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -846,7 +846,7 @@ GameObject:
   - component: {fileID: 7156882814540968800}
   - component: {fileID: 1726977217653430919}
   - component: {fileID: 671723880294483109}
-  - component: {fileID: 7703024648704189130}
+  - component: {fileID: 48264188265954338}
   m_Layer: 0
   m_Name: Land (7)
   m_TagString: Ground
@@ -974,7 +974,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &7703024648704189130
+--- !u!251 &48264188265954338
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -989,7 +989,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 582709280036575995}
   - component: {fileID: 3335944782198574807}
   - component: {fileID: 1035205304896917921}
-  - component: {fileID: 5283283974015974369}
+  - component: {fileID: 3660775578891573265}
   m_Layer: 0
   m_Name: Land
   m_TagString: Ground
@@ -1132,7 +1132,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &5283283974015974369
+--- !u!251 &3660775578891573265
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1147,7 +1147,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1162,7 +1162,7 @@ GameObject:
   - component: {fileID: 5873706836275379328}
   - component: {fileID: 7181093623720935699}
   - component: {fileID: 1062230624168687182}
-  - component: {fileID: 7942937856932268524}
+  - component: {fileID: 7429704497417493575}
   m_Layer: 0
   m_Name: Land (6)
   m_TagString: Ground
@@ -1290,7 +1290,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &7942937856932268524
+--- !u!251 &7429704497417493575
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1305,7 +1305,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 2215199688695605335}
   - component: {fileID: 1923764618464049177}
   - component: {fileID: 4507852944676050566}
-  - component: {fileID: 580516861925937474}
+  - component: {fileID: 3856434556517520721}
   m_Layer: 0
   m_Name: Land (1)
   m_TagString: Ground
@@ -1448,7 +1448,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &580516861925937474
+--- !u!251 &3856434556517520721
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1463,7 +1463,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1478,7 +1478,7 @@ GameObject:
   - component: {fileID: 8805338424682692401}
   - component: {fileID: 3269970971142900055}
   - component: {fileID: 1593024161616450091}
-  - component: {fileID: 369964507261277029}
+  - component: {fileID: 867503486600974110}
   m_Layer: 0
   m_Name: Land (3)
   m_TagString: Ground
@@ -1606,7 +1606,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.26, y: 0.43}
   m_EdgeRadius: 0
---- !u!251 &369964507261277029
+--- !u!251 &867503486600974110
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1621,7 +1621,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 160
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1

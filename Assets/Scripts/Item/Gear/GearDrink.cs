@@ -1,25 +1,36 @@
 using System.Collections;
 using UnityEngine;
 
-public class GearDrink : MonoBehaviour
+public class GearDrink : GearBase
 {
-    private float radius = 2f;
-    private float magnetspeed = 15f;
+    private float coolTime = 10f;
+    private GameObject go;
+    private GameManager gm;
+    private float t;
 
-
-
-    private void Update()
+    public override float GetProgressBarAmount()
     {
-        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach(Collider2D target in col)
-        {
-            ItemBase itemBase = target.GetComponent<ItemBase>();
-            if(itemBase!=null)
-            {
-                target.transform.position = Vector3.MoveTowards(target.transform.position,transform.position,magnetspeed*Time.deltaTime);
-            }
-        }
+        return t / coolTime;
     }
 
+    private void OnEnable()
+    {
+        go = GameObject.FindWithTag(Tags.GameManager);
+        if (go != null)
+        {
+            gm = go.GetComponent<GameManager>();
+        }
+        t = 0;
+    }
+    private void Update()
+    {
+        t += Time.deltaTime;
+        if (t > coolTime)
+        {
+            gm.ActivateDash(2f);
+            t = 0;
+        }
+
+    }
 
 }
