@@ -1,12 +1,17 @@
 using UnityEngine;
 
-public class GearCoinFlower : MonoBehaviour
+public class GearCoinFlower : GearBase
 {
     public GameObject coinFlowerPrefab;
     public GameObject stageroot;
     private float cooltime = 0.3f;
     private float t = 0;
     private float weight = 10f;
+
+    public override float GetProgressBarAmount()
+    {
+        return 1f;
+    }
 
     private void OnEnable()
     {

@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class GearMagnet : MonoBehaviour
+public class GearMagnet : GearBase
 {
     private float radius = 2f;
     private float magnetspeed = 15f;
 
-
+    public override float GetProgressBarAmount()
+    {
+        return 1f;
+    }
 
     private void Update()
     {

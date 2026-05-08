@@ -1,12 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
-public class GearDrink : MonoBehaviour
+public class GearDrink : GearBase
 {
     private float coolTime = 10f;
     private GameObject go;
     private GameManager gm;
     private float t;
+
+    public override float GetProgressBarAmount()
+    {
+        return t / coolTime;
+    }
+
     private void OnEnable()
     {
         go = GameObject.FindWithTag(Tags.GameManager);
