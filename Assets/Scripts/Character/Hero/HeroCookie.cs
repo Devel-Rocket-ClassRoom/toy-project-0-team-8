@@ -46,6 +46,12 @@ public class HeroCookie : CookieBehavior
 
     void Update()
     {
+        if(_cookieController.CollisionCollider._changeStage == true)
+        {
+            _chargeJellyBatch.ReplaceJellyByDistance();
+            _cookieController.CollisionCollider._changeStage = false;
+        }
+
         // 변신 조건: 풀스택이거나 테스트용 1번키
         if ((ChargeStack == 5 || Input.GetKeyDown(KeyCode.Alpha1)) && !isFlying)
         {

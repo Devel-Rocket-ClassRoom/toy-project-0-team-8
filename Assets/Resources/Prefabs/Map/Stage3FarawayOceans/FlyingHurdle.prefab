@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1621392652050507049}
   - component: {fileID: 7686085031695907156}
   - component: {fileID: 1151323158109680116}
+  - component: {fileID: 8347692879673446238}
   m_Layer: 0
   m_Name: FlyingHurdle
   m_TagString: Untagged
@@ -114,3 +115,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8347692879673446238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623210450081690856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle

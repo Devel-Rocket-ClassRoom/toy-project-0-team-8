@@ -4,6 +4,7 @@ public class CookieCollisionChecker : MonoBehaviour {
 	[SerializeField] private CookieController _cookieController;
 	[SerializeField] private GameManager _gameManager;
 	public CookieController CookieController => _cookieController;
+	public bool _changeStage = false; // 스테이지 전환마다 실행할 거 필요한 쿠키들이 사용
 	
 	private CapsuleCollider2D _collider2D;
 	
@@ -67,6 +68,8 @@ public class CookieCollisionChecker : MonoBehaviour {
 		// 맵 끝과 충돌하면, 다음 스테이지 로딩하게
 		if (other.CompareTag(Tags.StageEnd)) {
 			_gameManager.LoadNextStage();
-		}
+			_changeStage = true;
+
+        }
 	}
 }

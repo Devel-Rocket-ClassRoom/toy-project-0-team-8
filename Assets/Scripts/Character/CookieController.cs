@@ -54,7 +54,7 @@ public class CookieController : MonoBehaviour {
 	[Header("=== 실제 충돌 처리할 캡슐 ===")]
 	[SerializeField] private CookieCollisionChecker _collisionCollider;
 
-	[Header("=== 떨어졌을때 메세지 출력할 Panel ===")] 
+    [Header("=== 떨어졌을때 메세지 출력할 Panel ===")] 
 	[SerializeField] private GameObject _fallAlertPanel;
 
 	[Header("=== 비행 쿠키 전용 천장 ===")]
@@ -86,10 +86,10 @@ public class CookieController : MonoBehaviour {
 	private GameManager _gameManager;
 	private CookieState _state;
 	private SpriteRenderer _spriteRenderer;
-	
-	
-	
-	public bool IsGodMode => _isGodMode;
+
+
+    public CookieCollisionChecker CollisionCollider => _collisionCollider;
+    public bool IsGodMode => _isGodMode;
 
 	public bool IsGiantMode {
 		get => _isGiantMode;
