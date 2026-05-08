@@ -1,10 +1,5 @@
 using System.Collections;
-using System.Runtime.InteropServices;
-using Unity.Properties;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class CherryCookie : CookieBehavior
 {
