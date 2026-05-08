@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8464536452235134529}
   - component: {fileID: 4360838242029610945}
   - component: {fileID: 2700508986312573582}
+  - component: {fileID: -2754256767622324579}
   m_Layer: 0
   m_Name: JumpObstacle1
   m_TagString: Obstacle
@@ -161,3 +162,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2754256767622324579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193568468019358675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle

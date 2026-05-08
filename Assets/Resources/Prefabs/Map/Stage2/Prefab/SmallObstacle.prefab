@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2524572037878754597}
   - component: {fileID: 2963084822361859030}
   - component: {fileID: 2602095113935150734}
+  - component: {fileID: -2312576978712303417}
   m_Layer: 0
   m_Name: SmallObstacle
   m_TagString: Obstacle
@@ -161,3 +162,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2312576978712303417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684484852209945989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle

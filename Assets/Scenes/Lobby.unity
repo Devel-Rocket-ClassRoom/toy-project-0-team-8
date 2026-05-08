@@ -2243,6 +2243,7 @@ MonoBehaviour:
   currentExp: {fileID: 1864050785}
   maxExp: 0
   LobbyCookie: {fileID: 1864397776}
+  exp: {fileID: 2089962034}
   data: {fileID: 1889541315}
 --- !u!4 &1762008711
 Transform:
@@ -2593,7 +2594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5571975875243587367, guid: 70ebfad6acd0c5047a6a61f5a6636f1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2824,7 +2825,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.564
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

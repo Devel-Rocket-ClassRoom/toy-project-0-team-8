@@ -10,7 +10,7 @@ public class LobbyUiManager : MonoBehaviour
     public TextMeshProUGUI currentExp;
     public float maxExp;
     public Image LobbyCookie;
-
+    public Slider exp;
     public GachaManager data;
 
     private void OnEnable()
@@ -19,7 +19,7 @@ public class LobbyUiManager : MonoBehaviour
         Level.text = $"{SaveLoadManager.Data.playerLevel}";
         maxExp = SaveLoadManager.Data.playerLevel * 100f;
         currentExp.text = $"{SaveLoadManager.Data.currentExp}/{maxExp}";
-
+        exp.value = (float)SaveLoadManager.Data.currentExp / maxExp;
 
         Coin.text = $"{SaveLoadManager.Data.Coin:n0}";
         Cristal.text = $"{SaveLoadManager.Data.Cristal:n0}";

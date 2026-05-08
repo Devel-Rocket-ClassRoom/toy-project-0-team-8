@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6687471315146705161}
   - component: {fileID: 2256033380635827045}
   - component: {fileID: 6531763577649723153}
+  - component: {fileID: -2578914683273588351}
   m_Layer: 0
   m_Name: UpObstacle
   m_TagString: Obstacle
@@ -161,3 +162,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2578914683273588351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8377006944873307206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
