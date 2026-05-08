@@ -146,6 +146,10 @@ public class BbobgiTitle : GenericWindow
         {
             return;
         }
+        if(count == 1 &&escdoubleCheck)
+        {
+            return;
+        }
         // 상자 클릭 시 효과 재생
         if (Input.GetKeyDown(KeyCode.Escape)&&firstCheck|| Input.GetKeyDown(KeyCode.Escape)&&rewardjoin)
         {
@@ -155,8 +159,10 @@ public class BbobgiTitle : GenericWindow
             }
             if (escdoubleCheck)
             {
-
-                StopCoroutine(cor);
+                if (cor != null)
+                {
+                    StopCoroutine(cor);
+                }
                 cor = null;
                 rewardCheck = false;
                 escdoubleCheck = false;
@@ -267,8 +273,8 @@ public class BbobgiTitle : GenericWindow
         if(count == 1)
         {
            TreasureviewOne.SetActive(true);
-           TreasureviewOne.transform.localScale = new Vector3(3f, 3f, 3f);
-            rewardGearList.Add(gachaManager.GachaItem());
+            TreasureviewOne.transform.localScale = Vector3.one;
+           rewardGearList.Add(gachaManager.GachaItem());
         }
         else if (count <= 10)
         {
@@ -294,7 +300,7 @@ public class BbobgiTitle : GenericWindow
         if(count == 1)
         {
            TreasureviewOne.SetActive(true);
-           TreasureviewOne.transform.localScale = new Vector3(3f, 3f, 3f);
+            TreasureviewOne.transform.localScale = Vector3.one;
             rewardCookieList.Add(gachaManager.GachaCookies());
         }
         else if (count <= 10)
@@ -356,13 +362,24 @@ public class BbobgiTitle : GenericWindow
         {
             Destroy(child.gameObject);
         }
-        for (int i = 0; i < rewardGearList.Count; i++)
+        if(rewardGearList.Count ==1)
         {
-            GameObject go = Instantiate(rewardPrefab,contentArea);
-            go.SetActive(true); // 나중에 바꿀예정 테스트용
-            go.transform.localScale = Vector3.one;
-            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[i].Icon;
-            yield return new WaitForSeconds(0.5f);
+            GameObject go = Instantiate(rewardPrefab, TreasureviewOne.transform);
+            go.SetActive(true);
+            go.transform.position = Vector3.zero;
+            go.transform.localScale = new Vector3(effectscaleMax, effectscaleMax, effectscaleMax);
+            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[0].Icon;
+        }
+        else
+        {
+            for (int i = 0; i < rewardGearList.Count; i++)
+            {
+                GameObject go = Instantiate(rewardPrefab, contentArea);
+                go.SetActive(true);
+                go.transform.localScale = Vector3.one;
+                go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[i].Icon;
+                yield return new WaitForSeconds(0.5f);
+            }
         }
         cor = null; ;
         exitable = true;
@@ -376,14 +393,26 @@ public class BbobgiTitle : GenericWindow
         {
             Destroy(child.gameObject);
         }
-        for (int i = 0; i < rewardCookieList.Count; i++)
+        if (rewardCookieList.Count == 1)
         {
-            GameObject go = Instantiate(rewardPrefab, contentArea);
-            go.SetActive(true); // 나중에 바꿀예정 테스트용
-            go.transform.localScale = Vector3.one;
-            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[i].Icon;
-            yield return new WaitForSeconds(0.5f);
+            GameObject go = Instantiate(rewardPrefab, TreasureviewOne.transform);
+            go.SetActive(true);
+            go.transform.position = Vector3.zero;
+            go.transform.localScale = new Vector3(effectscaleMax, effectscaleMax, effectscaleMax);
+            go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[0].Icon;
         }
+        else
+        {
+            for (int i = 0; i < rewardCookieList.Count; i++)
+            {
+                GameObject go = Instantiate(rewardPrefab, contentArea);
+                go.SetActive(true); // 나중에 바꿀예정 테스트용
+                go.transform.localScale = Vector3.one;
+                go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[i].Icon;
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+
         cor = null; ;
         exitable = true;
         exitbutton.SetActive(true);
@@ -393,25 +422,46 @@ public class BbobgiTitle : GenericWindow
         if (howTitle == 0)
         {
             int currentcount = contentArea.childCount;
-            for(int i = currentcount; i<rewardGearList.Count;i++)
+            if (rewardGearList.Count == 1)
             {
-                GameObject go = Instantiate(rewardPrefab, contentArea);
+                GameObject go = Instantiate(rewardPrefab, TreasureviewOne.transform);
                 go.SetActive(true);
+                go.transform.position = Vector3.zero;
                 go.transform.localScale = Vector3.one;
-                go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[i].Icon;
+                go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[0].Icon;
+            }
+            else
+            {
+                for (int i = currentcount; i < rewardGearList.Count; i++)
+                {
+                    GameObject go = Instantiate(rewardPrefab, contentArea);
+                    go.SetActive(true);
+                    go.transform.localScale = Vector3.one;
+                    go.transform.GetChild(0).GetComponent<Image>().sprite = rewardGearList[i].Icon;
+                }
             }
         }
         else if (howTitle == 1)
         {
             int currentcount = contentArea.childCount;
-            for(int i = currentcount; i<rewardCookieList.Count;i++)
+            if (rewardCookieList.Count == 1)
             {
-                GameObject go = Instantiate(rewardPrefab, contentArea);
+                GameObject go = Instantiate(rewardPrefab,TreasureviewOne.transform);
                 go.SetActive(true);
+                go.transform.position = Vector3.zero;
                 go.transform.localScale = Vector3.one;
-                go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[i].Icon;
+                go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[0].Icon;
             }
-          
+            else
+            {
+                for (int i = currentcount; i < rewardCookieList.Count; i++)
+                {
+                    GameObject go = Instantiate(rewardPrefab, contentArea);
+                    go.SetActive(true); // 나중에 바꿀예정 테스트용
+                    go.transform.localScale = Vector3.one;
+                    go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[i].Icon;
+                }
+            }
         }
         exitable = true;
         exitbutton.SetActive(true);
