@@ -79,10 +79,11 @@ public class GameResultManager : MonoBehaviour {
 		_coinText.gameObject.SetActive(false);
 		_scoreIcon.gameObject.SetActive(false);
 		_scoreText.gameObject.SetActive(false);
-		_bestScoreImage.gameObject.SetActive(false);
 		
-		// 이미지 텍스트는 비활성화하면 레이아웃이 이상해져서, 투명도 0으로
+		// 결과 아이콘과 최대점수 갱신 아이콘은 비활성화하면 레이아웃이 이상해져서, 투명도 0으로
 		_gradeImage.color = new Color(1, 1, 1, 0);
+		_bestScoreImage.color = new Color(1, 1, 1, 0);
+		
 		// 미리 이미지를 정해둬야 Text위치가 바뀌지 않음
 		_gradeImage.sprite = GetGradeSpriteByStageNum(_stageIdx);
 		
@@ -153,8 +154,8 @@ public class GameResultManager : MonoBehaviour {
 		_scoreText.text = _score.ToString("N0");
 		yield return new WaitForSeconds(_appearPeriod);
 		
-		// Best Score 표시? 혹은 안하기?
-		_bestScoreImage.gameObject.SetActive(_isMaxScoreRenewed);
+		// Best Score 갱신시에만 표시
+		if (_isMaxScoreRenewed) { _gradeImage.color = new Color(1, 1, 1, 1); }
 		
 		// 마지막에 결과값 한번 쭉 갱신
 		UpdateAllResults();
@@ -189,7 +190,7 @@ public class GameResultManager : MonoBehaviour {
 		_scoreText.gameObject.SetActive(true);
 		_scoreText.text = _score.ToString("N0");
 		
-		// Best Score 표시 혹은 안하기
-		_bestScoreImage.gameObject.SetActive(_isMaxScoreRenewed);
+		// Best Score 표시 여부 확인해서 표시
+		if (_isMaxScoreRenewed) { _gradeImage.color = new Color(1, 1, 1, 1); }
 	}
 }
