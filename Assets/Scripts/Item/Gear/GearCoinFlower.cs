@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GearCoinFlower : GearBase
 {
@@ -12,6 +13,8 @@ public class GearCoinFlower : GearBase
     {
         return 1f;
     }
+
+    public override UnityEvent OnGearActivated { get; } = new();
 
     private void OnEnable()
     {
@@ -28,6 +31,7 @@ public class GearCoinFlower : GearBase
             if (randomW < weight)
             {
                 Instantiate(coinFlowerPrefab,new Vector3(transform.position.x+6f,0f,0f),Quaternion.identity,stageroot.transform);
+                OnGearActivated?.Invoke();
             }
         }
     }
