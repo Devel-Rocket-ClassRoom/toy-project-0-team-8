@@ -18,12 +18,13 @@ public class CookieController : MonoBehaviour {
 	
 	// 무적, 능력 관련 변수
 	private readonly float _godModeDurationAfterHit = 2f;
-	private bool _isGodMode = false;
+	private bool _isGodMode = false; 
 	private bool _isDashing = false;
 	private bool _isGiantMode = false;
-	
-	// 데미지 입을 시 특정 행동을 하는 캐릭터들이 사용하기 위한 이벤트
-	[HideInInspector] public UnityEvent OnTakeDamage;
+	public bool _isSkill = false; // 스킬 : 무적, 충돌이 같이 들어가야하는 쿠키용
+
+    // 데미지 입을 시 특정 행동을 하는 캐릭터들이 사용하기 위한 이벤트
+    [HideInInspector] public UnityEvent OnTakeDamage;
 	
 	// 이벤트 종류별로 모두 생성 (점프키 누르기, 떼기, 누르고있기, 슬라이드 누르기, 떼기, 누르고있기)
 	[HideInInspector] public UnityEvent OnJumpKeyDown;

@@ -246,4 +246,11 @@ public class GameManager : MonoBehaviour {
 		Debug.Log($"게임 종료");
 	}
 
+	public float SkillSpeed(float speed)
+	{
+		_scrollSpeed = speed;
+
+		return _initialScrollSpeed;
+	}
+
 }
