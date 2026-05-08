@@ -62,6 +62,9 @@ public class CookieController : MonoBehaviour {
 
 	[Header("=== 보물 프리팹 생성 ===")]
 	public Transform gearPrefabParent;
+
+	[Header("=== 쿠키 애니메이션을 재생할 GameObject ===")] 
+	[SerializeField] private CookieRenderer _cookieRenderer;
 	
 	// 점프 관련 변수
 	private readonly float _jumpForce = 25f;
@@ -80,14 +83,13 @@ public class CookieController : MonoBehaviour {
 	// 붙어있는 Component 목록
 	private Rigidbody2D _rigidBody;
 	private BoxCollider2D _collider;
-	public BoxCollider2D Collider => _collider;
 	private CookieBehavior _cookieBehavior;
-	private Animator _animator;
 	private GameManager _gameManager;
 	private CookieState _state;
+	private Animator _animator;
 	private SpriteRenderer _spriteRenderer;
-
-
+	public Animator Animator => _animator;
+	public BoxCollider2D Collider => _collider;
     public CookieCollisionChecker CollisionCollider => _collisionCollider;
     public bool IsGodMode => _isGodMode;
 
@@ -152,12 +154,11 @@ public class CookieController : MonoBehaviour {
 		// 보물 장착
 		SetGear();
 
-
         _rigidBody = GetComponent<Rigidbody2D>();
 		_cookieBehavior = GetComponent<CookieBehavior>();
-		_animator = GetComponent<Animator>();
-		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_collider = GetComponent<BoxCollider2D>();
+		_animator = _cookieRenderer.Animator;
+		_spriteRenderer = _cookieRenderer.SpriteRenderer;
 		
 		_rigidBody.gravityScale = _gravityScale;
 		
@@ -190,6 +191,9 @@ public class CookieController : MonoBehaviour {
 		
 		// 추락 알림 패널 비활성화
 		_fallAlertPanel.SetActive(false);
+		
+		// 렌더러 위치 수정
+		_cookieRenderer.SetSpriteLocation(data);
 	}
 	
 	// 체력 감소

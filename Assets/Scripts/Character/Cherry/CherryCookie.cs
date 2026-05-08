@@ -44,7 +44,7 @@ public class CherryCookie : CookieBehavior
     public override void Init(CookieController controller)
     {
         base.Init(controller);
-        animator = GetComponent<Animator>();
+        animator = _cookieController.Animator;
         audioSource = GetComponent<AudioSource>();
         bomb = Resources.Load<GameObject>(_bombPath);
         normalSkill = true;
