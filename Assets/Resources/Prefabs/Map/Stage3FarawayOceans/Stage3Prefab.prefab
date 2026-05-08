@@ -3332,6 +3332,8 @@ GameObject:
   - component: {fileID: 3346669007945554996}
   - component: {fileID: 1451644629358733907}
   - component: {fileID: 251585887514068505}
+  - component: {fileID: 6527824205344355569}
+  - component: {fileID: 8451329539659091540}
   m_Layer: 0
   m_Name: AirHurdle
   m_TagString: Obstacle
@@ -3459,6 +3461,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.63, y: 4.71}
   m_EdgeRadius: 0
+--- !u!114 &6527824205344355569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559735795542261822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &8451329539659091540
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559735795542261822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &563928402766670160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,6 +3812,8 @@ GameObject:
   - component: {fileID: 8526158925260185947}
   - component: {fileID: 282333078423267388}
   - component: {fileID: 8903544668883589439}
+  - component: {fileID: 6684424543279971095}
+  - component: {fileID: 7265870845996568006}
   m_Layer: 0
   m_Name: GrandHurdle (6)
   m_TagString: Obstacle
@@ -3903,6 +3941,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &6684424543279971095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675413687518400928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &7265870845996568006
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675413687518400928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &751184914984449443
 GameObject:
   m_ObjectHideFlags: 0
@@ -10785,6 +10857,8 @@ GameObject:
   - component: {fileID: 5504706502718309158}
   - component: {fileID: 8385880999301612588}
   - component: {fileID: 7066456497961647403}
+  - component: {fileID: 3285016028011301203}
+  - component: {fileID: 4565042838518428695}
   m_Layer: 0
   m_Name: AirHurdle (1)
   m_TagString: Obstacle
@@ -10912,6 +10986,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.63, y: 4.71}
   m_EdgeRadius: 0
+--- !u!114 &3285016028011301203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015660455363453684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &4565042838518428695
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015660455363453684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2039126544766410517
 GameObject:
   m_ObjectHideFlags: 0
@@ -16890,6 +16998,8 @@ GameObject:
   - component: {fileID: 5715237568266760036}
   - component: {fileID: 1220453020851043123}
   - component: {fileID: 5861892307949154665}
+  - component: {fileID: 1439788641360643167}
+  - component: {fileID: 1386412660834547567}
   m_Layer: 0
   m_Name: GrandHurdle (1)
   m_TagString: Obstacle
@@ -17017,6 +17127,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &1439788641360643167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013982732158054745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &1386412660834547567
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013982732158054745}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3051898059209532887
 GameObject:
   m_ObjectHideFlags: 0
@@ -18558,6 +18702,8 @@ GameObject:
   - component: {fileID: 7505160268519700692}
   - component: {fileID: 7570531767364641940}
   - component: {fileID: 4351857198834940290}
+  - component: {fileID: 8732993654808224939}
+  - component: {fileID: 3938005296022176939}
   m_Layer: 0
   m_Name: GrandHurdle (2)
   m_TagString: Obstacle
@@ -18685,6 +18831,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &8732993654808224939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3398431237880911738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &3938005296022176939
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3398431237880911738}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3419252938058191473
 GameObject:
   m_ObjectHideFlags: 0
@@ -19263,6 +19443,8 @@ GameObject:
   - component: {fileID: 2010969243392200090}
   - component: {fileID: 6310669175496734614}
   - component: {fileID: 2232896126209494320}
+  - component: {fileID: 1649613104793751604}
+  - component: {fileID: 417379540972720489}
   m_Layer: 0
   m_Name: AirHurdle1 (3)
   m_TagString: Obstacle
@@ -19390,6 +19572,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.63, y: 4.71}
   m_EdgeRadius: 0
+--- !u!114 &1649613104793751604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505244210850873117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &417379540972720489
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505244210850873117}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3510307597087601096
 GameObject:
   m_ObjectHideFlags: 0
@@ -19707,6 +19923,8 @@ GameObject:
   - component: {fileID: 6574652676963191701}
   - component: {fileID: 5243075705530637403}
   - component: {fileID: 6331179291416999933}
+  - component: {fileID: 873332044719400961}
+  - component: {fileID: 7522829209626253863}
   m_Layer: 0
   m_Name: GrandHurdle (7)
   m_TagString: Obstacle
@@ -19834,6 +20052,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &873332044719400961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566079505144401703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &7522829209626253863
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566079505144401703}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3719532222282288133
 GameObject:
   m_ObjectHideFlags: 0
@@ -24670,6 +24922,8 @@ GameObject:
   - component: {fileID: 7327644581384576530}
   - component: {fileID: 4229891992676438948}
   - component: {fileID: 8842704023767544865}
+  - component: {fileID: 3456007432699720981}
+  - component: {fileID: 7431440748512094188}
   m_Layer: 0
   m_Name: AirHurdle1 (1)
   m_TagString: Obstacle
@@ -24797,6 +25051,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.63, y: 4.71}
   m_EdgeRadius: 0
+--- !u!114 &3456007432699720981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022863085064578878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &7431440748512094188
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022863085064578878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5039981078673512005
 GameObject:
   m_ObjectHideFlags: 0
@@ -25879,6 +26167,8 @@ GameObject:
   - component: {fileID: 8859542806753985345}
   - component: {fileID: 4118542977980313202}
   - component: {fileID: 8388345811834070230}
+  - component: {fileID: 3077745817961668607}
+  - component: {fileID: 8768257141645811699}
   m_Layer: 0
   m_Name: AirHurdle1
   m_TagString: Obstacle
@@ -26006,6 +26296,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.63, y: 4.71}
   m_EdgeRadius: 0
+--- !u!114 &3077745817961668607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285962422963728690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &8768257141645811699
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285962422963728690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5312379567589709838
 GameObject:
   m_ObjectHideFlags: 0
@@ -28006,6 +28330,8 @@ GameObject:
   - component: {fileID: 6737045437814755737}
   - component: {fileID: 3431264830817420942}
   - component: {fileID: 1453193344901351534}
+  - component: {fileID: 2262705339238412970}
+  - component: {fileID: 3280957944094388279}
   m_Layer: 0
   m_Name: AirHurdle1 (2)
   m_TagString: Obstacle
@@ -28133,6 +28459,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.63, y: 4.71}
   m_EdgeRadius: 0
+--- !u!114 &2262705339238412970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5822151127565202783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &3280957944094388279
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5822151127565202783}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5844353722993119662
 GameObject:
   m_ObjectHideFlags: 0
@@ -29674,6 +30034,8 @@ GameObject:
   - component: {fileID: 4533763467813741339}
   - component: {fileID: 719721787056573659}
   - component: {fileID: 6462668266935634497}
+  - component: {fileID: 5004331028123760314}
+  - component: {fileID: 9010110422183674308}
   m_Layer: 0
   m_Name: GrandHurdle (5)
   m_TagString: Obstacle
@@ -29801,6 +30163,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &5004331028123760314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086590474366569598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &9010110422183674308
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086590474366569598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6122090028822797541
 GameObject:
   m_ObjectHideFlags: 0
@@ -33178,6 +33574,8 @@ GameObject:
   - component: {fileID: 7171157302780304307}
   - component: {fileID: 5291588317372040466}
   - component: {fileID: 379988575701469350}
+  - component: {fileID: 5960376870296781297}
+  - component: {fileID: 4879816872134437791}
   m_Layer: 0
   m_Name: GrandHurdle
   m_TagString: Obstacle
@@ -33305,6 +33703,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &5960376870296781297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693242240898692672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &4879816872134437791
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693242240898692672}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6722580706467679674
 GameObject:
   m_ObjectHideFlags: 0
@@ -36529,6 +36961,8 @@ GameObject:
   - component: {fileID: 1560704838139501101}
   - component: {fileID: 3969687274059661110}
   - component: {fileID: 3203095227505241853}
+  - component: {fileID: 7378306955345768698}
+  - component: {fileID: 3924624522475820635}
   m_Layer: 0
   m_Name: GrandHurdle (3)
   m_TagString: Obstacle
@@ -36656,6 +37090,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &7378306955345768698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465445262002321814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &3924624522475820635
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465445262002321814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7466338154503630937
 GameObject:
   m_ObjectHideFlags: 0
@@ -43812,6 +44280,8 @@ GameObject:
   - component: {fileID: 7698702795874720781}
   - component: {fileID: 8768870873172743240}
   - component: {fileID: 1906647361539783433}
+  - component: {fileID: 752222434286973768}
+  - component: {fileID: 2884046440000785987}
   m_Layer: 0
   m_Name: GrandHurdle (4)
   m_TagString: Obstacle
@@ -43939,6 +44409,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.31, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &752222434286973768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937636470040933698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fedf391470d4340b743334a8eda183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!95 &2884046440000785987
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937636470040933698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06438523022fe5d409676a30630e0e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8956848413295945004
 GameObject:
   m_ObjectHideFlags: 0
