@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CherryBomb : MonoBehaviour
 {
+    // 장애물 파괴 시에 사용할 hash값 등록
+    private static readonly int _break = Animator.StringToHash("Break");
     public GameObject effectPrefab;
     public GameObject jellyPrefab;
     public GameObject stageroot;
@@ -35,7 +37,7 @@ public class CherryBomb : MonoBehaviour
             {
                 if(obstacle.CompareTag("Obstacle"))
                 {
-                    Destroy(obstacle.gameObject); // 장애물이 있으면 부숨
+                    obstacle.GetComponent<Animator>().SetTrigger(_break); // 장애물이 있으면 부숨
                 }
 
             }

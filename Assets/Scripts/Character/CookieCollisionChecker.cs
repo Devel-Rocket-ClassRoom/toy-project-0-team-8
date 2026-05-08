@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 public class CookieCollisionChecker : MonoBehaviour {
+	// 장애물 파괴 시에 사용할 hash값 등록
+	private static readonly int _break = Animator.StringToHash("Break");
 	[SerializeField] private CookieController _cookieController;
 	[SerializeField] private GameManager _gameManager;
 	public CookieController CookieController => _cookieController;
@@ -55,7 +57,7 @@ public class CookieCollisionChecker : MonoBehaviour {
 			if (!_cookieController.CollisionEnabled) { return; }
 			// 대쉬 혹은 거인화 상태라면, 부수고 지나감
 			if (_cookieController.IsDashing || _cookieController.IsGiantMode || _cookieController._isSkill) {
-				Destroy(other.gameObject);
+				other.GetComponent<Animator>().SetTrigger(_break);
 				return;
 			}
 			// 무적 상태라면 데미지 받지 않음
