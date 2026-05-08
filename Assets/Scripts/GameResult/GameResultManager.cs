@@ -155,7 +155,7 @@ public class GameResultManager : MonoBehaviour {
 		yield return new WaitForSeconds(_appearPeriod);
 		
 		// Best Score 갱신시에만 표시
-		if (_isMaxScoreRenewed) { _gradeImage.color = new Color(1, 1, 1, 1); }
+		if (_isMaxScoreRenewed) { _bestScoreImage.color = new Color(1, 1, 1, 1); }
 		
 		// 마지막에 결과값 한번 쭉 갱신
 		UpdateAllResults();
@@ -191,6 +191,6 @@ public class GameResultManager : MonoBehaviour {
 		_scoreText.text = _score.ToString("N0");
 		
 		// Best Score 표시 여부 확인해서 표시
-		if (_isMaxScoreRenewed) { _gradeImage.color = new Color(1, 1, 1, 1); }
+		if (_isMaxScoreRenewed) { _bestScoreImage.color = new Color(1, 1, 1, 1); }
 	}
 }
