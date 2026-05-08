@@ -4,6 +4,11 @@ using UnityEngine.UI;
 
 public class LobbyUiManager : MonoBehaviour
 {
+    [Header("=== 메뉴 버튼 ===")]
+    [SerializeField] private Button _menuButton;
+    [Header("=== 상단 메뉴 버튼 누르면 등장할 패널 ===")]
+    [SerializeField] private MenuPanel _menuPanel;
+    
     public TextMeshProUGUI Level;
     public TextMeshProUGUI Coin;
     public TextMeshProUGUI Cristal;
@@ -33,7 +38,22 @@ public class LobbyUiManager : MonoBehaviour
             }
 
         }
-
+        
+        // 처음 등장 시 메뉴 패널은 비활성화 상태로
+        _menuPanel.gameObject.SetActive(false);
+        // 종료 버튼 누르면 게임 종료되도록
+        _menuPanel.OnQuitButtonPressed.AddListener(QuitGame);
+        // 계속하기 누르면 다시 돌아오게
+        _menuPanel.OnResumeButtonPressed.AddListener(MenuPanelToggle);
+        // 메뉴 버튼 누르면 메뉴 패널 토글되도록
+        _menuButton.onClick.AddListener(MenuPanelToggle);
     }
-
+    
+    private void QuitGame() {
+        Application.Quit();
+    }
+    
+    private void MenuPanelToggle() {
+        _menuPanel.gameObject.SetActive(!_menuPanel.gameObject.activeSelf);
+    }
 }
