@@ -1,4 +1,4 @@
 Id,Name,Icon,Desc,Grade,Hp,Type
-Cookie_Pirate,PirateCookieName,PirateCookie,PirateCookieDesc,Rare,100,Pirate
-Cookie_Hero,HeroCookieName,HeroCookie,HeroCookieDesc,Common,100,Hero
-Cookie_Cherry,CherryCookieName,CherryCookie,CherryCookieDesc,Epic,120,Cherry
+Cookie_Pirate,PirateCookieName,PirateCookie,PirateCookieDesc,Rare,50,Pirate
+Cookie_Hero,HeroCookieName,HeroCookie,HeroCookieDesc,Common,50,Hero
+Cookie_Cherry,CherryCookieName,CherryCookie,CherryCookieDesc,Epic,50,Cherry
