@@ -41,7 +41,7 @@ public class PirateCookieBehavior : CookieBehavior {
 	public override void Init(CookieController controller) {
 		base.Init(controller);
 		
-		_animator = GetComponent<Animator>();
+		_animator = _cookieController.Animator;
         audioSource = GetComponent<AudioSource>();
         // 시작 시에, PirateShip 만들고 안보이는 상태로
         _pirateShip = Instantiate(Resources.Load<GameObject>(_shipResourcePath));
