@@ -117,9 +117,8 @@ public class CookieController : MonoBehaviour {
 	// 체력 회복되지 않게 하고 싶을 때 사용
 	public bool HealEnabled { get; set; } = true;
 	
-	private readonly float _standingYPos = -2.735f;
+	//private readonly float _standingYPos = -2.735f;
 	private readonly float _slidingYDiff = -0.425f;
-	
 	
 	private readonly float _standingColliderYOffset = -0.21f;
 	private readonly float _standingColliderYSize = 1.32f;

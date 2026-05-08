@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public static class CookieBehaviorFactory {
@@ -6,6 +7,7 @@ public static class CookieBehaviorFactory {
 			CookieType.Pirate => target.AddComponent<PirateCookieBehavior>(),
 			CookieType.Cherry => target.AddComponent<CherryCookie>(),
 			CookieType.Hero => target.AddComponent<HeroCookie>(),
+			_ => throw new ArgumentOutOfRangeException()
 		};
 	}	
 }

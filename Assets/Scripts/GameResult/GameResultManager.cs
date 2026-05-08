@@ -2,7 +2,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class GameResultManager : MonoBehaviour {
@@ -19,7 +18,8 @@ public class GameResultManager : MonoBehaviour {
 		1 => Resources.Load<Sprite>($"Sprite/ResultScene/{Grade.Silver}"),
 		2 => Resources.Load<Sprite>($"Sprite/ResultScene/{Grade.Gold}"),
 		3 => Resources.Load<Sprite>($"Sprite/ResultScene/{Grade.Emerald}"),
-		>= 4 => Resources.Load<Sprite>($"Sprite/ResultScene/{Grade.Rainbow}")
+		>= 4 => Resources.Load<Sprite>($"Sprite/ResultScene/{Grade.Rainbow}"),
+		_ => throw new ArgumentOutOfRangeException(nameof(stage), stage, null)
 	};
 	
 	private string GetStageResultStringByStageNum(int stage) => stage switch {
@@ -27,6 +27,7 @@ public class GameResultManager : MonoBehaviour {
 		2 => $"스테이지 2 : 젤리벌레의 숲",
 		3 => $"스테이지 3 : 멀리멀리 바다",
 		>= 4 => "클리어!",
+		_ => throw new ArgumentOutOfRangeException(nameof(stage), stage, null)
 	};
 	
 	private int _score;
