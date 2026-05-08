@@ -124,7 +124,7 @@ public class GameResultManager : MonoBehaviour {
 		
 		// 코인 아이콘 표시
 		_coinIcon.gameObject.SetActive(true);
-		yield return new WaitForSeconds(_lerpDuration);
+		yield return new WaitForSeconds(_appearPeriod);
 		
 		// 코인 값 표시
 		float timer = 0f;
@@ -139,7 +139,7 @@ public class GameResultManager : MonoBehaviour {
 		
 		// 젤리 아이콘 표시
 		_scoreIcon.gameObject.SetActive(true);
-		yield return new WaitForSeconds(_lerpDuration);
+		yield return new WaitForSeconds(_appearPeriod);
 		
 		// 젤리 값 표시
 		timer = 0f;
