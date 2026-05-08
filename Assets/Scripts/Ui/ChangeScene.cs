@@ -9,8 +9,7 @@ public class ChangeScene : MonoBehaviour
 
     private void OnEnable()
     {
-        // 씬이 바뀔 때마다 데이터를 저장
-        SaveLoadManager.Save(); 
+        // 씬이 바뀔 때마다 데이터 로드
         SaveLoadManager.Load();   
     }
     public void OnGachaScene()
@@ -20,7 +19,6 @@ public class ChangeScene : MonoBehaviour
     }
     public void OnLobbyScene()
     {
-
         SceneManager.LoadScene("Lobby");
     }
     public void OnReadyScene()
@@ -31,11 +29,12 @@ public class ChangeScene : MonoBehaviour
     public void OnPlayScene()
     {
         // 누를 때 데이터 테이블에 쿠키 정보 저장
+        SaveLoadManager.Save();
         SceneManager.LoadScene("PlayScene");
     }
     public void OnResultScene()
     {
-        
+        SaveLoadManager.Save();
         SceneManager.LoadScene("GameResultScene");
     }
 }

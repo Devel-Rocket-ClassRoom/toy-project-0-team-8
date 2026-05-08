@@ -11,10 +11,10 @@ public class HeroCookie : CookieBehavior
     public int ChargeStack;
 
     [Header("Flight Settings")]
-    public float flyUpForce = 20f;        // 위로 밀어주는 힘 (좀 더 강하게 수정 권장)
+    public float flyUpForce = 5f;        // 위로 밀어주는 힘 (좀 더 강하게 수정 권장)
     public float maxUpwardVelocity = 6f; // 최대 상승 속도
     public float flightGravityScale = 0.8f; // 비행 중 낙하 속도 (천천히 떨어지게)
-    public float SkillPosY = 0f;          // 비행 시작 높이
+    public float SkillPosY = -0.5f;          // 비행 시작 높이
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -73,8 +73,9 @@ public class HeroCookie : CookieBehavior
 
     IEnumerator coSkillRoutine()
     {
-        // --- 1. Transformation (변신 시작 및 공중 부양) ---
+        // 변신 시작
         animator.SetTrigger("Transformation");
+        _cookieController._isSkill = true;
         rb.bodyType = RigidbodyType2D.Kinematic; // 위치 고정을 위해 잠시 키네마틱
 
         float elapsed = 0f;
@@ -93,21 +94,21 @@ public class HeroCookie : CookieBehavior
             yield return null;
         }
 
-        // --- 2. Fly (실제 비행 구간) ---
+        // 비행
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = flightGravityScale; // 비행 전용 중력 적용
-
+        float initSpeed = _gameManager.SkillSpeed(20f);
         // 애니메이션이 Fly 상태인 동안 대기 (FlyEnd가 시작될 때까지)
         while (!animator.GetCurrentAnimatorStateInfo(0).IsName("FlyEnd"))
         {
             yield return null;
         }
 
-        // --- 3. FlyEnd (변신 해제 및 지면 복귀) ---
+        // 종료
         // 다시 조작권 회수 및 상태 초기화
         _cookieController.WhileJumpKeyPressed.RemoveListener(OnSkill);
         _cookieController.WhileSlideKeyPressed.RemoveListener(OnSkill);
-
+        _gameManager.SkillSpeed(initSpeed);
         // 착지 시에는 부드럽게 지면 근처로 유도 (원래 위치 y값으로)
         float returnElapsed = 0f;
         float returnDuration = 1.0f;
@@ -123,17 +124,16 @@ public class HeroCookie : CookieBehavior
             yield return null;
         }
 
-        // 최종 리셋
+        //리셋
         ChargeStack = 0;
         rb.gravityScale = defaultGravity;
         _cookieController.roof.SetActive(false);
 
+        _cookieController._isSkill = false;
         isFlying = false;
         _cookieController.JumpEnabled = true;
         _cookieController.SlideEnabled = true;
 
-        // 땅에 닿은 상태로 전환하기 위한 트리거/불린 설정
-        //animator.SetBool("isGrounded", true);
     }
 
     public void OnSkill()
@@ -141,7 +141,7 @@ public class HeroCookie : CookieBehavior
         // 비행 중 상승 로직
         if (rb.bodyType == RigidbodyType2D.Dynamic && rb.linearVelocity.y < maxUpwardVelocity)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, flyUpForce * 0.5f);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, flyUpForce);
 
         }
     }

@@ -53,7 +53,7 @@ public class CookieCollisionChecker : MonoBehaviour {
 			// 충돌 비활성화 상태라면, 일체의 상호작용 없음
 			if (!_cookieController.CollisionEnabled) { return; }
 			// 대쉬 혹은 거인화 상태라면, 부수고 지나감
-			if (_cookieController.IsDashing || _cookieController.IsGiantMode) {
+			if (_cookieController.IsDashing || _cookieController.IsGiantMode || _cookieController._isSkill) {
 				Destroy(other.gameObject);
 				return;
 			}
