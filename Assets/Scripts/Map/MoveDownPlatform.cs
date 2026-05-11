@@ -14,8 +14,8 @@ public class MoveDownPlatform : MonoBehaviour
         downCheck = true;
         time = Random.value;
         moveSpeed = Random.Range(0f, 5f);
-        
     }
+
     private void Update()
     {
         time += Time.deltaTime / moveSpeed * moveSpeed;
@@ -39,6 +39,5 @@ public class MoveDownPlatform : MonoBehaviour
             downCheck = true;
             time = 0f;
         }
-
     }
 }

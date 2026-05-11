@@ -16,8 +16,10 @@ public class CherryCookie : CookieBehavior
     private readonly int _isDash = Animator.StringToHash("isDash");
     private readonly string _jumpAudioClip = "Sprite/Character/Cherry/Sound/Ch28Jump";
     private readonly string _SlideAudioClip = "Sprite/Character/Cherry/Sound/Ch28slide";
-    private readonly string _ThrowAudioClip = "Sprite/Character/Cherry/Sound/Cherry_Throwing_Normal";
-    private readonly string _ThrowMadAudioClip = "Sprite/Character/Cherry/Sound/Cherry_Throwing_Mad";
+    private readonly string _ThrowAudioClip =
+        "Sprite/Character/Cherry/Sound/Cherry_Throwing_Normal";
+    private readonly string _ThrowMadAudioClip =
+        "Sprite/Character/Cherry/Sound/Cherry_Throwing_Mad";
     private AudioClip JumpClip;
     private AudioClip SlideClip;
     private AudioClip SkillMadClip;
@@ -39,8 +41,8 @@ public class CherryCookie : CookieBehavior
     {
         Alive = true;
         coolTime = maxCoolTIme;
-
     }
+
     public override void Init(CookieController controller)
     {
         base.Init(controller);
@@ -57,6 +59,7 @@ public class CherryCookie : CookieBehavior
     }
 
     public override bool UseAbilityProgressBar => true;
+
     private void Update()
     {
         if (!Alive)
@@ -69,19 +72,19 @@ public class CherryCookie : CookieBehavior
         {
             time = 0;
         }
-      
     }
-    public override float GetProgressbarAmount() {
 
+    public override float GetProgressbarAmount()
+    {
         return time / coolTime;
     }
 
     public override void StartJumpAnimation()
     {
-       audioSource.PlayOneShot(JumpClip);
-       animator.SetBool(_isSliding, false);
-       animator.SetBool(_isGround, false);  
-       animator.SetBool(_isJumping, true);
+        audioSource.PlayOneShot(JumpClip);
+        animator.SetBool(_isSliding, false);
+        animator.SetBool(_isGround, false);
+        animator.SetBool(_isJumping, true);
     }
 
     public override void StartRunAnimation()
@@ -90,11 +93,11 @@ public class CherryCookie : CookieBehavior
         animator.SetBool(_isSliding, false);
         animator.SetBool(_isDoubleJumping, false);
         animator.SetBool(_isDash, false);
-        animator.SetBool(_isGround,true);
- 
+        animator.SetBool(_isGround, true);
+
         if (coolTime == minCoolTIme)
         {
-            animator.SetBool(_isGround,false);
+            animator.SetBool(_isGround, false);
             animator.SetBool(_isMiddleRun, false);
             animator.SetBool(_isHappyRun, true);
             normalSkill = false;
@@ -118,7 +121,6 @@ public class CherryCookie : CookieBehavior
     {
         audioSource.PlayOneShot(SlideClip);
         animator.SetBool(_isSliding, true);
-
     }
 
     public override void StartDeathAnimation()
@@ -127,24 +129,25 @@ public class CherryCookie : CookieBehavior
         animator.SetTrigger(_isDie);
     }
 
-    public override void StartDashAnimation() {
+    public override void StartDashAnimation()
+    {
         animator.SetBool(_isDash, true);
     }
+
     public IEnumerator Cycle()
     {
         while (Alive)
         {
             yield return new WaitForSeconds(coolTime);
-            if(!Alive)
+            if (!Alive)
             {
                 yield break;
             }
             cor = StartCoroutine(Skill());
             coolTime -= 0.5f;
-            if(coolTime < minCoolTIme)
+            if (coolTime < minCoolTIme)
             {
                 coolTime = minCoolTIme;
-
             }
 
             if (hit)
@@ -152,10 +155,9 @@ public class CherryCookie : CookieBehavior
                 coolTime = maxCoolTIme;
                 hit = false;
                 normalSkill = true;
-                madSkill=false;
+                madSkill = false;
                 animator.SetBool(_isMiddleRun, false);
                 animator.SetBool(_isHappyRun, false);
-
             }
         }
     }
@@ -167,7 +169,6 @@ public class CherryCookie : CookieBehavior
         if (normalSkill)
         {
             audioSource.PlayOneShot(skillClip);
-
         }
         else if (madSkill)
         {
@@ -176,12 +177,12 @@ public class CherryCookie : CookieBehavior
 
         ThrowBomb();
 
-        animator.SetBool(_isSkill,false);
+        animator.SetBool(_isSkill, false);
     }
 
     public void ThrowBomb()
     {
-        for(int i = 0; i <3;i++)
+        for (int i = 0; i < 3; i++)
         {
             GameObject newBomb = Instantiate(bomb, transform.position, Quaternion.identity);
             Rigidbody2D rb = newBomb.GetComponent<Rigidbody2D>();

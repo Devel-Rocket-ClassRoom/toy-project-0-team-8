@@ -13,8 +13,5 @@ public class ChargeItem : ItemBase
             other.GetComponent<HeroCookie>().ChargeStack += 1;
     }
 
-    protected override void RemoveItemEffect(CookieController other)
-    {
-        
-    }
+    protected override void RemoveItemEffect(CookieController other) { }
 }

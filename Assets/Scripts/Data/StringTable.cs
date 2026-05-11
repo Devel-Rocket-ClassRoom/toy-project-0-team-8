@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StringTable : DataTable
 {
@@ -8,11 +8,12 @@ public class StringTable : DataTable
 
     public class Data
     {
-        public string Id {  get; set; }
+        public string Id { get; set; }
         public string String { get; set; }
     }
 
     private readonly Dictionary<string, string> table = new Dictionary<string, string>();
+
     public override void Load(string filename)
     {
         table.Clear();
@@ -22,10 +23,9 @@ public class StringTable : DataTable
         TextAsset textAsset = Resources.Load<TextAsset>(path);
         var list = LoadCSV<Data>(textAsset.text);
 
-
         foreach (Data data in list)
         {
-            if(!table.ContainsKey(data.Id))
+            if (!table.ContainsKey(data.Id))
             {
                 table.Add(data.Id, data.String);
             }
@@ -34,7 +34,6 @@ public class StringTable : DataTable
                 Debug.LogError($"키 중복: {data.Id}");
             }
         }
-
     }
 
     public string Get(string Key)

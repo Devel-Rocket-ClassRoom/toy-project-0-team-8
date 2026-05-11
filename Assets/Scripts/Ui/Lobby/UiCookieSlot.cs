@@ -18,8 +18,8 @@ public class UiCookieSlot : MonoBehaviour
     private void Start()
     {
         SetCookie();
-        
     }
+
     public void SetEmpty()
     {
         imageIcon.sprite = null;
@@ -32,5 +32,4 @@ public class UiCookieSlot : MonoBehaviour
         textName.text = CookieData.cookieName;
         textLevel.text = $"Lv.{level}";
     }
-
 }

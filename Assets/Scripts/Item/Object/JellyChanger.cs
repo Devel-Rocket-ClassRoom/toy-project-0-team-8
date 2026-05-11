@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class JellyChanger : MonoBehaviour
 {
-
     public Sprite GomJelly;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Jelly>() != null)
+        if (collision.GetComponent<Jelly>() != null)
         {
             var go = collision.gameObject;
             ChangeJelly(go);

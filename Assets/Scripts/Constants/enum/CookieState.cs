@@ -1,8 +1,9 @@
-﻿public enum CookieState {
-	Run,
-	Jump,
-	DoubleJump,
-	Slide,
-	Death,
-	Revive
+﻿public enum CookieState
+{
+    Run,
+    Jump,
+    DoubleJump,
+    Slide,
+    Death,
+    Revive,
 }

@@ -6,7 +6,6 @@ using SaveDataVC = SaveDataV1;
 
 public class BbobgiTitle : GenericWindow
 {
-
     public Animator animator;
     public float time;
     private float effcetTime = 0;
@@ -36,6 +35,7 @@ public class BbobgiTitle : GenericWindow
     private int howTitle;
 
     private Coroutine cor;
+
     private void Awake()
     {
         rewardGearList = new List<GachaGear>();
@@ -50,16 +50,18 @@ public class BbobgiTitle : GenericWindow
         rewardjoin = false;
         escdoubleCheck = false;
         time = 0;
-        count= 0;
+        count = 0;
         animator.speed = 1.0f;
         Treasureview.SetActive(false);
         TreasureviewOne.SetActive(false);
         effects.SetActive(false);
     }
+
     private void OnEnable()
     {
         howTitle = -1;
     }
+
     public override void Open()
     {
         base.Open();
@@ -80,6 +82,7 @@ public class BbobgiTitle : GenericWindow
         time = 0;
         animator.speed = 1.0f;
     }
+
     public override void Open(int count)
     {
         base.Open(count);
@@ -99,8 +102,8 @@ public class BbobgiTitle : GenericWindow
         time = 0;
         animator.speed = 1.0f;
         this.count = count;
-
     }
+
     public override void Open(int count, int currentBbobgi)
     {
         base.Open(count, currentBbobgi);
@@ -122,12 +125,13 @@ public class BbobgiTitle : GenericWindow
         animator.speed = 1.0f;
         this.count = count;
     }
+
     public override void Close()
     {
         base.Close();
-        isClick= false;
-        isOpen= false;
-        rewardCheck= false;
+        isClick = false;
+        isOpen = false;
+        rewardCheck = false;
         rewardjoin = false;
         firstCheck = false;
         exitable = false;
@@ -136,8 +140,6 @@ public class BbobgiTitle : GenericWindow
         effects.SetActive(false);
         exitbutton.SetActive(false);
         yunchul.SetActive(false);
-  
-        
     }
 
     private void Update()
@@ -146,12 +148,15 @@ public class BbobgiTitle : GenericWindow
         {
             return;
         }
-        if(count == 1 &&escdoubleCheck)
+        if (count == 1 && escdoubleCheck)
         {
             return;
         }
         // 상자 클릭 시 효과 재생
-        if (Input.GetKeyDown(KeyCode.Escape)&&firstCheck|| Input.GetKeyDown(KeyCode.Escape)&&rewardjoin)
+        if (
+            Input.GetKeyDown(KeyCode.Escape) && firstCheck
+            || Input.GetKeyDown(KeyCode.Escape) && rewardjoin
+        )
         {
             if (rewardjoin)
             {
@@ -173,15 +178,26 @@ public class BbobgiTitle : GenericWindow
             }
             isClick = false;
             escdoubleCheck = true;
-            effects.transform.localScale = new Vector3(effectscaleMax, effectscaleMax, effectscaleMax);
+            effects.transform.localScale = new Vector3(
+                effectscaleMax,
+                effectscaleMax,
+                effectscaleMax
+            );
             rewardCheck = true;
         }
         if (isClick)
         {
-
-            effcetTime += Time.deltaTime/effectScaleSpeed;
-            effects.transform.localScale = Vector3.Lerp(new Vector3(effectscalemin, effectscalemin, effectscalemin), new Vector3(effectscaleMax, effectscaleMax, effectscaleMax), effcetTime);
-            yunchul.transform.localScale = Vector3.Lerp(new Vector3(effectscalemin, effectscalemin, effectscalemin), new Vector3(effectscaleMax, effectscaleMax, effectscaleMax), effcetTime);
+            effcetTime += Time.deltaTime / effectScaleSpeed;
+            effects.transform.localScale = Vector3.Lerp(
+                new Vector3(effectscalemin, effectscalemin, effectscalemin),
+                new Vector3(effectscaleMax, effectscaleMax, effectscaleMax),
+                effcetTime
+            );
+            yunchul.transform.localScale = Vector3.Lerp(
+                new Vector3(effectscalemin, effectscalemin, effectscalemin),
+                new Vector3(effectscaleMax, effectscaleMax, effectscaleMax),
+                effcetTime
+            );
             time += Time.deltaTime;
             if (time > 3)
             {
@@ -191,21 +207,21 @@ public class BbobgiTitle : GenericWindow
                 time = 0;
             }
         }
-       
+
         // 상자가 열리는 연출
         if (isOpen)
         {
             time += Time.deltaTime;
             if (time > 1)
             {
-                time= 0;
+                time = 0;
                 rewardCheck = true;
                 isOpen = false;
             }
         }
 
         // 보상 획득
-        if(rewardCheck)
+        if (rewardCheck)
         {
             Debug.Log($"뽑기번호 : {howTitle}");
             rewardjoin = true;
@@ -226,22 +242,20 @@ public class BbobgiTitle : GenericWindow
             else if (howTitle == 1)
             {
                 CookieReward();
-                if(count == 10)
+                if (count == 10)
                 {
-                    effects.GetComponent <Animator>().speed = 0;
+                    effects.GetComponent<Animator>().speed = 0;
                 }
                 effectParticle.gameObject.SetActive(false);
                 cor = StartCoroutine(UpdateSlotCookie());
                 rewardCheck = false;
             }
- 
         }
-
     }
 
     public void OnClickChest()
     {
-        if(firstCheck)
+        if (firstCheck)
         {
             return;
         }
@@ -256,12 +270,13 @@ public class BbobgiTitle : GenericWindow
         effects.GetComponent<Animator>().speed = 1;
 
         effectParticle.gameObject.SetActive(true);
-
     }
+
     public IEnumerator Rewards()
     {
         yield return null;
     }
+
     public void Reward()
     {
         // 쿠키 분리하던지 여기서 자체 분기 하던지
@@ -270,11 +285,11 @@ public class BbobgiTitle : GenericWindow
         Treasureview.SetActive(false);
         TreasureviewOne.SetActive(false);
 
-        if(count == 1)
+        if (count == 1)
         {
-           TreasureviewOne.SetActive(true);
+            TreasureviewOne.SetActive(true);
             TreasureviewOne.transform.localScale = Vector3.one;
-           rewardGearList.Add(gachaManager.GachaItem());
+            rewardGearList.Add(gachaManager.GachaItem());
         }
         else if (count <= 10)
         {
@@ -288,7 +303,7 @@ public class BbobgiTitle : GenericWindow
         // 리워드 리스트 json으로 저장
         SaveGearReward();
     }
-    
+
     public void CookieReward()
     {
         // 쿠키 분리하던지 여기서 자체 분기 하던지
@@ -297,9 +312,9 @@ public class BbobgiTitle : GenericWindow
         Treasureview.SetActive(false);
         TreasureviewOne.SetActive(false);
 
-        if(count == 1)
+        if (count == 1)
         {
-           TreasureviewOne.SetActive(true);
+            TreasureviewOne.SetActive(true);
             TreasureviewOne.transform.localScale = Vector3.one;
             rewardCookieList.Add(gachaManager.GachaCookies());
         }
@@ -315,7 +330,7 @@ public class BbobgiTitle : GenericWindow
         // 리워드 리스트 json으로 저장
         SaveCookieReward();
     }
-    
+
     public void SaveGearReward()
     {
         foreach (GachaGear gear in rewardGearList)
@@ -330,9 +345,9 @@ public class BbobgiTitle : GenericWindow
 
         SaveLoadManager.Save();
     }
+
     public void SaveCookieReward()
     {
-
         foreach (GachaCookie cookie in rewardCookieList)
         {
             string cookieId = cookie.cookieId;
@@ -345,24 +360,26 @@ public class BbobgiTitle : GenericWindow
 
         SaveLoadManager.Save();
     }
+
     public void OnClickExit()
     {
-        if(exitable)
+        if (exitable)
         {
-            windowManager.Open(0,0, howTitle);
+            windowManager.Open(0, 0, howTitle);
         }
         else
         {
             return;
         }
     }
+
     public IEnumerator UpdateSlot()
     {
         foreach (Transform child in contentArea)
         {
             Destroy(child.gameObject);
         }
-        if(rewardGearList.Count ==1)
+        if (rewardGearList.Count == 1)
         {
             GameObject go = Instantiate(rewardPrefab, TreasureviewOne.transform);
             go.SetActive(true);
@@ -381,7 +398,8 @@ public class BbobgiTitle : GenericWindow
                 yield return new WaitForSeconds(0.5f);
             }
         }
-        cor = null; ;
+        cor = null;
+        ;
         exitable = true;
         exitbutton.SetActive(true);
     }
@@ -413,10 +431,12 @@ public class BbobgiTitle : GenericWindow
             }
         }
 
-        cor = null; ;
+        cor = null;
+        ;
         exitable = true;
         exitbutton.SetActive(true);
     }
+
     public void SkipReward()
     {
         if (howTitle == 0)
@@ -446,7 +466,7 @@ public class BbobgiTitle : GenericWindow
             int currentcount = contentArea.childCount;
             if (rewardCookieList.Count == 1)
             {
-                GameObject go = Instantiate(rewardPrefab,TreasureviewOne.transform);
+                GameObject go = Instantiate(rewardPrefab, TreasureviewOne.transform);
                 go.SetActive(true);
                 go.transform.position = Vector3.zero;
                 go.transform.localScale = Vector3.one;
@@ -459,7 +479,9 @@ public class BbobgiTitle : GenericWindow
                     GameObject go = Instantiate(rewardPrefab, contentArea);
                     go.SetActive(true); // 나중에 바꿀예정 테스트용
                     go.transform.localScale = Vector3.one;
-                    go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[i].Icon;
+                    go.transform.GetChild(0).GetComponent<Image>().sprite = rewardCookieList[
+                        i
+                    ].Icon;
                 }
             }
         }

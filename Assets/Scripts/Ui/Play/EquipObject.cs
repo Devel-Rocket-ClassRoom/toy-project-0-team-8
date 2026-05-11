@@ -13,7 +13,7 @@ public class EquipObject : MonoBehaviour
     public Image CookieIcon;
     public Image[] Gear;
     public Sprite Blank;
-    
+
     public GameObject CookieList;
     public GameObject GearList;
 
@@ -21,21 +21,21 @@ public class EquipObject : MonoBehaviour
 
     private int maxIndex = 3;
     private UiGearSlot[] currentSlots = new UiGearSlot[3];
+
     public void EquipCheck(UiGearSlot uiGearSlot)
     {
         int emptyIndex = Array.FindIndex(currentSlots, slot => slot == null);
 
         currentSlots[emptyIndex] = uiGearSlot;
         uiGearSlot.selectMark.enabled = true;
-
     }
+
     public void EquipCheckCookie(UiCookieSlot saveCookie)
     {
-        if(SaveCookie == saveCookie)
+        if (SaveCookie == saveCookie)
         {
             saveCookie.selectMark.enabled = true;
         }
-
     }
 
     public void EquipCookie(UiCookieSlot saveCookie)
@@ -43,9 +43,8 @@ public class EquipObject : MonoBehaviour
         SaveCookie = saveCookie;
 
         saveCookie.selectMark.enabled = !saveCookie.selectMark.enabled;
-
-
     }
+
     public void EquipGear(UiGearSlot saveGear)
     {
         // 취소 로직: 이미 선택된 칸을 다시 누른 경우
@@ -63,7 +62,8 @@ public class EquipObject : MonoBehaviour
 
         // 장착 로직: 새로 선택하는 경우
         // 중복 체크
-        if (currentSlots.Contains(saveGear)) return;
+        if (currentSlots.Contains(saveGear))
+            return;
 
         // 빈 칸 찾기
         int emptyIndex = Array.FindIndex(currentSlots, slot => slot == null);
@@ -80,22 +80,22 @@ public class EquipObject : MonoBehaviour
             Debug.Log("더 이상 장착할 수 없습니다. 빈 칸이 없어요!");
         }
     }
+
     public void SetData()
     {
         // 클릭 시 실행할 함수.
         // null이 아닌 데이터를 찾아서 장착함
 
-        // 
+        //
         changeScene.equipGear = currentSlots;
 
         currentSlots = new UiGearSlot[maxIndex];
-        if (GearList.activeInHierarchy) 
+        if (GearList.activeInHierarchy)
         {
             string[] gear = new string[maxIndex];
             for (int i = 0; i < maxIndex; i++)
             {
                 var data = changeScene.equipGear[i];
-
 
                 if (data != null)
                 {
@@ -112,7 +112,6 @@ public class EquipObject : MonoBehaviour
             SaveLoadManager.Data.currentGear = gear;
             SaveLoadManager.Save();
         }
-        
 
         if (CookieList.activeInHierarchy)
         {
@@ -125,7 +124,7 @@ public class EquipObject : MonoBehaviour
 
         var list = Inventory.GetComponent<UiCategorySelect>().uiGearList.uiSlotList;
 
-        for (int i = 0; i < list.Count; i++ ) 
+        for (int i = 0; i < list.Count; i++)
         {
             list[i].selectMark.enabled = false;
         }

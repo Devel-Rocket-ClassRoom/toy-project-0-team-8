@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GachaManager : MonoBehaviour
@@ -41,6 +41,7 @@ public class GachaManager : MonoBehaviour
         }
         return null;
     }
+
     public GachaCookie GachaCookies()
     {
         totalWeight = 0f;
@@ -58,7 +59,7 @@ public class GachaManager : MonoBehaviour
             }
             pivot -= cookieList[i].weight;
         }
-        if(lastIndex != -1)
+        if (lastIndex != -1)
         {
             GachaCookie result = cookieList[lastIndex];
             dropHistoryCookie.Add(result);
@@ -67,13 +68,13 @@ public class GachaManager : MonoBehaviour
         return null;
     }
 
-
     // 유료에셋이 있어서 기존에 쓰던 Resources.Load로 불러오는 방식은 못 씀..
     // 그래서 스크립터블 오브젝트에 등록된 이미지를 불러오는 함수 등록
     public Sprite LoadGearSprite(string soName)
     {
         return itemList.Find(item => item.name == soName).Icon;
     }
+
     public Sprite LoadCookieSprite(string soName)
     {
         return cookieList.Find(item => item.name == soName).Icon;

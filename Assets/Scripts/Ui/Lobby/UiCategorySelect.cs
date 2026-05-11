@@ -7,10 +7,9 @@ public class UiCategorySelect : MonoBehaviour
 {
     public UiCookieList uiCookieList;
     public UiGearList uiGearList;
-    
+
     public Button[] buttons;
     public int index;
-
 
     public void OnCategoryTab(int index)
     {
@@ -18,7 +17,8 @@ public class UiCategorySelect : MonoBehaviour
 
         for (int i = 0; i < buttons.Length; i++)
         {
-            if (buttons[i] == null) continue;
+            if (buttons[i] == null)
+                continue;
 
             if (i == index)
             {
@@ -29,7 +29,6 @@ public class UiCategorySelect : MonoBehaviour
 
     private void OnEnable()
     {
-
         OnCategoryTab(0);
     }
 
@@ -41,8 +40,8 @@ public class UiCategorySelect : MonoBehaviour
         uiCookieList.gameObject.SetActive(true);
 
         uiCookieList.SetSaveCookieDataList(SaveLoadManager.Data.CookieList);
-
     }
+
     public void OnLoadGear()
     {
         DataTableManager.ChangeDataType(DataType.Gear);
@@ -51,6 +50,5 @@ public class UiCategorySelect : MonoBehaviour
         uiGearList.gameObject.SetActive(true);
 
         uiGearList.SetSaveGearDataList(SaveLoadManager.Data.GearList);
-
     }
 }

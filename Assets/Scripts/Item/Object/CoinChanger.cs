@@ -12,9 +12,9 @@ public class CoinChanger : MonoBehaviour
             ConvertToCoins(collision);
         }
     }
+
     public void ConvertToCoins(Collider2D obstarcle)
     {
-
         Bounds bounds = obstarcle.bounds;
 
         // 콜라이더의 좌측 하단(최솟값)과 우측 상단(최댓값) 좌표

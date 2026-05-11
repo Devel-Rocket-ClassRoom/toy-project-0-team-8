@@ -7,14 +7,13 @@ using UnityEngine.UI;
 
 public class HeroCookie : CookieBehavior
 {
-
     public int ChargeStack;
 
     [Header("Flight Settings")]
-    public float flyUpForce = 5f;        // 위로 밀어주는 힘 (좀 더 강하게 수정 권장)
+    public float flyUpForce = 5f; // 위로 밀어주는 힘 (좀 더 강하게 수정 권장)
     public float maxUpwardVelocity = 6f; // 최대 상승 속도
     public float flightGravityScale = 0.8f; // 비행 중 낙하 속도 (천천히 떨어지게)
-    public float SkillPosY = -0.5f;          // 비행 시작 높이
+    public float SkillPosY = -0.5f; // 비행 시작 높이
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -23,16 +22,15 @@ public class HeroCookie : CookieBehavior
 
     private ChargeJellyBatch _chargeJellyBatch;
 
-    public override void Init(CookieController controller) {
+    public override void Init(CookieController controller)
+    {
         base.Init(controller);
         rb = GetComponent<Rigidbody2D>();
         _chargeJellyBatch = GetComponent<ChargeJellyBatch>();
         animator = _cookieController.Animator;
     }
 
-    public void Awake()
-    {
-    }
+    public void Awake() { }
 
     void Start()
     {
@@ -46,7 +44,7 @@ public class HeroCookie : CookieBehavior
 
     void Update()
     {
-        if(_cookieController.CollisionCollider._changeStage == true)
+        if (_cookieController.CollisionCollider._changeStage == true)
         {
             _chargeJellyBatch.ReplaceJellyByDistance();
             _cookieController.CollisionCollider._changeStage = false;
@@ -126,7 +124,10 @@ public class HeroCookie : CookieBehavior
             returnElapsed += Time.deltaTime;
             float t = returnElapsed / returnDuration;
             // 물리엔진과 충돌하지 않게 속도를 줄이면서 Lerp
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Lerp(rb.linearVelocity.y, targetLandingY, t));
+            rb.linearVelocity = new Vector2(
+                rb.linearVelocity.x,
+                Mathf.Lerp(rb.linearVelocity.y, targetLandingY, t)
+            );
             yield return null;
         }
 
@@ -139,7 +140,6 @@ public class HeroCookie : CookieBehavior
         isFlying = false;
         _cookieController.JumpEnabled = true;
         _cookieController.SlideEnabled = true;
-
     }
 
     public void OnSkill()
@@ -148,29 +148,24 @@ public class HeroCookie : CookieBehavior
         if (rb.bodyType == RigidbodyType2D.Dynamic && rb.linearVelocity.y < maxUpwardVelocity)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, flyUpForce);
-
         }
     }
-
 
     public void Die()
     {
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
-
     }
 
     public override bool UseAbilityProgressBar => true;
-    
-    public override float GetProgressbarAmount() 
-    {
 
-        return ChargeStack/5f;
+    public override float GetProgressbarAmount()
+    {
+        return ChargeStack / 5f;
     }
 
     public override void StartJumpAnimation()
     {
-        
         animator.SetBool("isGrounded", false);
     }
 
@@ -181,7 +176,6 @@ public class HeroCookie : CookieBehavior
         animator.SetBool("isDash", false);
 
         animator.SetBool("isGrounded", true);
-
     }
 
     public override void StartDoubleJumpAnimation()
@@ -200,8 +194,8 @@ public class HeroCookie : CookieBehavior
         Die();
     }
 
-    public override void StartDashAnimation() 
+    public override void StartDashAnimation()
     {
-        animator.SetBool("isDash",true);
+        animator.SetBool("isDash", true);
     }
 }

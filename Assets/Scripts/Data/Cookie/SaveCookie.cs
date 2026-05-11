@@ -1,5 +1,5 @@
-using Newtonsoft.Json;
 using System;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class SaveCookie
@@ -9,7 +9,6 @@ public class SaveCookie
     [JsonConverter(typeof(CharacterDataConverter))]
     public CookieData CookieData;
     public DateTime creationTime { get; set; }
-
 
     public SaveCookie()
     {

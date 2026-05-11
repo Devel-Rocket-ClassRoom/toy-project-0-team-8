@@ -25,7 +25,8 @@ public class WindowManager : MonoBehaviour
         windows[currntWindowId].Open();
         return windows[currntWindowId];
     }
-    public GenericWindow Open(int id,int count)
+
+    public GenericWindow Open(int id, int count)
     {
         windows[currntWindowId].Close();
         currntWindowId = id;
@@ -37,16 +38,17 @@ public class WindowManager : MonoBehaviour
         {
             windows[currntWindowId].Open();
         }
-       
+
         return windows[currntWindowId];
     }
-    public GenericWindow Open(int id,int count, int currentBbobgi)
+
+    public GenericWindow Open(int id, int count, int currentBbobgi)
     {
         windows[currntWindowId].Close();
         currntWindowId = id;
-        if(count > 0)
+        if (count > 0)
         {
-            windows[currntWindowId].Open(count,currentBbobgi);
+            windows[currntWindowId].Open(count, currentBbobgi);
         }
         else
         {

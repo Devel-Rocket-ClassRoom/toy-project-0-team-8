@@ -20,7 +20,6 @@ public class UiGearSlot : MonoBehaviour
         SetGear();
     }
 
-
     public void SetEmpty()
     {
         imageIcon.sprite = null;

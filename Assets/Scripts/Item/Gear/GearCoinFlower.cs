@@ -21,6 +21,7 @@ public class GearCoinFlower : GearBase
         t = 0;
         stageroot = GameObject.FindWithTag(Tags.StageRoot);
     }
+
     private void Update()
     {
         t += Time.deltaTime;
@@ -30,7 +31,12 @@ public class GearCoinFlower : GearBase
             float randomW = Random.Range(0, 100);
             if (randomW < weight)
             {
-                Instantiate(coinFlowerPrefab,new Vector3(transform.position.x+6f,0f,0f),Quaternion.identity,stageroot.transform);
+                Instantiate(
+                    coinFlowerPrefab,
+                    new Vector3(transform.position.x + 6f, 0f, 0f),
+                    Quaternion.identity,
+                    stageroot.transform
+                );
                 OnGearActivated?.Invoke();
             }
         }

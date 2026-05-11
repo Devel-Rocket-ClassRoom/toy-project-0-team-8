@@ -25,6 +25,7 @@ public class GearDrink : GearBase
         }
         t = 0;
     }
+
     private void Update()
     {
         t += Time.deltaTime;
@@ -34,7 +35,5 @@ public class GearDrink : GearBase
             t = 0;
             OnGearActivated?.Invoke();
         }
-
     }
-
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GearData
 {
-    public string Id {  get; set; }
-    public string Name { get; set; }    
-    public string Desc {  get; set; }
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string Desc { get; set; }
     public Grade Grade { get; set; }
     public int CoolTime { get; set; }
-    public string Icon {  get; set; }
+    public string Icon { get; set; }
 
     public override string ToString()
     {
@@ -20,13 +20,16 @@ public class GearData
     public string StringDesc => DataTableManager.GearStringTable.Get(Desc);
 
     // 경로 수정 필요함
-    public Sprite SpriteIcon => GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GachaManager>().LoadGearSprite(Icon);
+    public Sprite SpriteIcon =>
+        GameObject
+            .FindGameObjectWithTag("SceneManager")
+            .GetComponent<GachaManager>()
+            .LoadGearSprite(Icon);
 }
 
 public class GearTable : DataTable
 {
     public readonly Dictionary<string, GearData> table = new Dictionary<string, GearData>();
-
 
     private List<string> keyList;
 
@@ -38,9 +41,9 @@ public class GearTable : DataTable
         TextAsset textAsset = Resources.Load<TextAsset>(path);
         List<GearData> list = LoadCSV<GearData>(textAsset.text);
 
-        foreach(var item in list)
+        foreach (var item in list)
         {
-            if(!table.ContainsKey(item.Id))
+            if (!table.ContainsKey(item.Id))
             {
                 table.Add(item.Id, item);
             }
@@ -55,7 +58,7 @@ public class GearTable : DataTable
 
     public GearData Get(string id)
     {
-        if(!table.ContainsKey(id))
+        if (!table.ContainsKey(id))
         {
             Debug.LogError("아이템 아이디 없음");
             return null;
@@ -66,6 +69,6 @@ public class GearTable : DataTable
 
     public GearData GetRandom()
     {
-        return Get(keyList[Random.Range(0,keyList.Count)]);
+        return Get(keyList[Random.Range(0, keyList.Count)]);
     }
 }

@@ -14,6 +14,7 @@ public class UiCookieList : MonoBehaviour
     public UiCookieSlot prefab;
     public ScrollRect scrollRect;
     public Image LobbyCookie;
+
     // 데이터 갱신을 위한 이벤트
     public UnityEvent onUpdateSlot;
     public UnityEvent<UiCookieSlot> onSelectSlot;
@@ -23,7 +24,6 @@ public class UiCookieList : MonoBehaviour
 
     private void OnSelectSlot(UiCookieSlot saveCookie)
     {
-
         if (equip.gameObject.activeSelf)
         {
             Debug.Log(saveCookie.CookieData.cookieName);
@@ -51,11 +51,10 @@ public class UiCookieList : MonoBehaviour
             slot.button.onClick.AddListener(() => onSelectSlot.Invoke(slot));
         }
     }
+
     private void Start()
     {
         onSelectSlot.AddListener(OnSelectSlot);
-
-
     }
 
     private void OnEnable()
@@ -71,7 +70,6 @@ public class UiCookieList : MonoBehaviour
             {
                 equip.EquipCheckCookie(uiSlotList[index]);
             }
-            
         }
     }
 
@@ -84,8 +82,6 @@ public class UiCookieList : MonoBehaviour
         }
     }
 
-
-
     public void ClearList()
     {
         for (int i = 0; i < uiSlotList.Count; i++)
@@ -96,5 +92,4 @@ public class UiCookieList : MonoBehaviour
         // 선택된 보물 할당 제거
         equip.saveGearIcon = null;
     }
-    
 }

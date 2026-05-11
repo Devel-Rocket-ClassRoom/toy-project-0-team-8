@@ -22,7 +22,11 @@ public class GearMagnet : GearBase
             ItemBase itemBase = target.GetComponent<ItemBase>();
             if (itemBase != null)
             {
-                target.transform.position = Vector3.MoveTowards(target.transform.position, transform.position, magnetspeed * Time.deltaTime);
+                target.transform.position = Vector3.MoveTowards(
+                    target.transform.position,
+                    transform.position,
+                    magnetspeed * Time.deltaTime
+                );
             }
         }
     }

@@ -9,8 +9,7 @@ using UnityEngine.UI;
 
 public class UiGearList : MonoBehaviour
 {
-    // 끼고 있는 아이템에는 장착 중 표시를 해야함. 
-
+    // 끼고 있는 아이템에는 장착 중 표시를 해야함.
 
     public List<UiGearSlot> uiSlotList = new List<UiGearSlot>();
 
@@ -18,7 +17,6 @@ public class UiGearList : MonoBehaviour
 
     public UiGearSlot prefab;
     public ScrollRect scrollRect;
-
 
     // 데이터 갱신을 위한 이벤트
     public UnityEvent onUpdateSlot;
@@ -36,8 +34,6 @@ public class UiGearList : MonoBehaviour
             Debug.Log(saveGear.GearData.itemName);
             equip.EquipGear(saveGear);
         }
-
-
     }
 
     private void Awake()
@@ -48,11 +44,10 @@ public class UiGearList : MonoBehaviour
             slot.button.onClick.AddListener(() => onSelectSlot.Invoke(slot));
         }
     }
+
     private void Start()
     {
         onSelectSlot.AddListener(OnSelectSlot);
-
-  
     }
 
     private void OnEnable()
@@ -67,7 +62,7 @@ public class UiGearList : MonoBehaviour
                 int index = uiSlotList.IndexOf(equip.changeScene.equipGear[i]);
 
                 if (index > -1)
-                { 
+                {
                     equip.EquipCheck(uiSlotList[index]);
                 }
             }
@@ -76,16 +71,12 @@ public class UiGearList : MonoBehaviour
 
     public void SetSaveGearDataList(Dictionary<string, int> source)
     {
-
         foreach (var slot in uiSlotList)
         {
             slot.level = source[slot.GearData.itemId];
             slot.SetGear();
         }
-
     }
-
-
 
     public void ClearList()
     {
@@ -96,11 +87,9 @@ public class UiGearList : MonoBehaviour
         }
 
         // 선택된 쿠키 할당 제거
-        if(equip.SaveCookie != null)
+        if (equip.SaveCookie != null)
         {
             equip.SaveCookie = null;
         }
     }
-
-
 }

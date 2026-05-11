@@ -21,7 +21,11 @@ public class RewardEffect : MonoBehaviour
     {
         scaletime += Time.deltaTime / scaleSpeed;
         time += Time.deltaTime * rotatespeed;
-        transform.localScale = Vector3.Lerp(new Vector3(scaleMin, scaleMin, scaleMin),new Vector3(scaleMax, scaleMax, scaleMax),scaletime);
+        transform.localScale = Vector3.Lerp(
+            new Vector3(scaleMin, scaleMin, scaleMin),
+            new Vector3(scaleMax, scaleMax, scaleMax),
+            scaletime
+        );
         transform.Rotate(Vector3.up * time);
     }
 }

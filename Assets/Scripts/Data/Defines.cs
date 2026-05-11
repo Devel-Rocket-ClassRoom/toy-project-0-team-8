@@ -17,10 +17,7 @@ public static class Variables
 
     public static DataType DataTypes
     {
-        get
-        {
-            return dataType;
-        }
+        get { return dataType; }
         set
         {
             if (dataType == value)
@@ -32,20 +29,13 @@ public static class Variables
             DataTableManager.ChangeDataType(dataType);
         }
     }
-
-
 }
 
 public static class DataTableIds
 {
-    public static readonly string[] StringTableIds =
-    {
-        "StringTableCookie",
-        "StringTableGear",
-    };
+    public static readonly string[] StringTableIds = { "StringTableCookie", "StringTableGear" };
 
     public static string String => StringTableIds[(int)Variables.DataTypes];
     public static readonly string Gear = "GearTable";
     public static readonly string Cookie = "CookieTable";
-
 }

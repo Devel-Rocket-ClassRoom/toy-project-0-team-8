@@ -1,5 +1,3 @@
 ﻿using UnityEngine;
 
-public class BlindPanel : MonoBehaviour {
-	
-}
+public class BlindPanel : MonoBehaviour { }

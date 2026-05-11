@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CookieData
 {
-    public string Id {  get; set; }
+    public string Id { get; set; }
     public string Name { get; set; }
     public string Icon { get; set; }
     public string Desc { get; set; }
@@ -16,17 +16,24 @@ public class CookieData
     {
         return $"{Id} / {Name} / {Icon} / {Desc} / {Grade} / {Hp}";
     }
-    public RuntimeAnimatorController AnimatorController => Resources.Load<RuntimeAnimatorController>($"Animations/Character/{Type.ToString()}/AnimationController");
+
+    public RuntimeAnimatorController AnimatorController =>
+        Resources.Load<RuntimeAnimatorController>(
+            $"Animations/Character/{Type.ToString()}/AnimationController"
+        );
     public string StringName => DataTableManager.CookieStringTable.Get(Name);
     public string StringDesc => DataTableManager.CookieStringTable.Get(Desc);
-    public Sprite SpriteIcon => GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GachaManager>().LoadCookieSprite(Icon);
+    public Sprite SpriteIcon =>
+        GameObject
+            .FindGameObjectWithTag("SceneManager")
+            .GetComponent<GachaManager>()
+            .LoadCookieSprite(Icon);
 }
-
 
 public class CookieTable : DataTable
 {
     private readonly Dictionary<string, CookieData> table = new Dictionary<string, CookieData>();
-    
+
     private List<CookieData> gradeList = new List<CookieData>();
 
     public override void Load(string filename)
@@ -49,8 +56,6 @@ public class CookieTable : DataTable
                 Debug.LogError("캐릭터 아이디 중복");
             }
         }
-
-
     }
 
     public CookieData Get(string id)
@@ -63,5 +68,4 @@ public class CookieTable : DataTable
 
         return table[id];
     }
-
 }

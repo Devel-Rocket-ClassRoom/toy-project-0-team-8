@@ -15,29 +15,29 @@ public class MovingPlatform : MonoBehaviour
         time = Random.value;
         moveSpeed = Random.Range(0f, 5f);
     }
+
     private void Update()
     {
-        time += Time.deltaTime/moveSpeed*moveSpeed;
-        if(!highCheck)
+        time += Time.deltaTime / moveSpeed * moveSpeed;
+        if (!highCheck)
         {
             float y = Mathf.Lerp(firstY, maxY, time);
             transform.position = new Vector3(transform.position.x, y, 0);
         }
-        else if(highCheck)
+        else if (highCheck)
         {
-            float y = Mathf.Lerp(maxY,firstY, time);
-            transform.position = new Vector3(transform.position.x,y, 0);
+            float y = Mathf.Lerp(maxY, firstY, time);
+            transform.position = new Vector3(transform.position.x, y, 0);
         }
-        if(transform.position.y >= maxY)
+        if (transform.position.y >= maxY)
         {
             highCheck = true;
             time = 0f;
         }
-        else if(transform.position.y <= firstY)
+        else if (transform.position.y <= firstY)
         {
-            highCheck= false;
+            highCheck = false;
             time = 0f;
         }
-       
     }
 }

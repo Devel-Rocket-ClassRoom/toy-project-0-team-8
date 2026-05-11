@@ -11,7 +11,8 @@ public class ChargeJellyBatch : MonoBehaviour
     [ContextMenu("Replace Jelly by X Distance")]
     public void ReplaceJellyByDistance()
     {
-        if (stateObject == null || chargeJellyPrefab == null) return;
+        if (stateObject == null || chargeJellyPrefab == null)
+            return;
 
         // 1. 모든 jelly 컴포넌트를 가져와서 리스트로 변환
         List<Jelly> jellyList = stateObject.GetComponentsInChildren<Jelly>(true).ToList();
@@ -19,7 +20,8 @@ public class ChargeJellyBatch : MonoBehaviour
         // 2. X 좌표 기준으로 오름차순 정렬 (왼쪽 -> 오른쪽)
         jellyList = jellyList.OrderBy(j => j.transform.position.x).ToList();
 
-        if (jellyList.Count == 0) return;
+        if (jellyList.Count == 0)
+            return;
 
         int replaceCount = 0;
 

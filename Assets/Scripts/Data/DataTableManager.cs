@@ -12,7 +12,6 @@ public static class DataTableManager
 
     public static StringTable GearStringTable => Get<StringTable>("StringTableGear");
     public static GearTable GearTable => Get<GearTable>(DataTableIds.Gear);
-    
 
 #if UNITY_EDITOR
     public static StringTable GetStringTable(DataType lang)
@@ -20,12 +19,12 @@ public static class DataTableManager
         return Get<StringTable>(DataTableIds.StringTableIds[(int)lang]);
     }
 #endif
-    
+
     static DataTableManager()
     {
         Init();
     }
-    
+
     private static void Init()
     {
         foreach (var id in DataTableIds.StringTableIds)
@@ -42,7 +41,6 @@ public static class DataTableManager
         var characterTable = new CookieTable();
         characterTable.Load(DataTableIds.Cookie);
         tables.Add(DataTableIds.Cookie, characterTable);
-
     }
 
     public static void ChangeDataType(DataType dataType)
@@ -65,11 +63,10 @@ public static class DataTableManager
         stringTable.Load(newId);
         tables.Remove(oldId);
         tables.Add(newId, stringTable);
-
-
     }
 
-    public static T Get<T>(string id) where T : DataTable
+    public static T Get<T>(string id)
+        where T : DataTable
     {
         if (!tables.ContainsKey(id))
         {
@@ -79,4 +76,3 @@ public static class DataTableManager
         return tables[id] as T;
     }
 }
-
