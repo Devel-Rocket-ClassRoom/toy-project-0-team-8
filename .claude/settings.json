@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "$d=$input-join'';$f=($d|ConvertFrom-Json).tool_input.file_path;if($f-match'\\.cs$'){dotnet csharpier format $f}"
+          }
+        ]
+      }
+    ]
+  }
+}
