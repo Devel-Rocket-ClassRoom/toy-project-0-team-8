@@ -138,3 +138,6 @@ $RECYCLE.BIN/
     
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Codex
+**/AGENTS.md
