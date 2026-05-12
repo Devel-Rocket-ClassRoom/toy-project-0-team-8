@@ -513,7 +513,11 @@ public class CookieController : MonoBehaviour
 
         SetStandingPosition();
         SetStandingCollider();
-        _cookieBehavior.StartRunAnimation();
+
+        if (IsDashing)
+            _cookieBehavior.StartDashAnimation();
+        else
+            _cookieBehavior.StartRunAnimation();
     }
 
     // 슬라이딩 시에 위치 자연스럽게 변경

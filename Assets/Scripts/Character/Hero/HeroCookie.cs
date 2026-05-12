@@ -167,7 +167,6 @@ public class HeroCookie : CookieBehavior
     public override void StartJumpAnimation()
     {
         animator.SetBool("isSlide", false);
-        animator.SetBool("isDash", false);
         animator.SetBool("isGrounded", false);
     }
 
