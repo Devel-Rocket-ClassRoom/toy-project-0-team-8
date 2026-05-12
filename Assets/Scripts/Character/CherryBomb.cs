@@ -12,6 +12,9 @@ public class CherryBomb : MonoBehaviour
     public float jellyAddRadius = 0.35f;
     private float splashRadius = 2f;
     private bool isExploded = false;
+
+    // 폭발 시에 젤리 생성 여부 (해적맛 쿠키 등 다른 캐릭터가 재활용할 때 false로 끌 수 있음)
+    public bool spawnJellyEnabled = true;
     public AudioSource bombAudio;
     private Coroutine bombCor;
 
@@ -31,7 +34,8 @@ public class CherryBomb : MonoBehaviour
         {
             Effect();
             isExploded = true;
-            SpawnJelly();
+            if (spawnJellyEnabled)
+                SpawnJelly();
             AudioSource.PlayClipAtPoint(bombAudio.clip, transform.position);
             Collider2D[] obstacles = Physics2D.OverlapCircleAll(transform.position, splashRadius); // 범위 내에 장애물들이 있는지 확인
             foreach (var obstacle in obstacles)
@@ -78,7 +82,8 @@ public class CherryBomb : MonoBehaviour
             isExploded = true;
             if (effectPrefab != null)
                 Effect();
-            SpawnJelly();
+            if (spawnJellyEnabled)
+                SpawnJelly();
             AudioSource.PlayClipAtPoint(bombAudio.clip, transform.position);
             Collider2D[] obstacles = Physics2D.OverlapCircleAll(transform.position, splashRadius);
             foreach (var obstacle in obstacles)

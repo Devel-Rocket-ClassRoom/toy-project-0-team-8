@@ -6,6 +6,7 @@ public class PirateCookieBehavior : CookieBehavior
     private Animator _animator;
 
     private readonly string _shipResourcePath = "Prefabs/Character/Pirate/PirateShip";
+    private readonly string _bombResourcePath = "Sprite/Character/Cherry/Jelly/CherryBomb";
     private readonly string _jumpSoundpath = "Sprite/Character/Pirate/Sound/Ch16jump";
     private readonly string _slideSoundpath = "Sprite/Character/Pirate/Sound/Ch16slide";
     private readonly string _reviveSoundpath = "Sprite/Character/Pirate/Sound/G_ghostmode_start";
@@ -25,9 +26,12 @@ public class PirateCookieBehavior : CookieBehavior
         "Animations/Character/Pirate/GhostAnimationController";
 
     private GameObject _pirateShip;
+    private GameObject _bombPrefab;
 
     private readonly float _abilityPeriod = 15f;
     private readonly float _abilityDuration = 2f;
+    private readonly float _bombThrowInterval = 0.4f;
+    private readonly float _bombThrowPower = 8f;
     private float _abilityTimer;
 
     private bool _isUsingAbility;
@@ -35,6 +39,7 @@ public class PirateCookieBehavior : CookieBehavior
 
     private Coroutine _abilityCycleCoroutine;
     private Coroutine _abilityCoroutine;
+    private Coroutine _bombThrowCoroutine;
     private Coroutine _reviveCoroutine;
 
     public override bool UseAbilityProgressBar => true;
@@ -48,6 +53,7 @@ public class PirateCookieBehavior : CookieBehavior
         // 시작 시에, PirateShip 만들고 안보이는 상태로
         _pirateShip = Instantiate(Resources.Load<GameObject>(_shipResourcePath));
         _pirateShip.SetActive(false);
+        _bombPrefab = Resources.Load<GameObject>(_bombResourcePath);
         JumpClip = Resources.Load<AudioClip>(_jumpSoundpath);
         SlideClip = Resources.Load<AudioClip>(_slideSoundpath);
         ReviveClip = Resources.Load<AudioClip>(_reviveSoundpath);
@@ -85,12 +91,61 @@ public class PirateCookieBehavior : CookieBehavior
         // 능력 시작 후 종료
         _pirateShip.SetActive(true);
         _isUsingAbility = true;
+
+        // 능력 발동 동안 일정 간격으로 폭탄 투척
+        _bombThrowCoroutine = StartCoroutine(CoThrowBombs());
+
         yield return new WaitForSeconds(_abilityDuration);
+
+        if (_bombThrowCoroutine != null)
+        {
+            StopCoroutine(_bombThrowCoroutine);
+            _bombThrowCoroutine = null;
+        }
         _isUsingAbility = false;
 
         StartCoroutine(CoDisappear());
 
         _abilityCoroutine = null;
+    }
+
+    private IEnumerator CoThrowBombs()
+    {
+        // 능력 발동 직후 첫 폭탄을 던지고, 이후 _bombThrowInterval 간격으로 반복
+        while (true)
+        {
+            ThrowBomb();
+            yield return new WaitForSeconds(_bombThrowInterval);
+        }
+    }
+
+    private void ThrowBomb()
+    {
+        if (_bombPrefab == null)
+            return;
+
+        // 해적선이 보이면 그 위치에서, 아니면 캐릭터 위치에서 투척
+        Vector3 spawnPos =
+            _pirateShip != null && _pirateShip.activeSelf
+                ? _pirateShip.transform.position
+                : transform.position;
+
+        GameObject bomb = Instantiate(_bombPrefab, spawnPos, Quaternion.identity);
+
+        // CherryBomb 프리팹 재활용. 해적 폭탄은 젤리 생성을 비활성화.
+        CherryBomb bombScript = bomb.GetComponent<CherryBomb>();
+        if (bombScript != null)
+        {
+            bombScript.spawnJellyEnabled = false;
+        }
+
+        // 앞쪽 위로 비스듬히 던지기
+        Rigidbody2D rb = bomb.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            Vector3 throwDirection = new Vector3(1f, 0.6f, 0f).normalized;
+            rb.AddForce(throwDirection * _bombThrowPower, ForceMode2D.Impulse);
+        }
     }
 
     private IEnumerator CoDisappear()
@@ -155,6 +210,11 @@ public class PirateCookieBehavior : CookieBehavior
         else if (base.DeathCheck() && _reviveCoroutine == null && !_isFirstDeath)
         {
             StopCoroutine(_abilityCycleCoroutine);
+            if (_bombThrowCoroutine != null)
+            {
+                StopCoroutine(_bombThrowCoroutine);
+                _bombThrowCoroutine = null;
+            }
             _abilityCoroutine = null;
             return true;
         }
