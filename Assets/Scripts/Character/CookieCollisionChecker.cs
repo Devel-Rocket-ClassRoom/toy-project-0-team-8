@@ -18,7 +18,7 @@ public class CookieCollisionChecker : MonoBehaviour
     private readonly float _standingColliderXOffset = -0.08f;
     private readonly float _standingColliderXSize = 1.08f;
     private readonly float _standingColliderYOffset = -0.82f;
-    private readonly float _standingColliderYSize = 2.36f;
+    private readonly float _standingColliderYSize = 2.35f;
 
     private readonly float _slidingColliderXOffset = 0f;
     private readonly float _slidingColliderXSize = 1.39f;
@@ -49,7 +49,7 @@ public class CookieCollisionChecker : MonoBehaviour
 
     private void SetStandingOffset()
     {
-        _collider2D.offset = new Vector2(_standingColliderXOffset, _slidingColliderYOffset);
+        _collider2D.offset = new Vector2(_standingColliderXOffset, _standingColliderYOffset);
     }
 
     public void SetSlidingSize()
@@ -59,7 +59,7 @@ public class CookieCollisionChecker : MonoBehaviour
 
     public void SetStandingSize()
     {
-        _collider2D.size = new Vector2(_standingColliderXSize, _slidingColliderYSize);
+        _collider2D.size = new Vector2(_standingColliderXSize, _standingColliderYSize);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
