@@ -72,7 +72,11 @@ public class CookieMovementController : MonoBehaviour
         _state = CookieState.Run;
         _sizeController.SetStandingPosition();
         _sizeController.SetStandingCollider();
-        _cookieBehavior.StartRunAnimation();
+
+        if (_cookieController.IsDashing)
+            _cookieBehavior.StartDashAnimation();
+        else
+            _cookieBehavior.StartRunAnimation();
     }
 
     private void FixedUpdate()
