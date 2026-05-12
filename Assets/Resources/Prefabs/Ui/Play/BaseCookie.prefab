@@ -171,7 +171,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.08, y: -0.82}
-  m_Size: {x: 1.08, y: 2.36}
+  m_Size: {x: 1.08, y: 2.35}
   m_Direction: 0
 --- !u!114 &8567717157291444384
 MonoBehaviour:
@@ -186,7 +186,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookieCollisionChecker
   _cookieController: {fileID: 5630293020394366963}
---- !u!1 &4452933684968082351
+  _gameManager: {fileID: 0}
+  _changeStage: 0
+--- !u!1 &4212966327388905811
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,46 +196,62 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7222709207348568573}
-  - component: {fileID: 5305658334026297100}
-  - component: {fileID: 7943733558333321254}
-  - component: {fileID: 2615641987897293069}
-  - component: {fileID: 2087361772635488321}
-  - component: {fileID: 5630293020394366963}
-  - component: {fileID: 7126042939000283837}
+  - component: {fileID: 8327118611032423940}
+  - component: {fileID: 8999173042583954117}
+  - component: {fileID: 6200421209569298278}
+  - component: {fileID: 4740290898441428290}
   m_Layer: 0
-  m_Name: BaseCookie
+  m_Name: CookieVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7222709207348568573
+--- !u!4 &8327118611032423940
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452933684968082351}
+  m_GameObject: {fileID: 4212966327388905811}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: -3.91, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 574136981216230339}
-  - {fileID: 5208596194788919393}
-  - {fileID: 9197689710625806770}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 7222709207348568573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5305658334026297100
+--- !u!95 &8999173042583954117
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212966327388905811}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &6200421209569298278
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452933684968082351}
+  m_GameObject: {fileID: 4212966327388905811}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -271,20 +289,79 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -966681783
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6805693047356623700, guid: a0489b6321f71d04c8ed72af37c2dd7c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.77, y: 2}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4740290898441428290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212966327388905811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bd354956744219b541c1d36329e22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookieRenderer
+--- !u!1 &4452933684968082351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7222709207348568573}
+  - component: {fileID: 7943733558333321254}
+  - component: {fileID: 2615641987897293069}
+  - component: {fileID: 2087361772635488321}
+  - component: {fileID: 5630293020394366963}
+  - component: {fileID: 6773060119075874205}
+  - component: {fileID: 7659667361548828086}
+  - component: {fileID: 9077476192347511553}
+  - component: {fileID: 1433624404273702603}
+  - component: {fileID: 9096583113551313584}
+  - component: {fileID: 6401933373911461714}
+  - component: {fileID: 7126042939000283837}
+  m_Layer: 0
+  m_Name: BaseCookie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7222709207348568573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452933684968082351}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: -3.91, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8327118611032423940}
+  - {fileID: 574136981216230339}
+  - {fileID: 5208596194788919393}
+  - {fileID: 9197689710625806770}
+  - {fileID: 111160477642506979}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7943733558333321254
 Animator:
   serializedVersion: 7
@@ -293,7 +370,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4452933684968082351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -322,7 +399,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -392,9 +469,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d88e76bf8a747669ccc0afc14b92bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookieController
+  _isSkill: 0
+  roof: {fileID: 0}
+  _abilityProgressBar: {fileID: 8606422125004181002}
+  _fallAlertPanel: {fileID: 0}
+  _cookieRenderer: {fileID: 4740290898441428290}
+--- !u!114 &6773060119075874205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452933684968082351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e1ff14904e2e24098c825474021fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChargeJellyBatch
+  stateObject: {fileID: 0}
+  chargeJellyPrefab: {fileID: 1637299784096980318, guid: 82b50d755553dc846bfc0f7ed2ffec63, type: 3}
+  distanceThreshold: 20
+--- !u!114 &7659667361548828086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452933684968082351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807421bf0fb4c7e4ea95e2d051c2e4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookieGearController
+  gearPrefabParent: {fileID: 0}
+--- !u!114 &9077476192347511553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452933684968082351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff69fd05f23e764b890da765b0baa50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookieHealthController
+  _hpBar: {fileID: 0}
+  _additionalHpBar: {fileID: 0}
+  _healthBarShine: {fileID: 0}
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1433624404273702603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452933684968082351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445836af562c90745898acfbf1f1a570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookieInputController
+  JumpButton: {fileID: 0}
+  SlideButton: {fileID: 0}
+  _jumpKey: 32
+  _slideKey: 306
   OnJumpKeyDown:
     m_PersistentCalls:
       m_Calls: []
@@ -413,17 +554,30 @@ MonoBehaviour:
   WhileSlideKeyPressed:
     m_PersistentCalls:
       m_Calls: []
-  _hpBar: {fileID: 0}
-  _additionalHpBar: {fileID: 0}
-  _healthBarShine: {fileID: 0}
-  _abilityProgressBar: {fileID: 8606422125004181002}
-  JumpButton: {fileID: 0}
-  SlideButton: {fileID: 0}
-  _jumpKey: 32
-  _slideKey: 306
-  _jumpForce: 25
-  _gravityScale: 10
-  _healthReduceSpeed: 2
+--- !u!114 &9096583113551313584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452933684968082351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db1b95edaed0dc469a223887d1f347e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookieMovementController
+--- !u!114 &6401933373911461714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452933684968082351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290b9fbd9cf74a548b2c9abb7a9490e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookieSizeController
   _collisionCollider: {fileID: 8567717157291444384}
 --- !u!82 &7126042939000283837
 AudioSource:
@@ -588,7 +742,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.59}
+  m_Offset: {x: 0, y: 0.11}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -598,7 +752,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.14, y: 0.31}
   m_EdgeRadius: 0
 --- !u!1 &5300641201557095212
 GameObject:
@@ -675,6 +829,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5311825843120459025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111160477642506979}
+  m_Layer: 0
+  m_Name: GearSlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &111160477642506979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311825843120459025}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7222709207348568573}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6422571429211417960
 GameObject:
   m_ObjectHideFlags: 0
